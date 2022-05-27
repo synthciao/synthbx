@@ -8,10 +8,7 @@
 +--- benchmarks
 |    +-- data : specifications (schema + example)
 |    +-- results : candidates, solutions, statistic logs
-|
-+--- benchmarks.stat.bak : a backup of benchmarking
-|    +-- data : specifications (schema + example)
-|    +-- results : candidates, solutions, statistic logs
+|    +-- benchmarks.bak.zip
 |
 +--- synthbx
 |    +-- ast
