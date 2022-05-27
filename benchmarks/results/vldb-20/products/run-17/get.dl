@@ -1,0 +1,20 @@
+.type PRODUCT_ID <: symbol
+.type TITLE <: symbol
+.type DESCRIPTION <: symbol
+.type MANUFACTURER_ID <: symbol
+.type CREATED_AT <: symbol
+.type UPDATED_AT <: symbol
+.type MPN <: symbol
+.type VISIBLE <: symbol
+.type SUBSCRIPTIONS_COUNT <: symbol
+
+
+.decl products_raw(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.input products_raw, subscriptions_agg
+
+.decl products(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.output products
+
+products(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7), subscriptions_agg(v0, v8).
+products(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7), !subscriptions_agg(v0, _), v8 = "0".

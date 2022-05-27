@@ -1,0 +1,52 @@
+.type CITY_ID <: symbol
+.type CITY <: symbol
+.type COUNTRY_ID <: symbol
+.type LAST_UPDATE <: symbol
+
+.decl city(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl usa_city(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID)
+.decl M__1(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl city_update(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl city_sdt_insert(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl city_sdt_delete(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl usa_city_update(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID)
+.decl usa_city_vdt_insert(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID)
+.decl usa_city_vdt_delete(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID)
+.decl M__1_update(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl M__1_sdt_insert(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl M__1_sdt_delete(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl M__1_vdt_insert(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl M__1_vdt_delete(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl Au_P_0_usa_city_M__1(v0: LAST_UPDATE)
+.decl Au_P_1_usa_city_M__1(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input city
+.output city_update
+.input usa_city_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2, v3) :- city(v0, v1, v2, v3), v2 = "103".
+usa_city(v0, v1, v2) :- M__1(v0, v1, v2, v3).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+usa_city_vdt_delete(v0, v1, v2) :- usa_city(v0, v1, v2), !usa_city_update(v0, v1, v2).
+usa_city_vdt_insert(v0, v1, v2) :- usa_city_update(v0, v1, v2), !usa_city(v0, v1, v2).
+
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+city_update(v0, v1, v2, v3) :- city(v0, v1, v2, v3), !city_sdt_delete(v0, v1, v2, v3); city_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1(_, _, v2, _), v2 != "103".
+Fr__("_rejected_") :- M__1_update(_, _, v2, _), v2 != "103".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3) :- usa_city_vdt_delete(v0, v1, v2), M__1(v0, v1, v2, v3).
+M__1_sdt_insert(v0, v1, v2, v3) :- usa_city_vdt_insert(v0, v1, v2), Au_P_0_usa_city_M__1(v3), !Au_P_1_usa_city_M__1(v0, v1, v2, _), !M__1(v0, v1, v2, _).
+M__1_sdt_insert(v0, v1, v2, v3) :- usa_city_vdt_insert(v0, v1, v2), Au_P_1_usa_city_M__1(v0, v1, v2, v3), !M__1(v0, v1, v2, _).
+city_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v0, v1, v2, v3), city(v0, v1, v2, v3).
+city_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1, v2, v3), !city(v0, v1, v2, v3).
+
+Au_P_0_usa_city_M__1("2006-02-15 09:45:26").

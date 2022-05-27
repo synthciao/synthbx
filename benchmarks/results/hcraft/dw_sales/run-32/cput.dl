@@ -1,0 +1,385 @@
+.type SalesQuotaKey <: symbol
+.type EmployeeKey <: symbol
+.type DateKey <: symbol
+.type CalendarQuarter <: symbol
+.type SalesAmountQuota <: symbol
+.type Date <: symbol
+.type CalendarYear <: symbol
+
+.decl FactSalesQuota2010(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl dw_sales(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl M__1(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__2(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__3(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__4(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__5(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__6(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__7(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__8(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl dw_sales__0_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl FactSalesQuota2010_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2010_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2010_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl dw_sales_update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales_vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales_vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl M__1_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__1_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__1_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__1_vdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__1_vdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__2_update(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__2_sdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__2_sdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__2_vdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__2_vdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__3_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__3_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__3_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__3_vdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__3_vdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__4_update(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__4_sdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__4_sdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__4_vdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__4_vdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__5_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__5_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__5_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__5_vdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__5_vdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__6_update(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__6_sdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__6_sdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__6_vdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__6_vdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__7_update(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__7_sdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__7_sdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__7_vdt_insert(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__7_vdt_delete(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__8_update(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__8_sdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__8_sdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__8_vdt_insert(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__8_vdt_delete(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl dw_sales__0__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__0__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__0__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__0__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__0__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5__update(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5__sdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5__sdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5__vdt_insert(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5__vdt_delete(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_P_0_M__2_M__1(v0: EmployeeKey, v1: DateKey, v2: Date)
+.decl Au_P_0_M__4_M__3(v0: EmployeeKey, v1: DateKey, v2: Date)
+.decl Au_P_0_M__6_M__5(v0: EmployeeKey, v1: DateKey, v2: Date)
+.decl Au_P_0_M__8_M__7(v0: EmployeeKey, v1: DateKey, v2: Date)
+.decl Au_U_dw_sales_dw_sales__4_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_U_dw_sales_dw_sales__5_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_U_dw_sales__4__dw_sales__0_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_U_dw_sales__4__dw_sales__1_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_U_dw_sales__5__dw_sales__2_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Au_U_dw_sales__5__dw_sales__3_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input FactSalesQuota2010
+.input FactSalesQuota2011
+.input FactSalesQuota2012
+.input FactSalesQuota2013
+.output dw_sales
+.output M__1
+.output M__2
+.output M__3
+.output M__4
+.output M__5
+.output M__6
+.output M__7
+.output M__8
+.output dw_sales__0_
+.output dw_sales__1_
+.output dw_sales__2_
+.output dw_sales__3_
+.output dw_sales__4_
+.output dw_sales__5_
+.output FactSalesQuota2010_update
+.output FactSalesQuota2010_sdt_insert
+.output FactSalesQuota2010_sdt_delete
+.output FactSalesQuota2011_update
+.output FactSalesQuota2011_sdt_insert
+.output FactSalesQuota2011_sdt_delete
+.output FactSalesQuota2012_update
+.output FactSalesQuota2012_sdt_insert
+.output FactSalesQuota2012_sdt_delete
+.output FactSalesQuota2013_update
+.output FactSalesQuota2013_sdt_insert
+.output FactSalesQuota2013_sdt_delete
+.input dw_sales_update
+.output dw_sales_vdt_insert
+.output dw_sales_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output M__3_update
+.output M__3_sdt_insert
+.output M__3_sdt_delete
+.output M__3_vdt_insert
+.output M__3_vdt_delete
+.output M__4_update
+.output M__4_sdt_insert
+.output M__4_sdt_delete
+.output M__4_vdt_insert
+.output M__4_vdt_delete
+.output M__5_update
+.output M__5_sdt_insert
+.output M__5_sdt_delete
+.output M__5_vdt_insert
+.output M__5_vdt_delete
+.output M__6_update
+.output M__6_sdt_insert
+.output M__6_sdt_delete
+.output M__6_vdt_insert
+.output M__6_vdt_delete
+.output M__7_update
+.output M__7_sdt_insert
+.output M__7_sdt_delete
+.output M__7_vdt_insert
+.output M__7_vdt_delete
+.output M__8_update
+.output M__8_sdt_insert
+.output M__8_sdt_delete
+.output M__8_vdt_insert
+.output M__8_vdt_delete
+.output dw_sales__0__update
+.output dw_sales__0__sdt_insert
+.output dw_sales__0__sdt_delete
+.output dw_sales__0__vdt_insert
+.output dw_sales__0__vdt_delete
+.output dw_sales__1__update
+.output dw_sales__1__sdt_insert
+.output dw_sales__1__sdt_delete
+.output dw_sales__1__vdt_insert
+.output dw_sales__1__vdt_delete
+.output dw_sales__2__update
+.output dw_sales__2__sdt_insert
+.output dw_sales__2__sdt_delete
+.output dw_sales__2__vdt_insert
+.output dw_sales__2__vdt_delete
+.output dw_sales__3__update
+.output dw_sales__3__sdt_insert
+.output dw_sales__3__sdt_delete
+.output dw_sales__3__vdt_insert
+.output dw_sales__3__vdt_delete
+.output dw_sales__4__update
+.output dw_sales__4__sdt_insert
+.output dw_sales__4__sdt_delete
+.output dw_sales__4__vdt_insert
+.output dw_sales__4__vdt_delete
+.output dw_sales__5__update
+.output dw_sales__5__sdt_insert
+.output dw_sales__5__sdt_delete
+.output dw_sales__5__vdt_insert
+.output dw_sales__5__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2010(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__2(v0, v3, v4) :- M__1(v0, v1, v2, v3, v4, v5).
+M__3(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2011(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__4(v0, v3, v4) :- M__3(v0, v1, v2, v3, v4, v5).
+M__5(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2012(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__6(v0, v3, v4) :- M__5(v0, v1, v2, v3, v4, v5).
+M__7(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2013(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__8(v0, v3, v4) :- M__7(v0, v1, v2, v3, v4, v5).
+dw_sales(v0, v1, v2, v3) :- dw_sales__4_(v0, v1, v2, v3); dw_sales__5_(v0, v1, v2, v3).
+dw_sales__0_(v0, v1, v2, v3) :- M__2(v0, v2, v3), v1 = "2010".
+dw_sales__1_(v0, v1, v2, v3) :- M__4(v0, v2, v3), v1 = "2011".
+dw_sales__2_(v0, v1, v2, v3) :- M__6(v0, v2, v3), v1 = "2012".
+dw_sales__3_(v0, v1, v2, v3) :- M__8(v0, v2, v3), v1 = "2013".
+dw_sales__4_(v0, v1, v2, v3) :- dw_sales__0_(v0, v1, v2, v3); dw_sales__1_(v0, v1, v2, v3).
+dw_sales__5_(v0, v1, v2, v3) :- dw_sales__2_(v0, v1, v2, v3); dw_sales__3_(v0, v1, v2, v3).
+
+M__1_vdt_delete(v0, v1, v2, v3, v4, v5) :- M__1(v0, v1, v2, v3, v4, v5), !M__1_update(v0, v1, v2, v3, v4, v5).
+M__1_vdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_update(v0, v1, v2, v3, v4, v5), !M__1(v0, v1, v2, v3, v4, v5).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+M__3_vdt_delete(v0, v1, v2, v3, v4, v5) :- M__3(v0, v1, v2, v3, v4, v5), !M__3_update(v0, v1, v2, v3, v4, v5).
+M__3_vdt_insert(v0, v1, v2, v3, v4, v5) :- M__3_update(v0, v1, v2, v3, v4, v5), !M__3(v0, v1, v2, v3, v4, v5).
+M__4_vdt_delete(v0, v1, v2) :- M__4(v0, v1, v2), !M__4_update(v0, v1, v2).
+M__4_vdt_insert(v0, v1, v2) :- M__4_update(v0, v1, v2), !M__4(v0, v1, v2).
+M__5_vdt_delete(v0, v1, v2, v3, v4, v5) :- M__5(v0, v1, v2, v3, v4, v5), !M__5_update(v0, v1, v2, v3, v4, v5).
+M__5_vdt_insert(v0, v1, v2, v3, v4, v5) :- M__5_update(v0, v1, v2, v3, v4, v5), !M__5(v0, v1, v2, v3, v4, v5).
+M__6_vdt_delete(v0, v1, v2) :- M__6(v0, v1, v2), !M__6_update(v0, v1, v2).
+M__6_vdt_insert(v0, v1, v2) :- M__6_update(v0, v1, v2), !M__6(v0, v1, v2).
+M__7_vdt_delete(v0, v1, v2, v3, v4, v5) :- M__7(v0, v1, v2, v3, v4, v5), !M__7_update(v0, v1, v2, v3, v4, v5).
+M__7_vdt_insert(v0, v1, v2, v3, v4, v5) :- M__7_update(v0, v1, v2, v3, v4, v5), !M__7(v0, v1, v2, v3, v4, v5).
+M__8_vdt_delete(v0, v1, v2) :- M__8(v0, v1, v2), !M__8_update(v0, v1, v2).
+M__8_vdt_insert(v0, v1, v2) :- M__8_update(v0, v1, v2), !M__8(v0, v1, v2).
+dw_sales__0__vdt_delete(v0, v1, v2, v3) :- dw_sales__0_(v0, v1, v2, v3), !dw_sales__0__update(v0, v1, v2, v3).
+dw_sales__0__vdt_insert(v0, v1, v2, v3) :- dw_sales__0__update(v0, v1, v2, v3), !dw_sales__0_(v0, v1, v2, v3).
+dw_sales__1__vdt_delete(v0, v1, v2, v3) :- dw_sales__1_(v0, v1, v2, v3), !dw_sales__1__update(v0, v1, v2, v3).
+dw_sales__1__vdt_insert(v0, v1, v2, v3) :- dw_sales__1__update(v0, v1, v2, v3), !dw_sales__1_(v0, v1, v2, v3).
+dw_sales__2__vdt_delete(v0, v1, v2, v3) :- dw_sales__2_(v0, v1, v2, v3), !dw_sales__2__update(v0, v1, v2, v3).
+dw_sales__2__vdt_insert(v0, v1, v2, v3) :- dw_sales__2__update(v0, v1, v2, v3), !dw_sales__2_(v0, v1, v2, v3).
+dw_sales__3__vdt_delete(v0, v1, v2, v3) :- dw_sales__3_(v0, v1, v2, v3), !dw_sales__3__update(v0, v1, v2, v3).
+dw_sales__3__vdt_insert(v0, v1, v2, v3) :- dw_sales__3__update(v0, v1, v2, v3), !dw_sales__3_(v0, v1, v2, v3).
+dw_sales__4__vdt_delete(v0, v1, v2, v3) :- dw_sales__4_(v0, v1, v2, v3), !dw_sales__4__update(v0, v1, v2, v3).
+dw_sales__4__vdt_insert(v0, v1, v2, v3) :- dw_sales__4__update(v0, v1, v2, v3), !dw_sales__4_(v0, v1, v2, v3).
+dw_sales__5__vdt_delete(v0, v1, v2, v3) :- dw_sales__5_(v0, v1, v2, v3), !dw_sales__5__update(v0, v1, v2, v3).
+dw_sales__5__vdt_insert(v0, v1, v2, v3) :- dw_sales__5__update(v0, v1, v2, v3), !dw_sales__5_(v0, v1, v2, v3).
+dw_sales_vdt_delete(v0, v1, v2, v3) :- dw_sales(v0, v1, v2, v3), !dw_sales_update(v0, v1, v2, v3).
+dw_sales_vdt_insert(v0, v1, v2, v3) :- dw_sales_update(v0, v1, v2, v3), !dw_sales(v0, v1, v2, v3).
+
+FactSalesQuota2010_update(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2010(v0, v1, v2, v3, v4, v5), !FactSalesQuota2010_sdt_delete(v0, v1, v2, v3, v4, v5); FactSalesQuota2010_sdt_insert(v0, v1, v2, v3, v4, v5).
+FactSalesQuota2011_update(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2011(v0, v1, v2, v3, v4, v5), !FactSalesQuota2011_sdt_delete(v0, v1, v2, v3, v4, v5); FactSalesQuota2011_sdt_insert(v0, v1, v2, v3, v4, v5).
+FactSalesQuota2012_update(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2012(v0, v1, v2, v3, v4, v5), !FactSalesQuota2012_sdt_delete(v0, v1, v2, v3, v4, v5); FactSalesQuota2012_sdt_insert(v0, v1, v2, v3, v4, v5).
+FactSalesQuota2013_update(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2013(v0, v1, v2, v3, v4, v5), !FactSalesQuota2013_sdt_delete(v0, v1, v2, v3, v4, v5); FactSalesQuota2013_sdt_insert(v0, v1, v2, v3, v4, v5).
+M__1_update(v0, v1, v2, v3, v4, v5) :- M__1(v0, v1, v2, v3, v4, v5), !M__1_sdt_delete(v0, v1, v2, v3, v4, v5); M__1_sdt_insert(v0, v1, v2, v3, v4, v5).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+M__3_update(v0, v1, v2, v3, v4, v5) :- M__3(v0, v1, v2, v3, v4, v5), !M__3_sdt_delete(v0, v1, v2, v3, v4, v5); M__3_sdt_insert(v0, v1, v2, v3, v4, v5).
+M__4_update(v0, v1, v2) :- M__4(v0, v1, v2), !M__4_sdt_delete(v0, v1, v2); M__4_sdt_insert(v0, v1, v2).
+M__5_update(v0, v1, v2, v3, v4, v5) :- M__5(v0, v1, v2, v3, v4, v5), !M__5_sdt_delete(v0, v1, v2, v3, v4, v5); M__5_sdt_insert(v0, v1, v2, v3, v4, v5).
+M__6_update(v0, v1, v2) :- M__6(v0, v1, v2), !M__6_sdt_delete(v0, v1, v2); M__6_sdt_insert(v0, v1, v2).
+M__7_update(v0, v1, v2, v3, v4, v5) :- M__7(v0, v1, v2, v3, v4, v5), !M__7_sdt_delete(v0, v1, v2, v3, v4, v5); M__7_sdt_insert(v0, v1, v2, v3, v4, v5).
+M__8_update(v0, v1, v2) :- M__8(v0, v1, v2), !M__8_sdt_delete(v0, v1, v2); M__8_sdt_insert(v0, v1, v2).
+dw_sales__0__update(v0, v1, v2, v3) :- dw_sales__0_(v0, v1, v2, v3), !dw_sales__0__sdt_delete(v0, v1, v2, v3); dw_sales__0__sdt_insert(v0, v1, v2, v3).
+dw_sales__1__update(v0, v1, v2, v3) :- dw_sales__1_(v0, v1, v2, v3), !dw_sales__1__sdt_delete(v0, v1, v2, v3); dw_sales__1__sdt_insert(v0, v1, v2, v3).
+dw_sales__2__update(v0, v1, v2, v3) :- dw_sales__2_(v0, v1, v2, v3), !dw_sales__2__sdt_delete(v0, v1, v2, v3); dw_sales__2__sdt_insert(v0, v1, v2, v3).
+dw_sales__3__update(v0, v1, v2, v3) :- dw_sales__3_(v0, v1, v2, v3), !dw_sales__3__sdt_delete(v0, v1, v2, v3); dw_sales__3__sdt_insert(v0, v1, v2, v3).
+dw_sales__4__update(v0, v1, v2, v3) :- dw_sales__4_(v0, v1, v2, v3), !dw_sales__4__sdt_delete(v0, v1, v2, v3); dw_sales__4__sdt_insert(v0, v1, v2, v3).
+dw_sales__5__update(v0, v1, v2, v3) :- dw_sales__5_(v0, v1, v2, v3), !dw_sales__5__sdt_delete(v0, v1, v2, v3); dw_sales__5__sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__1_update(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__3(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__3_update(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__5(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__5_update(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__7(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- M__7_update(_, _, _, v3, _, _), v3 != "4".
+Fr__("_rejected_") :- dw_sales__0_(_, v1, _, _), v1 != "2010".
+Fr__("_rejected_") :- dw_sales__0__update(_, v1, _, _), v1 != "2010".
+Fr__("_rejected_") :- dw_sales__1_(_, v1, _, _), v1 != "2011".
+Fr__("_rejected_") :- dw_sales__1__update(_, v1, _, _), v1 != "2011".
+Fr__("_rejected_") :- dw_sales__2_(_, v1, _, _), v1 != "2012".
+Fr__("_rejected_") :- dw_sales__2__update(_, v1, _, _), v1 != "2012".
+Fr__("_rejected_") :- dw_sales__3_(_, v1, _, _), v1 != "2013".
+Fr__("_rejected_") :- dw_sales__3__update(_, v1, _, _), v1 != "2013".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+FactSalesQuota2010_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__1_vdt_delete(v0, v1, v2, v3, v4, v5), FactSalesQuota2010(v0, v1, v2, v3, v4, v5), Rule(0).
+FactSalesQuota2010_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_vdt_insert(v0, v1, v2, v3, v4, v5), !FactSalesQuota2010(v0, v1, v2, v3, v4, v5), Rule(1).
+FactSalesQuota2011_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__3_vdt_delete(v0, v1, v2, v3, v4, v5), FactSalesQuota2011(v0, v1, v2, v3, v4, v5), Rule(4).
+FactSalesQuota2011_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__3_vdt_insert(v0, v1, v2, v3, v4, v5), !FactSalesQuota2011(v0, v1, v2, v3, v4, v5), Rule(5).
+FactSalesQuota2012_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__5_vdt_delete(v0, v1, v2, v3, v4, v5), FactSalesQuota2012(v0, v1, v2, v3, v4, v5), Rule(8).
+FactSalesQuota2012_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__5_vdt_insert(v0, v1, v2, v3, v4, v5), !FactSalesQuota2012(v0, v1, v2, v3, v4, v5), Rule(9).
+FactSalesQuota2013_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__7_vdt_delete(v0, v1, v2, v3, v4, v5), FactSalesQuota2013(v0, v1, v2, v3, v4, v5), Rule(12).
+FactSalesQuota2013_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__7_vdt_insert(v0, v1, v2, v3, v4, v5), !FactSalesQuota2013(v0, v1, v2, v3, v4, v5), Rule(13).
+M__1_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__2_vdt_delete(v0, v3, v4), M__1(v0, v1, v2, v3, v4, v5), Rule(2).
+M__1_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__2_vdt_insert(v0, v3, v4), Au_P_0_M__2_M__1(v1, v2, v5), !M__1(v0, _, _, v3, v4, _), Rule(3).
+M__2_sdt_delete(v0, v2, v3) :- dw_sales__0__vdt_delete(v0, _, v2, v3), M__2(v0, v2, v3), Rule(26).
+M__2_sdt_insert(v0, v2, v3) :- dw_sales__0__vdt_insert(v0, _, v2, v3), !M__2(v0, v2, v3), Rule(27).
+M__3_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__4_vdt_delete(v0, v3, v4), M__3(v0, v1, v2, v3, v4, v5), Rule(6).
+M__3_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__4_vdt_insert(v0, v3, v4), Au_P_0_M__4_M__3(v1, v2, v5), !M__3(v0, _, _, v3, v4, _), Rule(7).
+M__4_sdt_delete(v0, v2, v3) :- dw_sales__1__vdt_delete(v0, _, v2, v3), M__4(v0, v2, v3), Rule(28).
+M__4_sdt_insert(v0, v2, v3) :- dw_sales__1__vdt_insert(v0, _, v2, v3), !M__4(v0, v2, v3), Rule(29).
+M__5_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__6_vdt_delete(v0, v3, v4), M__5(v0, v1, v2, v3, v4, v5), Rule(10).
+M__5_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__6_vdt_insert(v0, v3, v4), Au_P_0_M__6_M__5(v1, v2, v5), !M__5(v0, _, _, v3, v4, _), Rule(11).
+M__6_sdt_delete(v0, v2, v3) :- dw_sales__2__vdt_delete(v0, _, v2, v3), M__6(v0, v2, v3), Rule(30).
+M__6_sdt_insert(v0, v2, v3) :- dw_sales__2__vdt_insert(v0, _, v2, v3), !M__6(v0, v2, v3), Rule(31).
+M__7_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__8_vdt_delete(v0, v3, v4), M__7(v0, v1, v2, v3, v4, v5), Rule(14).
+M__7_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__8_vdt_insert(v0, v3, v4), Au_P_0_M__8_M__7(v1, v2, v5), !M__7(v0, _, _, v3, v4, _), Rule(15).
+M__8_sdt_delete(v0, v2, v3) :- dw_sales__3__vdt_delete(v0, _, v2, v3), M__8(v0, v2, v3), Rule(32).
+M__8_sdt_insert(v0, v2, v3) :- dw_sales__3__vdt_insert(v0, _, v2, v3), !M__8(v0, v2, v3), Rule(33).
+dw_sales__0__sdt_delete(v0, v1, v2, v3) :- dw_sales__4__vdt_delete(v0, v1, v2, v3), dw_sales__0_(v0, v1, v2, v3), Rule(34).
+dw_sales__0__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__4__dw_sales__0_(v0, v1, v2, v3), !dw_sales__0_(v0, v1, v2, v3), Rule(37).
+dw_sales__0__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__4__dw_sales__1_(v0, v1, v2, v3), !dw_sales__0_(v0, v1, v2, v3), Rule(39).
+dw_sales__0__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__4__dw_sales__0_(v0, v1, v2, v3), !dw_sales__0_(v0, v1, v2, v3), Rule(36).
+dw_sales__0__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__4__dw_sales__1_(v0, v1, v2, v3), !dw_sales__0_(v0, v1, v2, v3), Rule(38).
+dw_sales__1__sdt_delete(v0, v1, v2, v3) :- dw_sales__4__vdt_delete(v0, v1, v2, v3), dw_sales__1_(v0, v1, v2, v3), Rule(35).
+dw_sales__1__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__4__dw_sales__0_(v0, v1, v2, v3), !dw_sales__1_(v0, v1, v2, v3), Rule(41).
+dw_sales__1__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__4__dw_sales__1_(v0, v1, v2, v3), !dw_sales__1_(v0, v1, v2, v3), Rule(43).
+dw_sales__1__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__4__dw_sales__0_(v0, v1, v2, v3), !dw_sales__1_(v0, v1, v2, v3), Rule(40).
+dw_sales__1__sdt_insert(v0, v1, v2, v3) :- dw_sales__4__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__4__dw_sales__1_(v0, v1, v2, v3), !dw_sales__1_(v0, v1, v2, v3), Rule(42).
+dw_sales__2__sdt_delete(v0, v1, v2, v3) :- dw_sales__5__vdt_delete(v0, v1, v2, v3), dw_sales__2_(v0, v1, v2, v3), Rule(44).
+dw_sales__2__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__5__dw_sales__2_(v0, v1, v2, v3), !dw_sales__2_(v0, v1, v2, v3), Rule(47).
+dw_sales__2__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__5__dw_sales__3_(v0, v1, v2, v3), !dw_sales__2_(v0, v1, v2, v3), Rule(49).
+dw_sales__2__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__5__dw_sales__2_(v0, v1, v2, v3), !dw_sales__2_(v0, v1, v2, v3), Rule(46).
+dw_sales__2__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__5__dw_sales__3_(v0, v1, v2, v3), !dw_sales__2_(v0, v1, v2, v3), Rule(48).
+dw_sales__3__sdt_delete(v0, v1, v2, v3) :- dw_sales__5__vdt_delete(v0, v1, v2, v3), dw_sales__3_(v0, v1, v2, v3), Rule(45).
+dw_sales__3__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__5__dw_sales__2_(v0, v1, v2, v3), !dw_sales__3_(v0, v1, v2, v3), Rule(51).
+dw_sales__3__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales__5__dw_sales__3_(v0, v1, v2, v3), !dw_sales__3_(v0, v1, v2, v3), Rule(53).
+dw_sales__3__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__5__dw_sales__2_(v0, v1, v2, v3), !dw_sales__3_(v0, v1, v2, v3), Rule(50).
+dw_sales__3__sdt_insert(v0, v1, v2, v3) :- dw_sales__5__vdt_insert(v0, v1, v2, v3), Au_U_dw_sales__5__dw_sales__3_(v0, v1, v2, v3), !dw_sales__3_(v0, v1, v2, v3), Rule(52).
+dw_sales__4__sdt_delete(v0, v1, v2, v3) :- dw_sales_vdt_delete(v0, v1, v2, v3), dw_sales__4_(v0, v1, v2, v3), Rule(16).
+dw_sales__4__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales_dw_sales__4_(v0, v1, v2, v3), !dw_sales__4_(v0, v1, v2, v3), Rule(19).
+dw_sales__4__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales_dw_sales__5_(v0, v1, v2, v3), !dw_sales__4_(v0, v1, v2, v3), Rule(21).
+dw_sales__4__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), Au_U_dw_sales_dw_sales__4_(v0, v1, v2, v3), !dw_sales__4_(v0, v1, v2, v3), Rule(18).
+dw_sales__4__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), Au_U_dw_sales_dw_sales__5_(v0, v1, v2, v3), !dw_sales__4_(v0, v1, v2, v3), Rule(20).
+dw_sales__5__sdt_delete(v0, v1, v2, v3) :- dw_sales_vdt_delete(v0, v1, v2, v3), dw_sales__5_(v0, v1, v2, v3), Rule(17).
+dw_sales__5__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales_dw_sales__4_(v0, v1, v2, v3), !dw_sales__5_(v0, v1, v2, v3), Rule(23).
+dw_sales__5__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), !Au_U_dw_sales_dw_sales__5_(v0, v1, v2, v3), !dw_sales__5_(v0, v1, v2, v3), Rule(25).
+dw_sales__5__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), Au_U_dw_sales_dw_sales__4_(v0, v1, v2, v3), !dw_sales__5_(v0, v1, v2, v3), Rule(22).
+dw_sales__5__sdt_insert(v0, v1, v2, v3) :- dw_sales_vdt_insert(v0, v1, v2, v3), Au_U_dw_sales_dw_sales__5_(v0, v1, v2, v3), !dw_sales__5_(v0, v1, v2, v3), Rule(24).
+
+Au_P_0_M__2_M__1("000", "20101231", "2010-12-31 00:00:00").
+Au_P_0_M__4_M__3("000", "20111231", "2010-12-31 00:00:00").
+Au_P_0_M__6_M__5("000", "20121231", "2012-12-31 00:00:00").
+Au_P_0_M__8_M__7("000", "20131231", "2013-12-31 00:00:00").
+Au_U_dw_sales_dw_sales__4_("200", "2010", "4", "201000").
+Au_U_dw_sales_dw_sales__4_("201", "2011", "4", "201100").
+Au_U_dw_sales_dw_sales__5_("202", "2012", "4", "201200").
+Au_U_dw_sales_dw_sales__5_("203", "2013", "4", "201300").
+Au_U_dw_sales__4__dw_sales__0_("200", "2010", "4", "201000").
+Au_U_dw_sales__4__dw_sales__1_("201", "2011", "4", "201100").
+Au_U_dw_sales__5__dw_sales__2_("202", "2012", "4", "201200").
+Au_U_dw_sales__5__dw_sales__3_("203", "2013", "4", "201300").

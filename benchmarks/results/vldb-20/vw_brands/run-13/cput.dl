@@ -1,0 +1,151 @@
+.type BRAND_ID <: symbol
+.type BRAND_NAME <: symbol
+.type APPROVAL_STATUS <: symbol
+
+.decl brands(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brand_approvals(v0: BRAND_ID, v1: BRAND_NAME)
+.decl vw_brands(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl M__1(v0: BRAND_NAME)
+.decl M__2(v0: BRAND_NAME)
+.decl vw_brands__0_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl brands_update(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brands_sdt_insert(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brands_sdt_delete(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brand_approvals_update(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brand_approvals_sdt_insert(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brand_approvals_sdt_delete(v0: BRAND_ID, v1: BRAND_NAME)
+.decl vw_brands_update(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands_vdt_insert(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands_vdt_delete(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl M__1_update(v0: BRAND_NAME)
+.decl M__1_sdt_insert(v0: BRAND_NAME)
+.decl M__1_sdt_delete(v0: BRAND_NAME)
+.decl M__1_vdt_insert(v0: BRAND_NAME)
+.decl M__1_vdt_delete(v0: BRAND_NAME)
+.decl M__2_update(v0: BRAND_NAME)
+.decl M__2_sdt_insert(v0: BRAND_NAME)
+.decl M__2_sdt_delete(v0: BRAND_NAME)
+.decl M__2_vdt_insert(v0: BRAND_NAME)
+.decl M__2_vdt_delete(v0: BRAND_NAME)
+.decl vw_brands__0__update(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__0__sdt_insert(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__0__sdt_delete(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__0__vdt_insert(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__0__vdt_delete(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1__update(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1__sdt_insert(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1__sdt_delete(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1__vdt_insert(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1__vdt_delete(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl Au_P_0_M__1_brands(v0: BRAND_ID)
+.decl Au_P_1_M__1_brands(v0: BRAND_ID, v1: BRAND_NAME)
+.decl Au_P_0_M__2_brand_approvals(v0: BRAND_ID)
+.decl Au_P_1_M__2_brand_approvals(v0: BRAND_ID, v1: BRAND_NAME)
+.decl Au_U_vw_brands_vw_brands__0_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl Au_U_vw_brands_vw_brands__1_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input brands
+.input brand_approvals
+.output vw_brands
+.output M__1
+.output M__2
+.output vw_brands__0_
+.output vw_brands__1_
+.output brands_update
+.output brands_sdt_insert
+.output brands_sdt_delete
+.output brand_approvals_update
+.output brand_approvals_sdt_insert
+.output brand_approvals_sdt_delete
+.input vw_brands_update
+.output vw_brands_vdt_insert
+.output vw_brands_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output vw_brands__0__update
+.output vw_brands__0__sdt_insert
+.output vw_brands__0__sdt_delete
+.output vw_brands__0__vdt_insert
+.output vw_brands__0__vdt_delete
+.output vw_brands__1__update
+.output vw_brands__1__sdt_insert
+.output vw_brands__1__sdt_delete
+.output vw_brands__1__vdt_insert
+.output vw_brands__1__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v1) :- brands(v0, v1).
+M__2(v1) :- brand_approvals(v0, v1).
+vw_brands(v0, v1) :- vw_brands__0_(v0, v1); vw_brands__1_(v0, v1).
+vw_brands__0_(v0, v1) :- M__1(v0), v1 = "Approved".
+vw_brands__1_(v0, v1) :- M__2(v0), v1 = "Pending Approval".
+
+M__1_vdt_delete(v0) :- M__1(v0), !M__1_update(v0).
+M__1_vdt_insert(v0) :- M__1_update(v0), !M__1(v0).
+M__2_vdt_delete(v0) :- M__2(v0), !M__2_update(v0).
+M__2_vdt_insert(v0) :- M__2_update(v0), !M__2(v0).
+vw_brands__0__vdt_delete(v0, v1) :- vw_brands__0_(v0, v1), !vw_brands__0__update(v0, v1).
+vw_brands__0__vdt_insert(v0, v1) :- vw_brands__0__update(v0, v1), !vw_brands__0_(v0, v1).
+vw_brands__1__vdt_delete(v0, v1) :- vw_brands__1_(v0, v1), !vw_brands__1__update(v0, v1).
+vw_brands__1__vdt_insert(v0, v1) :- vw_brands__1__update(v0, v1), !vw_brands__1_(v0, v1).
+vw_brands_vdt_delete(v0, v1) :- vw_brands(v0, v1), !vw_brands_update(v0, v1).
+vw_brands_vdt_insert(v0, v1) :- vw_brands_update(v0, v1), !vw_brands(v0, v1).
+
+M__1_update(v0) :- M__1(v0), !M__1_sdt_delete(v0); M__1_sdt_insert(v0).
+M__2_update(v0) :- M__2(v0), !M__2_sdt_delete(v0); M__2_sdt_insert(v0).
+brand_approvals_update(v0, v1) :- brand_approvals(v0, v1), !brand_approvals_sdt_delete(v0, v1); brand_approvals_sdt_insert(v0, v1).
+brands_update(v0, v1) :- brands(v0, v1), !brands_sdt_delete(v0, v1); brands_sdt_insert(v0, v1).
+vw_brands__0__update(v0, v1) :- vw_brands__0_(v0, v1), !vw_brands__0__sdt_delete(v0, v1); vw_brands__0__sdt_insert(v0, v1).
+vw_brands__1__update(v0, v1) :- vw_brands__1_(v0, v1), !vw_brands__1__sdt_delete(v0, v1); vw_brands__1__sdt_insert(v0, v1).
+
+Fr__("_rejected_") :- vw_brands__0_(_, v1), v1 != "Approved".
+Fr__("_rejected_") :- vw_brands__0__update(_, v1), v1 != "Approved".
+Fr__("_rejected_") :- vw_brands__1_(_, v1), v1 != "Pending Approval".
+Fr__("_rejected_") :- vw_brands__1__update(_, v1), v1 != "Pending Approval".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0) :- vw_brands__0__vdt_delete(v0, _), M__1(v0), Rule(16).
+M__1_sdt_insert(v0) :- vw_brands__0__vdt_insert(v0, _), !M__1(v0), Rule(17).
+M__2_sdt_delete(v0) :- vw_brands__1__vdt_delete(v0, _), M__2(v0), Rule(18).
+M__2_sdt_insert(v0) :- vw_brands__1__vdt_insert(v0, _), !M__2(v0), Rule(19).
+brand_approvals_sdt_delete(v0, v1) :- M__2_vdt_delete(v1), brand_approvals(v0, v1), Rule(3).
+brand_approvals_sdt_insert(v0, v1) :- M__2_vdt_insert(v1), Au_P_0_M__2_brand_approvals(v0), !Au_P_1_M__2_brand_approvals(_, v1), !brand_approvals(_, v1), Rule(5).
+brand_approvals_sdt_insert(v0, v1) :- M__2_vdt_insert(v1), Au_P_1_M__2_brand_approvals(v0, v1), !brand_approvals(_, v1), Rule(4).
+brands_sdt_delete(v0, v1) :- M__1_vdt_delete(v1), brands(v0, v1), Rule(0).
+brands_sdt_insert(v0, v1) :- M__1_vdt_insert(v1), Au_P_0_M__1_brands(v0), !Au_P_1_M__1_brands(_, v1), !brands(_, v1), Rule(2).
+brands_sdt_insert(v0, v1) :- M__1_vdt_insert(v1), Au_P_1_M__1_brands(v0, v1), !brands(_, v1), Rule(1).
+vw_brands__0__sdt_delete(v0, v1) :- vw_brands_vdt_delete(v0, v1), vw_brands__0_(v0, v1), Rule(6).
+vw_brands__0__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), !Au_U_vw_brands_vw_brands__0_(v0, v1), !vw_brands__0_(v0, v1), Rule(9).
+vw_brands__0__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), !Au_U_vw_brands_vw_brands__1_(v0, v1), !vw_brands__0_(v0, v1), Rule(11).
+vw_brands__0__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), Au_U_vw_brands_vw_brands__0_(v0, v1), !vw_brands__0_(v0, v1), Rule(8).
+vw_brands__0__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), Au_U_vw_brands_vw_brands__1_(v0, v1), !vw_brands__0_(v0, v1), Rule(10).
+vw_brands__1__sdt_delete(v0, v1) :- vw_brands_vdt_delete(v0, v1), vw_brands__1_(v0, v1), Rule(7).
+vw_brands__1__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), !Au_U_vw_brands_vw_brands__0_(v0, v1), !vw_brands__1_(v0, v1), Rule(13).
+vw_brands__1__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), !Au_U_vw_brands_vw_brands__1_(v0, v1), !vw_brands__1_(v0, v1), Rule(15).
+vw_brands__1__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), Au_U_vw_brands_vw_brands__0_(v0, v1), !vw_brands__1_(v0, v1), Rule(12).
+vw_brands__1__sdt_insert(v0, v1) :- vw_brands_vdt_insert(v0, v1), Au_U_vw_brands_vw_brands__1_(v0, v1), !vw_brands__1_(v0, v1), Rule(14).
+
+Au_P_0_M__1_brands("10").
+Au_P_1_M__1_brands("11", "Microsoft").
+Au_P_1_M__1_brands("12", "Apple").
+Au_P_0_M__2_brand_approvals("102").
+Au_P_1_M__2_brand_approvals("103", "Trinity").
+Au_U_vw_brands_vw_brands__0_("Star", "Approved").
+Au_U_vw_brands_vw_brands__0_("Microsoft", "Approved").
+Au_U_vw_brands_vw_brands__0_("Apple", "Approved").
+Au_U_vw_brands_vw_brands__1_("Neo", "Pending Approval").
+Au_U_vw_brands_vw_brands__1_("Trinity", "Pending Approval").

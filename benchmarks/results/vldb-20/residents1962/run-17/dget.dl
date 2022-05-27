@@ -1,0 +1,11 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents1962(v0: emp_name, v1: birth_date, v2: gender)
+
+.input residents
+.output residents1962
+
+residents1962(v0, v1, v2) :- residents(v0, v1, v2), v1 >= "1962-01-01", v1 <= "1962-12-31".

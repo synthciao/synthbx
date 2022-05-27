@@ -1,0 +1,421 @@
+.type shipmethodid <: symbol
+.type shipname <: symbol
+.type shipbase <: symbol
+.type shiprate <: symbol
+.type purcharseorderid <: symbol
+.type status <: symbol
+.type employeeid <: symbol
+.type vendorid <: symbol
+.type orderdate <: symbol
+.type shipdate <: symbol
+.type subtotal <: symbol
+.type taxamt <: symbol
+.type freight <: symbol
+
+.decl ShipMethod(v0: shipmethodid, v1: shipname, v2: shipbase, v3: shiprate)
+.decl PurcharseOrderHeader(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl dw_ship(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl M__1(v0: shipmethodid, v1: shipname)
+.decl M__2(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__3(v0: shipmethodid, v1: shipname)
+.decl M__4(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl dw_ship__0_(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1_(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl ShipMethod_update(v0: shipmethodid, v1: shipname, v2: shipbase, v3: shiprate)
+.decl ShipMethod_sdt_insert(v0: shipmethodid, v1: shipname, v2: shipbase, v3: shiprate)
+.decl ShipMethod_sdt_delete(v0: shipmethodid, v1: shipname, v2: shipbase, v3: shiprate)
+.decl PurcharseOrderHeader_update(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl PurcharseOrderHeader_sdt_insert(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl PurcharseOrderHeader_sdt_delete(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl dw_ship_update(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship_vdt_insert(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship_vdt_delete(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl M__1_update(v0: shipmethodid, v1: shipname)
+.decl M__1_sdt_insert(v0: shipmethodid, v1: shipname)
+.decl M__1_sdt_delete(v0: shipmethodid, v1: shipname)
+.decl M__1_vdt_insert(v0: shipmethodid, v1: shipname)
+.decl M__1_vdt_delete(v0: shipmethodid, v1: shipname)
+.decl M__2_update(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__2_sdt_insert(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__2_sdt_delete(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__2_vdt_insert(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__2_vdt_delete(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__3_update(v0: shipmethodid, v1: shipname)
+.decl M__3_sdt_insert(v0: shipmethodid, v1: shipname)
+.decl M__3_sdt_delete(v0: shipmethodid, v1: shipname)
+.decl M__3_vdt_insert(v0: shipmethodid, v1: shipname)
+.decl M__3_vdt_delete(v0: shipmethodid, v1: shipname)
+.decl M__4_update(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__4_sdt_insert(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__4_sdt_delete(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__4_vdt_insert(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl M__4_vdt_delete(v0: purcharseorderid, v1: shipmethodid, v2: shipdate)
+.decl dw_ship__0__update(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__0__sdt_insert(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__0__sdt_delete(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__0__vdt_insert(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__0__vdt_delete(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1__update(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1__sdt_insert(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1__sdt_delete(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1__vdt_insert(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl dw_ship__1__vdt_delete(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+.decl Au_P_0_M__1_ShipMethod(v0: shipbase, v1: shiprate)
+.decl Au_P_0_M__2_PurcharseOrderHeader(v0: status, v1: employeeid, v2: vendorid, v3: orderdate, v4: subtotal, v5: taxamt, v6: freight)
+.decl Au_P_1_M__2_PurcharseOrderHeader(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl Au_P_0_M__3_ShipMethod(v0: shipbase, v1: shiprate)
+.decl Au_P_0_M__4_PurcharseOrderHeader(v0: status, v1: employeeid, v2: vendorid, v3: orderdate, v4: subtotal, v5: taxamt, v6: freight)
+.decl Au_P_1_M__4_PurcharseOrderHeader(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input ShipMethod
+.input PurcharseOrderHeader
+.output dw_ship
+.output M__1
+.output M__2
+.output M__3
+.output M__4
+.output dw_ship__0_
+.output dw_ship__1_
+.output ShipMethod_update
+.output ShipMethod_sdt_insert
+.output ShipMethod_sdt_delete
+.output PurcharseOrderHeader_update
+.output PurcharseOrderHeader_sdt_insert
+.output PurcharseOrderHeader_sdt_delete
+.input dw_ship_update
+.output dw_ship_vdt_insert
+.output dw_ship_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output M__3_update
+.output M__3_sdt_insert
+.output M__3_sdt_delete
+.output M__3_vdt_insert
+.output M__3_vdt_delete
+.output M__4_update
+.output M__4_sdt_insert
+.output M__4_sdt_delete
+.output M__4_vdt_insert
+.output M__4_vdt_delete
+.output dw_ship__0__update
+.output dw_ship__0__sdt_insert
+.output dw_ship__0__sdt_delete
+.output dw_ship__0__vdt_insert
+.output dw_ship__0__vdt_delete
+.output dw_ship__1__update
+.output dw_ship__1__sdt_insert
+.output dw_ship__1__sdt_delete
+.output dw_ship__1__vdt_insert
+.output dw_ship__1__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1) :- ShipMethod(v0, v1, v2, v3).
+M__2(v0, v4, v6) :- PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+M__3(v0, v1) :- ShipMethod(v0, v1, v2, v3).
+M__4(v0, v4, v6) :- PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+dw_ship(v0, v1, v2, v3) :- dw_ship__0_(v0, v1, v2, v3); dw_ship__1_(v0, v1, v2, v3).
+dw_ship__0_(v0, v1, v2, v3) :- M__1(v2, v3), M__2(v0, v2, v1).
+dw_ship__1_(v0, v1, v2, v3) :- M__3(v2, v3), M__4(v0, v2, v1).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+M__3_vdt_delete(v0, v1) :- M__3(v0, v1), !M__3_update(v0, v1).
+M__3_vdt_insert(v0, v1) :- M__3_update(v0, v1), !M__3(v0, v1).
+M__4_vdt_delete(v0, v1, v2) :- M__4(v0, v1, v2), !M__4_update(v0, v1, v2).
+M__4_vdt_insert(v0, v1, v2) :- M__4_update(v0, v1, v2), !M__4(v0, v1, v2).
+dw_ship__0__vdt_delete(v0, v1, v2, v3) :- dw_ship__0_(v0, v1, v2, v3), !dw_ship__0__update(v0, v1, v2, v3).
+dw_ship__0__vdt_insert(v0, v1, v2, v3) :- dw_ship__0__update(v0, v1, v2, v3), !dw_ship__0_(v0, v1, v2, v3).
+dw_ship__1__vdt_delete(v0, v1, v2, v3) :- dw_ship__1_(v0, v1, v2, v3), !dw_ship__1__update(v0, v1, v2, v3).
+dw_ship__1__vdt_insert(v0, v1, v2, v3) :- dw_ship__1__update(v0, v1, v2, v3), !dw_ship__1_(v0, v1, v2, v3).
+dw_ship_vdt_delete(v0, v1, v2, v3) :- dw_ship(v0, v1, v2, v3), !dw_ship_update(v0, v1, v2, v3).
+dw_ship_vdt_insert(v0, v1, v2, v3) :- dw_ship_update(v0, v1, v2, v3), !dw_ship(v0, v1, v2, v3).
+
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+M__3_update(v0, v1) :- M__3(v0, v1), !M__3_sdt_delete(v0, v1); M__3_sdt_insert(v0, v1).
+M__4_update(v0, v1, v2) :- M__4(v0, v1, v2), !M__4_sdt_delete(v0, v1, v2); M__4_sdt_insert(v0, v1, v2).
+PurcharseOrderHeader_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !PurcharseOrderHeader_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); PurcharseOrderHeader_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+ShipMethod_update(v0, v1, v2, v3) :- ShipMethod(v0, v1, v2, v3), !ShipMethod_sdt_delete(v0, v1, v2, v3); ShipMethod_sdt_insert(v0, v1, v2, v3).
+dw_ship__0__update(v0, v1, v2, v3) :- dw_ship__0_(v0, v1, v2, v3), !dw_ship__0__sdt_delete(v0, v1, v2, v3); dw_ship__0__sdt_insert(v0, v1, v2, v3).
+dw_ship__1__update(v0, v1, v2, v3) :- dw_ship__1_(v0, v1, v2, v3), !dw_ship__1__sdt_delete(v0, v1, v2, v3); dw_ship__1__sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1_sdt_delete(v2, _), M__1_update(v2, _), M__2_sdt_delete(_, v2, _), M__2_update(_, v2, _).
+Fr__("_rejected_") :- M__1_sdt_insert(v2, _), M__1(v2, _).
+Fr__("_rejected_") :- M__2_sdt_insert(_, v2, _), M__2(_, v2, _).
+Fr__("_rejected_") :- M__3_sdt_delete(v2, _), M__3_update(v2, _), M__4_sdt_delete(_, v2, _), M__4_update(_, v2, _).
+Fr__("_rejected_") :- M__3_sdt_insert(v2, _), M__3(v2, _).
+Fr__("_rejected_") :- M__4_sdt_insert(_, v2, _), M__4(_, v2, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1) :- M__3_sdt_delete(v0, v1), ShipMethod(v0, v1, _, _), Rule(22).
+M__1_sdt_insert(v0, v1) :- M__3_sdt_insert(v0, v1), Au_P_0_M__3_ShipMethod(v2, v3), !ShipMethod(v0, v1, _, _), Rule(23).
+M__1_sdt_insert(v2, v3) :- dw_ship__0__vdt_insert(_, _, v2, v3), !M__1(v2, v3), Rule(15).
+M__2_sdt_delete(v0, v2, v1) :- dw_ship__0__vdt_delete(v0, v1, v2, _), M__2(v0, v2, v1), Rule(14).
+M__2_sdt_delete(v0, v4, v6) :- M__4_sdt_delete(v0, v4, v6), PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(27).
+M__2_sdt_insert(v0, v2, v1) :- dw_ship__0__vdt_insert(v0, v1, v2, _), !M__2(v0, v2, v1), Rule(16).
+M__2_sdt_insert(v0, v4, v6) :- M__4_sdt_insert(v0, v4, v6), Au_P_0_M__4_PurcharseOrderHeader(v1, v2, v3, v5, v7, v8, v9), !Au_P_1_M__4_PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(29).
+M__2_sdt_insert(v0, v4, v6) :- M__4_sdt_insert(v0, v4, v6), Au_P_1_M__4_PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(28).
+M__3_sdt_delete(v0, v1) :- M__1_sdt_delete(v0, v1), ShipMethod(v0, v1, _, _), Rule(20).
+M__3_sdt_insert(v0, v1) :- M__1_sdt_insert(v0, v1), Au_P_0_M__1_ShipMethod(v2, v3), !ShipMethod(v0, v1, _, _), Rule(21).
+M__3_sdt_insert(v2, v3) :- dw_ship__1__vdt_insert(_, _, v2, v3), !M__3(v2, v3), Rule(18).
+M__4_sdt_delete(v0, v2, v1) :- dw_ship__1__vdt_delete(v0, v1, v2, _), M__4(v0, v2, v1), Rule(17).
+M__4_sdt_delete(v0, v4, v6) :- M__2_sdt_delete(v0, v4, v6), PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(24).
+M__4_sdt_insert(v0, v2, v1) :- dw_ship__1__vdt_insert(v0, v1, v2, _), !M__4(v0, v2, v1), Rule(19).
+M__4_sdt_insert(v0, v4, v6) :- M__2_sdt_insert(v0, v4, v6), Au_P_0_M__2_PurcharseOrderHeader(v1, v2, v3, v5, v7, v8, v9), !Au_P_1_M__2_PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(26).
+M__4_sdt_insert(v0, v4, v6) :- M__2_sdt_insert(v0, v4, v6), Au_P_1_M__2_PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(25).
+PurcharseOrderHeader_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__2_vdt_delete(v0, v4, v6), PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(2).
+PurcharseOrderHeader_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__4_vdt_delete(v0, v4, v6), PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(7).
+PurcharseOrderHeader_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__2_vdt_insert(v0, v4, v6), Au_P_0_M__2_PurcharseOrderHeader(v1, v2, v3, v5, v7, v8, v9), !Au_P_1_M__2_PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(4).
+PurcharseOrderHeader_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__2_vdt_insert(v0, v4, v6), Au_P_1_M__2_PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(3).
+PurcharseOrderHeader_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__4_vdt_insert(v0, v4, v6), Au_P_0_M__4_PurcharseOrderHeader(v1, v2, v3, v5, v7, v8, v9), !Au_P_1_M__4_PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(9).
+PurcharseOrderHeader_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- M__4_vdt_insert(v0, v4, v6), Au_P_1_M__4_PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !PurcharseOrderHeader(v0, _, _, _, v4, _, v6, _, _, _), Rule(8).
+ShipMethod_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v0, v1), ShipMethod(v0, v1, v2, v3), Rule(0).
+ShipMethod_sdt_delete(v0, v1, v2, v3) :- M__3_vdt_delete(v0, v1), ShipMethod(v0, v1, v2, v3), Rule(5).
+ShipMethod_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1), Au_P_0_M__1_ShipMethod(v2, v3), !ShipMethod(v0, v1, _, _), Rule(1).
+ShipMethod_sdt_insert(v0, v1, v2, v3) :- M__3_vdt_insert(v0, v1), Au_P_0_M__3_ShipMethod(v2, v3), !ShipMethod(v0, v1, _, _), Rule(6).
+dw_ship__0__sdt_delete(v0, v1, v2, v3) :- dw_ship_vdt_delete(v0, v1, v2, v3), dw_ship__0_(v0, v1, v2, v3), Rule(10).
+dw_ship__0__sdt_insert(v0, v1, v2, v3) :- dw_ship_vdt_insert(v0, v1, v2, v3), !dw_ship__0_(v0, v1, v2, v3), Rule(12).
+dw_ship__1__sdt_delete(v0, v1, v2, v3) :- dw_ship_vdt_delete(v0, v1, v2, v3), dw_ship__1_(v0, v1, v2, v3), Rule(11).
+dw_ship__1__sdt_insert(v0, v1, v2, v3) :- dw_ship_vdt_insert(v0, v1, v2, v3), !dw_ship__1_(v0, v1, v2, v3), Rule(13).
+
+Au_P_0_M__1_ShipMethod("20.00", "1.75").
+Au_P_0_M__2_PurcharseOrderHeader("4", "258", "1599", "2013-12-24 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1000", "4", "272", "1520", "3", "2013-12-26 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1001", "4", "260", "1526", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1002", "4", "271", "1599", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1003", "4", "273", "1538", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1004", "4", "259", "1555", "2", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1005", "4", "250", "1599", "2", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1006", "4", "256", "1538", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1007", "4", "271", "1507", "3", "2013-12-23 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1008", "4", "274", "1556", "3", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1009", "4", "253", "1542", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1010", "4", "265", "1584", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1011", "4", "258", "1559", "2", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1012", "4", "275", "1506", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1013", "4", "274", "1533", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1014", "4", "271", "1591", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1015", "4", "262", "1517", "3", "2013-12-24 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1016", "4", "258", "1594", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1017", "4", "262", "1536", "2", "2013-12-23 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1018", "4", "255", "1580", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1019", "4", "258", "1553", "3", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1020", "4", "278", "1577", "2", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1021", "4", "277", "1552", "2", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1022", "4", "259", "1521", "3", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1023", "4", "274", "1583", "3", "2013-12-24 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1024", "4", "259", "1535", "3", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1025", "4", "271", "1528", "3", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1027", "4", "261", "1583", "3", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1028", "4", "259", "1584", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1029", "4", "255", "1522", "2", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1030", "4", "259", "1565", "3", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1031", "4", "260", "1554", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1032", "4", "251", "1581", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1033", "4", "270", "1520", "3", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1034", "4", "262", "1552", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1035", "4", "265", "1589", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1036", "4", "252", "1510", "3", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1037", "4", "257", "1557", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1038", "4", "271", "1520", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1039", "4", "265", "1550", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1040", "4", "272", "1559", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1041", "4", "279", "1559", "2", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1042", "4", "266", "1575", "2", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1043", "4", "270", "1518", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1044", "4", "268", "1553", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1045", "4", "261", "1564", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1046", "4", "255", "1521", "3", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1047", "4", "253", "1558", "3", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1048", "4", "273", "1518", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1049", "4", "274", "1543", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1050", "4", "254", "1567", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1051", "4", "262", "1533", "3", "2013-12-24 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1052", "4", "269", "1502", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1053", "4", "272", "1515", "3", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1054", "4", "265", "1578", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1055", "4", "260", "1548", "2", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1056", "4", "254", "1506", "2", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1057", "4", "276", "1566", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1058", "4", "250", "1536", "2", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1059", "4", "260", "1527", "2", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1061", "4", "278", "1585", "2", "2013-12-23 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1062", "4", "250", "1501", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1063", "4", "272", "1535", "2", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1064", "4", "268", "1599", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1065", "4", "265", "1511", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1066", "4", "263", "1565", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1067", "4", "274", "1581", "3", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1068", "4", "278", "1521", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1069", "4", "279", "1507", "3", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1070", "4", "264", "1514", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1071", "4", "252", "1508", "2", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1072", "4", "275", "1548", "3", "2013-12-24 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1073", "4", "252", "1572", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1074", "4", "273", "1504", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1075", "4", "264", "1585", "2", "2013-12-23 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1076", "4", "258", "1580", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1077", "4", "267", "1554", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1078", "4", "276", "1583", "2", "2013-12-26 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1079", "4", "256", "1505", "3", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1080", "4", "251", "1534", "3", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1081", "4", "271", "1556", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1082", "4", "274", "1512", "3", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1083", "4", "261", "1519", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1084", "4", "276", "1506", "3", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1085", "4", "253", "1577", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1086", "4", "277", "1554", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1087", "4", "272", "1512", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1088", "4", "274", "1501", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1089", "4", "261", "1541", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1090", "4", "255", "1531", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1091", "4", "262", "1576", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1092", "4", "260", "1547", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1093", "4", "251", "1570", "2", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1094", "4", "277", "1561", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1095", "4", "269", "1593", "3", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1096", "4", "262", "1519", "2", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1097", "4", "254", "1533", "2", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1098", "4", "272", "1517", "3", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1099", "4", "262", "1538", "2", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1100", "4", "257", "1545", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1101", "4", "268", "1537", "3", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1102", "4", "250", "1579", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1103", "4", "256", "1521", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1104", "4", "272", "1574", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1105", "4", "278", "1524", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1106", "4", "253", "1558", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1107", "4", "271", "1578", "3", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1108", "4", "268", "1580", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1109", "4", "270", "1595", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1110", "4", "259", "1544", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1111", "4", "276", "1589", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__2_PurcharseOrderHeader("1500", "4", "264", "1601", "6", "2013-12-24 00:00:00", "2014-01-02 00:00:00", "0", "0", "0").
+Au_P_0_M__3_ShipMethod("20.00", "1.75").
+Au_P_0_M__4_PurcharseOrderHeader("4", "258", "1599", "2013-12-24 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1000", "4", "272", "1520", "3", "2013-12-26 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1001", "4", "260", "1526", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1002", "4", "271", "1599", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1003", "4", "273", "1538", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1004", "4", "259", "1555", "2", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1005", "4", "250", "1599", "2", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1006", "4", "256", "1538", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1007", "4", "271", "1507", "3", "2013-12-23 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1008", "4", "274", "1556", "3", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1009", "4", "253", "1542", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1010", "4", "265", "1584", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1011", "4", "258", "1559", "2", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1012", "4", "275", "1506", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1013", "4", "274", "1533", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1014", "4", "271", "1591", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1015", "4", "262", "1517", "3", "2013-12-24 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1016", "4", "258", "1594", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1017", "4", "262", "1536", "2", "2013-12-23 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1018", "4", "255", "1580", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1019", "4", "258", "1553", "3", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1020", "4", "278", "1577", "2", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1021", "4", "277", "1552", "2", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1022", "4", "259", "1521", "3", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1023", "4", "274", "1583", "3", "2013-12-24 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1024", "4", "259", "1535", "3", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1025", "4", "271", "1528", "3", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1027", "4", "261", "1583", "3", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1028", "4", "259", "1584", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1029", "4", "255", "1522", "2", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1030", "4", "259", "1565", "3", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1031", "4", "260", "1554", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1032", "4", "251", "1581", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1033", "4", "270", "1520", "3", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1034", "4", "262", "1552", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1035", "4", "265", "1589", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1036", "4", "252", "1510", "3", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1037", "4", "257", "1557", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1038", "4", "271", "1520", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1039", "4", "265", "1550", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1040", "4", "272", "1559", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1041", "4", "279", "1559", "2", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1042", "4", "266", "1575", "2", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1043", "4", "270", "1518", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1044", "4", "268", "1553", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1045", "4", "261", "1564", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1046", "4", "255", "1521", "3", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1047", "4", "253", "1558", "3", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1048", "4", "273", "1518", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1049", "4", "274", "1543", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1050", "4", "254", "1567", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1051", "4", "262", "1533", "3", "2013-12-24 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1052", "4", "269", "1502", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1053", "4", "272", "1515", "3", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1054", "4", "265", "1578", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1055", "4", "260", "1548", "2", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1056", "4", "254", "1506", "2", "2013-12-22 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1057", "4", "276", "1566", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1058", "4", "250", "1536", "2", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1059", "4", "260", "1527", "2", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1061", "4", "278", "1585", "2", "2013-12-23 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1062", "4", "250", "1501", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1063", "4", "272", "1535", "2", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1064", "4", "268", "1599", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1065", "4", "265", "1511", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1066", "4", "263", "1565", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1067", "4", "274", "1581", "3", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1068", "4", "278", "1521", "3", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1069", "4", "279", "1507", "3", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1070", "4", "264", "1514", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1071", "4", "252", "1508", "2", "2013-12-22 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1072", "4", "275", "1548", "3", "2013-12-24 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1073", "4", "252", "1572", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1074", "4", "273", "1504", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1075", "4", "264", "1585", "2", "2013-12-23 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1076", "4", "258", "1580", "3", "2013-12-25 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1077", "4", "267", "1554", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1078", "4", "276", "1583", "2", "2013-12-26 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1079", "4", "256", "1505", "3", "2013-12-24 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1080", "4", "251", "1534", "3", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1081", "4", "271", "1556", "2", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1082", "4", "274", "1512", "3", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1083", "4", "261", "1519", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1084", "4", "276", "1506", "3", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1085", "4", "253", "1577", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1086", "4", "277", "1554", "3", "2013-12-22 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1087", "4", "272", "1512", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1088", "4", "274", "1501", "2", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1089", "4", "261", "1541", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1090", "4", "255", "1531", "2", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1091", "4", "262", "1576", "3", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1092", "4", "260", "1547", "2", "2013-12-23 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1093", "4", "251", "1570", "2", "2013-12-25 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1094", "4", "277", "1561", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1095", "4", "269", "1593", "3", "2013-12-25 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1096", "4", "262", "1519", "2", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1097", "4", "254", "1533", "2", "2013-12-22 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1098", "4", "272", "1517", "3", "2013-12-23 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1099", "4", "262", "1538", "2", "2013-12-26 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1100", "4", "257", "1545", "3", "2013-12-26 00:00:00", "2014-01-08 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1101", "4", "268", "1537", "3", "2013-12-23 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1102", "4", "250", "1579", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1103", "4", "256", "1521", "2", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1104", "4", "272", "1574", "3", "2013-12-26 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1105", "4", "278", "1524", "3", "2013-12-25 00:00:00", "2014-01-15 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1106", "4", "253", "1558", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1107", "4", "271", "1578", "3", "2013-12-24 00:00:00", "2014-01-11 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1108", "4", "268", "1580", "3", "2013-12-24 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1109", "4", "270", "1595", "2", "2013-12-26 00:00:00", "2014-01-04 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1110", "4", "259", "1544", "2", "2013-12-25 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1111", "4", "276", "1589", "2", "2013-12-22 00:00:00", "2014-01-13 00:00:00", "0", "0", "0").
+Au_P_1_M__4_PurcharseOrderHeader("1500", "4", "264", "1601", "6", "2013-12-24 00:00:00", "2014-01-02 00:00:00", "0", "0", "0").

@@ -1,0 +1,172 @@
+.type sname <: symbol
+.type port <: symbol
+.type proto <: symbol
+.type description <: symbol
+.type state <: symbol
+
+.decl service(v0: sname, v1: port, v2: proto, v3: description)
+.decl active(v0: proto, v1: port, v2: state)
+.decl open_port(v0: port, v1: proto, v2: sname)
+.decl inv0_service(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active(v0: proto, v1: port, v2: state)
+.decl Rule(v0: number)
+
+.input service
+.input active
+.output open_port
+.output inv0_service
+.output inv0_active
+.input Rule
+
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", Rule(21).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "110", Rule(38).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "143", Rule(39).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "21", Rule(37).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "22", Rule(36).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "448", Rule(41).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v1 = "501", Rule(40).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v2 = "ESTABLISHED", Rule(44).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "tcp", v2 = "LISTENING", Rule(45).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", Rule(20).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "110", Rule(32).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "143", Rule(33).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "21", Rule(31).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "22", Rule(30).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "448", Rule(35).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v1 = "501", Rule(34).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v2 = "ESTABLISHED", Rule(42).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v0 = "udp", v2 = "LISTENING", Rule(43).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "110", Rule(24).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "110", v2 = "ESTABLISHED", Rule(50).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "110", v2 = "LISTENING", Rule(51).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "143", Rule(25).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "143", v2 = "ESTABLISHED", Rule(52).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "143", v2 = "LISTENING", Rule(53).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "21", Rule(23).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "21", v2 = "ESTABLISHED", Rule(48).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "21", v2 = "LISTENING", Rule(49).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "22", Rule(22).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "22", v2 = "ESTABLISHED", Rule(46).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "22", v2 = "LISTENING", Rule(47).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "448", Rule(27).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "448", v2 = "ESTABLISHED", Rule(56).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "448", v2 = "LISTENING", Rule(57).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "501", Rule(26).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "501", v2 = "ESTABLISHED", Rule(54).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v1 = "501", v2 = "LISTENING", Rule(55).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v2 = "ESTABLISHED", Rule(28).
+inv0_active(v0, v1, v2) :- active(v0, v1, v2), v2 = "LISTENING", Rule(29).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "110", Rule(2).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "110", v2 = "tcp", Rule(13).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "110", v2 = "udp", Rule(12).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "143", Rule(3).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "143", v2 = "tcp", Rule(15).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "143", v2 = "udp", Rule(14).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "21", Rule(1).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "21", v2 = "tcp", Rule(11).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "21", v2 = "udp", Rule(10).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "22", Rule(0).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "22", v2 = "tcp", Rule(9).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "22", v2 = "udp", Rule(8).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "448", Rule(5).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "448", v2 = "tcp", Rule(19).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "448", v2 = "udp", Rule(18).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "501", Rule(4).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "501", v2 = "tcp", Rule(17).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "501", v2 = "udp", Rule(16).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v2 = "tcp", Rule(7).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v2 = "udp", Rule(6).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !active(_, v0, _), Rule(66).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !active(v1, _, _), Rule(67).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !active(v1, v0, _), Rule(68).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !inv0_active(_, v0, _), Rule(69).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !inv0_active(v1, _, _), Rule(70).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), !inv0_active(v1, v0, _), Rule(71).
+open_port(v0, v1, v3) :- inv0_service(v3, v0, v1, v2), Rule(65).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !active(_, v0, _), Rule(59).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !active(v1, _, _), Rule(60).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !active(v1, v0, _), Rule(61).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !inv0_active(_, v0, _), Rule(62).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !inv0_active(v1, _, _), Rule(63).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), !inv0_active(v1, v0, _), Rule(64).
+open_port(v0, v1, v3) :- service(v3, v0, v1, v2), Rule(58).
+open_port(v4, v0, v6) :- active(v0, v4, v2), inv0_service(v6, v4, v0, v3), Rule(112).
+open_port(v4, v0, v6) :- active(v0, v4, v2), inv0_service(v6, v4, v1, v3), Rule(113).
+open_port(v4, v0, v6) :- active(v0, v4, v2), inv0_service(v6, v5, v0, v3), Rule(114).
+open_port(v4, v0, v6) :- active(v0, v5, v2), inv0_service(v6, v4, v0, v3), Rule(115).
+open_port(v4, v0, v6) :- active(v1, v4, v2), inv0_service(v6, v4, v0, v3), Rule(116).
+open_port(v4, v0, v6) :- inv0_service(v6, v4, v0, v3), inv0_active(v0, v4, v2), Rule(132).
+open_port(v4, v0, v6) :- inv0_service(v6, v4, v0, v3), inv0_active(v0, v5, v2), Rule(133).
+open_port(v4, v0, v6) :- inv0_service(v6, v4, v0, v3), inv0_active(v1, v4, v2), Rule(134).
+open_port(v4, v0, v6) :- inv0_service(v6, v4, v1, v3), inv0_active(v0, v4, v2), Rule(135).
+open_port(v4, v0, v6) :- inv0_service(v6, v5, v0, v3), inv0_active(v0, v4, v2), Rule(136).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), active(v0, v4, v2), Rule(72).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), active(v0, v5, v2), Rule(73).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), active(v1, v4, v2), Rule(74).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), inv0_active(v0, v4, v2), Rule(92).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), inv0_active(v0, v5, v2), Rule(93).
+open_port(v4, v0, v6) :- service(v6, v4, v0, v3), inv0_active(v1, v4, v2), Rule(94).
+open_port(v4, v0, v6) :- service(v6, v4, v1, v3), active(v0, v4, v2), Rule(75).
+open_port(v4, v0, v6) :- service(v6, v4, v1, v3), inv0_active(v0, v4, v2), Rule(95).
+open_port(v4, v0, v6) :- service(v6, v5, v0, v3), active(v0, v4, v2), Rule(76).
+open_port(v4, v0, v6) :- service(v6, v5, v0, v3), inv0_active(v0, v4, v2), Rule(96).
+open_port(v4, v1, v6) :- active(v0, v4, v2), inv0_service(v6, v4, v1, v3), Rule(117).
+open_port(v4, v1, v6) :- active(v1, v4, v2), inv0_service(v6, v4, v0, v3), Rule(118).
+open_port(v4, v1, v6) :- active(v1, v4, v2), inv0_service(v6, v4, v1, v3), Rule(119).
+open_port(v4, v1, v6) :- active(v1, v4, v2), inv0_service(v6, v5, v1, v3), Rule(120).
+open_port(v4, v1, v6) :- active(v1, v5, v2), inv0_service(v6, v4, v1, v3), Rule(121).
+open_port(v4, v1, v6) :- inv0_service(v6, v4, v0, v3), inv0_active(v1, v4, v2), Rule(137).
+open_port(v4, v1, v6) :- inv0_service(v6, v4, v1, v3), inv0_active(v0, v4, v2), Rule(138).
+open_port(v4, v1, v6) :- inv0_service(v6, v4, v1, v3), inv0_active(v1, v4, v2), Rule(139).
+open_port(v4, v1, v6) :- inv0_service(v6, v4, v1, v3), inv0_active(v1, v5, v2), Rule(140).
+open_port(v4, v1, v6) :- inv0_service(v6, v5, v1, v3), inv0_active(v1, v4, v2), Rule(141).
+open_port(v4, v1, v6) :- service(v6, v4, v0, v3), active(v1, v4, v2), Rule(77).
+open_port(v4, v1, v6) :- service(v6, v4, v0, v3), inv0_active(v1, v4, v2), Rule(97).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), active(v0, v4, v2), Rule(78).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), active(v1, v4, v2), Rule(79).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), active(v1, v5, v2), Rule(80).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), inv0_active(v0, v4, v2), Rule(98).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), inv0_active(v1, v4, v2), Rule(99).
+open_port(v4, v1, v6) :- service(v6, v4, v1, v3), inv0_active(v1, v5, v2), Rule(100).
+open_port(v4, v1, v6) :- service(v6, v5, v1, v3), active(v1, v4, v2), Rule(81).
+open_port(v4, v1, v6) :- service(v6, v5, v1, v3), inv0_active(v1, v4, v2), Rule(101).
+open_port(v5, v0, v6) :- active(v0, v4, v2), inv0_service(v6, v5, v0, v3), Rule(122).
+open_port(v5, v0, v6) :- active(v0, v5, v2), inv0_service(v6, v4, v0, v3), Rule(123).
+open_port(v5, v0, v6) :- active(v0, v5, v2), inv0_service(v6, v5, v0, v3), Rule(124).
+open_port(v5, v0, v6) :- active(v0, v5, v2), inv0_service(v6, v5, v1, v3), Rule(125).
+open_port(v5, v0, v6) :- active(v1, v5, v2), inv0_service(v6, v5, v0, v3), Rule(126).
+open_port(v5, v0, v6) :- inv0_service(v6, v4, v0, v3), inv0_active(v0, v5, v2), Rule(142).
+open_port(v5, v0, v6) :- inv0_service(v6, v5, v0, v3), inv0_active(v0, v4, v2), Rule(143).
+open_port(v5, v0, v6) :- inv0_service(v6, v5, v0, v3), inv0_active(v0, v5, v2), Rule(144).
+open_port(v5, v0, v6) :- inv0_service(v6, v5, v0, v3), inv0_active(v1, v5, v2), Rule(145).
+open_port(v5, v0, v6) :- inv0_service(v6, v5, v1, v3), inv0_active(v0, v5, v2), Rule(146).
+open_port(v5, v0, v6) :- service(v6, v4, v0, v3), active(v0, v5, v2), Rule(82).
+open_port(v5, v0, v6) :- service(v6, v4, v0, v3), inv0_active(v0, v5, v2), Rule(102).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), active(v0, v4, v2), Rule(83).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), active(v0, v5, v2), Rule(84).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), active(v1, v5, v2), Rule(85).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), inv0_active(v0, v4, v2), Rule(103).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), inv0_active(v0, v5, v2), Rule(104).
+open_port(v5, v0, v6) :- service(v6, v5, v0, v3), inv0_active(v1, v5, v2), Rule(105).
+open_port(v5, v0, v6) :- service(v6, v5, v1, v3), active(v0, v5, v2), Rule(86).
+open_port(v5, v0, v6) :- service(v6, v5, v1, v3), inv0_active(v0, v5, v2), Rule(106).
+open_port(v5, v1, v6) :- active(v0, v5, v2), inv0_service(v6, v5, v1, v3), Rule(127).
+open_port(v5, v1, v6) :- active(v1, v4, v2), inv0_service(v6, v5, v1, v3), Rule(128).
+open_port(v5, v1, v6) :- active(v1, v5, v2), inv0_service(v6, v4, v1, v3), Rule(129).
+open_port(v5, v1, v6) :- active(v1, v5, v2), inv0_service(v6, v5, v0, v3), Rule(130).
+open_port(v5, v1, v6) :- active(v1, v5, v2), inv0_service(v6, v5, v1, v3), Rule(131).
+open_port(v5, v1, v6) :- inv0_service(v6, v4, v1, v3), inv0_active(v1, v5, v2), Rule(147).
+open_port(v5, v1, v6) :- inv0_service(v6, v5, v0, v3), inv0_active(v1, v5, v2), Rule(148).
+open_port(v5, v1, v6) :- inv0_service(v6, v5, v1, v3), inv0_active(v0, v5, v2), Rule(149).
+open_port(v5, v1, v6) :- inv0_service(v6, v5, v1, v3), inv0_active(v1, v4, v2), Rule(150).
+open_port(v5, v1, v6) :- inv0_service(v6, v5, v1, v3), inv0_active(v1, v5, v2), Rule(151).
+open_port(v5, v1, v6) :- service(v6, v4, v1, v3), active(v1, v5, v2), Rule(87).
+open_port(v5, v1, v6) :- service(v6, v4, v1, v3), inv0_active(v1, v5, v2), Rule(107).
+open_port(v5, v1, v6) :- service(v6, v5, v0, v3), active(v1, v5, v2), Rule(88).
+open_port(v5, v1, v6) :- service(v6, v5, v0, v3), inv0_active(v1, v5, v2), Rule(108).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), active(v0, v5, v2), Rule(89).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), active(v1, v4, v2), Rule(90).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), active(v1, v5, v2), Rule(91).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), inv0_active(v0, v5, v2), Rule(109).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), inv0_active(v1, v4, v2), Rule(110).
+open_port(v5, v1, v6) :- service(v6, v5, v1, v3), inv0_active(v1, v5, v2), Rule(111).

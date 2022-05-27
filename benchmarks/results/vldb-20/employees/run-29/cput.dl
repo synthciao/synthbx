@@ -1,0 +1,77 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+.type dept_name <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced(v0: emp_name, v1: dept_name)
+.decl employees(v0: emp_name, v1: birth_date, v2: gender)
+.decl M__1(v0: emp_name)
+.decl residents_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced_update(v0: emp_name, v1: dept_name)
+.decl ced_sdt_insert(v0: emp_name, v1: dept_name)
+.decl ced_sdt_delete(v0: emp_name, v1: dept_name)
+.decl employees_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl employees_vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl employees_vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl M__1_update(v0: emp_name)
+.decl M__1_sdt_insert(v0: emp_name)
+.decl M__1_sdt_delete(v0: emp_name)
+.decl M__1_vdt_insert(v0: emp_name)
+.decl M__1_vdt_delete(v0: emp_name)
+.decl Au_P_0_M__1_ced(v0: dept_name)
+.decl Au_P_1_M__1_ced(v0: emp_name, v1: dept_name)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input residents
+.input ced
+.output employees
+.output M__1
+.output residents_update
+.output residents_sdt_insert
+.output residents_sdt_delete
+.output ced_update
+.output ced_sdt_insert
+.output ced_sdt_delete
+.input employees_update
+.output employees_vdt_insert
+.output employees_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0) :- ced(v0, v1).
+employees(v0, v1, v2) :- residents(v0, v1, v2), M__1(v0).
+
+M__1_vdt_delete(v0) :- M__1(v0), !M__1_update(v0).
+M__1_vdt_insert(v0) :- M__1_update(v0), !M__1(v0).
+employees_vdt_delete(v0, v1, v2) :- employees(v0, v1, v2), !employees_update(v0, v1, v2).
+employees_vdt_insert(v0, v1, v2) :- employees_update(v0, v1, v2), !employees(v0, v1, v2).
+
+M__1_update(v0) :- M__1(v0), !M__1_sdt_delete(v0); M__1_sdt_insert(v0).
+ced_update(v0, v1) :- ced(v0, v1), !ced_sdt_delete(v0, v1); ced_sdt_insert(v0, v1).
+residents_update(v0, v1, v2) :- residents(v0, v1, v2), !residents_sdt_delete(v0, v1, v2); residents_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- M__1_sdt_insert(v0), M__1(v0).
+Fr__("_rejected_") :- residents_sdt_delete(v0, _, _), residents_update(v0, _, _), M__1_sdt_delete(v0), M__1_update(v0).
+Fr__("_rejected_") :- residents_sdt_insert(v0, _, _), residents(v0, _, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0) :- employees_vdt_delete(v0, _, _), M__1(v0), Rule(3).
+M__1_sdt_insert(v0) :- employees_vdt_insert(v0, _, _), !M__1(v0), Rule(5).
+ced_sdt_delete(v0, v1) :- M__1_vdt_delete(v0), ced(v0, v1), Rule(0).
+ced_sdt_insert(v0, v1) :- M__1_vdt_insert(v0), Au_P_0_M__1_ced(v1), !Au_P_1_M__1_ced(v0, _), !ced(v0, _), Rule(2).
+ced_sdt_insert(v0, v1) :- M__1_vdt_insert(v0), Au_P_1_M__1_ced(v0, v1), !ced(v0, _), Rule(1).
+residents_sdt_insert(v0, v1, v2) :- employees_vdt_insert(v0, v1, v2), !residents(v0, v1, v2), Rule(4).
+
+Au_P_0_M__1_ced("Social Network").
+Au_P_1_M__1_ced("Alex Ferguson", "Human Resources").

@@ -1,0 +1,17 @@
+.type title <: symbol
+.type year <: symbol
+.type length <: symbol
+.type genre <: symbol
+.type studioname <: symbol
+.type producerc <: symbol
+
+.decl movies(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.input movies
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl paramountmovies(v0: title, v1: year)
+.output paramountmovies
+
+paramountmovies(v0, v1) :- movies(v0, v1, v2, v3, v4, v5), v4 = "Paramount", Rule(1).

@@ -1,0 +1,26 @@
+.type sname
+.type color
+.type supplier_key
+.type part_id
+
+
+.decl isRed(v0: color)
+.input isRed
+.decl isGreen(v0: color)
+.input isGreen
+.decl input3(v0: supplier_key, v1: sname)
+.input input3
+.decl input1(v0: supplier_key, v1: part_id)
+.input input1
+.decl input2(v0: part_id, v1: color)
+.input input2
+
+.decl inv(v0: part_id, v1: color)
+.output inv
+
+.decl ans(v0: sname)
+.output ans
+
+inv(v0, v1) :- input2(v0, v1), isRed(v1).
+inv(v0, v1) :- input2(v0, v1), isGreen(v1).
+ans(v3) :- inv(v0, v1), input1(v2, v0), input3(v2, v3).

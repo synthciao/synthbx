@@ -1,0 +1,37 @@
+.type PRODUCT_ID <: symbol
+.type TITLE <: symbol
+.type DESCRIPTION <: symbol
+.type MANUFACTURER_ID <: symbol
+.type CREATED_AT <: symbol
+.type UPDATED_AT <: symbol
+.type MPN <: symbol
+.type VISIBLE <: symbol
+.type SUBSCRIPTIONS_COUNT <: symbol
+
+.decl products_raw(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl products(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl M__1(v0: PRODUCT_ID)
+.decl M__2(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products__0_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_0__cp(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl products_raw_0__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+
+.input products_raw
+.input subscriptions_agg
+.output products
+
+M__1(v0) :- subscriptions_agg(v0, v1).
+M__2(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7), M__1(v0).
+M__3(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7), !M__2(v0, v1, v2, v3, v4, v5, v6, v7).
+products(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8); products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7), subscriptions_agg_0__cp(v0, v8).
+products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- M__3(v0, v1, v2, v3, v4, v5, v6, v7), v8 = "0".
+products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+subscriptions_agg_0__cp(v0, v1) :- subscriptions_agg(v0, v1).

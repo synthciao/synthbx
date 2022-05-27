@@ -1,0 +1,24 @@
+.type ID <: symbol
+.type CINEMA_ID <: symbol
+.type VENUE_ID <: symbol
+.type MOVIE_ID <: symbol
+.type EVENT_ID <: symbol
+.type RESULT <: symbol
+.type CONTEXT <: symbol
+.type GUIDE <: symbol
+.type STARTED_AT <: symbol
+.type ENDED_AT <: symbol
+.type CREATED_AT <: symbol
+.type UPDATED_AT <: symbol
+
+.decl task(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl outstanding_task(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl M__1(v0: ID)
+.decl task_0__cp(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+
+.input task
+.output outstanding_task
+
+M__1(v0) :- task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+outstanding_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), M__1(v1).
+task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).

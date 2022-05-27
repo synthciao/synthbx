@@ -1,0 +1,125 @@
+.type meets_at <: symbol
+.type C_name <: symbol
+.type S_key <: symbol
+
+.decl class(v0: C_name, v1: meets_at)
+.decl LT(v0: C_name, v1: C_name)
+.decl enroll(v0: S_key, v1: C_name)
+.decl inv(v0: S_key, v1: C_name, v2: meets_at)
+.decl ans(v0: S_key)
+.decl M__1(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl inv_0__cp(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp(v0: S_key, v1: C_name, v2: meets_at)
+.decl class_update(v0: C_name, v1: meets_at)
+.decl class_sdt_insert(v0: C_name, v1: meets_at)
+.decl class_sdt_delete(v0: C_name, v1: meets_at)
+.decl LT_update(v0: C_name, v1: C_name)
+.decl LT_sdt_insert(v0: C_name, v1: C_name)
+.decl LT_sdt_delete(v0: C_name, v1: C_name)
+.decl enroll_update(v0: S_key, v1: C_name)
+.decl enroll_sdt_insert(v0: S_key, v1: C_name)
+.decl enroll_sdt_delete(v0: S_key, v1: C_name)
+.decl inv_update(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_sdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_sdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_vdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_vdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl ans_update(v0: S_key)
+.decl ans_vdt_insert(v0: S_key)
+.decl ans_vdt_delete(v0: S_key)
+.decl M__1_update(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__1_sdt_insert(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__1_sdt_delete(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__1_vdt_insert(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__1_vdt_delete(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2_update(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2_sdt_insert(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2_sdt_delete(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2_vdt_insert(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2_vdt_delete(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl inv_0__cp_update(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_0__cp_sdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_0__cp_sdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_0__cp_vdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_0__cp_vdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp_update(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp_sdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp_sdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp_vdt_insert(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp_vdt_delete(v0: S_key, v1: C_name, v2: meets_at)
+.decl Au_P_0_ans_M__2(v0: C_name, v1: C_name, v2: meets_at)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input class
+.input LT
+.input enroll
+.output class_update
+.output LT_update
+.output enroll_update
+.input ans_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2, v3) :- LT(v0, v1), inv_1__cp(v2, v0, v3).
+M__2(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), inv_0__cp(v2, v1, v3).
+ans(v2) :- M__2(v0, v1, v2, v3).
+inv(v0, v1, v2) :- class(v1, v2), enroll(v0, v1).
+inv_0__cp(v0, v1, v2) :- inv(v0, v1, v2).
+inv_1__cp(v0, v1, v2) :- inv(v0, v1, v2).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+M__2_vdt_delete(v0, v1, v2, v3) :- M__2(v0, v1, v2, v3), !M__2_update(v0, v1, v2, v3).
+M__2_vdt_insert(v0, v1, v2, v3) :- M__2_update(v0, v1, v2, v3), !M__2(v0, v1, v2, v3).
+ans_vdt_delete(v0) :- ans(v0), !ans_update(v0).
+ans_vdt_insert(v0) :- ans_update(v0), !ans(v0).
+inv_0__cp_vdt_delete(v0, v1, v2) :- inv_0__cp(v0, v1, v2), !inv_0__cp_update(v0, v1, v2).
+inv_0__cp_vdt_insert(v0, v1, v2) :- inv_0__cp_update(v0, v1, v2), !inv_0__cp(v0, v1, v2).
+inv_1__cp_vdt_delete(v0, v1, v2) :- inv_1__cp(v0, v1, v2), !inv_1__cp_update(v0, v1, v2).
+inv_1__cp_vdt_insert(v0, v1, v2) :- inv_1__cp_update(v0, v1, v2), !inv_1__cp(v0, v1, v2).
+inv_vdt_delete(v0, v1, v2) :- inv(v0, v1, v2), !inv_update(v0, v1, v2).
+inv_vdt_insert(v0, v1, v2) :- inv_update(v0, v1, v2), !inv(v0, v1, v2).
+
+LT_update(v0, v1) :- LT(v0, v1), !LT_sdt_delete(v0, v1); LT_sdt_insert(v0, v1).
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+M__2_update(v0, v1, v2, v3) :- M__2(v0, v1, v2, v3), !M__2_sdt_delete(v0, v1, v2, v3); M__2_sdt_insert(v0, v1, v2, v3).
+class_update(v0, v1) :- class(v0, v1), !class_sdt_delete(v0, v1); class_sdt_insert(v0, v1).
+enroll_update(v0, v1) :- enroll(v0, v1), !enroll_sdt_delete(v0, v1); enroll_sdt_insert(v0, v1).
+inv_0__cp_update(v0, v1, v2) :- inv_0__cp(v0, v1, v2), !inv_0__cp_sdt_delete(v0, v1, v2); inv_0__cp_sdt_insert(v0, v1, v2).
+inv_1__cp_update(v0, v1, v2) :- inv_1__cp(v0, v1, v2), !inv_1__cp_sdt_delete(v0, v1, v2); inv_1__cp_sdt_insert(v0, v1, v2).
+inv_update(v0, v1, v2) :- inv(v0, v1, v2), !inv_sdt_delete(v0, v1, v2); inv_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- LT_sdt_delete(v0, _), LT_update(v0, _), inv_1__cp_sdt_delete(_, v0, _), inv_1__cp_update(_, v0, _).
+Fr__("_rejected_") :- LT_sdt_insert(v0, _), LT(v0, _).
+Fr__("_rejected_") :- M__1_sdt_delete(_, v1, v2, v3), M__1_update(_, v1, v2, v3), inv_0__cp_sdt_delete(v2, v1, v3), inv_0__cp_update(v2, v1, v3).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v1, v2, v3), M__1(_, v1, v2, v3).
+Fr__("_rejected_") :- class_sdt_delete(v1, _), class_update(v1, _), enroll_sdt_delete(_, v1), enroll_update(_, v1).
+Fr__("_rejected_") :- class_sdt_insert(v1, _), class(v1, _).
+Fr__("_rejected_") :- enroll_sdt_insert(_, v1), enroll(_, v1).
+Fr__("_rejected_") :- inv_0__cp_sdt_insert(v2, v1, v3), inv_0__cp(v2, v1, v3).
+Fr__("_rejected_") :- inv_1__cp_sdt_insert(_, v0, _), inv_1__cp(_, v0, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+LT_sdt_delete(v0, v1) :- M__1_vdt_delete(v0, v1, _, _), LT(v0, v1).
+LT_sdt_insert(v0, v1) :- M__1_vdt_insert(v0, v1, _, _), !LT(v0, v1).
+M__1_sdt_delete(v0, v1, v2, v3) :- M__2_vdt_delete(v0, v1, v2, v3), M__1(v0, v1, v2, v3).
+M__1_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+M__2_sdt_delete(v0, v1, v2, v3) :- ans_vdt_delete(v2), M__2(v0, v1, v2, v3).
+M__2_sdt_insert(v0, v1, v2, v3) :- ans_vdt_insert(v2), Au_P_0_ans_M__2(v0, v1, v3), !M__2(_, _, v2, _).
+class_sdt_delete(v1, v2) :- inv_vdt_delete(_, v1, v2), class(v1, v2).
+class_sdt_insert(v1, v2) :- inv_vdt_insert(_, v1, v2), !class(v1, v2).
+enroll_sdt_insert(v0, v1) :- inv_vdt_insert(v0, v1, _), !enroll(v0, v1).
+inv_0__cp_sdt_delete(v0, v1, v2) :- inv_1__cp_sdt_delete(v0, v1, v2), inv(v0, v1, v2).
+inv_0__cp_sdt_insert(v0, v1, v2) :- inv_1__cp_sdt_insert(v0, v1, v2), !inv(v0, v1, v2).
+inv_0__cp_sdt_insert(v2, v1, v3) :- M__2_vdt_insert(_, v1, v2, v3), !inv_0__cp(v2, v1, v3).
+inv_1__cp_sdt_delete(v0, v1, v2) :- inv_0__cp_sdt_delete(v0, v1, v2), inv(v0, v1, v2).
+inv_1__cp_sdt_insert(v0, v1, v2) :- inv_0__cp_sdt_insert(v0, v1, v2), !inv(v0, v1, v2).
+inv_1__cp_sdt_insert(v2, v0, v3) :- M__1_vdt_insert(v0, _, v2, v3), !inv_1__cp(v2, v0, v3).
+inv_sdt_delete(v0, v1, v2) :- inv_0__cp_vdt_delete(v0, v1, v2).
+inv_sdt_delete(v0, v1, v2) :- inv_1__cp_vdt_delete(v0, v1, v2).
+inv_sdt_insert(v0, v1, v2) :- inv_0__cp_vdt_insert(v0, v1, v2).
+inv_sdt_insert(v0, v1, v2) :- inv_1__cp_vdt_insert(v0, v1, v2).
+
+Au_P_0_ans_M__2("class10", "class11", "sat").

@@ -1,0 +1,11 @@
+.type id <: symbol
+.type name <: symbol
+.type price <: symbol
+
+.decl items(v0: id, v1: name, v2: price)
+.decl luxuryitems(v0: id, v1: name, v2: price)
+
+.input items
+.output luxuryitems
+
+luxuryitems(v0, v1, v2) :- items(v0, v1, v2), v2 > "700.00".

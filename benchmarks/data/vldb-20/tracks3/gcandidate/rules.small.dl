@@ -1,0 +1,15 @@
+.type TRACK <: symbol
+.type RATING <: symbol
+.type ALBUM <: symbol
+.type QUANTITY <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl tracks2(v0: TRACK, v1: RATING, v2: ALBUM, v3: QUANTITY)
+.input tracks2
+
+.decl tracks3(v0: TRACK, v1: RATING, v2: ALBUM, v3: QUANTITY)
+.output tracks3
+
+tracks3(v0, v1, v2, v3) :- tracks2(v0, v1, v2, v3), v3 > "2", Rule(1).

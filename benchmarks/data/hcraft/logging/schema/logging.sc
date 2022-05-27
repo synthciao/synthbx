@@ -1,0 +1,5 @@
+*user(username, uid, gid, info, homedir, shell)
+*logged(username, tty, day, date)
+*status(tty)
++invent(username, tty, date)
+logging(username, uid, info, date)

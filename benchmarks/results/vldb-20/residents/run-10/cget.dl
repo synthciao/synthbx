@@ -1,0 +1,20 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl male(v0: emp_name, v1: birth_date)
+.decl female(v0: emp_name, v1: birth_date)
+.decl others(v0: emp_name, v1: birth_date, v2: gender)
+.input male
+.input female
+.input others
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.output residents
+
+residents(v0, v1, v2) :- male(v0, v1), v2 = "M", Rule(6).
+residents(v0, v1, v2) :- female(v0, v1), v2 = "F", Rule(7).
+residents(v0, v1, v2) :- others(v0, v1, v2), Rule(5).

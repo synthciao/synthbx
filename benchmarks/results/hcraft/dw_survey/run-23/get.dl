@@ -1,0 +1,19 @@
+.type surveyresponsekey <: symbol
+.type datekey <: symbol
+.type customerkey <: symbol
+.type productcategorykey <: symbol
+.type englishproductcategory <: symbol
+.type productsubcategorykey <: symbol
+.type englishproductsubcategory <: symbol
+.type date <: symbol
+
+.decl FactSurveyResponse(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl dw_survey(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+
+.input FactSurveyResponse
+.output dw_survey
+.output inv0_FactSurveyResponse
+
+dw_survey(v1, v4, v6, v7, v2, v3, v5, v0) :- inv0_FactSurveyResponse(v1, v4, v6, v7, v2, v3, v5, v0).
+inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7) :- FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Accessories", v6 = "Cleaners".

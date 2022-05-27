@@ -1,0 +1,13 @@
+.type ID
+.type Name
+.type Age
+
+
+.decl family(v0: ID, v1: Name, v2: Age, v3: ID)
+.input family
+
+
+.decl Out(v0: ID, v1: Name)
+.output Out
+
+Out(v0, v1) :- family(v0, v1, v2, v3), family(v4, v5, v6, v0).

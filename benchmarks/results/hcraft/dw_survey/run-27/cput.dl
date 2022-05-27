@@ -1,0 +1,66 @@
+.type surveyresponsekey <: symbol
+.type datekey <: symbol
+.type customerkey <: symbol
+.type productcategorykey <: symbol
+.type englishproductcategory <: symbol
+.type productsubcategorykey <: symbol
+.type englishproductsubcategory <: symbol
+.type date <: symbol
+
+.decl FactSurveyResponse(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl dw_survey(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl FactSurveyResponse_update(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl FactSurveyResponse_sdt_insert(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl FactSurveyResponse_sdt_delete(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl dw_survey_update(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl dw_survey_vdt_insert(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl dw_survey_vdt_delete(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse_update(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse_sdt_insert(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse_sdt_delete(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse_vdt_insert(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl inv0_FactSurveyResponse_vdt_delete(v0: surveyresponsekey, v1: datekey, v2: customerkey, v3: productcategorykey, v4: englishproductcategory, v5: productsubcategorykey, v6: englishproductsubcategory, v7: date)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input FactSurveyResponse
+.output dw_survey
+.output inv0_FactSurveyResponse
+.output FactSurveyResponse_update
+.output FactSurveyResponse_sdt_insert
+.output FactSurveyResponse_sdt_delete
+.input dw_survey_update
+.output dw_survey_vdt_insert
+.output dw_survey_vdt_delete
+.output inv0_FactSurveyResponse_update
+.output inv0_FactSurveyResponse_sdt_insert
+.output inv0_FactSurveyResponse_sdt_delete
+.output inv0_FactSurveyResponse_vdt_insert
+.output inv0_FactSurveyResponse_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+dw_survey(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7) :- FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Accessories", v6 = "Cleaners".
+
+dw_survey_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- dw_survey(v0, v1, v2, v3, v4, v5, v6, v7), !dw_survey_update(v0, v1, v2, v3, v4, v5, v6, v7).
+dw_survey_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- dw_survey_update(v0, v1, v2, v3, v4, v5, v6, v7), !dw_survey(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_FactSurveyResponse_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_FactSurveyResponse_update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_FactSurveyResponse_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse_update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7).
+
+FactSurveyResponse_update(v0, v1, v2, v3, v4, v5, v6, v7) :- FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), !FactSurveyResponse_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); FactSurveyResponse_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_FactSurveyResponse_update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_FactSurveyResponse_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_FactSurveyResponse_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+
+Fr__("_rejected_") :- inv0_FactSurveyResponse(_, _, _, _, _, _, v6, _), v6 != "Cleaners".
+Fr__("_rejected_") :- inv0_FactSurveyResponse(_, _, _, _, v4, _, _, _), v4 != "Accessories".
+Fr__("_rejected_") :- inv0_FactSurveyResponse_update(_, _, _, _, _, _, v6, _), v6 != "Cleaners".
+Fr__("_rejected_") :- inv0_FactSurveyResponse_update(_, _, _, _, v4, _, _, _), v4 != "Accessories".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+FactSurveyResponse_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), Rule(2).
+FactSurveyResponse_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_FactSurveyResponse_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), Rule(3).
+inv0_FactSurveyResponse_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- dw_survey_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), Rule(0).
+inv0_FactSurveyResponse_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- dw_survey_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), Rule(1).

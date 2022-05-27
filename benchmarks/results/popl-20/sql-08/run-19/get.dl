@@ -1,0 +1,23 @@
+.type T
+.type C
+.type S
+
+
+.decl Active(v0: S)
+.input Active
+.decl Inactive(v0: S)
+.input Inactive
+.decl Input1(v0: T, v1: S, v2: C)
+.input Input1
+
+.decl inv1(v0: T, v1: C)
+.output inv1
+.decl inv2(v0: T, v1: C)
+.output inv2
+
+.decl ans(v0: T, v1: C, v2: C)
+.output ans
+
+inv2(v1, v2) :- Active(v0), Input1(v1, v0, v2).
+ans(v0, v2, v1) :- inv1(v0, v1), inv2(v0, v2).
+inv1(v1, v2) :- Inactive(v0), Input1(v1, v0, v2).

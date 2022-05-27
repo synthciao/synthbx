@@ -1,0 +1,249 @@
+.type content_id <: symbol
+.type asset_id <: symbol
+.type title <: symbol
+.type alias <: symbol
+.type introtext <: symbol
+.type state <: symbol
+.type year <: symbol
+.type date <: symbol
+.type version <: symbol
+.type access <: symbol
+
+.decl content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl blog_2020(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl inv0_content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl content_update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl content_sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl content_sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl blog_2020_update(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl blog_2020_vdt_insert(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl blog_2020_vdt_delete(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl inv0_content_update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content_sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content_sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content_vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content_vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5__update(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5__sdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5__sdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5__vdt_insert(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5__vdt_delete(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_P_0_blog_2020_inv0_content(v0: asset_id, v1: alias, v2: introtext, v3: state, v4: date)
+.decl Au_P_1_blog_2020_inv0_content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content_inv0_content__5_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content_inv0_content__4__inv0_content__5_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content__4__inv0_content__0_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content__4__inv0_content__1_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content__5__inv0_content__3_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Au_U_inv0_content__5__inv0_content__2__inv0_content__3_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input content
+.output blog_2020
+.output inv0_content
+.output inv0_content__0_
+.output inv0_content__1_
+.output inv0_content__2_
+.output inv0_content__3_
+.output inv0_content__4_
+.output inv0_content__5_
+.output content_update
+.output content_sdt_insert
+.output content_sdt_delete
+.input blog_2020_update
+.output blog_2020_vdt_insert
+.output blog_2020_vdt_delete
+.output inv0_content_update
+.output inv0_content_sdt_insert
+.output inv0_content_sdt_delete
+.output inv0_content_vdt_insert
+.output inv0_content_vdt_delete
+.output inv0_content__0__update
+.output inv0_content__0__sdt_insert
+.output inv0_content__0__sdt_delete
+.output inv0_content__0__vdt_insert
+.output inv0_content__0__vdt_delete
+.output inv0_content__1__update
+.output inv0_content__1__sdt_insert
+.output inv0_content__1__sdt_delete
+.output inv0_content__1__vdt_insert
+.output inv0_content__1__vdt_delete
+.output inv0_content__2__update
+.output inv0_content__2__sdt_insert
+.output inv0_content__2__sdt_delete
+.output inv0_content__2__vdt_insert
+.output inv0_content__2__vdt_delete
+.output inv0_content__3__update
+.output inv0_content__3__sdt_insert
+.output inv0_content__3__sdt_delete
+.output inv0_content__3__vdt_insert
+.output inv0_content__3__vdt_delete
+.output inv0_content__4__update
+.output inv0_content__4__sdt_insert
+.output inv0_content__4__sdt_delete
+.output inv0_content__4__vdt_insert
+.output inv0_content__4__vdt_delete
+.output inv0_content__5__update
+.output inv0_content__5__sdt_insert
+.output inv0_content__5__sdt_delete
+.output inv0_content__5__vdt_insert
+.output inv0_content__5__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+blog_2020(v6, v0, v2, v8, v9) :- inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes".
+inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes".
+inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes".
+inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v6 = "2020".
+inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+
+blog_2020_vdt_delete(v0, v1, v2, v3, v4) :- blog_2020(v0, v1, v2, v3, v4), !blog_2020_update(v0, v1, v2, v3, v4).
+blog_2020_vdt_insert(v0, v1, v2, v3, v4) :- blog_2020_update(v0, v1, v2, v3, v4), !blog_2020(v0, v1, v2, v3, v4).
+inv0_content__0__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__2__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__2__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__3__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__3__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__4__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+
+content_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__2__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__3__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__4__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__5__update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+
+Fr__("_rejected_") :- inv0_content__0_(_, _, v2, _, _, _, _, _, _, _), v2 != "Keigo Higashino Quotes".
+Fr__("_rejected_") :- inv0_content__0__update(_, _, v2, _, _, _, _, _, _, _), v2 != "Keigo Higashino Quotes".
+Fr__("_rejected_") :- inv0_content__1_(_, _, v2, _, _, _, _, _, _, _), v2 != "Paulo Coelho Quotes".
+Fr__("_rejected_") :- inv0_content__1__update(_, _, v2, _, _, _, _, _, _, _), v2 != "Paulo Coelho Quotes".
+Fr__("_rejected_") :- inv0_content__2_(_, _, v2, _, _, _, _, _, _, _), v2 != "Sam Esmail Quotes".
+Fr__("_rejected_") :- inv0_content__2__update(_, _, v2, _, _, _, _, _, _, _), v2 != "Sam Esmail Quotes".
+Fr__("_rejected_") :- inv0_content__3_(_, _, _, _, _, _, v6, _, _, _), v6 != "2020".
+Fr__("_rejected_") :- inv0_content__3_(_, _, _, _, _, v5, _, _, _, _), v5 != "0".
+Fr__("_rejected_") :- inv0_content__3__update(_, _, _, _, _, _, v6, _, _, _), v6 != "2020".
+Fr__("_rejected_") :- inv0_content__3__update(_, _, _, _, _, v5, _, _, _, _), v5 != "0".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(13).
+content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(15).
+content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(17).
+content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(19).
+content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(14).
+content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(16).
+content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(18).
+content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(20).
+inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(43).
+inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(47).
+inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(51).
+inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(21).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(44).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(48).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(52).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__4__inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(24).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__4__inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(26).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__4__inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(23).
+inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__4__inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(25).
+inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(41).
+inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(55).
+inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(59).
+inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(22).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(42).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(56).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(60).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__4__inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(28).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__4__inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(30).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__4__inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(27).
+inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__4__inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(29).
+inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(45).
+inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(53).
+inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(63).
+inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(31).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(46).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(54).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(64).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__5__inv0_content__2__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(36).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__5__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(34).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__5__inv0_content__2__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(35).
+inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__5__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(33).
+inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(49).
+inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(57).
+inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(61).
+inv0_content__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(32).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(50).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(58).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(62).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__5__inv0_content__2__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(40).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content__5__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(38).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__5__inv0_content__2__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(39).
+inv0_content__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content__5__inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(37).
+inv0_content__4__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(3).
+inv0_content__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content_inv0_content__4__inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(8).
+inv0_content__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content_inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(6).
+inv0_content__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content_inv0_content__4__inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(7).
+inv0_content__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content_inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(5).
+inv0_content__5__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(4).
+inv0_content__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content_inv0_content__4__inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(12).
+inv0_content__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !Au_U_inv0_content_inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(10).
+inv0_content__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content_inv0_content__4__inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(11).
+inv0_content__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Au_U_inv0_content_inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(9).
+inv0_content_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- blog_2020_vdt_delete(v6, v0, v2, v8, v9), inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), Rule(0).
+inv0_content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- blog_2020_vdt_insert(v6, v0, v2, v8, v9), Au_P_0_blog_2020_inv0_content(v1, v3, v4, v5, v7), !Au_P_1_blog_2020_inv0_content(v0, _, v2, _, _, _, v6, _, v8, v9), !inv0_content(v0, _, v2, _, _, _, v6, _, v8, v9), Rule(2).
+inv0_content_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- blog_2020_vdt_insert(v6, v0, v2, v8, v9), Au_P_1_blog_2020_inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), !inv0_content(v0, _, v2, _, _, _, v6, _, v8, v9), Rule(1).
+
+Au_P_0_blog_2020_inv0_content("0", "_null_", "_null_", "0", "01-01 00:00:00").
+Au_U_inv0_content_inv0_content__5_("51", "0", "Sam Esmail Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content_inv0_content__4__inv0_content__5_("52", "0", "Keigo Higashino Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content_inv0_content__4__inv0_content__5_("53", "0", "Paulo Coelho Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content__4__inv0_content__0_("52", "0", "Keigo Higashino Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content__4__inv0_content__1_("53", "0", "Paulo Coelho Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content__5__inv0_content__3_("52", "0", "Keigo Higashino Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content__5__inv0_content__3_("53", "0", "Paulo Coelho Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").
+Au_U_inv0_content__5__inv0_content__2__inv0_content__3_("51", "0", "Sam Esmail Quotes", "_null_", "_null_", "0", "2020", "01-01 00:00:00", "1", "0").

@@ -1,0 +1,36 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents1962(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents1962_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents1962_vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents1962_vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input residents
+.output residents_update
+.input residents1962_update
+.output Fr__
+.output Fv__
+
+residents1962(v0, v1, v2) :- residents(v0, v1, v2), v1 >= "1962-01-01", v1 <= "1962-12-31".
+
+residents1962_vdt_delete(v0, v1, v2) :- residents1962(v0, v1, v2), !residents1962_update(v0, v1, v2).
+residents1962_vdt_insert(v0, v1, v2) :- residents1962_update(v0, v1, v2), !residents1962(v0, v1, v2).
+
+residents_update(v0, v1, v2) :- residents(v0, v1, v2), !residents_sdt_delete(v0, v1, v2); residents_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- residents1962(_, v1, _), v1 < "1962-01-01".
+Fr__("_rejected_") :- residents1962(_, v1, _), v1 > "1962-12-31".
+Fr__("_rejected_") :- residents1962_update(_, v1, _), v1 < "1962-01-01".
+Fr__("_rejected_") :- residents1962_update(_, v1, _), v1 > "1962-12-31".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+residents_sdt_delete(v0, v1, v2) :- residents1962_vdt_delete(v0, v1, v2), residents(v0, v1, v2).
+residents_sdt_insert(v0, v1, v2) :- residents1962_vdt_insert(v0, v1, v2), !residents(v0, v1, v2).

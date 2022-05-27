@@ -1,0 +1,85 @@
+.type PRODUCT_ID <: symbol
+.type PRODUCT_NAME <: symbol
+.type PURCHASE_ID <: symbol
+.type WHEN_BOUGHT <: symbol
+
+.decl product(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl purchase(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.decl purchaseview(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.decl M__1(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl product_update(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl product_sdt_insert(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl product_sdt_delete(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl purchase_update(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.decl purchase_sdt_insert(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.decl purchase_sdt_delete(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.decl purchaseview_update(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.decl purchaseview_vdt_insert(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.decl purchaseview_vdt_delete(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.decl M__1_update(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl M__1_sdt_insert(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl M__1_sdt_delete(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl M__1_vdt_insert(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl M__1_vdt_delete(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl Au_P_0_purchaseview_M__1(v0: PRODUCT_ID)
+.decl Au_P_1_purchaseview_M__1(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input product
+.input purchase
+.output purchaseview
+.output M__1
+.output product_update
+.output product_sdt_insert
+.output product_sdt_delete
+.output purchase_update
+.output purchase_sdt_insert
+.output purchase_sdt_delete
+.input purchaseview_update
+.output purchaseview_vdt_insert
+.output purchaseview_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3) :- purchase(v0, v1, v2), product(v1, v3).
+purchaseview(v0, v3, v2) :- M__1(v0, v1, v2, v3).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+purchaseview_vdt_delete(v0, v1, v2) :- purchaseview(v0, v1, v2), !purchaseview_update(v0, v1, v2).
+purchaseview_vdt_insert(v0, v1, v2) :- purchaseview_update(v0, v1, v2), !purchaseview(v0, v1, v2).
+
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+product_update(v0, v1) :- product(v0, v1), !product_sdt_delete(v0, v1); product_sdt_insert(v0, v1).
+purchase_update(v0, v1, v2) :- purchase(v0, v1, v2), !purchase_sdt_delete(v0, v1, v2); purchase_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- product_sdt_insert(v1, _), product(v1, _).
+Fr__("_rejected_") :- purchase_sdt_delete(_, v1, _), purchase_update(_, v1, _), product_sdt_delete(v1, _), product_update(v1, _).
+Fr__("_rejected_") :- purchase_sdt_insert(_, v1, _), purchase(_, v1, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3) :- purchaseview_vdt_delete(v0, v3, v2), M__1(v0, v1, v2, v3), Rule(3).
+M__1_sdt_insert(v0, v1, v2, v3) :- purchaseview_vdt_insert(v0, v3, v2), Au_P_0_purchaseview_M__1(v1), !Au_P_1_purchaseview_M__1(v0, _, v2, v3), !M__1(v0, _, v2, v3), Rule(5).
+M__1_sdt_insert(v0, v1, v2, v3) :- purchaseview_vdt_insert(v0, v3, v2), Au_P_1_purchaseview_M__1(v0, v1, v2, v3), !M__1(v0, _, v2, v3), Rule(4).
+product_sdt_insert(v1, v3) :- M__1_vdt_insert(_, v1, _, v3), !product(v1, v3), Rule(2).
+purchase_sdt_delete(v0, v1, v2) :- M__1_vdt_delete(v0, v1, v2, _), purchase(v0, v1, v2), Rule(0).
+purchase_sdt_insert(v0, v1, v2) :- M__1_vdt_insert(v0, v1, v2, _), !purchase(v0, v1, v2), Rule(1).
+
+Au_P_0_purchaseview_M__1("110").
+Au_P_1_purchaseview_M__1("1089", "102", "2017-03-01", "HDD").
+Au_P_1_purchaseview_M__1("1090", "111", "2017-06-27", "Headset").
+Au_P_1_purchaseview_M__1("1091", "112", "2020-03-06", "Camera").
+Au_P_1_purchaseview_M__1("1092", "109", "2018-07-04", "Motherboard").
+Au_P_1_purchaseview_M__1("1093", "115", "2019-01-05", "UPS").
+Au_P_1_purchaseview_M__1("1094", "105", "2017-08-13", "Mouse").
+Au_P_1_purchaseview_M__1("1095", "107", "2020-11-21", "GPU").
+Au_P_1_purchaseview_M__1("1096", "107", "2018-12-15", "GPU").
+Au_P_1_purchaseview_M__1("1097", "108", "2018-12-07", "CPU").

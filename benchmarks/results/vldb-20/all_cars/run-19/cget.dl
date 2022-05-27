@@ -1,0 +1,16 @@
+.type brand_id <: symbol
+.type brand_name <: symbol
+.type car_id <: symbol
+.type car_name <: symbol
+
+.decl brands(v0: brand_id, v1: brand_name)
+.decl cars(v0: car_id, v1: car_name, v2: brand_id)
+.input brands, cars
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl all_cars(v0: car_id, v1: car_name, v2: brand_id, v3: brand_name)
+.output all_cars
+
+all_cars(v0, v1, v2, v3) :- cars(v0, v1, v2), brands(v2, v3), Rule(1).

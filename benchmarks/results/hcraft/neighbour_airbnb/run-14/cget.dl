@@ -1,0 +1,106 @@
+.type id <: symbol
+.type name <: symbol
+.type host_id <: symbol
+.type host_name <: symbol
+.type neighbourhood <: symbol
+.type room_type <: symbol
+.type price <: symbol
+.type minimum_nights <: symbol
+
+.decl listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl neighbour_airbnb(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl inv0_listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Rule(v0: number)
+
+.input listing
+.output neighbour_airbnb
+.output inv0_listing
+.input Rule
+
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", Rule(1).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v5 = "Entire home-apt", Rule(17).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v5 = "Private room", Rule(16).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "12143", Rule(26).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "17126", Rule(25).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "5500", Rule(28).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "9000", Rule(27).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "Unk", Rule(29).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "1", Rule(42).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "2", Rule(41).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "3", Rule(40).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "4", Rule(39).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", Rule(0).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v5 = "Entire home-apt", Rule(15).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v5 = "Private room", Rule(14).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v6 = "12143", Rule(21).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v6 = "17126", Rule(20).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v6 = "5500", Rule(23).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v6 = "9000", Rule(22).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v6 = "Unk", Rule(24).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v7 = "1", Rule(38).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v7 = "2", Rule(37).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v7 = "3", Rule(36).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v7 = "4", Rule(35).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", Rule(2).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v5 = "Entire home-apt", Rule(19).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v5 = "Private room", Rule(18).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v6 = "12143", Rule(31).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v6 = "17126", Rule(30).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v6 = "5500", Rule(33).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v6 = "9000", Rule(32).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v6 = "Unk", Rule(34).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v7 = "1", Rule(46).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v7 = "2", Rule(45).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v7 = "3", Rule(44).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku", v7 = "4", Rule(43).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", Rule(4).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v6 = "12143", Rule(53).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v6 = "17126", Rule(52).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v6 = "5500", Rule(55).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v6 = "9000", Rule(54).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v6 = "Unk", Rule(56).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v7 = "1", Rule(64).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v7 = "2", Rule(63).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v7 = "3", Rule(62).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Entire home-apt", v7 = "4", Rule(61).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", Rule(3).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v6 = "12143", Rule(48).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v6 = "17126", Rule(47).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v6 = "5500", Rule(50).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v6 = "9000", Rule(49).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v6 = "Unk", Rule(51).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v7 = "1", Rule(60).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v7 = "2", Rule(59).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v7 = "3", Rule(58).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v5 = "Private room", v7 = "4", Rule(57).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "12143", Rule(6).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "12143", v7 = "1", Rule(72).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "12143", v7 = "2", Rule(71).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "12143", v7 = "3", Rule(70).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "12143", v7 = "4", Rule(69).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "17126", Rule(5).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "17126", v7 = "1", Rule(68).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "17126", v7 = "2", Rule(67).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "17126", v7 = "3", Rule(66).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "17126", v7 = "4", Rule(65).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "5500", Rule(8).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "5500", v7 = "1", Rule(80).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "5500", v7 = "2", Rule(79).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "5500", v7 = "3", Rule(78).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "5500", v7 = "4", Rule(77).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "9000", Rule(7).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "9000", v7 = "1", Rule(76).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "9000", v7 = "2", Rule(75).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "9000", v7 = "3", Rule(74).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "9000", v7 = "4", Rule(73).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "Unk", Rule(9).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "Unk", v7 = "1", Rule(84).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "Unk", v7 = "2", Rule(83).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "Unk", v7 = "3", Rule(82).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v6 = "Unk", v7 = "4", Rule(81).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v7 = "1", Rule(13).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v7 = "2", Rule(12).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v7 = "3", Rule(11).
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v7 = "4", Rule(10).
+neighbour_airbnb(v2, v5, v7, v6) :- inv0_listing(v2, v3, v0, v4, v5, v7, v1, v6), Rule(86).
+neighbour_airbnb(v2, v5, v7, v6) :- listing(v2, v3, v0, v4, v5, v7, v1, v6), Rule(85).

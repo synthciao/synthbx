@@ -1,0 +1,46 @@
+.type F_name <: symbol
+.type level <: symbol
+.type F_key <: symbol
+.type C_name <: symbol
+.type S_name <: symbol
+.type S_key <: symbol
+
+.decl Junior(v0: level)
+.decl Enroll(v0: S_key, v1: C_name)
+.decl focus(v0: F_name)
+.decl Student(v0: S_key, v1: S_name, v2: level)
+.decl Class(v0: C_name, v1: F_key)
+.decl Faculty(v0: F_key, v1: F_name)
+.decl inv1(v0: F_key)
+.decl inv2(v0: C_name)
+.decl inv3(v0: S_key)
+.decl ans(v0: S_name)
+.decl M__1(v0: F_key)
+.decl M__2(v0: F_key)
+.decl M__3(v0: F_key, v1: C_name)
+.decl M__4(v0: C_name, v1: S_key)
+.decl M__5(v0: level, v1: S_key, v2: S_name)
+.decl M__6(v0: level, v1: S_key, v2: S_name)
+.decl M__7(v0: F_name, v1: F_key)
+.decl Faculty_0__cp(v0: F_key, v1: F_name)
+
+.input Junior
+.input Enroll
+.input focus
+.input Student
+.input Class
+.input Faculty
+.output ans
+
+Faculty_0__cp(v0, v1) :- Faculty(v0, v1).
+M__1(v0) :- Faculty(v0, v1).
+M__2(v0) :- M__1(v0), inv1(v0).
+M__3(v0, v1) :- M__2(v0), Class(v1, v0).
+M__4(v0, v1) :- inv2(v0), Enroll(v1, v0).
+M__5(v0, v1, v2) :- Junior(v0), Student(v1, v2, v0).
+M__6(v0, v1, v2) :- M__5(v0, v1, v2), inv3(v1).
+M__7(v0, v1) :- focus(v0), Faculty_0__cp(v1, v0).
+ans(v2) :- M__6(v0, v1, v2).
+inv1(v1) :- M__7(v0, v1).
+inv2(v1) :- M__3(v0, v1).
+inv3(v1) :- M__4(v0, v1).

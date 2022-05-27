@@ -1,0 +1,24 @@
+.type ID <: symbol
+.type Pid <: symbol
+.type Name <: symbol
+.type G <: symbol
+
+.decl In(v0: ID, v1: Pid, v2: Name, v3: G)
+.decl Lt(v0: G, v1: G)
+.decl inv(v0: Pid, v1: G)
+.decl Out(v0: Pid, v1: G, v2: G)
+.decl M__1(v0: G, v1: G, v2: Pid)
+.decl M__2(v0: G, v1: G, v2: Pid)
+.decl inv_0__cp(v0: Pid, v1: G)
+.decl inv_1__cp(v0: Pid, v1: G)
+
+.input In
+.input Lt
+.output Out
+
+M__1(v0, v1, v2) :- Lt(v0, v1), inv_1__cp(v2, v0).
+M__2(v0, v1, v2) :- M__1(v0, v1, v2), inv_0__cp(v2, v1).
+Out(v2, v0, v1) :- M__2(v0, v1, v2).
+inv(v1, v3) :- In(v0, v1, v2, v3).
+inv_0__cp(v0, v1) :- inv(v0, v1).
+inv_1__cp(v0, v1) :- inv(v0, v1).

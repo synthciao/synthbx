@@ -1,0 +1,31 @@
+.type username <: symbol
+.type uid <: symbol
+.type gid <: symbol
+.type info <: symbol
+.type homedir <: symbol
+.type shell <: symbol
+.type tty <: symbol
+.type day <: symbol
+.type date <: symbol
+
+.decl user(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged(v0: username, v1: tty, v2: day, v3: date)
+.decl status(v0: tty)
+.decl logging(v0: username, v1: uid, v2: info, v3: date)
+.decl invent(v0: username, v1: tty, v2: date)
+.decl inv0_logged(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_status(v0: tty)
+
+.input user
+.input logged
+.input status
+.output logging
+.output invent
+.output inv0_logged
+.output inv0_status
+
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "console", v2 = "Sun".
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys000", v2 = "Sun".
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys001", v2 = "Sun".
+invent(v3, v2, v0) :- inv0_logged(v3, v2, v1, v0).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5).

@@ -1,0 +1,17 @@
+.type SNAME <: symbol
+.type PORT <: symbol
+.type PROTO <: symbol
+.type DESCRIPTION <: symbol
+.type STATE <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl service(v0: SNAME, v1: PORT, v2: PROTO, v3: DESCRIPTION)
+.decl active(v0: PROTO, v1: PORT, v2: STATE)
+.input service, active
+
+.decl open_port(v0: PORT, v1: PROTO, v2: SNAME)
+.output open_port
+
+open_port(v1, v2, v0) :- service(v0, v1, v2, v3), active(v2, v1, v4), Rule(1).

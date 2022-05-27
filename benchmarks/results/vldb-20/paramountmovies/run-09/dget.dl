@@ -1,0 +1,16 @@
+.type title <: symbol
+.type year <: symbol
+.type length <: symbol
+.type genre <: symbol
+.type studioname <: symbol
+.type producerc <: symbol
+
+.decl movies(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl paramountmovies(v0: title, v1: year)
+.decl M__1(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+
+.input movies
+.output paramountmovies
+
+M__1(v0, v1, v2, v3, v4, v5) :- movies(v0, v1, v2, v3, v4, v5), v4 = "Paramount".
+paramountmovies(v0, v1) :- M__1(v0, v1, v2, v3, v4, v5).

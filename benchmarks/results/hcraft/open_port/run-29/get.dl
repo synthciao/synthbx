@@ -1,0 +1,23 @@
+.type sname <: symbol
+.type port <: symbol
+.type proto <: symbol
+.type description <: symbol
+.type state <: symbol
+
+.decl service(v0: sname, v1: port, v2: proto, v3: description)
+.decl active(v0: proto, v1: port, v2: state)
+.decl open_port(v0: port, v1: proto, v2: sname)
+.decl inv0_service(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active(v0: proto, v1: port, v2: state)
+
+.input service
+.input active
+.output open_port
+.output inv0_service
+.output inv0_active
+
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "110", v2 = "tcp".
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "448", v2 = "udp".
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "501", v2 = "udp".
+open_port(v2, v4, v6) :- active(v4, v2, v1), inv0_service(v6, v2, v4, v0).
+open_port(v5, v3, v2) :- service(v2, v5, v3, v0), active(v3, v5, v1).

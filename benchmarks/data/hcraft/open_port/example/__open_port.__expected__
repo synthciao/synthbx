@@ -1,0 +1,7 @@
+21	udp	ftp
+22	tcp	ssh
+80	tcp	http
+80	tcp	www
+80	tcp	www-http
+443	tcp	https
+445	udp	microsoft-ds

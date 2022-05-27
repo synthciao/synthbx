@@ -1,0 +1,17 @@
+.type CITY_ID <: symbol
+.type LOGDATE <: symbol
+.type PEAKTEMP <: symbol
+.type UNITSALES <: symbol
+
+.decl measurement_y2006m02(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m03(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.input measurement_y2006m02, measurement_y2006m03
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl measurement(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.output measurement
+
+measurement(v0, v1, v2, v3) :- measurement_y2006m02(v0, v1, v2, v3), v1 >= "2006-02-01", v1 <= "2006-02-28", Rule(1).
+measurement(v0, v1, v2, v3) :- measurement_y2006m03(v0, v1, v2, v3), v1 >= "2006-03-01", v1 <= "2006-03-31", Rule(2).

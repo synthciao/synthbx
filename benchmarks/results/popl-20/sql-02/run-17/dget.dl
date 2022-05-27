@@ -1,0 +1,15 @@
+.type ID <: symbol
+.type Name <: symbol
+.type Age <: symbol
+
+.decl family(v0: ID, v1: Name, v2: Age, v3: ID)
+.decl Out(v0: ID, v1: Name)
+.decl M__1(v0: ID, v1: Name)
+.decl M__2(v0: ID)
+
+.input family
+.output Out
+
+M__1(v0, v1) :- family(v0, v1, v2, v3).
+M__2(v3) :- family(v0, v1, v2, v3).
+Out(v0, v1) :- M__1(v0, v1), M__2(v0).

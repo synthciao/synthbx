@@ -1,0 +1,3 @@
+*brands(BRAND_ID, BRAND_NAME)
+*brand_approvals(BRAND_ID, BRAND_NAME)
+vw_brands(BRAND_NAME, APPROVAL_STATUS)

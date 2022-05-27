@@ -1,0 +1,906 @@
+_null_	0	tcp	Reserved
+_null_	0	udp	Reserved
+tcpmux	1	tcp	TCP Port Service Multiplexer
+tcpmux	1	udp	TCP Port Service Multiplexer
+compressnet	2	tcp	Management Utility
+compressnet	2	udp	Management Utility
+compressnet	3	tcp	Compression Process
+compressnet	3	udp	Compression Process
+_null_	4	tcp	Unassigned
+_null_	4	udp	Unassigned
+rje	5	tcp	Remote Job Entry
+rje	5	udp	Remote Job Entry
+_null_	6	tcp	Unassigned
+_null_	6	udp	Unassigned
+echo	7	tcp	Echo
+echo	7	udp	Echo
+_null_	8	tcp	Unassigned
+_null_	8	udp	Unassigned
+discard	9	tcp	Discard
+discard	9	udp	Discard
+discard	9	sctp	Discard
+discard	9	dccp	Discard
+_null_	10	tcp	Unassigned
+_null_	10	udp	Unassigned
+systat	11	tcp	Active Users
+systat	11	udp	Active Users
+_null_	12	tcp	Unassigned
+_null_	12	udp	Unassigned
+daytime	13	tcp	Daytime
+daytime	13	udp	Daytime
+_null_	14	tcp	Unassigned
+_null_	14	udp	Unassigned
+_null_	15	tcp	Unassigned [was netstat]
+_null_	15	udp	Unassigned
+_null_	16	tcp	Unassigned
+_null_	16	udp	Unassigned
+qotd	17	tcp	Quote of the Day
+qotd	17	udp	Quote of the Day
+msp	18	tcp	Message Send Protocol [historic]
+msp	18	udp	Message Send Protocol [historic]
+chargen	19	tcp	Character Generator
+chargen	19	udp	Character Generator
+ftp-data	20	tcp	File Transfer [Default Data]
+ftp-data	20	udp	File Transfer [Default Data]
+ftp-data	20	sctp	FTP
+ftp	21	tcp	File Transfer Protocol [Control]
+ftp	21	udp	File Transfer Protocol [Control]
+ftp	21	sctp	FTP
+ssh	22	tcp	The Secure Shell [SSH] Protocol
+ssh	22	udp	The Secure Shell [SSH] Protocol
+ssh	22	sctp	SSH
+telnet	23	tcp	Telnet
+telnet	23	udp	Telnet
+_null_	24	tcp	any private mail system
+_null_	24	udp	any private mail system
+smtp	25	tcp	Simple Mail Transfer
+smtp	25	udp	Simple Mail Transfer
+_null_	26	tcp	Unassigned
+_null_	26	udp	Unassigned
+nsw-fe	27	tcp	NSW User System FE
+nsw-fe	27	udp	NSW User System FE
+_null_	28	tcp	Unassigned
+_null_	28	udp	Unassigned
+msg-icp	29	tcp	MSG ICP
+msg-icp	29	udp	MSG ICP
+_null_	30	tcp	Unassigned
+_null_	30	udp	Unassigned
+msg-auth	31	tcp	MSG Authentication
+msg-auth	31	udp	MSG Authentication
+_null_	32	tcp	Unassigned
+_null_	32	udp	Unassigned
+dsp	33	tcp	Display Support Protocol
+dsp	33	udp	Display Support Protocol
+_null_	34	tcp	Unassigned
+_null_	34	udp	Unassigned
+_null_	35	tcp	any private printer server
+_null_	35	udp	any private printer server
+_null_	36	tcp	Unassigned
+_null_	36	udp	Unassigned
+time	37	tcp	Time
+time	37	udp	Time
+rap	38	tcp	Route Access Protocol
+rap	38	udp	Route Access Protocol
+rlp	39	tcp	Resource Location Protocol
+rlp	39	udp	Resource Location Protocol
+_null_	40	tcp	Unassigned
+_null_	40	udp	Unassigned
+graphics	41	tcp	Graphics
+graphics	41	udp	Graphics
+name	42	tcp	Host Name Server
+name	42	udp	Host Name Server
+nameserver	42	tcp	Host Name Server
+nameserver	42	udp	Host Name Server
+nicname	43	tcp	Who Is
+nicname	43	udp	Who Is
+mpm-flags	44	tcp	MPM FLAGS Protocol
+mpm-flags	44	udp	MPM FLAGS Protocol
+mpm	45	tcp	Message Processing Module [recv]
+mpm	45	udp	Message Processing Module [recv]
+mpm-snd	46	tcp	MPM [default send]
+mpm-snd	46	udp	MPM [default send]
+_null_	47	tcp	Reserved
+_null_	47	udp	Reserved
+auditd	48	tcp	Digital Audit Daemon
+auditd	48	udp	Digital Audit Daemon
+tacacs	49	tcp	Login Host Protocol [TACACS]
+tacacs	49	udp	Login Host Protocol [TACACS]
+re-mail-ck	50	tcp	Remote Mail Checking Protocol
+re-mail-ck	50	udp	Remote Mail Checking Protocol
+_null_	51		Reserved
+xns-time	52	tcp	XNS Time Protocol
+xns-time	52	udp	XNS Time Protocol
+domain	53	tcp	Domain Name Server
+domain	53	udp	Domain Name Server
+xns-ch	54	tcp	XNS Clearinghouse
+xns-ch	54	udp	XNS Clearinghouse
+isi-gl	55	tcp	ISI Graphics Language
+isi-gl	55	udp	ISI Graphics Language
+xns-auth	56	tcp	XNS Authentication
+xns-auth	56	udp	XNS Authentication
+_null_	57	tcp	any private terminal access
+_null_	57	udp	any private terminal access
+xns-mail	58	tcp	XNS Mail
+xns-mail	58	udp	XNS Mail
+_null_	59	tcp	any private file service
+_null_	59	udp	any private file service
+_null_	60	tcp	Unassigned
+_null_	60	udp	Unassigned
+_null_	61	tcp	Reserved
+_null_	61	udp	Reserved
+acas	62	tcp	ACA Services
+acas	62	udp	ACA Services
+whoispp	63	tcp	whois++ IANA assigned this well-formed service name as a replacement for whois++.
+whois++	63	tcp	whois++
+whoispp	63	udp	whois++ IANA assigned this well-formed service name as a replacement for whois++.
+whois++	63	udp	whois++
+covia	64	tcp	Communications Integrator [CI]
+covia	64	udp	Communications Integrator [CI]
+tacacs-ds	65	tcp	TACACS-Database Service
+tacacs-ds	65	udp	TACACS-Database Service
+sql-net	66	tcp	Oracle SQL*NET IANA assigned this well-formed service name as a replacement for sql*net.
+sql*net	66	tcp	Oracle SQL*NET
+sql-net	66	udp	Oracle SQL*NET IANA assigned this well-formed service name as a replacement for sql*net.
+sql*net	66	udp	Oracle SQL*NET
+bootps	67	tcp	Bootstrap Protocol Server
+bootps	67	udp	Bootstrap Protocol Server
+bootpc	68	tcp	Bootstrap Protocol Client
+bootpc	68	udp	Bootstrap Protocol Client
+tftp	69	tcp	Trivial File Transfer
+tftp	69	udp	Trivial File Transfer
+gopher	70	tcp	Gopher
+gopher	70	udp	Gopher
+netrjs-1	71	tcp	Remote Job Service
+netrjs-1	71	udp	Remote Job Service
+netrjs-2	72	tcp	Remote Job Service
+netrjs-2	72	udp	Remote Job Service
+netrjs-3	73	tcp	Remote Job Service
+netrjs-3	73	udp	Remote Job Service
+netrjs-4	74	tcp	Remote Job Service
+netrjs-4	74	udp	Remote Job Service
+_null_	75	tcp	any private dial out service
+_null_	75	udp	any private dial out service
+deos	76	tcp	Distributed External Object Store
+deos	76	udp	Distributed External Object Store
+_null_	77	tcp	any private RJE service
+_null_	77	udp	any private RJE service
+vettcp	78	tcp	vettcp
+vettcp	78	udp	vettcp
+finger	79	tcp	Finger
+finger	79	udp	Finger
+http	80	tcp	World Wide Web HTTP
+http	80	udp	World Wide Web HTTP
+www	80	tcp	World Wide Web HTTP
+www	80	udp	World Wide Web HTTP
+www-http	80	tcp	World Wide Web HTTP
+www-http	80	udp	World Wide Web HTTP
+http	80	sctp	HTTP
+_null_	81		Unassigned
+xfer	82	tcp	XFER Utility
+xfer	82	udp	XFER Utility
+mit-ml-dev	83	tcp	MIT ML Device
+mit-ml-dev	83	udp	MIT ML Device
+ctf	84	tcp	Common Trace Facility
+ctf	84	udp	Common Trace Facility
+mit-ml-dev	85	tcp	MIT ML Device
+mit-ml-dev	85	udp	MIT ML Device
+mfcobol	86	tcp	Micro Focus Cobol
+mfcobol	86	udp	Micro Focus Cobol
+_null_	87	tcp	any private terminal link
+_null_	87	udp	any private terminal link
+kerberos	88	tcp	Kerberos
+kerberos	88	udp	Kerberos
+su-mit-tg	89	tcp	SU-MIT Telnet Gateway
+su-mit-tg	89	udp	SU-MIT Telnet Gateway
+dnsix	90	tcp	DNSIX Securit Attribute Token Map
+dnsix	90	udp	DNSIX Securit Attribute Token Map
+mit-dov	91	tcp	MIT Dover Spooler
+mit-dov	91	udp	MIT Dover Spooler
+npp	92	tcp	Network Printing Protocol
+npp	92	udp	Network Printing Protocol
+dcp	93	tcp	Device Control Protocol
+dcp	93	udp	Device Control Protocol
+objcall	94	tcp	Tivoli Object Dispatcher
+objcall	94	udp	Tivoli Object Dispatcher
+supdup	95	tcp	SUPDUP
+supdup	95	udp	SUPDUP
+dixie	96	tcp	DIXIE Protocol Specification
+dixie	96	udp	DIXIE Protocol Specification
+swift-rvf	97	tcp	Swift Remote Virtural File Protocol
+swift-rvf	97	udp	Swift Remote Virtural File Protocol
+tacnews	98	tcp	TAC News
+tacnews	98	udp	TAC News
+metagram	99	tcp	Metagram Relay
+metagram	99	udp	Metagram Relay
+_null_	100		Unassigned
+hostname	101	tcp	NIC Host Name Server
+hostname	101	udp	NIC Host Name Server
+iso-tsap	102	tcp	ISO-TSAP Class 0
+iso-tsap	102	udp	ISO-TSAP Class 0
+gppitnp	103	tcp	Genesis Point-to-Point Trans Net
+gppitnp	103	udp	Genesis Point-to-Point Trans Net
+acr-nema	104	tcp	ACR-NEMA Digital Imag. & Comm. 300
+acr-nema	104	udp	ACR-NEMA Digital Imag. & Comm. 300
+cso	105	tcp	CCSO name server protocol
+cso	105	udp	CCSO name server protocol
+csnet-ns	105	tcp	Mailbox Name Nameserver
+csnet-ns	105	udp	Mailbox Name Nameserver
+3com-tsmux	106	tcp	3COM-TSMUX
+3com-tsmux	106	udp	3COM-TSMUX
+rtelnet	107	tcp	Remote Telnet Service
+rtelnet	107	udp	Remote Telnet Service
+snagas	108	tcp	SNA Gateway Access Server
+snagas	108	udp	SNA Gateway Access Server
+pop2	109	tcp	Post Office Protocol - Version 2
+pop2	109	udp	Post Office Protocol - Version 2
+pop3	110	tcp	Post Office Protocol - Version 3
+pop3	110	udp	Post Office Protocol - Version 3
+sunrpc	111	tcp	SUN Remote Procedure Call
+sunrpc	111	udp	SUN Remote Procedure Call
+mcidas	112	tcp	McIDAS Data Transmission Protocol
+mcidas	112	udp	McIDAS Data Transmission Protocol
+ident	113	tcp	
+auth	113	tcp	Authentication Service
+auth	113	udp	Authentication Service
+_null_	114		unassigned
+sftp	115	tcp	Simple File Transfer Protocol
+sftp	115	udp	Simple File Transfer Protocol
+ansanotify	116	tcp	ANSA REX Notify
+ansanotify	116	udp	ANSA REX Notify
+uucp-path	117	tcp	UUCP Path Service
+uucp-path	117	udp	UUCP Path Service
+sqlserv	118	tcp	SQL Services
+sqlserv	118	udp	SQL Services
+nntp	119	tcp	Network News Transfer Protocol
+nntp	119	udp	Network News Transfer Protocol
+cfdptkt	120	tcp	CFDPTKT
+cfdptkt	120	udp	CFDPTKT
+erpc	121	tcp	Encore Expedited Remote Pro.Call
+erpc	121	udp	Encore Expedited Remote Pro.Call
+smakynet	122	tcp	SMAKYNET
+smakynet	122	udp	SMAKYNET
+ntp	123	tcp	Network Time Protocol
+ntp	123	udp	Network Time Protocol
+ansatrader	124	tcp	ANSA REX Trader
+ansatrader	124	udp	ANSA REX Trader
+locus-map	125	tcp	Locus PC-Interface Net Map Ser
+locus-map	125	udp	Locus PC-Interface Net Map Ser
+nxedit	126	tcp	NXEdit
+nxedit	126	udp	NXEdit
+locus-con	127	tcp	Locus PC-Interface Conn Server
+locus-con	127	udp	Locus PC-Interface Conn Server
+gss-xlicen	128	tcp	GSS X License Verification
+gss-xlicen	128	udp	GSS X License Verification
+pwdgen	129	tcp	Password Generator Protocol
+pwdgen	129	udp	Password Generator Protocol
+cisco-fna	130	tcp	cisco FNATIVE
+cisco-fna	130	udp	cisco FNATIVE
+cisco-tna	131	tcp	cisco TNATIVE
+cisco-tna	131	udp	cisco TNATIVE
+cisco-sys	132	tcp	cisco SYSMAINT
+cisco-sys	132	udp	cisco SYSMAINT
+statsrv	133	tcp	Statistics Service
+statsrv	133	udp	Statistics Service
+ingres-net	134	tcp	INGRES-NET Service
+ingres-net	134	udp	INGRES-NET Service
+epmap	135	tcp	DCE endpoint resolution
+epmap	135	udp	DCE endpoint resolution
+profile	136	tcp	PROFILE Naming System
+profile	136	udp	PROFILE Naming System
+netbios-ns	137	tcp	NETBIOS Name Service
+netbios-ns	137	udp	NETBIOS Name Service
+netbios-dgm	138	tcp	NETBIOS Datagram Service
+netbios-dgm	138	udp	NETBIOS Datagram Service
+netbios-ssn	139	tcp	NETBIOS Session Service
+netbios-ssn	139	udp	NETBIOS Session Service
+emfis-data	140	tcp	EMFIS Data Service
+emfis-data	140	udp	EMFIS Data Service
+emfis-cntl	141	tcp	EMFIS Control Service
+emfis-cntl	141	udp	EMFIS Control Service
+bl-idm	142	tcp	Britton-Lee IDM
+bl-idm	142	udp	Britton-Lee IDM
+imap	143	tcp	Internet Message Access Protocol
+_null_	143	udp	Reserved
+uma	144	tcp	Universal Management Architecture
+uma	144	udp	Universal Management Architecture
+uaac	145	tcp	UAAC Protocol
+uaac	145	udp	UAAC Protocol
+iso-tp0	146	tcp	ISO-IP0
+iso-tp0	146	udp	ISO-IP0
+iso-ip	147	tcp	ISO-IP
+iso-ip	147	udp	ISO-IP
+jargon	148	tcp	Jargon
+jargon	148	udp	Jargon
+aed-512	149	tcp	AED 512 Emulation Service
+aed-512	149	udp	AED 512 Emulation Service
+sql-net	150	tcp	SQL-NET
+sql-net	150	udp	SQL-NET
+hems	151	tcp	HEMS
+hems	151	udp	HEMS
+bftp	152	tcp	Background File Transfer Program
+bftp	152	udp	Background File Transfer Program
+sgmp	153	tcp	SGMP
+sgmp	153	udp	SGMP
+netsc-prod	154	tcp	NETSC
+netsc-prod	154	udp	NETSC
+netsc-dev	155	tcp	NETSC
+netsc-dev	155	udp	NETSC
+sqlsrv	156	tcp	SQL Service
+sqlsrv	156	udp	SQL Service
+knet-cmp	157	tcp	KNET-VM Command-Message Protocol
+knet-cmp	157	udp	KNET-VM Command-Message Protocol
+pcmail-srv	158	tcp	PCMail Server
+pcmail-srv	158	udp	PCMail Server
+nss-routing	159	tcp	NSS-Routing
+nss-routing	159	udp	NSS-Routing
+sgmp-traps	160	tcp	SGMP-TRAPS
+sgmp-traps	160	udp	SGMP-TRAPS
+snmp	161	tcp	SNMP
+snmp	161	udp	SNMP
+snmptrap	162	tcp	SNMPTRAP
+snmptrap	162	udp	SNMPTRAP
+cmip-man	163	tcp	CMIP-TCP Manager
+cmip-man	163	udp	CMIP-TCP Manager
+cmip-agent	164	tcp	CMIP-TCP Agent
+cmip-agent	164	udp	CMIP-TCP Agent
+xns-courier	165	tcp	Xerox
+xns-courier	165	udp	Xerox
+s-net	166	tcp	Sirius Systems
+s-net	166	udp	Sirius Systems
+namp	167	tcp	NAMP
+namp	167	udp	NAMP
+rsvd	168	tcp	RSVD
+rsvd	168	udp	RSVD
+send	169	tcp	SEND
+send	169	udp	SEND
+print-srv	170	tcp	Network PostScript
+print-srv	170	udp	Network PostScript
+multiplex	171	tcp	Network Innovations Multiplex
+multiplex	171	udp	Network Innovations Multiplex
+cl-1	172	tcp	Network Innovations CL-1 IANA assigned this well-formed service name as a replacement for cl-1.
+cl-1	172	tcp	Network Innovations CL-1
+cl-1	172	udp	Network Innovations CL-1 IANA assigned this well-formed service name as a replacement for cl-1.
+cl-1	172	udp	Network Innovations CL-1
+xyplex-mux	173	tcp	Xyplex
+xyplex-mux	173	udp	Xyplex
+mailq	174	tcp	MAILQ
+mailq	174	udp	MAILQ
+vmnet	175	tcp	VMNET
+vmnet	175	udp	VMNET
+genrad-mux	176	tcp	GENRAD-MUX
+genrad-mux	176	udp	GENRAD-MUX
+xdmcp	177	tcp	X Display Manager Control Protocol
+xdmcp	177	udp	X Display Manager Control Protocol
+nextstep	178	tcp	NextStep Window Server
+nextstep	178	udp	NextStep Window Server
+bgp	179	tcp	Border Gateway Protocol
+bgp	179	udp	Border Gateway Protocol
+bgp	179	sctp	BGP
+ris	180	tcp	Intergraph
+ris	180	udp	Intergraph
+unify	181	tcp	Unify
+unify	181	udp	Unify
+audit	182	tcp	Unisys Audit SITP
+audit	182	udp	Unisys Audit SITP
+ocbinder	183	tcp	OCBinder
+ocbinder	183	udp	OCBinder
+ocserver	184	tcp	OCServer
+ocserver	184	udp	OCServer
+remote-kis	185	tcp	Remote-KIS
+remote-kis	185	udp	Remote-KIS
+kis	186	tcp	KIS Protocol
+kis	186	udp	KIS Protocol
+aci	187	tcp	Application Communication Interface
+aci	187	udp	Application Communication Interface
+mumps	188	tcp	Plus Fives MUMPS
+mumps	188	udp	Plus Fives MUMPS
+qft	189	tcp	Queued File Transport
+qft	189	udp	Queued File Transport
+gacp	190	tcp	Gateway Access Control Protocol
+gacp	190	udp	Gateway Access Control Protocol
+prospero	191	tcp	Prospero Directory Service
+prospero	191	udp	Prospero Directory Service
+osu-nms	192	tcp	OSU Network Monitoring System
+osu-nms	192	udp	OSU Network Monitoring System
+srmp	193	tcp	Spider Remote Monitoring Protocol
+srmp	193	udp	Spider Remote Monitoring Protocol
+irc	194	tcp	Internet Relay Chat Protocol
+irc	194	udp	Internet Relay Chat Protocol
+dn6-nlm-aud	195	tcp	DNSIX Network Level Module Audit
+dn6-nlm-aud	195	udp	DNSIX Network Level Module Audit
+dn6-smm-red	196	tcp	DNSIX Session Mgt Module Audit Redir
+dn6-smm-red	196	udp	DNSIX Session Mgt Module Audit Redir
+dls	197	tcp	Directory Location Service
+dls	197	udp	Directory Location Service
+dls-mon	198	tcp	Directory Location Service Monitor
+dls-mon	198	udp	Directory Location Service Monitor
+smux	199	tcp	SMUX
+smux	199	udp	SMUX
+src	200	tcp	IBM System Resource Controller
+src	200	udp	IBM System Resource Controller
+at-rtmp	201	tcp	AppleTalk Routing Maintenance
+at-rtmp	201	udp	AppleTalk Routing Maintenance
+at-nbp	202	tcp	AppleTalk Name Binding
+at-nbp	202	udp	AppleTalk Name Binding
+at-3	203	tcp	AppleTalk Unused
+at-3	203	udp	AppleTalk Unused
+at-echo	204	tcp	AppleTalk Echo
+at-echo	204	udp	AppleTalk Echo
+at-5	205	tcp	AppleTalk Unused
+at-5	205	udp	AppleTalk Unused
+at-zis	206	tcp	AppleTalk Zone Information
+at-zis	206	udp	AppleTalk Zone Information
+at-7	207	tcp	AppleTalk Unused
+at-7	207	udp	AppleTalk Unused
+at-8	208	tcp	AppleTalk Unused
+at-8	208	udp	AppleTalk Unused
+qmtp	209	tcp	The Quick Mail Transfer Protocol
+qmtp	209	udp	The Quick Mail Transfer Protocol
+z39-50	210	tcp	ANSI Z39.50 IANA assigned this well-formed service name as a replacement for z39.50.
+z39.50	210	tcp	ANSI Z39.50
+z39-50	210	udp	ANSI Z39.50 IANA assigned this well-formed service name as a replacement for z39.50.
+z39.50	210	udp	ANSI Z39.50
+914c-g	211	tcp	Texas Instruments 914C-G Terminal IANA assigned this well-formed service name as a replacement for 914c-g.
+914c-g	211	tcp	Texas Instruments 914C-G Terminal
+914c-g	211	udp	Texas Instruments 914C-G Terminal IANA assigned this well-formed service name as a replacement for 914c-g.
+914c-g	211	udp	Texas Instruments 914C-G Terminal
+anet	212	tcp	ATEXSSTR
+anet	212	udp	ATEXSSTR
+ipx	213	tcp	IPX
+ipx	213	udp	IPX
+vmpwscs	214	tcp	VM PWSCS
+vmpwscs	214	udp	VM PWSCS
+softpc	215	tcp	Insignia Solutions
+softpc	215	udp	Insignia Solutions
+CAIlic	216	tcp	Computer Associates Intl License Server
+CAIlic	216	udp	Computer Associates Intl License Server
+dbase	217	tcp	dBASE Unix
+dbase	217	udp	dBASE Unix
+mpp	218	tcp	Netix Message Posting Protocol
+mpp	218	udp	Netix Message Posting Protocol
+uarps	219	tcp	Unisys ARPs
+uarps	219	udp	Unisys ARPs
+imap3	220	tcp	Interactive Mail Access Protocol v3
+imap3	220	udp	Interactive Mail Access Protocol v3
+fln-spx	221	tcp	Berkeley rlogind with SPX auth
+fln-spx	221	udp	Berkeley rlogind with SPX auth
+rsh-spx	222	tcp	Berkeley rshd with SPX auth
+rsh-spx	222	udp	Berkeley rshd with SPX auth
+cdc	223	tcp	Certificate Distribution Center
+cdc	223	udp	Certificate Distribution Center
+masqdialer	224	tcp	masqdialer
+masqdialer	224	udp	masqdialer
+_null_	225-241		Reserved
+direct	242	tcp	Direct
+direct	242	udp	Direct
+sur-meas	243	tcp	Survey Measurement
+sur-meas	243	udp	Survey Measurement
+inbusiness	244	tcp	inbusiness
+inbusiness	244	udp	inbusiness
+link	245	tcp	LINK
+link	245	udp	LINK
+dsp3270	246	tcp	Display Systems Protocol
+dsp3270	246	udp	Display Systems Protocol
+subntbcst-tftp	247	tcp	SUBNTBCST_TFTP IANA assigned this well-formed service name as a replacement for subntbcst_tftp.
+subntbcst_tftp	247	tcp	SUBNTBCST_TFTP
+subntbcst-tftp	247	udp	SUBNTBCST_TFTP IANA assigned this well-formed service name as a replacement for subntbcst_tftp.
+subntbcst_tftp	247	udp	SUBNTBCST_TFTP
+bhfhs	248	tcp	bhfhs
+bhfhs	248	udp	bhfhs
+_null_	249-255		Reserved
+rap	256	tcp	RAP
+rap	256	udp	RAP
+set	257	tcp	Secure Electronic Transaction
+set	257	udp	Secure Electronic Transaction
+_null_	258		Unassigned
+esro-gen	259	tcp	Efficient Short Remote Operations
+esro-gen	259	udp	Efficient Short Remote Operations
+openport	260	tcp	Openport
+openport	260	udp	Openport
+nsiiops	261	tcp	IIOP Name Service over TLS-SSL
+nsiiops	261	udp	IIOP Name Service over TLS-SSL
+arcisdms	262	tcp	Arcisdms
+arcisdms	262	udp	Arcisdms
+hdap	263	tcp	HDAP
+hdap	263	udp	HDAP
+bgmp	264	tcp	BGMP
+bgmp	264	udp	BGMP
+x-bone-ctl	265	tcp	X-Bone CTL
+x-bone-ctl	265	udp	X-Bone CTL
+sst	266	tcp	SCSI on ST
+sst	266	udp	SCSI on ST
+td-service	267	tcp	Tobit David Service Layer
+td-service	267	udp	Tobit David Service Layer
+td-replica	268	tcp	Tobit David Replica
+td-replica	268	udp	Tobit David Replica
+manet	269	tcp	MANET Protocols
+manet	269	udp	MANET Protocols
+_null_	270	tcp	Reserved
+gist	270	udp	Q-mode encapsulation for GIST messages
+pt-tls	271	tcp	IETF Network Endpoint Assessment [NEA] Posture Transport Protocol over TLS [PT-TLS]
+_null_	271	udp	Reserved
+_null_	272-279		Unassigned
+http-mgmt	280	tcp	http-mgmt
+http-mgmt	280	udp	http-mgmt
+personal-link	281	tcp	Personal Link
+personal-link	281	udp	Personal Link
+cableport-ax	282	tcp	Cable Port A-X
+cableport-ax	282	udp	Cable Port A-X
+rescap	283	tcp	rescap
+rescap	283	udp	rescap
+corerjd	284	tcp	corerjd
+corerjd	284	udp	corerjd
+_null_	285		Unassigned
+fxp	286	tcp	FXP Communication
+fxp	286	udp	FXP Communication
+k-block	287	tcp	K-BLOCK
+k-block	287	udp	K-BLOCK
+_null_	288-307		Unassigned
+novastorbakcup	308	tcp	Novastor Backup
+novastorbakcup	308	udp	Novastor Backup
+entrusttime	309	tcp	EntrustTime
+entrusttime	309	udp	EntrustTime
+bhmds	310	tcp	bhmds
+bhmds	310	udp	bhmds
+asip-webadmin	311	tcp	AppleShare IP WebAdmin
+asip-webadmin	311	udp	AppleShare IP WebAdmin
+vslmp	312	tcp	VSLMP
+vslmp	312	udp	VSLMP
+magenta-logic	313	tcp	Magenta Logic
+magenta-logic	313	udp	Magenta Logic
+opalis-robot	314	tcp	Opalis Robot
+opalis-robot	314	udp	Opalis Robot
+dpsi	315	tcp	DPSI
+dpsi	315	udp	DPSI
+decauth	316	tcp	decAuth
+decauth	316	udp	decAuth
+zannet	317	tcp	Zannet
+zannet	317	udp	Zannet
+pkix-timestamp	318	tcp	PKIX TimeStamp
+pkix-timestamp	318	udp	PKIX TimeStamp
+ptp-event	319	tcp	PTP Event
+ptp-event	319	udp	PTP Event
+ptp-general	320	tcp	PTP General
+ptp-general	320	udp	PTP General
+pip	321	tcp	PIP
+pip	321	udp	PIP
+rtsps	322	tcp	RTSPS
+rtsps	322	udp	RTSPS
+rpki-rtr	323	tcp	Resource PKI to Router Protocol
+_null_	323	udp	Reserved
+rpki-rtr-tls	324	tcp	Resource PKI to Router Protocol over TLS
+_null_	324	udp	Reserved
+_null_	325-332		Unassigned
+texar	333	tcp	Texar Security Port
+texar	333	udp	Texar Security Port
+_null_	334-343		Unassigned
+pdap	344	tcp	Prospero Data Access Protocol
+pdap	344	udp	Prospero Data Access Protocol
+pawserv	345	tcp	Perf Analysis Workbench
+pawserv	345	udp	Perf Analysis Workbench
+zserv	346	tcp	Zebra server
+zserv	346	udp	Zebra server
+fatserv	347	tcp	Fatmen Server
+fatserv	347	udp	Fatmen Server
+csi-sgwp	348	tcp	Cabletron Management Protocol
+csi-sgwp	348	udp	Cabletron Management Protocol
+mftp	349	tcp	mftp
+mftp	349	udp	mftp
+matip-type-a	350	tcp	MATIP Type A
+matip-type-a	350	udp	MATIP Type A
+matip-type-b	351	tcp	MATIP Type B
+matip-type-b	351	udp	MATIP Type B
+bhoetty	351	tcp	bhoetty
+bhoetty	351	udp	bhoetty
+dtag-ste-sb	352	tcp	DTAG
+dtag-ste-sb	352	udp	DTAG
+bhoedap4	352	tcp	bhoedap4
+bhoedap4	352	udp	bhoedap4
+ndsauth	353	tcp	NDSAUTH
+ndsauth	353	udp	NDSAUTH
+bh611	354	tcp	bh611
+bh611	354	udp	bh611
+datex-asn	355	tcp	DATEX-ASN
+datex-asn	355	udp	DATEX-ASN
+cloanto-net-1	356	tcp	Cloanto Net 1
+cloanto-net-1	356	udp	Cloanto Net 1
+bhevent	357	tcp	bhevent
+bhevent	357	udp	bhevent
+shrinkwrap	358	tcp	Shrinkwrap
+shrinkwrap	358	udp	Shrinkwrap
+nsrmp	359	tcp	Network Security Risk Management Protocol
+nsrmp	359	udp	Network Security Risk Management Protocol
+scoi2odialog	360	tcp	scoi2odialog
+scoi2odialog	360	udp	scoi2odialog
+semantix	361	tcp	Semantix
+semantix	361	udp	Semantix
+srssend	362	tcp	SRS Send
+srssend	362	udp	SRS Send
+rsvp-tunnel	363	tcp	RSVP Tunnel IANA assigned this well-formed service name as a replacement for rsvp_tunnel.
+rsvp_tunnel	363	tcp	RSVP Tunnel
+rsvp-tunnel	363	udp	RSVP Tunnel IANA assigned this well-formed service name as a replacement for rsvp_tunnel.
+rsvp_tunnel	363	udp	RSVP Tunnel
+aurora-cmgr	364	tcp	Aurora CMGR
+aurora-cmgr	364	udp	Aurora CMGR
+dtk	365	tcp	DTK
+dtk	365	udp	DTK
+odmr	366	tcp	ODMR
+odmr	366	udp	ODMR
+mortgageware	367	tcp	MortgageWare
+mortgageware	367	udp	MortgageWare
+qbikgdp	368	tcp	QbikGDP
+qbikgdp	368	udp	QbikGDP
+rpc2portmap	369	tcp	rpc2portmap
+rpc2portmap	369	udp	rpc2portmap
+codaauth2	370	tcp	codaauth2
+codaauth2	370	udp	codaauth2
+clearcase	371	tcp	Clearcase
+clearcase	371	udp	Clearcase
+ulistproc	372	tcp	ListProcessor
+ulistproc	372	udp	ListProcessor
+legent-1	373	tcp	Legent Corporation
+legent-1	373	udp	Legent Corporation
+legent-2	374	tcp	Legent Corporation
+legent-2	374	udp	Legent Corporation
+hassle	375	tcp	Hassle
+hassle	375	udp	Hassle
+nip	376	tcp	Amiga Envoy Network Inquiry Protocol
+nip	376	udp	Amiga Envoy Network Inquiry Protocol
+tnETOS	377	tcp	NEC Corporation
+tnETOS	377	udp	NEC Corporation
+dsETOS	378	tcp	NEC Corporation
+dsETOS	378	udp	NEC Corporation
+is99c	379	tcp	TIA-EIA-IS-99 modem client
+is99c	379	udp	TIA-EIA-IS-99 modem client
+is99s	380	tcp	TIA-EIA-IS-99 modem server
+is99s	380	udp	TIA-EIA-IS-99 modem server
+hp-collector	381	tcp	hp performance data collector
+hp-collector	381	udp	hp performance data collector
+hp-managed-node	382	tcp	hp performance data managed node
+hp-managed-node	382	udp	hp performance data managed node
+hp-alarm-mgr	383	tcp	hp performance data alarm manager
+hp-alarm-mgr	383	udp	hp performance data alarm manager
+arns	384	tcp	A Remote Network Server System
+arns	384	udp	A Remote Network Server System
+ibm-app	385	tcp	IBM Application
+ibm-app	385	udp	IBM Application
+asa	386	tcp	ASA Message Router Object Def.
+asa	386	udp	ASA Message Router Object Def.
+aurp	387	tcp	Appletalk Update-Based Routing Pro.
+aurp	387	udp	Appletalk Update-Based Routing Pro.
+unidata-ldm	388	tcp	Unidata LDM
+unidata-ldm	388	udp	Unidata LDM
+ldap	389	tcp	Lightweight Directory Access Protocol
+ldap	389	udp	Lightweight Directory Access Protocol
+uis	390	tcp	UIS
+uis	390	udp	UIS
+synotics-relay	391	tcp	SynOptics SNMP Relay Port
+synotics-relay	391	udp	SynOptics SNMP Relay Port
+synotics-broker	392	tcp	SynOptics Port Broker Port
+synotics-broker	392	udp	SynOptics Port Broker Port
+meta5	393	tcp	Meta5
+meta5	393	udp	Meta5
+embl-ndt	394	tcp	EMBL Nucleic Data Transfer
+embl-ndt	394	udp	EMBL Nucleic Data Transfer
+netcp	395	tcp	NetScout Control Protocol
+netcp	395	udp	NetScout Control Protocol
+netware-ip	396	tcp	Novell Netware over IP
+netware-ip	396	udp	Novell Netware over IP
+mptn	397	tcp	Multi Protocol Trans. Net.
+mptn	397	udp	Multi Protocol Trans. Net.
+kryptolan	398	tcp	Kryptolan
+kryptolan	398	udp	Kryptolan
+iso-tsap-c2	399	tcp	ISO Transport Class 2 Non-Control over TCP
+iso-tsap-c2	399	udp	ISO Transport Class 2 Non-Control over UDP
+osb-sd	400	tcp	Oracle Secure Backup
+osb-sd	400	udp	Oracle Secure Backup
+ups	401	tcp	Uninterruptible Power Supply
+ups	401	udp	Uninterruptible Power Supply
+genie	402	tcp	Genie Protocol
+genie	402	udp	Genie Protocol
+decap	403	tcp	decap
+decap	403	udp	decap
+nced	404	tcp	nced
+nced	404	udp	nced
+ncld	405	tcp	ncld
+ncld	405	udp	ncld
+imsp	406	tcp	Interactive Mail Support Protocol
+imsp	406	udp	Interactive Mail Support Protocol
+timbuktu	407	tcp	Timbuktu
+timbuktu	407	udp	Timbuktu
+prm-sm	408	tcp	Prospero Resource Manager Sys. Man.
+prm-sm	408	udp	Prospero Resource Manager Sys. Man.
+prm-nm	409	tcp	Prospero Resource Manager Node Man.
+prm-nm	409	udp	Prospero Resource Manager Node Man.
+decladebug	410	tcp	DECLadebug Remote Debug Protocol
+decladebug	410	udp	DECLadebug Remote Debug Protocol
+rmt	411	tcp	Remote MT Protocol
+rmt	411	udp	Remote MT Protocol
+synoptics-trap	412	tcp	Trap Convention Port
+synoptics-trap	412	udp	Trap Convention Port
+smsp	413	tcp	Storage Management Services Protocol
+smsp	413	udp	Storage Management Services Protocol
+infoseek	414	tcp	InfoSeek
+infoseek	414	udp	InfoSeek
+bnet	415	tcp	BNet
+bnet	415	udp	BNet
+silverplatter	416	tcp	Silverplatter
+silverplatter	416	udp	Silverplatter
+onmux	417	tcp	Onmux
+onmux	417	udp	Onmux
+hyper-g	418	tcp	Hyper-G
+hyper-g	418	udp	Hyper-G
+ariel1	419	tcp	Ariel 1
+ariel1	419	udp	Ariel 1
+smpte	420	tcp	SMPTE
+smpte	420	udp	SMPTE
+ariel2	421	tcp	Ariel 2
+ariel2	421	udp	Ariel 2
+ariel3	422	tcp	Ariel 3
+ariel3	422	udp	Ariel 3
+opc-job-start	423	tcp	IBM Operations Planning and Control Start
+opc-job-start	423	udp	IBM Operations Planning and Control Start
+opc-job-track	424	tcp	IBM Operations Planning and Control Track
+opc-job-track	424	udp	IBM Operations Planning and Control Track
+icad-el	425	tcp	ICAD
+icad-el	425	udp	ICAD
+smartsdp	426	tcp	smartsdp
+smartsdp	426	udp	smartsdp
+svrloc	427	tcp	Server Location
+svrloc	427	udp	Server Location
+ocs-cmu	428	tcp	OCS_CMU IANA assigned this well-formed service name as a replacement for ocs_cmu.
+ocs_cmu	428	tcp	OCS_CMU
+ocs-cmu	428	udp	OCS_CMU IANA assigned this well-formed service name as a replacement for ocs_cmu.
+ocs_cmu	428	udp	OCS_CMU
+ocs-amu	429	tcp	OCS_AMU IANA assigned this well-formed service name as a replacement for ocs_amu.
+ocs_amu	429	tcp	OCS_AMU
+ocs-amu	429	udp	OCS_AMU IANA assigned this well-formed service name as a replacement for ocs_amu.
+ocs_amu	429	udp	OCS_AMU
+utmpsd	430	tcp	UTMPSD
+utmpsd	430	udp	UTMPSD
+utmpcd	431	tcp	UTMPCD
+utmpcd	431	udp	UTMPCD
+iasd	432	tcp	IASD
+iasd	432	udp	IASD
+nnsp	433	tcp	NNTP for transit servers [NNSP]
+nnsp	433	udp	NNTP for transit servers [NNSP]
+mobileip-agent	434	tcp	MobileIP-Agent
+mobileip-agent	434	udp	MobileIP-Agent
+mobilip-mn	435	tcp	MobilIP-MN
+mobilip-mn	435	udp	MobilIP-MN
+dna-cml	436	tcp	DNA-CML
+dna-cml	436	udp	DNA-CML
+comscm	437	tcp	comscm
+comscm	437	udp	comscm
+dsfgw	438	tcp	dsfgw
+dsfgw	438	udp	dsfgw
+dasp	439	tcp	dasp
+dasp	439	udp	dasp
+sgcp	440	tcp	sgcp
+sgcp	440	udp	sgcp
+decvms-sysmgt	441	tcp	decvms-sysmgt
+decvms-sysmgt	441	udp	decvms-sysmgt
+cvc-hostd	442	tcp	cvc_hostd IANA assigned this well-formed service name as a replacement for cvc_hostd.
+cvc_hostd	442	tcp	cvc_hostd
+cvc-hostd	442	udp	cvc_hostd IANA assigned this well-formed service name as a replacement for cvc_hostd.
+cvc_hostd	442	udp	cvc_hostd
+https	443	tcp	http protocol over TLS-SSL
+https	443	udp	http protocol over TLS-SSL
+https	443	sctp	HTTPS
+snpp	444	tcp	Simple Network Paging Protocol
+snpp	444	udp	Simple Network Paging Protocol
+microsoft-ds	445	tcp	Microsoft-DS
+microsoft-ds	445	udp	Microsoft-DS
+ddm-rdb	446	tcp	DDM-Remote Relational Database Access
+ddm-rdb	446	udp	DDM-Remote Relational Database Access
+ddm-dfm	447	tcp	DDM-Distributed File Management
+ddm-dfm	447	udp	DDM-Distributed File Management
+ddm-ssl	448	tcp	DDM-Remote DB Access Using Secure Sockets
+ddm-ssl	448	udp	DDM-Remote DB Access Using Secure Sockets
+as-servermap	449	tcp	AS Server Mapper
+as-servermap	449	udp	AS Server Mapper
+tserver	450	tcp	Computer Supported Telecomunication Applications
+tserver	450	udp	Computer Supported Telecomunication Applications
+sfs-smp-net	451	tcp	Cray Network Semaphore server
+sfs-smp-net	451	udp	Cray Network Semaphore server
+sfs-config	452	tcp	Cray SFS config server
+sfs-config	452	udp	Cray SFS config server
+creativeserver	453	tcp	CreativeServer
+creativeserver	453	udp	CreativeServer
+contentserver	454	tcp	ContentServer
+contentserver	454	udp	ContentServer
+creativepartnr	455	tcp	CreativePartnr
+creativepartnr	455	udp	CreativePartnr
+macon-tcp	456	tcp	macon-tcp
+macon-udp	456	udp	macon-udp
+scohelp	457	tcp	scohelp
+scohelp	457	udp	scohelp
+appleqtc	458	tcp	apple quick time
+appleqtc	458	udp	apple quick time
+ampr-rcmd	459	tcp	ampr-rcmd
+ampr-rcmd	459	udp	ampr-rcmd
+skronk	460	tcp	skronk
+skronk	460	udp	skronk
+datasurfsrv	461	tcp	DataRampSrv
+datasurfsrv	461	udp	DataRampSrv
+datasurfsrvsec	462	tcp	DataRampSrvSec
+datasurfsrvsec	462	udp	DataRampSrvSec
+alpes	463	tcp	alpes
+alpes	463	udp	alpes
+kpasswd	464	tcp	kpasswd
+kpasswd	464	udp	kpasswd
+urd	465	tcp	URL Rendezvous Directory for SSM
+submissions	465	tcp	Message Submission over TLS protocol
+igmpv3lite	465	udp	IGMP over UDP for SSM
+digital-vrc	466	tcp	digital-vrc
+digital-vrc	466	udp	digital-vrc
+mylex-mapd	467	tcp	mylex-mapd
+mylex-mapd	467	udp	mylex-mapd
+photuris	468	tcp	proturis
+photuris	468	udp	proturis
+rcp	469	tcp	Radio Control Protocol
+rcp	469	udp	Radio Control Protocol
+scx-proxy	470	tcp	scx-proxy
+scx-proxy	470	udp	scx-proxy
+mondex	471	tcp	Mondex
+mondex	471	udp	Mondex
+ljk-login	472	tcp	ljk-login
+ljk-login	472	udp	ljk-login
+hybrid-pop	473	tcp	hybrid-pop
+hybrid-pop	473	udp	hybrid-pop
+tn-tl-w1	474	tcp	tn-tl-w1
+tn-tl-w2	474	udp	tn-tl-w2
+tcpnethaspsrv	475	tcp	tcpnethaspsrv
+tcpnethaspsrv	475	udp	tcpnethaspsrv
+tn-tl-fd1	476	tcp	tn-tl-fd1
+tn-tl-fd1	476	udp	tn-tl-fd1
+ss7ns	477	tcp	ss7ns
+ss7ns	477	udp	ss7ns
+spsc	478	tcp	spsc
+spsc	478	udp	spsc
+iafserver	479	tcp	iafserver
+iafserver	479	udp	iafserver
+iafdbase	480	tcp	iafdbase
+iafdbase	480	udp	iafdbase
+ph	481	tcp	Ph service
+ph	481	udp	Ph service
+bgs-nsi	482	tcp	bgs-nsi
+bgs-nsi	482	udp	bgs-nsi
+ulpnet	483	tcp	ulpnet
+ulpnet	483	udp	ulpnet
+integra-sme	484	tcp	Integra Software Management Environment
+integra-sme	484	udp	Integra Software Management Environment
+powerburst	485	tcp	Air Soft Power Burst
+powerburst	485	udp	Air Soft Power Burst
+avian	486	tcp	avian
+avian	486	udp	avian
+saft	487	tcp	saft Simple Asynchronous File Transfer
+saft	487	udp	saft Simple Asynchronous File Transfer
+gss-http	488	tcp	gss-http
+gss-http	488	udp	gss-http
+nest-protocol	489	tcp	nest-protocol
+nest-protocol	489	udp	nest-protocol
+micom-pfs	490	tcp	micom-pfs
+micom-pfs	490	udp	micom-pfs
+go-login	491	tcp	go-login
+go-login	491	udp	go-login
+ticf-1	492	tcp	Transport Independent Convergence for FNA
+ticf-1	492	udp	Transport Independent Convergence for FNA
+ticf-2	493	tcp	Transport Independent Convergence for FNA
+ticf-2	493	udp	Transport Independent Convergence for FNA
+pov-ray	494	tcp	POV-Ray
+pov-ray	494	udp	POV-Ray
+intecourier	495	tcp	intecourier
+intecourier	495	udp	intecourier
+pim-rp-disc	496	tcp	PIM-RP-DISC
+pim-rp-disc	496	udp	PIM-RP-DISC
+retrospect	497	tcp	Retrospect backup and restore service
+retrospect	497	udp	Retrospect backup and restore service
+siam	498	tcp	siam
+siam	498	udp	siam
+iso-ill	499	tcp	ISO ILL Protocol
+iso-ill	499	udp	ISO ILL Protocol
+isakmp	500	tcp	isakmp
+isakmp	500	udp	isakmp
+stmf	501	tcp	STMF
+stmf	501	udp	STMF

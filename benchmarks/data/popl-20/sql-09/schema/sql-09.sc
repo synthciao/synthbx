@@ -1,0 +1,5 @@
+*treat(status)
+*untreat(status)
+*input1(id,country,status)
++inv(country)
+ans(id,country,status)

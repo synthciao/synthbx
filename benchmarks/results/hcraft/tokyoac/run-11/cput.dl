@@ -1,0 +1,145 @@
+.type sid <: symbol
+.type name <: symbol
+.type city <: symbol
+.type active <: symbol
+.type cid <: symbol
+
+.decl staffs(v0: sid, v1: name, v2: city, v3: active)
+.decl customers(v0: cid, v1: name, v2: city)
+.decl tokyoac(v0: name)
+.decl M__1(v0: sid, v1: name, v2: city, v3: active)
+.decl M__2(v0: cid, v1: name, v2: city)
+.decl tokyoac__0_(v0: name)
+.decl tokyoac__1_(v0: name)
+.decl staffs_update(v0: sid, v1: name, v2: city, v3: active)
+.decl staffs_sdt_insert(v0: sid, v1: name, v2: city, v3: active)
+.decl staffs_sdt_delete(v0: sid, v1: name, v2: city, v3: active)
+.decl customers_update(v0: cid, v1: name, v2: city)
+.decl customers_sdt_insert(v0: cid, v1: name, v2: city)
+.decl customers_sdt_delete(v0: cid, v1: name, v2: city)
+.decl tokyoac_update(v0: name)
+.decl tokyoac_vdt_insert(v0: name)
+.decl tokyoac_vdt_delete(v0: name)
+.decl M__1_update(v0: sid, v1: name, v2: city, v3: active)
+.decl M__1_sdt_insert(v0: sid, v1: name, v2: city, v3: active)
+.decl M__1_sdt_delete(v0: sid, v1: name, v2: city, v3: active)
+.decl M__1_vdt_insert(v0: sid, v1: name, v2: city, v3: active)
+.decl M__1_vdt_delete(v0: sid, v1: name, v2: city, v3: active)
+.decl M__2_update(v0: cid, v1: name, v2: city)
+.decl M__2_sdt_insert(v0: cid, v1: name, v2: city)
+.decl M__2_sdt_delete(v0: cid, v1: name, v2: city)
+.decl M__2_vdt_insert(v0: cid, v1: name, v2: city)
+.decl M__2_vdt_delete(v0: cid, v1: name, v2: city)
+.decl tokyoac__0__update(v0: name)
+.decl tokyoac__0__sdt_insert(v0: name)
+.decl tokyoac__0__sdt_delete(v0: name)
+.decl tokyoac__0__vdt_insert(v0: name)
+.decl tokyoac__0__vdt_delete(v0: name)
+.decl tokyoac__1__update(v0: name)
+.decl tokyoac__1__sdt_insert(v0: name)
+.decl tokyoac__1__sdt_delete(v0: name)
+.decl tokyoac__1__vdt_insert(v0: name)
+.decl tokyoac__1__vdt_delete(v0: name)
+.decl Au_U_tokyoac_tokyoac__0_(v0: name)
+.decl Au_U_tokyoac_tokyoac__1_(v0: name)
+.decl Au_P_0_tokyoac__0__M__1(v0: sid, v1: city, v2: active)
+.decl Au_P_0_tokyoac__1__M__2(v0: cid, v1: city)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input staffs
+.input customers
+.output tokyoac
+.output M__1
+.output M__2
+.output tokyoac__0_
+.output tokyoac__1_
+.output staffs_update
+.output staffs_sdt_insert
+.output staffs_sdt_delete
+.output customers_update
+.output customers_sdt_insert
+.output customers_sdt_delete
+.input tokyoac_update
+.output tokyoac_vdt_insert
+.output tokyoac_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output tokyoac__0__update
+.output tokyoac__0__sdt_insert
+.output tokyoac__0__sdt_delete
+.output tokyoac__0__vdt_insert
+.output tokyoac__0__vdt_delete
+.output tokyoac__1__update
+.output tokyoac__1__sdt_insert
+.output tokyoac__1__sdt_delete
+.output tokyoac__1__vdt_insert
+.output tokyoac__1__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3) :- staffs(v0, v1, v2, v3), v2 = "Tokyo", v3 = "1".
+M__2(v0, v1, v2) :- customers(v0, v1, v2), v2 = "Tokyo".
+tokyoac(v0) :- tokyoac__0_(v0); tokyoac__1_(v0).
+tokyoac__0_(v1) :- M__1(v0, v1, v2, v3).
+tokyoac__1_(v1) :- M__2(v0, v1, v2).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+tokyoac__0__vdt_delete(v0) :- tokyoac__0_(v0), !tokyoac__0__update(v0).
+tokyoac__0__vdt_insert(v0) :- tokyoac__0__update(v0), !tokyoac__0_(v0).
+tokyoac__1__vdt_delete(v0) :- tokyoac__1_(v0), !tokyoac__1__update(v0).
+tokyoac__1__vdt_insert(v0) :- tokyoac__1__update(v0), !tokyoac__1_(v0).
+tokyoac_vdt_delete(v0) :- tokyoac(v0), !tokyoac_update(v0).
+tokyoac_vdt_insert(v0) :- tokyoac_update(v0), !tokyoac(v0).
+
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+customers_update(v0, v1, v2) :- customers(v0, v1, v2), !customers_sdt_delete(v0, v1, v2); customers_sdt_insert(v0, v1, v2).
+staffs_update(v0, v1, v2, v3) :- staffs(v0, v1, v2, v3), !staffs_sdt_delete(v0, v1, v2, v3); staffs_sdt_insert(v0, v1, v2, v3).
+tokyoac__0__update(v0) :- tokyoac__0_(v0), !tokyoac__0__sdt_delete(v0); tokyoac__0__sdt_insert(v0).
+tokyoac__1__update(v0) :- tokyoac__1_(v0), !tokyoac__1__sdt_delete(v0); tokyoac__1__sdt_insert(v0).
+
+Fr__("_rejected_") :- M__1(_, _, _, v3), v3 != "1".
+Fr__("_rejected_") :- M__1(_, _, v2, _), v2 != "Tokyo".
+Fr__("_rejected_") :- M__1_update(_, _, _, v3), v3 != "1".
+Fr__("_rejected_") :- M__1_update(_, _, v2, _), v2 != "Tokyo".
+Fr__("_rejected_") :- M__2(_, _, v2), v2 != "Tokyo".
+Fr__("_rejected_") :- M__2_update(_, _, v2), v2 != "Tokyo".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3) :- tokyoac__0__vdt_delete(v1), M__1(v0, v1, v2, v3), Rule(14).
+M__1_sdt_insert(v0, v1, v2, v3) :- tokyoac__0__vdt_insert(v1), Au_P_0_tokyoac__0__M__1(v0, v2, v3), !M__1(_, v1, _, _), Rule(15).
+M__2_sdt_delete(v0, v1, v2) :- tokyoac__1__vdt_delete(v1), M__2(v0, v1, v2), Rule(16).
+M__2_sdt_insert(v0, v1, v2) :- tokyoac__1__vdt_insert(v1), Au_P_0_tokyoac__1__M__2(v0, v2), !M__2(_, v1, _), Rule(17).
+customers_sdt_delete(v0, v1, v2) :- M__2_vdt_delete(v0, v1, v2), customers(v0, v1, v2), Rule(2).
+customers_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0, v1, v2), !customers(v0, v1, v2), Rule(3).
+staffs_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v0, v1, v2, v3), staffs(v0, v1, v2, v3), Rule(0).
+staffs_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1, v2, v3), !staffs(v0, v1, v2, v3), Rule(1).
+tokyoac__0__sdt_delete(v0) :- tokyoac_vdt_delete(v0), tokyoac__0_(v0), Rule(4).
+tokyoac__0__sdt_insert(v0) :- tokyoac_vdt_insert(v0), !Au_U_tokyoac_tokyoac__0_(v0), !tokyoac__0_(v0), Rule(7).
+tokyoac__0__sdt_insert(v0) :- tokyoac_vdt_insert(v0), !Au_U_tokyoac_tokyoac__1_(v0), !tokyoac__0_(v0), Rule(9).
+tokyoac__0__sdt_insert(v0) :- tokyoac_vdt_insert(v0), Au_U_tokyoac_tokyoac__0_(v0), !tokyoac__0_(v0), Rule(6).
+tokyoac__0__sdt_insert(v0) :- tokyoac_vdt_insert(v0), Au_U_tokyoac_tokyoac__1_(v0), !tokyoac__0_(v0), Rule(8).
+tokyoac__1__sdt_delete(v0) :- tokyoac_vdt_delete(v0), tokyoac__1_(v0), Rule(5).
+tokyoac__1__sdt_insert(v0) :- tokyoac_vdt_insert(v0), !Au_U_tokyoac_tokyoac__0_(v0), !tokyoac__1_(v0), Rule(11).
+tokyoac__1__sdt_insert(v0) :- tokyoac_vdt_insert(v0), !Au_U_tokyoac_tokyoac__1_(v0), !tokyoac__1_(v0), Rule(13).
+tokyoac__1__sdt_insert(v0) :- tokyoac_vdt_insert(v0), Au_U_tokyoac_tokyoac__0_(v0), !tokyoac__1_(v0), Rule(10).
+tokyoac__1__sdt_insert(v0) :- tokyoac_vdt_insert(v0), Au_U_tokyoac_tokyoac__1_(v0), !tokyoac__1_(v0), Rule(12).
+
+Au_U_tokyoac_tokyoac__0_("Shin").
+Au_U_tokyoac_tokyoac__1_("Yuri").
+Au_P_0_tokyoac__0__M__1("14", "Tokyo", "1").
+Au_P_0_tokyoac__1__M__2("105", "Tokyo").

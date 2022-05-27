@@ -1,0 +1,76 @@
+.type uid <: symbol
+.type name <: symbol
+.type username <: symbol
+.type email <: symbol
+.type gr <: symbol
+.type pgr <: symbol
+.type gtitle <: symbol
+.type postid <: symbol
+.type title <: symbol
+.type state <: symbol
+.type access <: symbol
+
+.decl users(v0: uid, v1: name, v2: username, v3: email)
+.decl map(v0: uid, v1: gr)
+.decl groups(v0: gr, v1: pgr, v2: gtitle)
+.decl post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl admin_post_cms(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent(v0: uid, v1: gtitle)
+.decl inv0_users(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_map(v0: uid, v1: gr)
+.decl inv0_groups(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl M__1(v0: uid, v1: username)
+.decl M__2(v0: postid, v1: uid, v2: access)
+.decl M__3(v0: postid, v1: access, v2: uid, v3: username)
+.decl M__4(v0: postid, v1: gtitle, v2: access, v3: uid, v4: username)
+.decl M__5(v0: uid, v1: username)
+.decl M__6(v0: postid, v1: uid, v2: access)
+.decl M__7(v0: postid, v1: access, v2: uid, v3: username)
+.decl M__8(v0: postid, v1: gtitle, v2: access, v3: uid, v4: username)
+.decl M__9(v0: uid, v1: username)
+.decl M__10(v0: postid, v1: uid, v2: access)
+.decl M__11(v0: postid, v1: access, v2: uid, v3: username)
+.decl M__12(v0: postid, v1: gtitle, v2: access, v3: uid, v4: username)
+.decl M__13(v0: gr, v1: gtitle)
+.decl M__14(v0: gtitle, v1: gr, v2: uid)
+.decl admin_post_cms__0_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__2_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__3_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent_0__cp(v0: uid, v1: gtitle)
+.decl invent_1__cp(v0: uid, v1: gtitle)
+.decl invent_2__cp(v0: uid, v1: gtitle)
+
+.input users
+.input map
+.input groups
+.input post
+.output admin_post_cms
+
+M__1(v0, v2) :- inv0_users(v0, v1, v2, v3).
+M__10(v0, v1, v4) :- post(v0, v1, v2, v3, v4).
+M__11(v0, v1, v2, v3) :- M__9(v2, v3), M__10(v0, v2, v1).
+M__12(v0, v1, v2, v3, v4) :- M__11(v0, v2, v3, v4), invent_1__cp(v3, v1).
+M__13(v0, v2) :- groups(v0, v1, v2).
+M__14(v0, v1, v2) :- M__13(v1, v0), inv0_map(v2, v1).
+M__2(v0, v1, v4) :- inv0_post(v0, v1, v2, v3, v4).
+M__3(v0, v1, v2, v3) :- M__1(v2, v3), M__2(v0, v2, v1).
+M__4(v0, v1, v2, v3, v4) :- M__3(v0, v2, v3, v4), invent_2__cp(v3, v1).
+M__5(v0, v2) :- users(v0, v1, v2, v3).
+M__6(v0, v1, v4) :- inv0_post(v0, v1, v2, v3, v4).
+M__7(v0, v1, v2, v3) :- M__5(v2, v3), M__6(v0, v2, v1).
+M__8(v0, v1, v2, v3, v4) :- M__7(v0, v2, v3, v4), invent_0__cp(v3, v1).
+M__9(v0, v2) :- users(v0, v1, v2, v3).
+admin_post_cms(v0, v1, v2, v3) :- admin_post_cms__2_(v0, v1, v2, v3); admin_post_cms__3_(v0, v1, v2, v3).
+admin_post_cms__0_(v0, v1, v4, v2) :- M__4(v0, v1, v2, v3, v4).
+admin_post_cms__1_(v0, v1, v4, v2) :- M__8(v0, v1, v2, v3, v4).
+admin_post_cms__2_(v0, v1, v4, v2) :- M__12(v0, v1, v2, v3, v4).
+admin_post_cms__3_(v0, v1, v2, v3) :- admin_post_cms__0_(v0, v1, v2, v3); admin_post_cms__1_(v0, v1, v2, v3).
+inv0_map(v0, v1) :- map(v0, v1), v1 = "7".
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "NoTitle".
+inv0_users(v0, v1, v2, v3) :- users(v0, v1, v2, v3), v3 = "jkyoATjoomla.site".
+invent(v2, v0) :- M__14(v0, v1, v2).
+invent_0__cp(v0, v1) :- invent(v0, v1).
+invent_1__cp(v0, v1) :- invent(v0, v1).
+invent_2__cp(v0, v1) :- invent(v0, v1).

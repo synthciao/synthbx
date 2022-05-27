@@ -1,0 +1,140 @@
+.type username <: symbol
+.type uid <: symbol
+.type gid <: symbol
+.type info <: symbol
+.type homedir <: symbol
+.type shell <: symbol
+.type tty <: symbol
+.type day <: symbol
+.type date <: symbol
+
+.decl user(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged(v0: username, v1: tty, v2: day, v3: date)
+.decl status(v0: tty)
+.decl logging(v0: username, v1: uid, v2: info, v3: date)
+.decl invent(v0: username, v1: tty, v2: date)
+.decl inv0_logged(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_status(v0: tty)
+.decl Rule(v0: number)
+
+.input user
+.input logged
+.input status
+.output logging
+.output invent
+.output inv0_logged
+.output inv0_status
+.input Rule
+
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "console", Rule(1).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "console", v2 = "Sun", Rule(5).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys000", Rule(2).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys000", v2 = "Sun", Rule(6).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys001", Rule(0).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys001", v2 = "Sun", Rule(4).
+inv0_logged(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v2 = "Sun", Rule(3).
+inv0_status(v0) :- status(v0), v0 = "console", Rule(8).
+inv0_status(v0) :- status(v0), v0 = "ttys000", Rule(9).
+inv0_status(v0) :- status(v0), v0 = "ttys001", Rule(7).
+invent(v3, v2, v0) :- inv0_logged(v3, v2, v1, v0), !inv0_status(v2), Rule(83).
+invent(v3, v2, v0) :- inv0_logged(v3, v2, v1, v0), !status(v2), Rule(82).
+invent(v3, v2, v0) :- inv0_logged(v3, v2, v1, v0), !user(v3, _, _, _, _, _), Rule(81).
+invent(v3, v2, v0) :- inv0_logged(v3, v2, v1, v0), Rule(80).
+invent(v3, v2, v0) :- logged(v3, v2, v1, v0), !inv0_status(v2), Rule(79).
+invent(v3, v2, v0) :- logged(v3, v2, v1, v0), !status(v2), Rule(78).
+invent(v3, v2, v0) :- logged(v3, v2, v1, v0), !user(v3, _, _, _, _, _), Rule(77).
+invent(v3, v2, v0) :- logged(v3, v2, v1, v0), Rule(76).
+invent(v4, v2, v0) :- inv0_logged(v4, v2, v1, v0), inv0_status(v2), !user(v4, _, _, _, _, _), Rule(110).
+invent(v4, v2, v0) :- inv0_logged(v4, v2, v1, v0), inv0_status(v2), Rule(108).
+invent(v4, v2, v0) :- logged(v4, v2, v1, v0), inv0_status(v2), !user(v4, _, _, _, _, _), Rule(102).
+invent(v4, v2, v0) :- logged(v4, v2, v1, v0), inv0_status(v2), Rule(100).
+invent(v4, v2, v0) :- logged(v4, v2, v1, v0), status(v2), !user(v4, _, _, _, _, _), Rule(98).
+invent(v4, v2, v0) :- logged(v4, v2, v1, v0), status(v2), Rule(96).
+invent(v4, v2, v0) :- status(v2), inv0_logged(v4, v2, v1, v0), !user(v4, _, _, _, _, _), Rule(106).
+invent(v4, v2, v0) :- status(v2), inv0_logged(v4, v2, v1, v0), Rule(104).
+invent(v4, v3, v0) :- inv0_logged(v4, v3, v1, v0), inv0_status(v3), !user(v4, _, _, _, _, _), Rule(111).
+invent(v4, v3, v0) :- inv0_logged(v4, v3, v1, v0), inv0_status(v3), Rule(109).
+invent(v4, v3, v0) :- logged(v4, v3, v1, v0), inv0_status(v3), !user(v4, _, _, _, _, _), Rule(103).
+invent(v4, v3, v0) :- logged(v4, v3, v1, v0), inv0_status(v3), Rule(101).
+invent(v4, v3, v0) :- logged(v4, v3, v1, v0), status(v3), !user(v4, _, _, _, _, _), Rule(99).
+invent(v4, v3, v0) :- logged(v4, v3, v1, v0), status(v3), Rule(97).
+invent(v4, v3, v0) :- status(v3), inv0_logged(v4, v3, v1, v0), !user(v4, _, _, _, _, _), Rule(107).
+invent(v4, v3, v0) :- status(v3), inv0_logged(v4, v3, v1, v0), Rule(105).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !inv0_status(v7), Rule(94).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !status(v7), Rule(92).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), Rule(90).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !inv0_status(v7), Rule(88).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !status(v7), Rule(86).
+invent(v8, v7, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), Rule(84).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !inv0_status(v7), Rule(95).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !status(v7), Rule(93).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), Rule(91).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !inv0_status(v7), Rule(89).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !status(v7), Rule(87).
+invent(v9, v7, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), Rule(85).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(_, _, _, _), Rule(69).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(_, _, _, v5), Rule(62).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(_, v6, _, _), Rule(63).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(_, v6, _, v5), Rule(64).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(v7, _, _, _), Rule(65).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(v7, _, _, v5), Rule(66).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(v7, v6, _, _), Rule(67).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_logged(v7, v6, _, v5), Rule(68).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !inv0_status(v6), Rule(74).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(_, _, _, _), Rule(55).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(_, _, _, v5), Rule(48).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(_, v6, _, _), Rule(49).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(_, v6, _, v5), Rule(50).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(v7, _, _, _), Rule(51).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(v7, _, _, v5), Rule(52).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(v7, v6, _, _), Rule(53).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !logged(v7, v6, _, v5), Rule(54).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), !status(v6), Rule(60).
+logging(v7, v4, v1, v5) :- user(v7, v4, v0, v1, v2, v3), invent(v7, v6, v5), Rule(46).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !inv0_logged(_, _, _, _), Rule(73).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !inv0_logged(_, _, _, v5), Rule(70).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !inv0_logged(_, v6, _, _), Rule(71).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !inv0_logged(_, v6, _, v5), Rule(72).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !inv0_status(v6), Rule(75).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !logged(_, _, _, _), Rule(59).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !logged(_, _, _, v5), Rule(56).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !logged(_, v6, _, _), Rule(57).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !logged(_, v6, _, v5), Rule(58).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), !status(v6), Rule(61).
+logging(v8, v4, v1, v5) :- user(v8, v4, v0, v1, v2, v3), invent(v8, v6, v5), Rule(47).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !inv0_status(v7), Rule(32).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(_, _, _), Rule(41).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(_, _, v6), Rule(34).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(_, v7, _), Rule(35).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(_, v7, v6), Rule(36).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(v8, _, _), Rule(37).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(v8, _, v6), Rule(38).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(v8, v7, _), Rule(39).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !invent(v8, v7, v6), Rule(40).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), !status(v7), Rule(30).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), inv0_logged(v8, v7, v4, v6), Rule(28).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !inv0_status(v7), Rule(14).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(_, _, _), Rule(23).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(_, _, v6), Rule(16).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(_, v7, _), Rule(17).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(_, v7, v6), Rule(18).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(v8, _, _), Rule(19).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(v8, _, v6), Rule(20).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(v8, v7, _), Rule(21).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !invent(v8, v7, v6), Rule(22).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), !status(v7), Rule(12).
+logging(v8, v5, v1, v6) :- user(v8, v5, v0, v1, v2, v3), logged(v8, v7, v4, v6), Rule(10).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !inv0_status(v7), Rule(33).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !invent(_, _, _), Rule(45).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !invent(_, _, v6), Rule(42).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !invent(_, v7, _), Rule(43).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !invent(_, v7, v6), Rule(44).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), !status(v7), Rule(31).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), inv0_logged(v9, v7, v4, v6), Rule(29).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !inv0_status(v7), Rule(15).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !invent(_, _, _), Rule(27).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !invent(_, _, v6), Rule(24).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !invent(_, v7, _), Rule(25).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !invent(_, v7, v6), Rule(26).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), !status(v7), Rule(13).
+logging(v9, v5, v1, v6) :- user(v9, v5, v0, v1, v2, v3), logged(v9, v7, v4, v6), Rule(11).

@@ -1,0 +1,23 @@
+.type sid <: symbol
+.type name <: symbol
+.type city <: symbol
+.type active <: symbol
+.type cid <: symbol
+
+.decl staffs(v0: sid, v1: name, v2: city, v3: active)
+.decl customers(v0: cid, v1: name, v2: city)
+.decl tokyoac(v0: name)
+.decl M__1(v0: sid, v1: name, v2: city, v3: active)
+.decl M__2(v0: cid, v1: name, v2: city)
+.decl tokyoac__0_(v0: name)
+.decl tokyoac__1_(v0: name)
+
+.input staffs
+.input customers
+.output tokyoac
+
+M__1(v0, v1, v2, v3) :- staffs(v0, v1, v2, v3), v2 = "Tokyo", v3 = "1".
+M__2(v0, v1, v2) :- customers(v0, v1, v2), v2 = "Tokyo".
+tokyoac(v0) :- tokyoac__0_(v0); tokyoac__1_(v0).
+tokyoac__0_(v1) :- M__1(v0, v1, v2, v3).
+tokyoac__1_(v1) :- M__2(v0, v1, v2).

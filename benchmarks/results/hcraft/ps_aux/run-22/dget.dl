@@ -1,0 +1,21 @@
+.type user <: symbol
+.type pid <: symbol
+.type cpu <: symbol
+.type mem <: symbol
+.type vsz <: symbol
+.type rss <: symbol
+.type tt <: symbol
+.type stat <: symbol
+.type started <: symbol
+.type time <: symbol
+.type command <: symbol
+
+.decl ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_aux(v0: user, v1: pid, v2: command)
+.decl inv0_ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+
+.input ps
+.output ps_aux
+
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob".
+ps_aux(v0, v1, v10) :- inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).

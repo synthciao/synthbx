@@ -1,0 +1,15 @@
+.type sid <: symbol
+.type sname <: symbol
+.type login <: symbol
+.type age <: symbol
+.type gpa <: symbol
+
+.decl students(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl goodstudents(v0: sid, v1: gpa)
+.decl M__1(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+
+.input students
+.output goodstudents
+
+M__1(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), v4 > "3.0".
+goodstudents(v0, v4) :- M__1(v0, v1, v2, v3, v4).

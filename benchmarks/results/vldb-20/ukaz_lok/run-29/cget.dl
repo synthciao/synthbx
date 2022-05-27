@@ -1,0 +1,17 @@
+.type KOD_LOK <: symbol
+.type NAZEV <: symbol
+.type KATASTR <: symbol
+.type PRESNOST <: symbol
+.type SIRKA <: symbol
+.type DELKA <: symbol
+
+.decl lokalita(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST)
+.input lokalita
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl ukaz_lok(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST, v4: SIRKA, v5: DELKA)
+.output ukaz_lok
+
+ukaz_lok(v0, v1, v2, v3, v4, v5) :- lokalita(v0, v1, v2, v3), v4 = "50.0", v5 = "14.0", Rule(1).

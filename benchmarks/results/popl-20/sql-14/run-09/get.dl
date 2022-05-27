@@ -1,0 +1,22 @@
+.type Plan
+.type Attributes
+.type Id
+.type Value
+
+
+.decl active(v0: Attributes)
+.input active
+.decl correct(v0: Value)
+.input correct
+.decl input1(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.input input1
+
+.decl inv(v0: Plan)
+.output inv
+
+.decl ans(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.output ans
+
+inv(v2) :- correct(v0), input1(v1, v2, v3, v0).
+ans(v1, v2, v3, v0) :- correct(v0), input1(v1, v2, v3, v0).
+ans(v0, v1, v2, v3) :- input1(v0, v1, v2, v3), inv(v1).

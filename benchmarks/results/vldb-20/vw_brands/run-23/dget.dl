@@ -1,0 +1,21 @@
+.type BRAND_ID <: symbol
+.type BRAND_NAME <: symbol
+.type APPROVAL_STATUS <: symbol
+
+.decl brands(v0: BRAND_ID, v1: BRAND_NAME)
+.decl brand_approvals(v0: BRAND_ID, v1: BRAND_NAME)
+.decl vw_brands(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl M__1(v0: BRAND_NAME)
+.decl M__2(v0: BRAND_NAME)
+.decl vw_brands__0_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+.decl vw_brands__1_(v0: BRAND_NAME, v1: APPROVAL_STATUS)
+
+.input brands
+.input brand_approvals
+.output vw_brands
+
+M__1(v1) :- brands(v0, v1).
+M__2(v1) :- brand_approvals(v0, v1).
+vw_brands(v0, v1) :- vw_brands__0_(v0, v1); vw_brands__1_(v0, v1).
+vw_brands__0_(v0, v1) :- M__1(v0), v1 = "Approved".
+vw_brands__1_(v0, v1) :- M__2(v0), v1 = "Pending Approval".

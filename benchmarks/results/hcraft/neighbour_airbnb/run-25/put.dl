@@ -1,0 +1,149 @@
+.type id <: symbol
+.type name <: symbol
+.type host_id <: symbol
+.type host_name <: symbol
+.type neighbourhood <: symbol
+.type room_type <: symbol
+.type price <: symbol
+.type minimum_nights <: symbol
+
+.decl listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl neighbour_airbnb(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl inv0_listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl listing_update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl listing_sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl listing_sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl neighbour_airbnb_update(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl neighbour_airbnb_vdt_insert(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl neighbour_airbnb_vdt_delete(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl inv0_listing_update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing_sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing_sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing_vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing_vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__0__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__1__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__2__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__3__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__4__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5__update(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5__sdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5__sdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5__vdt_insert(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl inv0_listing__5__vdt_delete(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Au_U_inv0_listing_inv0_listing__4_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Au_U_inv0_listing_inv0_listing__5_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Au_U_inv0_listing__5__inv0_listing__2_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Au_U_inv0_listing__5__inv0_listing__3_(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Au_P_0_neighbour_airbnb_inv0_listing(v0: name, v1: host_id, v2: host_name, v3: price)
+.decl Au_P_1_neighbour_airbnb_inv0_listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input listing
+.output listing_update
+.input neighbour_airbnb_update
+.output Fr__
+.output Fv__
+
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "Unk".
+inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "4".
+inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v5 = "Private room".
+inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku".
+inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7).
+neighbour_airbnb(v0, v4, v5, v7) :- inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7).
+
+inv0_listing__0__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__0__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__0__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__1__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__1__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__2__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__2__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__2__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__3__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__3__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__3__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__3__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__4__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__4__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__5__update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5__update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing_update(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing_update(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7).
+neighbour_airbnb_vdt_delete(v0, v1, v2, v3) :- neighbour_airbnb(v0, v1, v2, v3), !neighbour_airbnb_update(v0, v1, v2, v3).
+neighbour_airbnb_vdt_insert(v0, v1, v2, v3) :- neighbour_airbnb_update(v0, v1, v2, v3), !neighbour_airbnb(v0, v1, v2, v3).
+
+inv0_listing__0__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__1__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__2__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__3__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__4__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__4__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5__update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__5__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing_update(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); inv0_listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+listing_update(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), !listing_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+
+Fr__("_rejected_") :- inv0_listing__0_(_, _, _, _, _, _, v6, _), v6 != "Unk".
+Fr__("_rejected_") :- inv0_listing__0_(_, _, _, _, v4, _, _, _), v4 != "Shibuya Ku".
+Fr__("_rejected_") :- inv0_listing__0__update(_, _, _, _, _, _, v6, _), v6 != "Unk".
+Fr__("_rejected_") :- inv0_listing__0__update(_, _, _, _, v4, _, _, _), v4 != "Shibuya Ku".
+Fr__("_rejected_") :- inv0_listing__1_(_, _, _, _, _, _, _, v7), v7 != "4".
+Fr__("_rejected_") :- inv0_listing__1_(_, _, _, _, v4, _, _, _), v4 != "Shibuya Ku".
+Fr__("_rejected_") :- inv0_listing__1__update(_, _, _, _, _, _, _, v7), v7 != "4".
+Fr__("_rejected_") :- inv0_listing__1__update(_, _, _, _, v4, _, _, _), v4 != "Shibuya Ku".
+Fr__("_rejected_") :- inv0_listing__2_(_, _, _, _, _, v5, _, _), v5 != "Private room".
+Fr__("_rejected_") :- inv0_listing__2_(_, _, _, _, v4, _, _, _), v4 != "Shinjuku Ku".
+Fr__("_rejected_") :- inv0_listing__2__update(_, _, _, _, _, v5, _, _), v5 != "Private room".
+Fr__("_rejected_") :- inv0_listing__2__update(_, _, _, _, v4, _, _, _), v4 != "Shinjuku Ku".
+Fr__("_rejected_") :- inv0_listing__3_(_, _, _, _, v4, _, _, _), v4 != "Sumida Ku".
+Fr__("_rejected_") :- inv0_listing__3__update(_, _, _, _, v4, _, _, _), v4 != "Sumida Ku".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+inv0_listing__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__0_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__4__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__2__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__2__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_inv0_listing__5__inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__3__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__3__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__5__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_inv0_listing__5__inv0_listing__2_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__3_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__4__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_inv0_listing_inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing__5__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_inv0_listing_inv0_listing__4_(v0, v1, v2, v3, v4, v5, v6, v7), !inv0_listing__5_(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- neighbour_airbnb_vdt_delete(v0, v4, v5, v7), inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7).
+inv0_listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- neighbour_airbnb_vdt_insert(v0, v4, v5, v7), Au_P_0_neighbour_airbnb_inv0_listing(v1, v2, v3, v6), !Au_P_1_neighbour_airbnb_inv0_listing(v0, _, _, _, v4, v5, _, v7), !inv0_listing(v0, _, _, _, v4, v5, _, v7).
+listing_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), listing(v0, v1, v2, v3, v4, v5, v6, v7).
+listing_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__3__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), listing(v0, v1, v2, v3, v4, v5, v6, v7).
+listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !listing(v0, v1, v2, v3, v4, v5, v6, v7).
+listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__2__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !listing(v0, v1, v2, v3, v4, v5, v6, v7).
+listing_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- inv0_listing__3__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !listing(v0, v1, v2, v3, v4, v5, v6, v7).
+
+Au_U_inv0_listing_inv0_listing__4_("16758685", "Homestay", "000000", "Unknown", "Shibuya Ku", "Private room", "Unk", "4").
+Au_U_inv0_listing_inv0_listing__4_("16758696", "Homestay", "000000", "Unknown", "Shibuya Ku", "Private room", "Unk", "4").
+Au_U_inv0_listing_inv0_listing__5_("16758675", "Homestay", "000000", "Unknown", "Shinjuku Ku", "Private room", "Unk", "1").
+Au_U_inv0_listing_inv0_listing__5_("16758695", "Homestay", "000000", "Unknown", "Sumida Ku", "Entire home-apt", "Unk", "2").
+Au_U_inv0_listing__5__inv0_listing__2_("16758675", "Homestay", "000000", "Unknown", "Shinjuku Ku", "Private room", "Unk", "1").
+Au_U_inv0_listing__5__inv0_listing__3_("16758695", "Homestay", "000000", "Unknown", "Sumida Ku", "Entire home-apt", "Unk", "2").
+Au_P_0_neighbour_airbnb_inv0_listing("Homestay", "000000", "Unknown", "Unk").

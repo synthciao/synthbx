@@ -1,0 +1,32 @@
+.type content_id <: symbol
+.type asset_id <: symbol
+.type title <: symbol
+.type alias <: symbol
+.type introtext <: symbol
+.type state <: symbol
+.type year <: symbol
+.type date <: symbol
+.type version <: symbol
+.type access <: symbol
+
+.decl content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl blog_2020(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl inv0_content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__0_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__1_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__2_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__3_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__4_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl inv0_content__5_(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+
+.input content
+.output blog_2020
+
+blog_2020(v6, v0, v2, v8, v9) :- inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes".
+inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes".
+inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes".
+inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v6 = "2020".
+inv0_content__4_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).
+inv0_content__5_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- inv0_content__2_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9); inv0_content__3_(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9).

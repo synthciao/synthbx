@@ -1,0 +1,77 @@
+.type VEHICLE_ID <: symbol
+.type SIZE <: symbol
+.type BRAND_ID <: symbol
+.type NAME <: symbol
+
+.decl vehicle(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl brand(v0: BRAND_ID, v1: NAME)
+.decl vehicle_view(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.decl M__1(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl vehicle_update(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl vehicle_sdt_insert(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl vehicle_sdt_delete(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl brand_update(v0: BRAND_ID, v1: NAME)
+.decl brand_sdt_insert(v0: BRAND_ID, v1: NAME)
+.decl brand_sdt_delete(v0: BRAND_ID, v1: NAME)
+.decl vehicle_view_update(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.decl vehicle_view_vdt_insert(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.decl vehicle_view_vdt_delete(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.decl M__1_update(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl M__1_sdt_insert(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl M__1_sdt_delete(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl M__1_vdt_insert(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl M__1_vdt_delete(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl Au_P_0_vehicle_view_M__1(v0: BRAND_ID)
+.decl Au_P_1_vehicle_view_M__1(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input vehicle
+.input brand
+.output vehicle_view
+.output M__1
+.output vehicle_update
+.output vehicle_sdt_insert
+.output vehicle_sdt_delete
+.output brand_update
+.output brand_sdt_insert
+.output brand_sdt_delete
+.input vehicle_view_update
+.output vehicle_view_vdt_insert
+.output vehicle_view_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3) :- vehicle(v0, v1, v2), brand(v2, v3).
+vehicle_view(v0, v1, v3) :- M__1(v0, v1, v2, v3).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+vehicle_view_vdt_delete(v0, v1, v2) :- vehicle_view(v0, v1, v2), !vehicle_view_update(v0, v1, v2).
+vehicle_view_vdt_insert(v0, v1, v2) :- vehicle_view_update(v0, v1, v2), !vehicle_view(v0, v1, v2).
+
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+brand_update(v0, v1) :- brand(v0, v1), !brand_sdt_delete(v0, v1); brand_sdt_insert(v0, v1).
+vehicle_update(v0, v1, v2) :- vehicle(v0, v1, v2), !vehicle_sdt_delete(v0, v1, v2); vehicle_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- brand_sdt_insert(v2, _), brand(v2, _).
+Fr__("_rejected_") :- vehicle_sdt_delete(_, _, v2), vehicle_update(_, _, v2), brand_sdt_delete(v2, _), brand_update(v2, _).
+Fr__("_rejected_") :- vehicle_sdt_insert(_, _, v2), vehicle(_, _, v2).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3) :- vehicle_view_vdt_delete(v0, v1, v3), M__1(v0, v1, v2, v3), Rule(3).
+M__1_sdt_insert(v0, v1, v2, v3) :- vehicle_view_vdt_insert(v0, v1, v3), Au_P_0_vehicle_view_M__1(v2), !Au_P_1_vehicle_view_M__1(v0, v1, _, v3), !M__1(v0, v1, _, v3), Rule(5).
+M__1_sdt_insert(v0, v1, v2, v3) :- vehicle_view_vdt_insert(v0, v1, v3), Au_P_1_vehicle_view_M__1(v0, v1, v2, v3), !M__1(v0, v1, _, v3), Rule(4).
+brand_sdt_insert(v2, v3) :- M__1_vdt_insert(_, _, v2, v3), !brand(v2, v3), Rule(2).
+vehicle_sdt_delete(v0, v1, v2) :- M__1_vdt_delete(v0, v1, v2, _), vehicle(v0, v1, v2), Rule(0).
+vehicle_sdt_insert(v0, v1, v2) :- M__1_vdt_insert(v0, v1, v2, _), !vehicle(v0, v1, v2), Rule(1).
+
+Au_P_0_vehicle_view_M__1("111").
+Au_P_1_vehicle_view_M__1("11", "S", "105", "Lamborghini").

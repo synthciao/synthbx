@@ -1,0 +1,17 @@
+.type EMPNAME <: symbol
+.type SALARY <: symbol
+.type OPERATION <: symbol
+.type USERID <: symbol
+.type STAMP <: number
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl emp(v0: EMPNAME, v1: SALARY)
+.decl emp_audit(v0: OPERATION, v1: USERID, v2: EMPNAME, v3: SALARY, v4: STAMP)
+.input emp, emp_audit
+
+.decl emp_view(v0: EMPNAME, v1: SALARY, v2: STAMP)
+.output emp_view
+
+emp_view(v0, v1, max v5 : emp_audit(_, _, v0, _, v5)) :- emp(v0, v1), emp_audit(v2, v3, v0, v4, v5), Rule(1).

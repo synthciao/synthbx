@@ -1,0 +1,30 @@
+.type uid <: symbol
+.type name <: symbol
+.type username <: symbol
+.type email <: symbol
+.type gid <: symbol
+.type gtitle <: symbol
+.type postid <: symbol
+.type title <: symbol
+.type state <: symbol
+.type access <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl users(v0: uid, v1: name, v2: username, v3: email)
+.decl map(v0: uid, v1: gid)
+.decl groups(v0: gid, v1: gid, v2: gtitle)
+.decl post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.input users, map, groups, post
+
+.decl invent1(v0: uid)
+.decl invent2(v0: uid, v1: username)
+.output invent1, invent2
+
+.decl admin_post_cms(v0: postid, v1: username, v2: access)
+.output admin_post_cms
+
+invent1(v0) :- map(v0, v1), groups(v1, v2, v3), v3 = "Administrator", Rule(1).
+invent2(v0, v2) :- users(v0, v1, v2, v3), invent1(v0), Rule(2).
+admin_post_cms(v0, v5, v4) :- post(v0, v1, v2, v3, v4), invent2(v1, v5), Rule(3).

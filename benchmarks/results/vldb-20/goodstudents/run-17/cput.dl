@@ -1,0 +1,66 @@
+.type sid <: symbol
+.type sname <: symbol
+.type login <: symbol
+.type age <: symbol
+.type gpa <: symbol
+
+.decl students(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl goodstudents(v0: sid, v1: gpa)
+.decl M__1(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl students_update(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl students_sdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl students_sdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl goodstudents_update(v0: sid, v1: gpa)
+.decl goodstudents_vdt_insert(v0: sid, v1: gpa)
+.decl goodstudents_vdt_delete(v0: sid, v1: gpa)
+.decl M__1_update(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_sdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_sdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_vdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_vdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl Au_P_0_goodstudents_M__1(v0: sname, v1: login, v2: age)
+.decl Au_P_1_goodstudents_M__1(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input students
+.output goodstudents
+.output M__1
+.output students_update
+.output students_sdt_insert
+.output students_sdt_delete
+.input goodstudents_update
+.output goodstudents_vdt_insert
+.output goodstudents_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), v4 > "3.0".
+goodstudents(v0, v4) :- M__1(v0, v1, v2, v3, v4).
+
+M__1_vdt_delete(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_update(v0, v1, v2, v3, v4).
+M__1_vdt_insert(v0, v1, v2, v3, v4) :- M__1_update(v0, v1, v2, v3, v4), !M__1(v0, v1, v2, v3, v4).
+goodstudents_vdt_delete(v0, v1) :- goodstudents(v0, v1), !goodstudents_update(v0, v1).
+goodstudents_vdt_insert(v0, v1) :- goodstudents_update(v0, v1), !goodstudents(v0, v1).
+
+M__1_update(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_sdt_delete(v0, v1, v2, v3, v4); M__1_sdt_insert(v0, v1, v2, v3, v4).
+students_update(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), !students_sdt_delete(v0, v1, v2, v3, v4); students_sdt_insert(v0, v1, v2, v3, v4).
+
+Fr__("_rejected_") :- M__1(_, _, _, _, v4), v4 <= "3.0".
+Fr__("_rejected_") :- M__1_update(_, _, _, _, v4), v4 <= "3.0".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3, v4) :- goodstudents_vdt_delete(v0, v4), M__1(v0, v1, v2, v3, v4), Rule(2).
+M__1_sdt_insert(v0, v1, v2, v3, v4) :- goodstudents_vdt_insert(v0, v4), Au_P_0_goodstudents_M__1(v1, v2, v3), !Au_P_1_goodstudents_M__1(v0, _, _, _, v4), !M__1(v0, _, _, _, v4), Rule(4).
+M__1_sdt_insert(v0, v1, v2, v3, v4) :- goodstudents_vdt_insert(v0, v4), Au_P_1_goodstudents_M__1(v0, v1, v2, v3, v4), !M__1(v0, _, _, _, v4), Rule(3).
+students_sdt_delete(v0, v1, v2, v3, v4) :- M__1_vdt_delete(v0, v1, v2, v3, v4), students(v0, v1, v2, v3, v4), Rule(0).
+students_sdt_insert(v0, v1, v2, v3, v4) :- M__1_vdt_insert(v0, v1, v2, v3, v4), !students(v0, v1, v2, v3, v4), Rule(1).
+
+Au_P_0_goodstudents_M__1("null", "null", "0").

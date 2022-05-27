@@ -1,0 +1,23 @@
+.type sid <: symbol
+.type sname <: symbol
+.type login <: symbol
+.type age <: symbol
+.type gpa <: symbol
+.type cid <: symbol
+.type grade <: symbol
+
+.decl students(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl enrolled(v0: sid, v1: cid, v2: grade)
+.decl bstudents(v0: sname, v1: sid, v2: cid)
+.decl M__1(v0: sid, v1: cid, v2: grade)
+.decl M__2(v0: sid, v1: sname)
+.decl M__3(v0: sid, v1: cid)
+
+.input students
+.input enrolled
+.output bstudents
+
+M__1(v0, v1, v2) :- enrolled(v0, v1, v2), v2 = "B".
+M__2(v0, v1) :- students(v0, v1, v2, v3, v4).
+M__3(v0, v1) :- M__1(v0, v1, v2).
+bstudents(v0, v1, v2) :- M__2(v1, v0), M__3(v1, v2).

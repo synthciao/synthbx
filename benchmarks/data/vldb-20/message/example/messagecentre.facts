@@ -1,0 +1,15 @@
+1685	html	not null	2012-10-22	James@mes	y	Richard@mes
+1125	html	not null	2012-04-23	David@mes	y	Richard@mes
+1647	text	not null	2012-08-24	Michael@mes	n	James@mes
+1645	text	not null	2012-06-22	John@mes	n	David@mes
+2623	text	not null	2012-10-26	Robert@mes	n	Richard@mes
+2013	html	null	2012-09-13	David@mes	y	Ivan@mes
+2581	html	null	2012-10-20	David@mes	y	Michael@mes
+1505	text	not null	2012-10-02	John@mes	n	John@mes
+1371	html	null	2012-08-24	Richard@mes	y	Richard@mes
+1927	html	not null	2012-06-25	Richard@mes	y	James@mes
+1663	text	not null	2012-02-02	Joseph@mes	y	Richard@mes
+3239	text	not null	2012-02-23	John@mes	y	Robert@mes
+2445	html	null	2012-06-04	Ivan@mes	y	David@mes
+2413	text	not null	2012-06-12	William@mes	n	Richard@mes
+3257	text	null	2012-03-24	Joseph@mes	n	William@mes

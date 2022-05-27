@@ -1,0 +1,20 @@
+.type meets_at
+.type C_name
+.type S_key
+
+
+.decl class(v0: C_name, v1: meets_at)
+.input class
+.decl LT(v0: C_name, v1: C_name)
+.input LT
+.decl enroll(v0: S_key, v1: C_name)
+.input enroll
+
+.decl inv(v0: S_key, v1: C_name, v2: meets_at)
+.output inv
+
+.decl ans(v0: S_key)
+.output ans
+
+inv(v2, v0, v1) :- class(v0, v1), enroll(v2, v0).
+ans(v2) :- LT(v0, v1), inv(v2, v0, v3), inv(v2, v1, v3).

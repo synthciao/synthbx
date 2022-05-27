@@ -1,0 +1,17 @@
+.type POI_ID <: symbol
+.type COL_A <: symbol
+.type COL_B <: symbol
+.type COL_C <: symbol
+.type COL_D <: symbol
+.type COL_E <: symbol
+.type COL_F <: symbol
+
+
+.decl poi(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl points(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.input poi, points
+
+.decl poi_view(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_D, v4: COL_E)
+.output poi_view
+
+poi_view(v0, v1, v2, v4, v5) :- poi(v0, v1, v2, v3), points(v0, v4, v5, v6).

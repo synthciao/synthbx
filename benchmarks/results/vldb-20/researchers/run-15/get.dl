@@ -1,0 +1,14 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+.type dept_name <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced(v0: emp_name, v1: dept_name)
+.input residents, ced
+
+
+.decl researchers(v0: emp_name)
+.output researchers
+
+researchers(v0) :- residents(v0, v1, v2), ced(v0, v3), v3 = "Research".

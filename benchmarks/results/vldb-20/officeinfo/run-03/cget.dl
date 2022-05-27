@@ -1,0 +1,19 @@
+.type OFFICECODE <: symbol
+.type CITY <: symbol
+.type PHONE <: symbol
+.type ADDRESSLINE <: symbol
+.type STATE <: symbol
+.type COUNTRY <: symbol
+.type POSTALCODE <: symbol
+.type TERRITORY <: symbol
+
+.decl offices(v0: OFFICECODE, v1: CITY, v2: PHONE, v3: ADDRESSLINE, v4: ADDRESSLINE, v5: STATE, v6: COUNTRY, v7: POSTALCODE, v8: TERRITORY)
+.input offices
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl officeinfo(v0: OFFICECODE, v1: PHONE, v2: CITY)
+.output officeinfo
+
+officeinfo(v0, v2, v1) :- offices(v0, v1, v2, v3, v4, v5, v6, v7, v8), Rule(1).

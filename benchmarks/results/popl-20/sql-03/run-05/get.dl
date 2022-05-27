@@ -1,0 +1,14 @@
+.type X
+.type Y
+.type Number
+.type Value
+
+
+.decl In(v0: X, v1: Y, v2: Number, v3: Value)
+.input In
+
+
+.decl Out(v0: Number, v1: Value)
+.output Out
+
+Out(v2, v9) :- In(v0, v1, v2, v3), In(v4, v5, v6, v3), In(v7, v8, v6, v9).

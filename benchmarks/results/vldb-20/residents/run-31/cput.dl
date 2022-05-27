@@ -1,0 +1,145 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+
+.decl male(v0: emp_name, v1: birth_date)
+.decl female(v0: emp_name, v1: birth_date)
+.decl others(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0_(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1_(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2_(v0: emp_name, v1: birth_date, v2: gender)
+.decl male_update(v0: emp_name, v1: birth_date)
+.decl male_sdt_insert(v0: emp_name, v1: birth_date)
+.decl male_sdt_delete(v0: emp_name, v1: birth_date)
+.decl female_update(v0: emp_name, v1: birth_date)
+.decl female_sdt_insert(v0: emp_name, v1: birth_date)
+.decl female_sdt_delete(v0: emp_name, v1: birth_date)
+.decl others_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl others_sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl others_sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0__update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0__sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0__sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0__vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__0__vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1__update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1__sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1__sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1__vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__1__vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2__update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2__sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2__sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2__vdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents__2__vdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl Au_U_residents_residents__1_(v0: emp_name, v1: birth_date, v2: gender)
+.decl Au_U_residents_residents__2_(v0: emp_name, v1: birth_date, v2: gender)
+.decl Au_U_residents__2__others(v0: emp_name, v1: birth_date, v2: gender)
+.decl Au_U_residents__2__residents__0_(v0: emp_name, v1: birth_date, v2: gender)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input male
+.input female
+.input others
+.output residents
+.output residents__0_
+.output residents__1_
+.output residents__2_
+.output male_update
+.output male_sdt_insert
+.output male_sdt_delete
+.output female_update
+.output female_sdt_insert
+.output female_sdt_delete
+.output others_update
+.output others_sdt_insert
+.output others_sdt_delete
+.input residents_update
+.output residents_vdt_insert
+.output residents_vdt_delete
+.output residents__0__update
+.output residents__0__sdt_insert
+.output residents__0__sdt_delete
+.output residents__0__vdt_insert
+.output residents__0__vdt_delete
+.output residents__1__update
+.output residents__1__sdt_insert
+.output residents__1__sdt_delete
+.output residents__1__vdt_insert
+.output residents__1__vdt_delete
+.output residents__2__update
+.output residents__2__sdt_insert
+.output residents__2__sdt_delete
+.output residents__2__vdt_insert
+.output residents__2__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+residents(v0, v1, v2) :- residents__1_(v0, v1, v2); residents__2_(v0, v1, v2).
+residents__0_(v0, v1, v2) :- male(v0, v1), v2 = "M".
+residents__1_(v0, v1, v2) :- female(v0, v1), v2 = "F".
+residents__2_(v0, v1, v2) :- others(v0, v1, v2); residents__0_(v0, v1, v2).
+
+residents__0__vdt_delete(v0, v1, v2) :- residents__0_(v0, v1, v2), !residents__0__update(v0, v1, v2).
+residents__0__vdt_insert(v0, v1, v2) :- residents__0__update(v0, v1, v2), !residents__0_(v0, v1, v2).
+residents__1__vdt_delete(v0, v1, v2) :- residents__1_(v0, v1, v2), !residents__1__update(v0, v1, v2).
+residents__1__vdt_insert(v0, v1, v2) :- residents__1__update(v0, v1, v2), !residents__1_(v0, v1, v2).
+residents__2__vdt_delete(v0, v1, v2) :- residents__2_(v0, v1, v2), !residents__2__update(v0, v1, v2).
+residents__2__vdt_insert(v0, v1, v2) :- residents__2__update(v0, v1, v2), !residents__2_(v0, v1, v2).
+residents_vdt_delete(v0, v1, v2) :- residents(v0, v1, v2), !residents_update(v0, v1, v2).
+residents_vdt_insert(v0, v1, v2) :- residents_update(v0, v1, v2), !residents(v0, v1, v2).
+
+female_update(v0, v1) :- female(v0, v1), !female_sdt_delete(v0, v1); female_sdt_insert(v0, v1).
+male_update(v0, v1) :- male(v0, v1), !male_sdt_delete(v0, v1); male_sdt_insert(v0, v1).
+others_update(v0, v1, v2) :- others(v0, v1, v2), !others_sdt_delete(v0, v1, v2); others_sdt_insert(v0, v1, v2).
+residents__0__update(v0, v1, v2) :- residents__0_(v0, v1, v2), !residents__0__sdt_delete(v0, v1, v2); residents__0__sdt_insert(v0, v1, v2).
+residents__1__update(v0, v1, v2) :- residents__1_(v0, v1, v2), !residents__1__sdt_delete(v0, v1, v2); residents__1__sdt_insert(v0, v1, v2).
+residents__2__update(v0, v1, v2) :- residents__2_(v0, v1, v2), !residents__2__sdt_delete(v0, v1, v2); residents__2__sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- residents__0_(_, _, v2), v2 != "M".
+Fr__("_rejected_") :- residents__0__update(_, _, v2), v2 != "M".
+Fr__("_rejected_") :- residents__1_(_, _, v2), v2 != "F".
+Fr__("_rejected_") :- residents__1__update(_, _, v2), v2 != "F".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+female_sdt_delete(v0, v1) :- residents__1__vdt_delete(v0, v1, _), female(v0, v1), Rule(12).
+female_sdt_insert(v0, v1) :- residents__1__vdt_insert(v0, v1, _), !female(v0, v1), Rule(13).
+male_sdt_delete(v0, v1) :- residents__0__vdt_delete(v0, v1, _), male(v0, v1), Rule(10).
+male_sdt_insert(v0, v1) :- residents__0__vdt_insert(v0, v1, _), !male(v0, v1), Rule(11).
+others_sdt_delete(v0, v1, v2) :- residents__2__vdt_delete(v0, v1, v2), others(v0, v1, v2), Rule(14).
+others_sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), !Au_U_residents__2__others(v0, v1, v2), !others(v0, v1, v2), Rule(17).
+others_sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), !Au_U_residents__2__residents__0_(v0, v1, v2), !others(v0, v1, v2), Rule(19).
+others_sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), Au_U_residents__2__others(v0, v1, v2), !others(v0, v1, v2), Rule(16).
+others_sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), Au_U_residents__2__residents__0_(v0, v1, v2), !others(v0, v1, v2), Rule(18).
+residents__0__sdt_delete(v0, v1, v2) :- residents__2__vdt_delete(v0, v1, v2), residents__0_(v0, v1, v2), Rule(15).
+residents__0__sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), !Au_U_residents__2__others(v0, v1, v2), !residents__0_(v0, v1, v2), Rule(21).
+residents__0__sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), !Au_U_residents__2__residents__0_(v0, v1, v2), !residents__0_(v0, v1, v2), Rule(23).
+residents__0__sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), Au_U_residents__2__others(v0, v1, v2), !residents__0_(v0, v1, v2), Rule(20).
+residents__0__sdt_insert(v0, v1, v2) :- residents__2__vdt_insert(v0, v1, v2), Au_U_residents__2__residents__0_(v0, v1, v2), !residents__0_(v0, v1, v2), Rule(22).
+residents__1__sdt_delete(v0, v1, v2) :- residents_vdt_delete(v0, v1, v2), residents__1_(v0, v1, v2), Rule(0).
+residents__1__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), !Au_U_residents_residents__1_(v0, v1, v2), !residents__1_(v0, v1, v2), Rule(3).
+residents__1__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), !Au_U_residents_residents__2_(v0, v1, v2), !residents__1_(v0, v1, v2), Rule(5).
+residents__1__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), Au_U_residents_residents__1_(v0, v1, v2), !residents__1_(v0, v1, v2), Rule(2).
+residents__1__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), Au_U_residents_residents__2_(v0, v1, v2), !residents__1_(v0, v1, v2), Rule(4).
+residents__2__sdt_delete(v0, v1, v2) :- residents_vdt_delete(v0, v1, v2), residents__2_(v0, v1, v2), Rule(1).
+residents__2__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), !Au_U_residents_residents__1_(v0, v1, v2), !residents__2_(v0, v1, v2), Rule(7).
+residents__2__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), !Au_U_residents_residents__2_(v0, v1, v2), !residents__2_(v0, v1, v2), Rule(9).
+residents__2__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), Au_U_residents_residents__1_(v0, v1, v2), !residents__2_(v0, v1, v2), Rule(6).
+residents__2__sdt_insert(v0, v1, v2) :- residents_vdt_insert(v0, v1, v2), Au_U_residents_residents__2_(v0, v1, v2), !residents__2_(v0, v1, v2), Rule(8).
+
+Au_U_residents_residents__1_("Emma Watson", "1990-04-15", "F").
+Au_U_residents_residents__2_("Simon Cowell", "1959-10-07", "M").
+Au_U_residents_residents__2_("Alex Ferguson", "1941-12-31", "M").
+Au_U_residents_residents__2_("Amanda Holden", "1971-02-16", "F").
+Au_U_residents_residents__2_("Gordon Ramsay", "1966-11-08", "M").
+Au_U_residents__2__others("Amanda Holden", "1971-02-16", "F").
+Au_U_residents__2__others("Gordon Ramsay", "1966-11-08", "M").
+Au_U_residents__2__others("Simon Cowell", "1959-10-07", "M").
+Au_U_residents__2__residents__0_("Alex Ferguson", "1941-12-31", "M").

@@ -1,0 +1,35 @@
+.type F_name
+.type level
+.type F_key
+.type C_name
+.type S_name
+.type S_key
+
+
+.decl Junior(v0: level)
+.input Junior
+.decl Enroll(v0: S_key, v1: C_name)
+.input Enroll
+.decl focus(v0: F_name)
+.input focus
+.decl Student(v0: S_key, v1: S_name, v2: level)
+.input Student
+.decl Class(v0: C_name, v1: F_key)
+.input Class
+.decl Faculty(v0: F_key, v1: F_name)
+.input Faculty
+
+.decl inv1(v0: F_key)
+.output inv1
+.decl inv2(v0: C_name)
+.output inv2
+.decl inv3(v0: S_key)
+.output inv3
+
+.decl ans(v0: S_name)
+.output ans
+
+ans(v2) :- Junior(v0), Student(v1, v2, v0), inv3(v1).
+inv2(v1) :- inv1(v0), Class(v1, v0), Class(v1, v2).
+inv1(v1) :- focus(v0), Faculty(v1, v0).
+inv3(v1) :- inv2(v0), Enroll(v1, v0), Enroll(v1, v2).

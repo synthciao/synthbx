@@ -1,0 +1,19 @@
+.type SurveyResponseKey <: symbol
+.type DateKey <: symbol
+.type CustomerKey <: symbol
+.type ProductCategoryKey <: symbol
+.type EnglishProductCategory <: symbol
+.type ProductSubcategoryKey <: symbol
+.type EnglishProductSubcategory <: symbol
+.type Date <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl FactSurveyResponse(v0: SurveyResponseKey, v1: DateKey, v2: CustomerKey, v3: ProductCategoryKey, v4: EnglishProductCategory, v5: ProductSubcategoryKey, v6: EnglishProductSubcategory, v7: Date)
+.input FactSurveyResponse
+
+.decl dw_survey(v0: SurveyResponseKey, v1: DateKey, v2: CustomerKey, v3: ProductCategoryKey, v4: EnglishProductCategory, v5: ProductSubcategoryKey, v6: EnglishProductSubcategory, v7: Date)
+.output dw_survey
+
+dw_survey(v0, v1, v2, v3, v4, v5, v6, v7) :- FactSurveyResponse(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Accessories", v6 = "Cleaners", Rule(1).

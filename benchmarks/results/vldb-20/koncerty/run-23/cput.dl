@@ -1,0 +1,103 @@
+.type nazwa_klubu <: symbol
+.type adres <: symbol
+.type nazwa_zespolu <: symbol
+.type ilosc_czlonkow <: symbol
+.type data_wystepu <: symbol
+
+.decl klub(v0: nazwa_klubu, v1: adres)
+.decl zespol(v0: nazwa_zespolu, v1: ilosc_czlonkow)
+.decl koncert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu)
+.decl koncerty(v0: nazwa_klubu, v1: adres, v2: nazwa_zespolu, v3: ilosc_czlonkow, v4: data_wystepu)
+.decl M__1(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__2(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl klub_update(v0: nazwa_klubu, v1: adres)
+.decl klub_sdt_insert(v0: nazwa_klubu, v1: adres)
+.decl klub_sdt_delete(v0: nazwa_klubu, v1: adres)
+.decl zespol_update(v0: nazwa_zespolu, v1: ilosc_czlonkow)
+.decl zespol_sdt_insert(v0: nazwa_zespolu, v1: ilosc_czlonkow)
+.decl zespol_sdt_delete(v0: nazwa_zespolu, v1: ilosc_czlonkow)
+.decl koncert_update(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu)
+.decl koncert_sdt_insert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu)
+.decl koncert_sdt_delete(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu)
+.decl koncerty_update(v0: nazwa_klubu, v1: adres, v2: nazwa_zespolu, v3: ilosc_czlonkow, v4: data_wystepu)
+.decl koncerty_vdt_insert(v0: nazwa_klubu, v1: adres, v2: nazwa_zespolu, v3: ilosc_czlonkow, v4: data_wystepu)
+.decl koncerty_vdt_delete(v0: nazwa_klubu, v1: adres, v2: nazwa_zespolu, v3: ilosc_czlonkow, v4: data_wystepu)
+.decl M__1_update(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__1_sdt_insert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__1_sdt_delete(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__1_vdt_insert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__1_vdt_delete(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres)
+.decl M__2_update(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl M__2_sdt_insert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl M__2_sdt_delete(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl M__2_vdt_insert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl M__2_vdt_delete(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu, v3: adres, v4: ilosc_czlonkow)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input klub
+.input zespol
+.input koncert
+.output koncerty
+.output M__1
+.output M__2
+.output klub_update
+.output klub_sdt_insert
+.output klub_sdt_delete
+.output zespol_update
+.output zespol_sdt_insert
+.output zespol_sdt_delete
+.output koncert_update
+.output koncert_sdt_insert
+.output koncert_sdt_delete
+.input koncerty_update
+.output koncerty_vdt_insert
+.output koncerty_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2, v3) :- koncert(v0, v1, v2), klub(v0, v3).
+M__2(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3), zespol(v1, v4).
+koncerty(v0, v3, v1, v4, v2) :- M__2(v0, v1, v2, v3, v4).
+
+M__1_vdt_delete(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_update(v0, v1, v2, v3).
+M__1_vdt_insert(v0, v1, v2, v3) :- M__1_update(v0, v1, v2, v3), !M__1(v0, v1, v2, v3).
+M__2_vdt_delete(v0, v1, v2, v3, v4) :- M__2(v0, v1, v2, v3, v4), !M__2_update(v0, v1, v2, v3, v4).
+M__2_vdt_insert(v0, v1, v2, v3, v4) :- M__2_update(v0, v1, v2, v3, v4), !M__2(v0, v1, v2, v3, v4).
+koncerty_vdt_delete(v0, v1, v2, v3, v4) :- koncerty(v0, v1, v2, v3, v4), !koncerty_update(v0, v1, v2, v3, v4).
+koncerty_vdt_insert(v0, v1, v2, v3, v4) :- koncerty_update(v0, v1, v2, v3, v4), !koncerty(v0, v1, v2, v3, v4).
+
+M__1_update(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), !M__1_sdt_delete(v0, v1, v2, v3); M__1_sdt_insert(v0, v1, v2, v3).
+M__2_update(v0, v1, v2, v3, v4) :- M__2(v0, v1, v2, v3, v4), !M__2_sdt_delete(v0, v1, v2, v3, v4); M__2_sdt_insert(v0, v1, v2, v3, v4).
+klub_update(v0, v1) :- klub(v0, v1), !klub_sdt_delete(v0, v1); klub_sdt_insert(v0, v1).
+koncert_update(v0, v1, v2) :- koncert(v0, v1, v2), !koncert_sdt_delete(v0, v1, v2); koncert_sdt_insert(v0, v1, v2).
+zespol_update(v0, v1) :- zespol(v0, v1), !zespol_sdt_delete(v0, v1); zespol_sdt_insert(v0, v1).
+
+Fr__("_rejected_") :- M__1_sdt_delete(_, v1, _, _), M__1_update(_, v1, _, _), zespol_sdt_delete(v1, _), zespol_update(v1, _).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v1, _, _), M__1(_, v1, _, _).
+Fr__("_rejected_") :- klub_sdt_insert(v0, _), klub(v0, _).
+Fr__("_rejected_") :- koncert_sdt_delete(v0, _, _), koncert_update(v0, _, _), klub_sdt_delete(v0, _), klub_update(v0, _).
+Fr__("_rejected_") :- koncert_sdt_insert(v0, _, _), koncert(v0, _, _).
+Fr__("_rejected_") :- zespol_sdt_insert(v1, _), zespol(v1, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3) :- M__2_vdt_delete(v0, v1, v2, v3, _), M__1(v0, v1, v2, v3), Rule(3).
+M__1_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v2, v3, _), !M__1(v0, v1, v2, v3), Rule(4).
+M__2_sdt_delete(v0, v1, v2, v3, v4) :- koncerty_vdt_delete(v0, v3, v1, v4, v2), Rule(6).
+M__2_sdt_insert(v0, v1, v2, v3, v4) :- koncerty_vdt_insert(v0, v3, v1, v4, v2), Rule(7).
+klub_sdt_insert(v0, v3) :- M__1_vdt_insert(v0, _, _, v3), !klub(v0, v3), Rule(2).
+koncert_sdt_delete(v0, v1, v2) :- M__1_vdt_delete(v0, v1, v2, _), koncert(v0, v1, v2), Rule(0).
+koncert_sdt_insert(v0, v1, v2) :- M__1_vdt_insert(v0, v1, v2, _), !koncert(v0, v1, v2), Rule(1).
+zespol_sdt_insert(v1, v4) :- M__2_vdt_insert(_, v1, _, _, v4), !zespol(v1, v4), Rule(5).

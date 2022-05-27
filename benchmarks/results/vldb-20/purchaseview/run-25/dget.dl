@@ -1,0 +1,16 @@
+.type PRODUCT_ID <: symbol
+.type PRODUCT_NAME <: symbol
+.type PURCHASE_ID <: symbol
+.type WHEN_BOUGHT <: symbol
+
+.decl product(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl purchase(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.decl purchaseview(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.decl M__1(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT, v3: PRODUCT_NAME)
+
+.input product
+.input purchase
+.output purchaseview
+
+M__1(v0, v1, v2, v3) :- purchase(v0, v1, v2), product(v1, v3).
+purchaseview(v0, v3, v2) :- M__1(v0, v1, v2, v3).

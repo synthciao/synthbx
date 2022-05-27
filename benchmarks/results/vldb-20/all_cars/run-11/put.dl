@@ -1,0 +1,44 @@
+.type brand_id <: symbol
+.type brand_name <: symbol
+.type car_id <: symbol
+.type car_name <: symbol
+
+.decl brands(v0: brand_id, v1: brand_name)
+.decl cars(v0: car_id, v1: car_name, v2: brand_id)
+.decl all_cars(v0: car_id, v1: car_name, v2: brand_id, v3: brand_name)
+.decl brands_update(v0: brand_id, v1: brand_name)
+.decl brands_sdt_insert(v0: brand_id, v1: brand_name)
+.decl brands_sdt_delete(v0: brand_id, v1: brand_name)
+.decl cars_update(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_sdt_insert(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_sdt_delete(v0: car_id, v1: car_name, v2: brand_id)
+.decl all_cars_update(v0: car_id, v1: car_name, v2: brand_id, v3: brand_name)
+.decl all_cars_vdt_insert(v0: car_id, v1: car_name, v2: brand_id, v3: brand_name)
+.decl all_cars_vdt_delete(v0: car_id, v1: car_name, v2: brand_id, v3: brand_name)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input brands
+.input cars
+.output brands_update
+.output cars_update
+.input all_cars_update
+.output Fr__
+.output Fv__
+
+all_cars(v0, v1, v2, v3) :- cars(v0, v1, v2), brands(v2, v3).
+
+all_cars_vdt_delete(v0, v1, v2, v3) :- all_cars(v0, v1, v2, v3), !all_cars_update(v0, v1, v2, v3).
+all_cars_vdt_insert(v0, v1, v2, v3) :- all_cars_update(v0, v1, v2, v3), !all_cars(v0, v1, v2, v3).
+
+brands_update(v0, v1) :- brands(v0, v1), !brands_sdt_delete(v0, v1); brands_sdt_insert(v0, v1).
+cars_update(v0, v1, v2) :- cars(v0, v1, v2), !cars_sdt_delete(v0, v1, v2); cars_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- brands_sdt_insert(v2, _), brands(v2, _).
+Fr__("_rejected_") :- cars_sdt_delete(_, _, v2), cars_update(_, _, v2), brands_sdt_delete(v2, _), brands_update(v2, _).
+Fr__("_rejected_") :- cars_sdt_insert(_, _, v2), cars(_, _, v2).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+brands_sdt_insert(v2, v3) :- all_cars_vdt_insert(_, _, v2, v3), !brands(v2, v3).
+cars_sdt_delete(v0, v1, v2) :- all_cars_vdt_delete(v0, v1, v2, _), cars(v0, v1, v2).
+cars_sdt_insert(v0, v1, v2) :- all_cars_vdt_insert(v0, v1, v2, _), !cars(v0, v1, v2).

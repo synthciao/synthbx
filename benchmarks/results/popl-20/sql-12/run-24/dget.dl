@@ -1,0 +1,36 @@
+.type sname <: symbol
+.type color <: symbol
+.type supplier_key <: symbol
+.type part_id <: symbol
+
+.decl isRed(v0: color)
+.decl isGreen(v0: color)
+.decl input3(v0: supplier_key, v1: sname)
+.decl input1(v0: supplier_key, v1: part_id)
+.decl input2(v0: part_id, v1: color)
+.decl inv(v0: part_id, v1: color)
+.decl ans(v0: sname)
+.decl M__1(v0: part_id)
+.decl M__2(v0: part_id, v1: supplier_key)
+.decl M__3(v0: part_id, v1: supplier_key, v2: sname)
+.decl inv__0_(v0: part_id, v1: color)
+.decl inv__1_(v0: part_id, v1: color)
+.decl input2_0__cp(v0: part_id, v1: color)
+.decl input2_1__cp(v0: part_id, v1: color)
+
+.input isRed
+.input isGreen
+.input input3
+.input input1
+.input input2
+.output ans
+
+M__1(v0) :- inv(v0, v1).
+M__2(v0, v1) :- M__1(v0), input1(v1, v0).
+M__3(v0, v1, v2) :- M__2(v0, v1), input3(v1, v2).
+ans(v2) :- M__3(v0, v1, v2).
+input2_0__cp(v0, v1) :- input2(v0, v1).
+input2_1__cp(v0, v1) :- input2(v0, v1).
+inv(v0, v1) :- inv__0_(v0, v1); inv__1_(v0, v1).
+inv__0_(v0, v1) :- input2_0__cp(v0, v1), isRed(v1).
+inv__1_(v0, v1) :- input2_1__cp(v0, v1), isGreen(v1).

@@ -1,0 +1,219 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> schema
+Rule 1     schema -> relation_list
+Rule 2     relation_list -> directive_relation
+Rule 3     relation_list -> relation_list directive_relation
+Rule 4     directive_relation -> INPUT relation
+Rule 5     directive_relation -> INVENT relation
+Rule 6     directive_relation -> relation
+Rule 7     relation -> IDENT LPAREN type_list RPAREN
+Rule 8     type_list -> type
+Rule 9     type_list -> type COMMA type_list
+Rule 10    type -> IDENT
+
+Terminals, with rules where they appear
+
+COMMA                : 9
+IDENT                : 7 10
+INPUT                : 4
+INVENT               : 5
+LPAREN               : 7
+RPAREN               : 7
+error                : 
+
+Nonterminals, with rules where they appear
+
+directive_relation   : 2 3
+relation             : 4 5 6
+relation_list        : 1 3
+schema               : 0
+type                 : 8 9
+type_list            : 7 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . schema
+    (1) schema -> . relation_list
+    (2) relation_list -> . directive_relation
+    (3) relation_list -> . relation_list directive_relation
+    (4) directive_relation -> . INPUT relation
+    (5) directive_relation -> . INVENT relation
+    (6) directive_relation -> . relation
+    (7) relation -> . IDENT LPAREN type_list RPAREN
+
+    INPUT           shift and go to state 4
+    INVENT          shift and go to state 6
+    IDENT           shift and go to state 7
+
+    schema                         shift and go to state 1
+    relation_list                  shift and go to state 2
+    directive_relation             shift and go to state 3
+    relation                       shift and go to state 5
+
+state 1
+
+    (0) S' -> schema .
+
+
+
+state 2
+
+    (1) schema -> relation_list .
+    (3) relation_list -> relation_list . directive_relation
+    (4) directive_relation -> . INPUT relation
+    (5) directive_relation -> . INVENT relation
+    (6) directive_relation -> . relation
+    (7) relation -> . IDENT LPAREN type_list RPAREN
+
+    $end            reduce using rule 1 (schema -> relation_list .)
+    INPUT           shift and go to state 4
+    INVENT          shift and go to state 6
+    IDENT           shift and go to state 7
+
+    directive_relation             shift and go to state 8
+    relation                       shift and go to state 5
+
+state 3
+
+    (2) relation_list -> directive_relation .
+
+    INPUT           reduce using rule 2 (relation_list -> directive_relation .)
+    INVENT          reduce using rule 2 (relation_list -> directive_relation .)
+    IDENT           reduce using rule 2 (relation_list -> directive_relation .)
+    $end            reduce using rule 2 (relation_list -> directive_relation .)
+
+
+state 4
+
+    (4) directive_relation -> INPUT . relation
+    (7) relation -> . IDENT LPAREN type_list RPAREN
+
+    IDENT           shift and go to state 7
+
+    relation                       shift and go to state 9
+
+state 5
+
+    (6) directive_relation -> relation .
+
+    INPUT           reduce using rule 6 (directive_relation -> relation .)
+    INVENT          reduce using rule 6 (directive_relation -> relation .)
+    IDENT           reduce using rule 6 (directive_relation -> relation .)
+    $end            reduce using rule 6 (directive_relation -> relation .)
+
+
+state 6
+
+    (5) directive_relation -> INVENT . relation
+    (7) relation -> . IDENT LPAREN type_list RPAREN
+
+    IDENT           shift and go to state 7
+
+    relation                       shift and go to state 10
+
+state 7
+
+    (7) relation -> IDENT . LPAREN type_list RPAREN
+
+    LPAREN          shift and go to state 11
+
+
+state 8
+
+    (3) relation_list -> relation_list directive_relation .
+
+    INPUT           reduce using rule 3 (relation_list -> relation_list directive_relation .)
+    INVENT          reduce using rule 3 (relation_list -> relation_list directive_relation .)
+    IDENT           reduce using rule 3 (relation_list -> relation_list directive_relation .)
+    $end            reduce using rule 3 (relation_list -> relation_list directive_relation .)
+
+
+state 9
+
+    (4) directive_relation -> INPUT relation .
+
+    INPUT           reduce using rule 4 (directive_relation -> INPUT relation .)
+    INVENT          reduce using rule 4 (directive_relation -> INPUT relation .)
+    IDENT           reduce using rule 4 (directive_relation -> INPUT relation .)
+    $end            reduce using rule 4 (directive_relation -> INPUT relation .)
+
+
+state 10
+
+    (5) directive_relation -> INVENT relation .
+
+    INPUT           reduce using rule 5 (directive_relation -> INVENT relation .)
+    INVENT          reduce using rule 5 (directive_relation -> INVENT relation .)
+    IDENT           reduce using rule 5 (directive_relation -> INVENT relation .)
+    $end            reduce using rule 5 (directive_relation -> INVENT relation .)
+
+
+state 11
+
+    (7) relation -> IDENT LPAREN . type_list RPAREN
+    (8) type_list -> . type
+    (9) type_list -> . type COMMA type_list
+    (10) type -> . IDENT
+
+    IDENT           shift and go to state 12
+
+    type_list                      shift and go to state 13
+    type                           shift and go to state 14
+
+state 12
+
+    (10) type -> IDENT .
+
+    COMMA           reduce using rule 10 (type -> IDENT .)
+    RPAREN          reduce using rule 10 (type -> IDENT .)
+
+
+state 13
+
+    (7) relation -> IDENT LPAREN type_list . RPAREN
+
+    RPAREN          shift and go to state 15
+
+
+state 14
+
+    (8) type_list -> type .
+    (9) type_list -> type . COMMA type_list
+
+    RPAREN          reduce using rule 8 (type_list -> type .)
+    COMMA           shift and go to state 16
+
+
+state 15
+
+    (7) relation -> IDENT LPAREN type_list RPAREN .
+
+    INPUT           reduce using rule 7 (relation -> IDENT LPAREN type_list RPAREN .)
+    INVENT          reduce using rule 7 (relation -> IDENT LPAREN type_list RPAREN .)
+    IDENT           reduce using rule 7 (relation -> IDENT LPAREN type_list RPAREN .)
+    $end            reduce using rule 7 (relation -> IDENT LPAREN type_list RPAREN .)
+
+
+state 16
+
+    (9) type_list -> type COMMA . type_list
+    (8) type_list -> . type
+    (9) type_list -> . type COMMA type_list
+    (10) type -> . IDENT
+
+    IDENT           shift and go to state 12
+
+    type                           shift and go to state 14
+    type_list                      shift and go to state 17
+
+state 17
+
+    (9) type_list -> type COMMA type_list .
+
+    RPAREN          reduce using rule 9 (type_list -> type COMMA type_list .)
+

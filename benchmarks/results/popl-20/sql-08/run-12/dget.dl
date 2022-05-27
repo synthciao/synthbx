@@ -1,0 +1,33 @@
+.type T <: symbol
+.type C <: symbol
+.type S <: symbol
+
+.decl Active(v0: S)
+.decl Inactive(v0: S)
+.decl Input1(v0: T, v1: S, v2: C)
+.decl inv1(v0: T, v1: C)
+.decl inv2(v0: T, v1: C)
+.decl ans(v0: T, v1: C, v2: C)
+.decl M__1(v0: T)
+.decl M__2(v0: S, v1: T, v2: C)
+.decl M__3(v0: S, v1: T, v2: C)
+.decl M__4(v0: S, v1: T, v2: C)
+.decl Input1_0__cp(v0: T, v1: S, v2: C)
+.decl Input1_1__cp(v0: T, v1: S, v2: C)
+.decl inv1_0__cp(v0: T, v1: C)
+
+.input Active
+.input Inactive
+.input Input1
+.output ans
+
+Input1_0__cp(v0, v1, v2) :- Input1(v0, v1, v2).
+Input1_1__cp(v0, v1, v2) :- Input1(v0, v1, v2).
+M__1(v0) :- inv1(v0, v1).
+M__2(v0, v1, v2) :- Inactive(v0), Input1_0__cp(v1, v0, v2).
+M__3(v0, v1, v2) :- M__2(v0, v1, v2), M__1(v1).
+M__4(v0, v1, v2) :- Active(v0), Input1_1__cp(v1, v0, v2).
+ans(v0, v1, v2) :- inv1_0__cp(v0, v1), inv2(v0, v2).
+inv1(v1, v2) :- M__4(v0, v1, v2).
+inv1_0__cp(v0, v1) :- inv1(v0, v1).
+inv2(v1, v2) :- M__3(v0, v1, v2).

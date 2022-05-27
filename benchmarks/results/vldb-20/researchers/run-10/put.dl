@@ -1,0 +1,90 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+.type dept_name <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced(v0: emp_name, v1: dept_name)
+.decl researchers(v0: emp_name)
+.decl M__1(v0: emp_name, v1: dept_name)
+.decl M__2(v0: emp_name)
+.decl M__3(v0: emp_name)
+.decl residents_update(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_insert(v0: emp_name, v1: birth_date, v2: gender)
+.decl residents_sdt_delete(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced_update(v0: emp_name, v1: dept_name)
+.decl ced_sdt_insert(v0: emp_name, v1: dept_name)
+.decl ced_sdt_delete(v0: emp_name, v1: dept_name)
+.decl researchers_update(v0: emp_name)
+.decl researchers_vdt_insert(v0: emp_name)
+.decl researchers_vdt_delete(v0: emp_name)
+.decl M__1_update(v0: emp_name, v1: dept_name)
+.decl M__1_sdt_insert(v0: emp_name, v1: dept_name)
+.decl M__1_sdt_delete(v0: emp_name, v1: dept_name)
+.decl M__1_vdt_insert(v0: emp_name, v1: dept_name)
+.decl M__1_vdt_delete(v0: emp_name, v1: dept_name)
+.decl M__2_update(v0: emp_name)
+.decl M__2_sdt_insert(v0: emp_name)
+.decl M__2_sdt_delete(v0: emp_name)
+.decl M__2_vdt_insert(v0: emp_name)
+.decl M__2_vdt_delete(v0: emp_name)
+.decl M__3_update(v0: emp_name)
+.decl M__3_sdt_insert(v0: emp_name)
+.decl M__3_sdt_delete(v0: emp_name)
+.decl M__3_vdt_insert(v0: emp_name)
+.decl M__3_vdt_delete(v0: emp_name)
+.decl Au_P_0_M__2_residents(v0: birth_date, v1: gender)
+.decl Au_P_1_M__2_residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl Au_P_0_M__3_M__1(v0: dept_name)
+.decl Au_P_1_M__3_M__1(v0: emp_name, v1: dept_name)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input residents
+.input ced
+.output residents_update
+.output ced_update
+.input researchers_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1) :- ced(v0, v1), v1 = "Research".
+M__2(v0) :- residents(v0, v1, v2).
+M__3(v0) :- M__1(v0, v1).
+researchers(v0) :- M__2(v0), M__3(v0).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0) :- M__2(v0), !M__2_update(v0).
+M__2_vdt_insert(v0) :- M__2_update(v0), !M__2(v0).
+M__3_vdt_delete(v0) :- M__3(v0), !M__3_update(v0).
+M__3_vdt_insert(v0) :- M__3_update(v0), !M__3(v0).
+researchers_vdt_delete(v0) :- researchers(v0), !researchers_update(v0).
+researchers_vdt_insert(v0) :- researchers_update(v0), !researchers(v0).
+
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0) :- M__2(v0), !M__2_sdt_delete(v0); M__2_sdt_insert(v0).
+M__3_update(v0) :- M__3(v0), !M__3_sdt_delete(v0); M__3_sdt_insert(v0).
+ced_update(v0, v1) :- ced(v0, v1), !ced_sdt_delete(v0, v1); ced_sdt_insert(v0, v1).
+residents_update(v0, v1, v2) :- residents(v0, v1, v2), !residents_sdt_delete(v0, v1, v2); residents_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- M__1(_, v1), v1 != "Research".
+Fr__("_rejected_") :- M__1_update(_, v1), v1 != "Research".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1) :- M__3_vdt_delete(v0), M__1(v0, v1).
+M__1_sdt_insert(v0, v1) :- M__3_vdt_insert(v0), Au_P_0_M__3_M__1(v1), !Au_P_1_M__3_M__1(v0, _), !M__1(v0, _).
+M__1_sdt_insert(v0, v1) :- M__3_vdt_insert(v0), Au_P_1_M__3_M__1(v0, v1), !M__1(v0, _).
+M__2_sdt_delete(v0) :- researchers_vdt_delete(v0), M__2(v0).
+M__2_sdt_insert(v0) :- researchers_vdt_insert(v0), !M__2(v0).
+M__3_sdt_delete(v0) :- researchers_vdt_delete(v0), M__3(v0).
+M__3_sdt_insert(v0) :- researchers_vdt_insert(v0), !M__3(v0).
+ced_sdt_delete(v0, v1) :- M__1_vdt_delete(v0, v1), ced(v0, v1).
+ced_sdt_insert(v0, v1) :- M__1_vdt_insert(v0, v1), !ced(v0, v1).
+residents_sdt_delete(v0, v1, v2) :- M__2_vdt_delete(v0), residents(v0, v1, v2).
+residents_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0), Au_P_0_M__2_residents(v1, v2), !Au_P_1_M__2_residents(v0, _, _), !residents(v0, _, _).
+residents_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0), Au_P_1_M__2_residents(v0, v1, v2), !residents(v0, _, _).
+
+Au_P_0_M__2_residents("1962-01-01", "M").
+Au_P_1_M__2_residents("Anna Sharapova", "1962-12-02", "F").
+Au_P_0_M__3_M__1("Research").

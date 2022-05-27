@@ -1,0 +1,17 @@
+.type nazwa_klubu <: symbol
+.type adres <: symbol
+.type nazwa_zespolu <: symbol
+.type ilosc_czlonkow <: symbol
+.type data_wystepu <: symbol
+
+
+
+.decl klub(v0: nazwa_klubu, v1: adres)
+.decl zespol(v0: nazwa_zespolu, v1: ilosc_czlonkow)
+.decl koncert(v0: nazwa_klubu, v1: nazwa_zespolu, v2: data_wystepu)
+.input klub, zespol, koncert
+
+.decl koncerty(v0: nazwa_klubu, v1: adres, v2: nazwa_zespolu, v3: ilosc_czlonkow, v4: data_wystepu)
+.output koncerty
+
+koncerty(v0, v3, v1, v4, v2) :- koncert(v0, v1, v2), klub(v0, v3), zespol(v1, v4).

@@ -1,0 +1,33 @@
+.type emp_name <: symbol
+.type dept_name <: symbol
+
+.decl ed(v0: emp_name, v1: dept_name)
+.decl eed(v0: emp_name, v1: dept_name)
+.decl ced(v0: emp_name, v1: dept_name)
+.decl ed_update(v0: emp_name, v1: dept_name)
+.decl ed_sdt_insert(v0: emp_name, v1: dept_name)
+.decl ed_sdt_delete(v0: emp_name, v1: dept_name)
+.decl eed_update(v0: emp_name, v1: dept_name)
+.decl eed_sdt_insert(v0: emp_name, v1: dept_name)
+.decl eed_sdt_delete(v0: emp_name, v1: dept_name)
+.decl ced_update(v0: emp_name, v1: dept_name)
+.decl ced_vdt_insert(v0: emp_name, v1: dept_name)
+.decl ced_vdt_delete(v0: emp_name, v1: dept_name)
+
+.input ed
+.input eed
+.output ed_update
+.output eed_update
+.input ced_update
+
+ced(v0, v1) :- ed(v0, v1), !eed(v0, v1).
+
+ced_vdt_delete(v0, v1) :- ced(v0, v1), !ced_update(v0, v1).
+ced_vdt_insert(v0, v1) :- ced_update(v0, v1), !ced(v0, v1).
+
+ed_update(v0, v1) :- ed(v0, v1), !ed_sdt_delete(v0, v1); ed_sdt_insert(v0, v1).
+eed_update(v0, v1) :- eed(v0, v1), !eed_sdt_delete(v0, v1); eed_sdt_insert(v0, v1).
+
+ed_sdt_insert(v0, v1) :- ced_vdt_insert(v0, v1), !ed(v0, v1).
+eed_sdt_delete(v0, v1) :- ced_vdt_insert(v0, v1), eed(v0, v1).
+eed_sdt_insert(v0, v1) :- ced_vdt_delete(v0, v1), !eed(v0, v1).

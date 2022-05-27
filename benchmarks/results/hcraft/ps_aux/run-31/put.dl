@@ -1,0 +1,59 @@
+.type user <: symbol
+.type pid <: symbol
+.type cpu <: symbol
+.type mem <: symbol
+.type vsz <: symbol
+.type rss <: symbol
+.type tt <: symbol
+.type stat <: symbol
+.type started <: symbol
+.type time <: symbol
+.type command <: symbol
+
+.decl ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_aux(v0: user, v1: pid, v2: command)
+.decl inv0_ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_update(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_sdt_insert(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_sdt_delete(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_aux_update(v0: user, v1: pid, v2: command)
+.decl ps_aux_vdt_insert(v0: user, v1: pid, v2: command)
+.decl ps_aux_vdt_delete(v0: user, v1: pid, v2: command)
+.decl inv0_ps_update(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl inv0_ps_sdt_insert(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl inv0_ps_sdt_delete(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl inv0_ps_vdt_insert(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl inv0_ps_vdt_delete(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl Au_P_0_ps_aux_inv0_ps(v0: cpu, v1: mem, v2: vsz, v3: rss, v4: tt, v5: stat, v6: started, v7: time)
+.decl Au_P_1_ps_aux_inv0_ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input ps
+.output ps_update
+.input ps_aux_update
+.output Fr__
+.output Fv__
+
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob".
+ps_aux(v0, v1, v10) :- inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+
+inv0_ps_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !inv0_ps_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+inv0_ps_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- inv0_ps_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+ps_aux_vdt_delete(v0, v1, v2) :- ps_aux(v0, v1, v2), !ps_aux_update(v0, v1, v2).
+ps_aux_vdt_insert(v0, v1, v2) :- ps_aux_update(v0, v1, v2), !ps_aux(v0, v1, v2).
+
+inv0_ps_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !inv0_ps_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10); inv0_ps_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+ps_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !ps_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10); ps_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+
+Fr__("_rejected_") :- inv0_ps(v0, _, _, _, _, _, _, _, _, _, _), v0 != "bob".
+Fr__("_rejected_") :- inv0_ps_update(v0, _, _, _, _, _, _, _, _, _, _), v0 != "bob".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+inv0_ps_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps_aux_vdt_delete(v0, v1, v10), inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+inv0_ps_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps_aux_vdt_insert(v0, v1, v10), Au_P_0_ps_aux_inv0_ps(v2, v3, v4, v5, v6, v7, v8, v9), !Au_P_1_ps_aux_inv0_ps(v0, v1, _, _, _, _, _, _, _, _, v10), !inv0_ps(v0, v1, _, _, _, _, _, _, _, _, v10).
+inv0_ps_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps_aux_vdt_insert(v0, v1, v10), Au_P_1_ps_aux_inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !inv0_ps(v0, v1, _, _, _, _, _, _, _, _, v10).
+ps_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- inv0_ps_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+ps_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- inv0_ps_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), !ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10).
+
+Au_P_0_ps_aux_inv0_ps("0.0", "0.1", "34814248", "11111", "??", "S", "10:00PM", "0:00.00").

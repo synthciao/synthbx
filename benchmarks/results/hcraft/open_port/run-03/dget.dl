@@ -1,0 +1,30 @@
+.type sname <: symbol
+.type port <: symbol
+.type proto <: symbol
+.type description <: symbol
+.type state <: symbol
+
+.decl service(v0: sname, v1: port, v2: proto, v3: description)
+.decl active(v0: proto, v1: port, v2: state)
+.decl open_port(v0: port, v1: proto, v2: sname)
+.decl inv0_service(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active(v0: proto, v1: port, v2: state)
+.decl M__1(v0: proto, v1: port)
+.decl M__2(v0: sname, v1: port, v2: proto)
+.decl M__3(v0: sname, v1: port, v2: proto)
+.decl M__4(v0: proto, v1: port)
+.decl open_port__0_(v0: port, v1: proto, v2: sname)
+.decl open_port__1_(v0: port, v1: proto, v2: sname)
+
+.input service
+.input active
+.output open_port
+
+M__1(v0, v1) :- active(v0, v1, v2).
+M__2(v0, v1, v2) :- inv0_service(v0, v1, v2, v3).
+M__3(v0, v1, v2) :- service(v0, v1, v2, v3).
+M__4(v0, v1) :- active(v0, v1, v2).
+inv0_service(v0, v1, v2, v3) :- service(v0, v1, v2, v3), v1 = "448", v2 = "udp".
+open_port(v0, v1, v2) :- open_port__0_(v0, v1, v2); open_port__1_(v0, v1, v2).
+open_port__0_(v0, v1, v2) :- M__1(v1, v0), M__2(v2, v0, v1).
+open_port__1_(v0, v1, v2) :- M__3(v2, v0, v1), M__4(v1, v0).

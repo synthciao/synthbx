@@ -1,0 +1,373 @@
+.type username <: symbol
+.type uid <: symbol
+.type gid <: symbol
+.type info <: symbol
+.type homedir <: symbol
+.type shell <: symbol
+.type tty <: symbol
+.type day <: symbol
+.type date <: symbol
+
+.decl user(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged(v0: username, v1: tty, v2: day, v3: date)
+.decl status(v0: tty)
+.decl logging(v0: username, v1: uid, v2: info, v3: date)
+.decl invent(v0: username, v1: tty, v2: date)
+.decl inv0_logged(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_status(v0: tty)
+.decl M__1(v0: username, v1: uid, v2: info)
+.decl M__2(v0: username, v1: tty, v2: date)
+.decl M__3(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl inv0_logged__0_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3_(v0: username, v1: tty, v2: day, v3: date)
+.decl M__3_0__cp(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl user_update(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl user_sdt_insert(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl user_sdt_delete(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged_update(v0: username, v1: tty, v2: day, v3: date)
+.decl logged_sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl logged_sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl status_update(v0: tty)
+.decl status_sdt_insert(v0: tty)
+.decl status_sdt_delete(v0: tty)
+.decl logging_update(v0: username, v1: uid, v2: info, v3: date)
+.decl logging_vdt_insert(v0: username, v1: uid, v2: info, v3: date)
+.decl logging_vdt_delete(v0: username, v1: uid, v2: info, v3: date)
+.decl invent_update(v0: username, v1: tty, v2: date)
+.decl invent_sdt_insert(v0: username, v1: tty, v2: date)
+.decl invent_sdt_delete(v0: username, v1: tty, v2: date)
+.decl invent_vdt_insert(v0: username, v1: tty, v2: date)
+.decl invent_vdt_delete(v0: username, v1: tty, v2: date)
+.decl inv0_logged_update(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged_sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged_sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged_vdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged_vdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_status_update(v0: tty)
+.decl inv0_status_sdt_insert(v0: tty)
+.decl inv0_status_sdt_delete(v0: tty)
+.decl inv0_status_vdt_insert(v0: tty)
+.decl inv0_status_vdt_delete(v0: tty)
+.decl M__1_update(v0: username, v1: uid, v2: info)
+.decl M__1_sdt_insert(v0: username, v1: uid, v2: info)
+.decl M__1_sdt_delete(v0: username, v1: uid, v2: info)
+.decl M__1_vdt_insert(v0: username, v1: uid, v2: info)
+.decl M__1_vdt_delete(v0: username, v1: uid, v2: info)
+.decl M__2_update(v0: username, v1: tty, v2: date)
+.decl M__2_sdt_insert(v0: username, v1: tty, v2: date)
+.decl M__2_sdt_delete(v0: username, v1: tty, v2: date)
+.decl M__2_vdt_insert(v0: username, v1: tty, v2: date)
+.decl M__2_vdt_delete(v0: username, v1: tty, v2: date)
+.decl M__3_update(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_sdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_sdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_vdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_vdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4_update(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4_sdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4_sdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4_vdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__4_vdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5_update(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5_sdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5_sdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5_vdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__5_vdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl inv0_logged__0__update(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__0__sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__0__sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__0__vdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__0__vdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1__update(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1__sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1__sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1__vdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1__vdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2__update(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2__sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2__sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2__vdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2__vdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3__update(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3__sdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3__sdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3__vdt_insert(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3__vdt_delete(v0: username, v1: tty, v2: day, v3: date)
+.decl M__3_0__cp_update(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_0__cp_sdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_0__cp_sdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_0__cp_vdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_0__cp_vdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp_update(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp_sdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp_sdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp_vdt_insert(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl M__3_1__cp_vdt_delete(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl Au_P_0_M__1_user(v0: gid, v1: homedir, v2: shell)
+.decl Au_P_0_M__2_inv0_logged(v0: day)
+.decl Au_P_1_M__2_inv0_logged(v0: username, v1: tty, v2: day, v3: date)
+.decl Au_U_inv0_logged__3__inv0_logged__0_(v0: username, v1: tty, v2: day, v3: date)
+.decl Au_U_inv0_logged__3__inv0_logged__1_(v0: username, v1: tty, v2: day, v3: date)
+.decl Au_P_0_logging_M__5(v0: tty)
+.decl Au_P_1_logging_M__5(v0: date, v1: uid, v2: tty, v3: username, v4: info)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input user
+.input logged
+.input status
+.output logging
+.output invent
+.output inv0_logged
+.output inv0_status
+.output M__1
+.output M__2
+.output M__3
+.output M__4
+.output M__5
+.output inv0_logged__0_
+.output inv0_logged__1_
+.output inv0_logged__2_
+.output inv0_logged__3_
+.output M__3_0__cp
+.output M__3_1__cp
+.output user_update
+.output user_sdt_insert
+.output user_sdt_delete
+.output logged_update
+.output logged_sdt_insert
+.output logged_sdt_delete
+.output status_update
+.output status_sdt_insert
+.output status_sdt_delete
+.input logging_update
+.output logging_vdt_insert
+.output logging_vdt_delete
+.output invent_update
+.output invent_sdt_insert
+.output invent_sdt_delete
+.output invent_vdt_insert
+.output invent_vdt_delete
+.output inv0_logged_update
+.output inv0_logged_sdt_insert
+.output inv0_logged_sdt_delete
+.output inv0_logged_vdt_insert
+.output inv0_logged_vdt_delete
+.output inv0_status_update
+.output inv0_status_sdt_insert
+.output inv0_status_sdt_delete
+.output inv0_status_vdt_insert
+.output inv0_status_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output M__3_update
+.output M__3_sdt_insert
+.output M__3_sdt_delete
+.output M__3_vdt_insert
+.output M__3_vdt_delete
+.output M__4_update
+.output M__4_sdt_insert
+.output M__4_sdt_delete
+.output M__4_vdt_insert
+.output M__4_vdt_delete
+.output M__5_update
+.output M__5_sdt_insert
+.output M__5_sdt_delete
+.output M__5_vdt_insert
+.output M__5_vdt_delete
+.output inv0_logged__0__update
+.output inv0_logged__0__sdt_insert
+.output inv0_logged__0__sdt_delete
+.output inv0_logged__0__vdt_insert
+.output inv0_logged__0__vdt_delete
+.output inv0_logged__1__update
+.output inv0_logged__1__sdt_insert
+.output inv0_logged__1__sdt_delete
+.output inv0_logged__1__vdt_insert
+.output inv0_logged__1__vdt_delete
+.output inv0_logged__2__update
+.output inv0_logged__2__sdt_insert
+.output inv0_logged__2__sdt_delete
+.output inv0_logged__2__vdt_insert
+.output inv0_logged__2__vdt_delete
+.output inv0_logged__3__update
+.output inv0_logged__3__sdt_insert
+.output inv0_logged__3__sdt_delete
+.output inv0_logged__3__vdt_insert
+.output inv0_logged__3__vdt_delete
+.output M__3_0__cp_update
+.output M__3_0__cp_sdt_insert
+.output M__3_0__cp_sdt_delete
+.output M__3_0__cp_vdt_insert
+.output M__3_0__cp_vdt_delete
+.output M__3_1__cp_update
+.output M__3_1__cp_sdt_insert
+.output M__3_1__cp_sdt_delete
+.output M__3_1__cp_vdt_insert
+.output M__3_1__cp_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v3) :- user(v0, v1, v2, v3, v4, v5).
+M__2(v0, v1, v3) :- inv0_logged(v0, v1, v2, v3).
+M__3(v0, v1, v2, v3, v4) :- M__1(v3, v1, v4), M__2(v3, v2, v0).
+M__3_0__cp(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4).
+M__3_1__cp(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4).
+M__4(v0, v1, v2, v3, v4) :- M__3_0__cp(v0, v1, v2, v3, v4), inv0_status(v2).
+M__5(v0, v1, v2, v3, v4) :- M__3_1__cp(v0, v1, v2, v3, v4), !M__4(v0, v1, v2, v3, v4).
+inv0_logged(v0, v1, v2, v3) :- inv0_logged__2_(v0, v1, v2, v3); inv0_logged__3_(v0, v1, v2, v3).
+inv0_logged__0_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "console", v2 = "Sun".
+inv0_logged__1_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys000", v2 = "Sun".
+inv0_logged__2_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys001", v2 = "Sun".
+inv0_logged__3_(v0, v1, v2, v3) :- inv0_logged__0_(v0, v1, v2, v3); inv0_logged__1_(v0, v1, v2, v3).
+logging(v3, v1, v4, v0) :- M__5(v0, v1, v2, v3, v4).
+
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+M__3_0__cp_vdt_delete(v0, v1, v2, v3, v4) :- M__3_0__cp(v0, v1, v2, v3, v4), !M__3_0__cp_update(v0, v1, v2, v3, v4).
+M__3_0__cp_vdt_insert(v0, v1, v2, v3, v4) :- M__3_0__cp_update(v0, v1, v2, v3, v4), !M__3_0__cp(v0, v1, v2, v3, v4).
+M__3_1__cp_vdt_delete(v0, v1, v2, v3, v4) :- M__3_1__cp(v0, v1, v2, v3, v4), !M__3_1__cp_update(v0, v1, v2, v3, v4).
+M__3_1__cp_vdt_insert(v0, v1, v2, v3, v4) :- M__3_1__cp_update(v0, v1, v2, v3, v4), !M__3_1__cp(v0, v1, v2, v3, v4).
+M__3_vdt_delete(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4), !M__3_update(v0, v1, v2, v3, v4).
+M__3_vdt_insert(v0, v1, v2, v3, v4) :- M__3_update(v0, v1, v2, v3, v4), !M__3(v0, v1, v2, v3, v4).
+M__4_vdt_delete(v0, v1, v2, v3, v4) :- M__4(v0, v1, v2, v3, v4), !M__4_update(v0, v1, v2, v3, v4).
+M__4_vdt_insert(v0, v1, v2, v3, v4) :- M__4_update(v0, v1, v2, v3, v4), !M__4(v0, v1, v2, v3, v4).
+M__5_vdt_delete(v0, v1, v2, v3, v4) :- M__5(v0, v1, v2, v3, v4), !M__5_update(v0, v1, v2, v3, v4).
+M__5_vdt_insert(v0, v1, v2, v3, v4) :- M__5_update(v0, v1, v2, v3, v4), !M__5(v0, v1, v2, v3, v4).
+inv0_logged__0__vdt_delete(v0, v1, v2, v3) :- inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__0__update(v0, v1, v2, v3).
+inv0_logged__0__vdt_insert(v0, v1, v2, v3) :- inv0_logged__0__update(v0, v1, v2, v3), !inv0_logged__0_(v0, v1, v2, v3).
+inv0_logged__1__vdt_delete(v0, v1, v2, v3) :- inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__1__update(v0, v1, v2, v3).
+inv0_logged__1__vdt_insert(v0, v1, v2, v3) :- inv0_logged__1__update(v0, v1, v2, v3), !inv0_logged__1_(v0, v1, v2, v3).
+inv0_logged__2__vdt_delete(v0, v1, v2, v3) :- inv0_logged__2_(v0, v1, v2, v3), !inv0_logged__2__update(v0, v1, v2, v3).
+inv0_logged__2__vdt_insert(v0, v1, v2, v3) :- inv0_logged__2__update(v0, v1, v2, v3), !inv0_logged__2_(v0, v1, v2, v3).
+inv0_logged__3__vdt_delete(v0, v1, v2, v3) :- inv0_logged__3_(v0, v1, v2, v3), !inv0_logged__3__update(v0, v1, v2, v3).
+inv0_logged__3__vdt_insert(v0, v1, v2, v3) :- inv0_logged__3__update(v0, v1, v2, v3), !inv0_logged__3_(v0, v1, v2, v3).
+inv0_logged_vdt_delete(v0, v1, v2, v3) :- inv0_logged(v0, v1, v2, v3), !inv0_logged_update(v0, v1, v2, v3).
+inv0_logged_vdt_insert(v0, v1, v2, v3) :- inv0_logged_update(v0, v1, v2, v3), !inv0_logged(v0, v1, v2, v3).
+inv0_status_vdt_delete(v0) :- inv0_status(v0), !inv0_status_update(v0).
+inv0_status_vdt_insert(v0) :- inv0_status_update(v0), !inv0_status(v0).
+invent_vdt_delete(v0, v1, v2) :- invent(v0, v1, v2), !invent_update(v0, v1, v2).
+invent_vdt_insert(v0, v1, v2) :- invent_update(v0, v1, v2), !invent(v0, v1, v2).
+logging_vdt_delete(v0, v1, v2, v3) :- logging(v0, v1, v2, v3), !logging_update(v0, v1, v2, v3).
+logging_vdt_insert(v0, v1, v2, v3) :- logging_update(v0, v1, v2, v3), !logging(v0, v1, v2, v3).
+
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+M__3_0__cp_update(v0, v1, v2, v3, v4) :- M__3_0__cp(v0, v1, v2, v3, v4), !M__3_0__cp_sdt_delete(v0, v1, v2, v3, v4); M__3_0__cp_sdt_insert(v0, v1, v2, v3, v4).
+M__3_1__cp_update(v0, v1, v2, v3, v4) :- M__3_1__cp(v0, v1, v2, v3, v4), !M__3_1__cp_sdt_delete(v0, v1, v2, v3, v4); M__3_1__cp_sdt_insert(v0, v1, v2, v3, v4).
+M__3_update(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4), !M__3_sdt_delete(v0, v1, v2, v3, v4); M__3_sdt_insert(v0, v1, v2, v3, v4).
+M__4_update(v0, v1, v2, v3, v4) :- M__4(v0, v1, v2, v3, v4), !M__4_sdt_delete(v0, v1, v2, v3, v4); M__4_sdt_insert(v0, v1, v2, v3, v4).
+M__5_update(v0, v1, v2, v3, v4) :- M__5(v0, v1, v2, v3, v4), !M__5_sdt_delete(v0, v1, v2, v3, v4); M__5_sdt_insert(v0, v1, v2, v3, v4).
+inv0_logged__0__update(v0, v1, v2, v3) :- inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__0__sdt_delete(v0, v1, v2, v3); inv0_logged__0__sdt_insert(v0, v1, v2, v3).
+inv0_logged__1__update(v0, v1, v2, v3) :- inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__1__sdt_delete(v0, v1, v2, v3); inv0_logged__1__sdt_insert(v0, v1, v2, v3).
+inv0_logged__2__update(v0, v1, v2, v3) :- inv0_logged__2_(v0, v1, v2, v3), !inv0_logged__2__sdt_delete(v0, v1, v2, v3); inv0_logged__2__sdt_insert(v0, v1, v2, v3).
+inv0_logged__3__update(v0, v1, v2, v3) :- inv0_logged__3_(v0, v1, v2, v3), !inv0_logged__3__sdt_delete(v0, v1, v2, v3); inv0_logged__3__sdt_insert(v0, v1, v2, v3).
+inv0_logged_update(v0, v1, v2, v3) :- inv0_logged(v0, v1, v2, v3), !inv0_logged_sdt_delete(v0, v1, v2, v3); inv0_logged_sdt_insert(v0, v1, v2, v3).
+inv0_status_update(v0) :- inv0_status(v0), !inv0_status_sdt_delete(v0); inv0_status_sdt_insert(v0).
+invent_update(v0, v1, v2) :- invent(v0, v1, v2), !invent_sdt_delete(v0, v1, v2); invent_sdt_insert(v0, v1, v2).
+logged_update(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), !logged_sdt_delete(v0, v1, v2, v3); logged_sdt_insert(v0, v1, v2, v3).
+status_update(v0) :- status(v0), !status_sdt_delete(v0); status_sdt_insert(v0).
+user_update(v0, v1, v2, v3, v4, v5) :- user(v0, v1, v2, v3, v4, v5), !user_sdt_delete(v0, v1, v2, v3, v4, v5); user_sdt_insert(v0, v1, v2, v3, v4, v5).
+
+Fr__("_rejected_") :- M__1_sdt_delete(v3, _, _), M__1_update(v3, _, _), M__2_sdt_delete(v3, _, _), M__2_update(v3, _, _).
+Fr__("_rejected_") :- M__1_sdt_insert(v3, _, _), M__1(v3, _, _).
+Fr__("_rejected_") :- M__2_sdt_insert(v3, _, _), M__2(v3, _, _).
+Fr__("_rejected_") :- M__3_0__cp_sdt_delete(_, _, v2, _, _), M__3_0__cp_update(_, _, v2, _, _), inv0_status_sdt_delete(v2), inv0_status_update(v2).
+Fr__("_rejected_") :- M__3_0__cp_sdt_insert(_, _, v2, _, _), M__3_0__cp(_, _, v2, _, _).
+Fr__("_rejected_") :- inv0_logged__0_(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__0_(_, v1, _, _), v1 != "console".
+Fr__("_rejected_") :- inv0_logged__0__update(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__0__update(_, v1, _, _), v1 != "console".
+Fr__("_rejected_") :- inv0_logged__1_(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__1_(_, v1, _, _), v1 != "ttys000".
+Fr__("_rejected_") :- inv0_logged__1__update(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__1__update(_, v1, _, _), v1 != "ttys000".
+Fr__("_rejected_") :- inv0_logged__2_(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__2_(_, v1, _, _), v1 != "ttys001".
+Fr__("_rejected_") :- inv0_logged__2__update(_, _, v2, _), v2 != "Sun".
+Fr__("_rejected_") :- inv0_logged__2__update(_, v1, _, _), v1 != "ttys001".
+Fr__("_rejected_") :- inv0_status_sdt_insert(v2), inv0_status(v2).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_insert(v3, v1, v4) :- M__3_vdt_insert(_, v1, _, v3, v4), !M__1(v3, v1, v4), Rule(6).
+M__2_sdt_delete(v3, v2, v0) :- M__3_vdt_delete(v0, _, v2, v3, _), M__2(v3, v2, v0), Rule(5).
+M__2_sdt_insert(v3, v2, v0) :- M__3_vdt_insert(v0, _, v2, v3, _), !M__2(v3, v2, v0), Rule(7).
+M__3_0__cp_sdt_delete(v0, v1, v2, v3, v4) :- M__3_1__cp_sdt_delete(v0, v1, v2, v3, v4), M__3(v0, v1, v2, v3, v4), Rule(42).
+M__3_0__cp_sdt_delete(v0, v1, v2, v3, v4) :- M__4_vdt_delete(v0, v1, v2, v3, v4), M__3_0__cp(v0, v1, v2, v3, v4), Rule(12).
+M__3_0__cp_sdt_insert(v0, v1, v2, v3, v4) :- M__3_1__cp_sdt_insert(v0, v1, v2, v3, v4), !M__3(v0, v1, v2, v3, v4), Rule(43).
+M__3_0__cp_sdt_insert(v0, v1, v2, v3, v4) :- M__4_vdt_insert(v0, v1, v2, v3, v4), !M__3_0__cp(v0, v1, v2, v3, v4), Rule(13).
+M__3_1__cp_sdt_delete(v0, v1, v2, v3, v4) :- M__3_0__cp_sdt_delete(v0, v1, v2, v3, v4), M__3(v0, v1, v2, v3, v4), Rule(40).
+M__3_1__cp_sdt_delete(v0, v1, v2, v3, v4) :- M__5_vdt_delete(v0, v1, v2, v3, v4), M__3_1__cp(v0, v1, v2, v3, v4), Rule(15).
+M__3_1__cp_sdt_insert(v0, v1, v2, v3, v4) :- M__3_0__cp_sdt_insert(v0, v1, v2, v3, v4), !M__3(v0, v1, v2, v3, v4), Rule(41).
+M__3_1__cp_sdt_insert(v0, v1, v2, v3, v4) :- M__5_vdt_insert(v0, v1, v2, v3, v4), !M__3_1__cp(v0, v1, v2, v3, v4), Rule(17).
+M__3_sdt_delete(v0, v1, v2, v3, v4) :- M__3_0__cp_vdt_delete(v0, v1, v2, v3, v4), Rule(8).
+M__3_sdt_delete(v0, v1, v2, v3, v4) :- M__3_1__cp_vdt_delete(v0, v1, v2, v3, v4), Rule(10).
+M__3_sdt_insert(v0, v1, v2, v3, v4) :- M__3_0__cp_vdt_insert(v0, v1, v2, v3, v4), Rule(9).
+M__3_sdt_insert(v0, v1, v2, v3, v4) :- M__3_1__cp_vdt_insert(v0, v1, v2, v3, v4), Rule(11).
+M__4_sdt_delete(v0, v1, v2, v3, v4) :- M__5_vdt_insert(v0, v1, v2, v3, v4), M__4(v0, v1, v2, v3, v4), Rule(16).
+M__5_sdt_delete(v0, v1, v2, v3, v4) :- logging_vdt_delete(v3, v1, v4, v0), M__5(v0, v1, v2, v3, v4), Rule(37).
+M__5_sdt_insert(v0, v1, v2, v3, v4) :- logging_vdt_insert(v3, v1, v4, v0), Au_P_0_logging_M__5(v2), !Au_P_1_logging_M__5(v0, v1, _, v3, v4), !M__5(v0, v1, _, v3, v4), Rule(39).
+M__5_sdt_insert(v0, v1, v2, v3, v4) :- logging_vdt_insert(v3, v1, v4, v0), Au_P_1_logging_M__5(v0, v1, v2, v3, v4), !M__5(v0, v1, _, v3, v4), Rule(38).
+inv0_logged__0__sdt_delete(v0, v1, v2, v3) :- inv0_logged__1__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(46).
+inv0_logged__0__sdt_delete(v0, v1, v2, v3) :- inv0_logged__2__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(50).
+inv0_logged__0__sdt_delete(v0, v1, v2, v3) :- inv0_logged__3__vdt_delete(v0, v1, v2, v3), inv0_logged__0_(v0, v1, v2, v3), Rule(27).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__1__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(47).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__2__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(51).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), !Au_U_inv0_logged__3__inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__0_(v0, v1, v2, v3), Rule(30).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), !Au_U_inv0_logged__3__inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__0_(v0, v1, v2, v3), Rule(32).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), Au_U_inv0_logged__3__inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__0_(v0, v1, v2, v3), Rule(29).
+inv0_logged__0__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), Au_U_inv0_logged__3__inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__0_(v0, v1, v2, v3), Rule(31).
+inv0_logged__1__sdt_delete(v0, v1, v2, v3) :- inv0_logged__0__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(44).
+inv0_logged__1__sdt_delete(v0, v1, v2, v3) :- inv0_logged__2__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(54).
+inv0_logged__1__sdt_delete(v0, v1, v2, v3) :- inv0_logged__3__vdt_delete(v0, v1, v2, v3), inv0_logged__1_(v0, v1, v2, v3), Rule(28).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__0__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(45).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__2__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(55).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), !Au_U_inv0_logged__3__inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__1_(v0, v1, v2, v3), Rule(34).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), !Au_U_inv0_logged__3__inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__1_(v0, v1, v2, v3), Rule(36).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), Au_U_inv0_logged__3__inv0_logged__0_(v0, v1, v2, v3), !inv0_logged__1_(v0, v1, v2, v3), Rule(33).
+inv0_logged__1__sdt_insert(v0, v1, v2, v3) :- inv0_logged__3__vdt_insert(v0, v1, v2, v3), Au_U_inv0_logged__3__inv0_logged__1_(v0, v1, v2, v3), !inv0_logged__1_(v0, v1, v2, v3), Rule(35).
+inv0_logged__2__sdt_delete(v0, v1, v2, v3) :- inv0_logged__0__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(48).
+inv0_logged__2__sdt_delete(v0, v1, v2, v3) :- inv0_logged__1__sdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(52).
+inv0_logged__2__sdt_delete(v0, v1, v2, v3) :- inv0_logged_vdt_delete(v0, v1, v2, v3), inv0_logged__2_(v0, v1, v2, v3), Rule(18).
+inv0_logged__2__sdt_insert(v0, v1, v2, v3) :- inv0_logged__0__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(49).
+inv0_logged__2__sdt_insert(v0, v1, v2, v3) :- inv0_logged__1__sdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(53).
+inv0_logged__3__sdt_delete(v0, v1, v2, v3) :- inv0_logged_vdt_delete(v0, v1, v2, v3), inv0_logged__3_(v0, v1, v2, v3), Rule(19).
+inv0_logged__3__sdt_insert(v0, v1, v2, v3) :- inv0_logged_vdt_insert(v0, v1, v2, v3), !inv0_logged__3_(v0, v1, v2, v3), Rule(20).
+inv0_logged_sdt_delete(v0, v1, v2, v3) :- M__2_vdt_delete(v0, v1, v3), inv0_logged(v0, v1, v2, v3), Rule(2).
+inv0_logged_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v3), Au_P_0_M__2_inv0_logged(v2), !Au_P_1_M__2_inv0_logged(v0, v1, _, v3), !inv0_logged(v0, v1, _, v3), Rule(4).
+inv0_logged_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v3), Au_P_1_M__2_inv0_logged(v0, v1, v2, v3), !inv0_logged(v0, v1, _, v3), Rule(3).
+inv0_status_sdt_insert(v2) :- M__4_vdt_insert(_, _, v2, _, _), !inv0_status(v2), Rule(14).
+logged_sdt_delete(v0, v1, v2, v3) :- inv0_logged__0__vdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(21).
+logged_sdt_delete(v0, v1, v2, v3) :- inv0_logged__1__vdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(23).
+logged_sdt_delete(v0, v1, v2, v3) :- inv0_logged__2__vdt_delete(v0, v1, v2, v3), logged(v0, v1, v2, v3), Rule(25).
+logged_sdt_insert(v0, v1, v2, v3) :- inv0_logged__0__vdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(22).
+logged_sdt_insert(v0, v1, v2, v3) :- inv0_logged__1__vdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(24).
+logged_sdt_insert(v0, v1, v2, v3) :- inv0_logged__2__vdt_insert(v0, v1, v2, v3), !logged(v0, v1, v2, v3), Rule(26).
+user_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__1_vdt_delete(v0, v1, v3), user(v0, v1, v2, v3, v4, v5), Rule(0).
+user_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_vdt_insert(v0, v1, v3), Au_P_0_M__1_user(v2, v4, v5), !user(v0, v1, _, v3, _, _), Rule(1).
+
+Au_P_0_M__1_user("_null_", "_null_", "_null_").
+Au_P_0_M__2_inv0_logged("Sun").
+Au_U_inv0_logged__3__inv0_logged__0_("babyshark", "console", "Sun", "May 1 19:00").
+Au_U_inv0_logged__3__inv0_logged__1_("bob", "ttys000", "Sun", "May 1 00:42").
+Au_U_inv0_logged__3__inv0_logged__1_("bob", "ttys000", "Sun", "May 1 00:18").
+Au_U_inv0_logged__3__inv0_logged__1_("bob", "ttys000", "Sun", "May 1 00:00").
+Au_P_0_logging_M__5("ttys000").
+Au_P_1_logging_M__5("May 1 19:00", "1001", "console", "babyshark", "BabyS").

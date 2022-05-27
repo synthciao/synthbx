@@ -1,0 +1,21 @@
+.type supplier_key <: symbol
+.type part_id <: symbol
+.type part_name <: symbol
+
+.decl input1(v0: supplier_key, v1: part_id)
+.decl input2(v0: part_id, v1: part_name)
+.decl ans(v0: part_name)
+.decl M__1(v0: supplier_key)
+.decl M__2(v0: supplier_key, v1: part_id)
+.decl M__3(v0: supplier_key, v1: part_id, v2: part_name)
+.decl input1_0__cp(v0: supplier_key, v1: part_id)
+
+.input input1
+.input input2
+.output ans
+
+M__1(v0) :- input1(v0, v1).
+M__2(v0, v1) :- M__1(v0), input1_0__cp(v0, v1).
+M__3(v0, v1, v2) :- M__2(v0, v1), input2(v1, v2).
+ans(v2) :- M__3(v0, v1, v2).
+input1_0__cp(v0, v1) :- input1(v0, v1).

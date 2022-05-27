@@ -1,0 +1,440 @@
+.type user <: symbol
+.type pid <: symbol
+.type cpu <: symbol
+.type mem <: symbol
+.type vsz <: symbol
+.type rss <: symbol
+.type tt <: symbol
+.type stat <: symbol
+.type started <: symbol
+.type time <: symbol
+.type command <: symbol
+
+.decl ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl ps_aux(v0: user, v1: pid, v2: command)
+.decl inv0_ps(v0: user, v1: pid, v2: cpu, v3: mem, v4: vsz, v5: rss, v6: tt, v7: stat, v8: started, v9: time, v10: command)
+.decl Rule(v0: number)
+
+.input ps
+.output ps_aux
+.output inv0_ps
+.input Rule
+
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", Rule(0).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(58).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(57).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/bin/bash", Rule(56).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/bin/echo", Rule(54).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/bin/zsh", Rule(53).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v10 = "/usr/bin/cd .", Rule(55).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v2 = "0.0", Rule(30).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v3 = "0.1", Rule(32).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v3 = "0.2", Rule(31).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v3 = "0.5", Rule(33).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v4 = "34501672", Rule(35).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v4 = "34509948", Rule(37).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v4 = "34814248", Rule(34).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v4 = "59679072", Rule(38).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v4 = "596954288", Rule(36).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v5 = "11111", Rule(41).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v5 = "26988", Rule(39).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v5 = "3144", Rule(43).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v5 = "33356", Rule(42).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v5 = "35788", Rule(40).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v6 = "??", Rule(44).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v7 = "S", Rule(45).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v8 = "10:00PM", Rule(47).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v8 = "9:25AM", Rule(46).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v9 = "0:00.00", Rule(52).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v9 = "0:00.09", Rule(49).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v9 = "0:00.10", Rule(51).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v9 = "0:00.15", Rule(50).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v0 = "bob", v9 = "0:00.51", Rule(48).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(29).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(28).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/bin/bash", Rule(27).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/bin/echo", Rule(25).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/bin/zsh", Rule(24).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v10 = "/usr/bin/cd .", Rule(26).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", Rule(1).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(86).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(85).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/bin/bash", Rule(84).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/bin/echo", Rule(82).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/bin/zsh", Rule(81).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v10 = "/usr/bin/cd .", Rule(83).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v3 = "0.1", Rule(60).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v3 = "0.2", Rule(59).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v3 = "0.5", Rule(61).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v4 = "34501672", Rule(63).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v4 = "34509948", Rule(65).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v4 = "34814248", Rule(62).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v4 = "59679072", Rule(66).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v4 = "596954288", Rule(64).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v5 = "11111", Rule(69).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v5 = "26988", Rule(67).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v5 = "3144", Rule(71).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v5 = "33356", Rule(70).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v5 = "35788", Rule(68).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v6 = "??", Rule(72).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v7 = "S", Rule(73).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v8 = "10:00PM", Rule(75).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v8 = "9:25AM", Rule(74).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v9 = "0:00.00", Rule(80).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v9 = "0:00.09", Rule(77).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v9 = "0:00.10", Rule(79).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v9 = "0:00.15", Rule(78).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v2 = "0.0", v9 = "0:00.51", Rule(76).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", Rule(3).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(155).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(154).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/bin/bash", Rule(153).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/bin/echo", Rule(151).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/bin/zsh", Rule(150).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v10 = "/usr/bin/cd .", Rule(152).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v4 = "34501672", Rule(93).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v4 = "34509948", Rule(95).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v4 = "34814248", Rule(92).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v4 = "59679072", Rule(96).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v4 = "596954288", Rule(94).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v5 = "11111", Rule(109).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v5 = "26988", Rule(107).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v5 = "3144", Rule(111).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v5 = "33356", Rule(110).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v5 = "35788", Rule(108).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v6 = "??", Rule(118).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v7 = "S", Rule(121).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v8 = "10:00PM", Rule(126).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v8 = "9:25AM", Rule(125).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v9 = "0:00.00", Rule(138).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v9 = "0:00.09", Rule(135).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v9 = "0:00.10", Rule(137).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v9 = "0:00.15", Rule(136).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.1", v9 = "0:00.51", Rule(134).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", Rule(2).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(149).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(148).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/bin/bash", Rule(147).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/bin/echo", Rule(145).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/bin/zsh", Rule(144).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v10 = "/usr/bin/cd .", Rule(146).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v4 = "34501672", Rule(88).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v4 = "34509948", Rule(90).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v4 = "34814248", Rule(87).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v4 = "59679072", Rule(91).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v4 = "596954288", Rule(89).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v5 = "11111", Rule(104).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v5 = "26988", Rule(102).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v5 = "3144", Rule(106).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v5 = "33356", Rule(105).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v5 = "35788", Rule(103).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v6 = "??", Rule(117).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v7 = "S", Rule(120).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v8 = "10:00PM", Rule(124).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v8 = "9:25AM", Rule(123).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v9 = "0:00.00", Rule(133).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v9 = "0:00.09", Rule(130).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v9 = "0:00.10", Rule(132).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v9 = "0:00.15", Rule(131).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.2", v9 = "0:00.51", Rule(129).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", Rule(4).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(161).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(160).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/bin/bash", Rule(159).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/bin/echo", Rule(157).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/bin/zsh", Rule(156).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v10 = "/usr/bin/cd .", Rule(158).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v4 = "34501672", Rule(98).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v4 = "34509948", Rule(100).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v4 = "34814248", Rule(97).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v4 = "59679072", Rule(101).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v4 = "596954288", Rule(99).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v5 = "11111", Rule(114).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v5 = "26988", Rule(112).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v5 = "3144", Rule(116).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v5 = "33356", Rule(115).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v5 = "35788", Rule(113).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v6 = "??", Rule(119).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v7 = "S", Rule(122).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v8 = "10:00PM", Rule(128).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v8 = "9:25AM", Rule(127).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v9 = "0:00.00", Rule(143).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v9 = "0:00.09", Rule(140).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v9 = "0:00.10", Rule(142).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v9 = "0:00.15", Rule(141).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v3 = "0.5", v9 = "0:00.51", Rule(139).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", Rule(6).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(243).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(242).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/bin/bash", Rule(241).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/bin/echo", Rule(239).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/bin/zsh", Rule(238).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v10 = "/usr/bin/cd .", Rule(240).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v5 = "11111", Rule(169).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v5 = "26988", Rule(167).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v5 = "3144", Rule(171).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v5 = "33356", Rule(170).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v5 = "35788", Rule(168).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v6 = "??", Rule(188).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v7 = "S", Rule(193).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v8 = "10:00PM", Rule(200).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v8 = "9:25AM", Rule(199).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v9 = "0:00.00", Rule(216).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v9 = "0:00.09", Rule(213).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v9 = "0:00.10", Rule(215).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v9 = "0:00.15", Rule(214).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34501672", v9 = "0:00.51", Rule(212).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", Rule(8).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(255).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(254).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/bin/bash", Rule(253).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/bin/echo", Rule(251).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/bin/zsh", Rule(250).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v10 = "/usr/bin/cd .", Rule(252).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v5 = "11111", Rule(179).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v5 = "26988", Rule(177).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v5 = "3144", Rule(181).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v5 = "33356", Rule(180).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v5 = "35788", Rule(178).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v6 = "??", Rule(190).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v7 = "S", Rule(195).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v8 = "10:00PM", Rule(204).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v8 = "9:25AM", Rule(203).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v9 = "0:00.00", Rule(226).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v9 = "0:00.09", Rule(223).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v9 = "0:00.10", Rule(225).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v9 = "0:00.15", Rule(224).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34509948", v9 = "0:00.51", Rule(222).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", Rule(5).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(237).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(236).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/bin/bash", Rule(235).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/bin/echo", Rule(233).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/bin/zsh", Rule(232).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v10 = "/usr/bin/cd .", Rule(234).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v5 = "11111", Rule(164).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v5 = "26988", Rule(162).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v5 = "3144", Rule(166).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v5 = "33356", Rule(165).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v5 = "35788", Rule(163).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v6 = "??", Rule(187).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v7 = "S", Rule(192).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v8 = "10:00PM", Rule(198).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v8 = "9:25AM", Rule(197).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v9 = "0:00.00", Rule(211).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v9 = "0:00.09", Rule(208).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v9 = "0:00.10", Rule(210).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v9 = "0:00.15", Rule(209).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "34814248", v9 = "0:00.51", Rule(207).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", Rule(9).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(261).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(260).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/bin/bash", Rule(259).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/bin/echo", Rule(257).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/bin/zsh", Rule(256).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v10 = "/usr/bin/cd .", Rule(258).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v5 = "11111", Rule(184).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v5 = "26988", Rule(182).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v5 = "3144", Rule(186).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v5 = "33356", Rule(185).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v5 = "35788", Rule(183).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v6 = "??", Rule(191).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v7 = "S", Rule(196).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v8 = "10:00PM", Rule(206).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v8 = "9:25AM", Rule(205).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v9 = "0:00.00", Rule(231).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v9 = "0:00.09", Rule(228).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v9 = "0:00.10", Rule(230).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v9 = "0:00.15", Rule(229).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "59679072", v9 = "0:00.51", Rule(227).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", Rule(7).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(249).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(248).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/bin/bash", Rule(247).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/bin/echo", Rule(245).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/bin/zsh", Rule(244).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v10 = "/usr/bin/cd .", Rule(246).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v5 = "11111", Rule(174).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v5 = "26988", Rule(172).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v5 = "3144", Rule(176).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v5 = "33356", Rule(175).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v5 = "35788", Rule(173).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v6 = "??", Rule(189).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v7 = "S", Rule(194).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v8 = "10:00PM", Rule(202).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v8 = "9:25AM", Rule(201).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v9 = "0:00.00", Rule(221).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v9 = "0:00.09", Rule(218).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v9 = "0:00.10", Rule(220).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v9 = "0:00.15", Rule(219).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v4 = "596954288", v9 = "0:00.51", Rule(217).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", Rule(12).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(324).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(323).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/bin/bash", Rule(322).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/bin/echo", Rule(320).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/bin/zsh", Rule(319).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v10 = "/usr/bin/cd .", Rule(321).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v6 = "??", Rule(264).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v7 = "S", Rule(269).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v8 = "10:00PM", Rule(277).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v8 = "9:25AM", Rule(276).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v9 = "0:00.00", Rule(296).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v9 = "0:00.09", Rule(293).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v9 = "0:00.10", Rule(295).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v9 = "0:00.15", Rule(294).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "11111", v9 = "0:00.51", Rule(292).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", Rule(10).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(312).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(311).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/bin/bash", Rule(310).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/bin/echo", Rule(308).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/bin/zsh", Rule(307).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v10 = "/usr/bin/cd .", Rule(309).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v6 = "??", Rule(262).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v7 = "S", Rule(267).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v8 = "10:00PM", Rule(273).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v8 = "9:25AM", Rule(272).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v9 = "0:00.00", Rule(286).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v9 = "0:00.09", Rule(283).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v9 = "0:00.10", Rule(285).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v9 = "0:00.15", Rule(284).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "26988", v9 = "0:00.51", Rule(282).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", Rule(14).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(336).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(335).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/bin/bash", Rule(334).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/bin/echo", Rule(332).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/bin/zsh", Rule(331).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v10 = "/usr/bin/cd .", Rule(333).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v6 = "??", Rule(266).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v7 = "S", Rule(271).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v8 = "10:00PM", Rule(281).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v8 = "9:25AM", Rule(280).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v9 = "0:00.00", Rule(306).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v9 = "0:00.09", Rule(303).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v9 = "0:00.10", Rule(305).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v9 = "0:00.15", Rule(304).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "3144", v9 = "0:00.51", Rule(302).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", Rule(13).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(330).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(329).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/bin/bash", Rule(328).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/bin/echo", Rule(326).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/bin/zsh", Rule(325).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v10 = "/usr/bin/cd .", Rule(327).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v6 = "??", Rule(265).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v7 = "S", Rule(270).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v8 = "10:00PM", Rule(279).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v8 = "9:25AM", Rule(278).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v9 = "0:00.00", Rule(301).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v9 = "0:00.09", Rule(298).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v9 = "0:00.10", Rule(300).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v9 = "0:00.15", Rule(299).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "33356", v9 = "0:00.51", Rule(297).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", Rule(11).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(318).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(317).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/bin/bash", Rule(316).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/bin/echo", Rule(314).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/bin/zsh", Rule(313).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v10 = "/usr/bin/cd .", Rule(315).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v6 = "??", Rule(263).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v7 = "S", Rule(268).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v8 = "10:00PM", Rule(275).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v8 = "9:25AM", Rule(274).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v9 = "0:00.00", Rule(291).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v9 = "0:00.09", Rule(288).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v9 = "0:00.10", Rule(290).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v9 = "0:00.15", Rule(289).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v5 = "35788", v9 = "0:00.51", Rule(287).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", Rule(15).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(350).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(349).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/bin/bash", Rule(348).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/bin/echo", Rule(346).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/bin/zsh", Rule(345).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v10 = "/usr/bin/cd .", Rule(347).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v7 = "S", Rule(337).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v8 = "10:00PM", Rule(339).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v8 = "9:25AM", Rule(338).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v9 = "0:00.00", Rule(344).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v9 = "0:00.09", Rule(341).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v9 = "0:00.10", Rule(343).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v9 = "0:00.15", Rule(342).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v6 = "??", v9 = "0:00.51", Rule(340).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", Rule(16).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(363).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(362).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/bin/bash", Rule(361).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/bin/echo", Rule(359).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/bin/zsh", Rule(358).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v10 = "/usr/bin/cd .", Rule(360).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v8 = "10:00PM", Rule(352).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v8 = "9:25AM", Rule(351).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v9 = "0:00.00", Rule(357).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v9 = "0:00.09", Rule(354).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v9 = "0:00.10", Rule(356).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v9 = "0:00.15", Rule(355).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v7 = "S", v9 = "0:00.51", Rule(353).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", Rule(18).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(385).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(384).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/bin/bash", Rule(383).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/bin/echo", Rule(381).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/bin/zsh", Rule(380).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v10 = "/usr/bin/cd .", Rule(382).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v9 = "0:00.00", Rule(373).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v9 = "0:00.09", Rule(370).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v9 = "0:00.10", Rule(372).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v9 = "0:00.15", Rule(371).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "10:00PM", v9 = "0:00.51", Rule(369).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", Rule(17).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(379).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(378).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/bin/bash", Rule(377).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/bin/echo", Rule(375).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/bin/zsh", Rule(374).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v10 = "/usr/bin/cd .", Rule(376).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v9 = "0:00.00", Rule(368).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v9 = "0:00.09", Rule(365).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v9 = "0:00.10", Rule(367).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v9 = "0:00.15", Rule(366).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v8 = "9:25AM", v9 = "0:00.51", Rule(364).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", Rule(23).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(415).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(414).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/bin/bash", Rule(413).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/bin/echo", Rule(411).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/bin/zsh", Rule(410).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.00", v10 = "/usr/bin/cd .", Rule(412).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", Rule(20).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(397).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(396).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/bin/bash", Rule(395).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/bin/echo", Rule(393).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/bin/zsh", Rule(392).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.09", v10 = "/usr/bin/cd .", Rule(394).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", Rule(22).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(409).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(408).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/bin/bash", Rule(407).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/bin/echo", Rule(405).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/bin/zsh", Rule(404).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.10", v10 = "/usr/bin/cd .", Rule(406).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", Rule(21).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(403).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(402).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/bin/bash", Rule(401).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/bin/echo", Rule(399).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/bin/zsh", Rule(398).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.15", v10 = "/usr/bin/cd .", Rule(400).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", Rule(19).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper Renderer.app/Contents/MacOS/Google Drive Helper Renderer", Rule(391).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper.app/Contents/MacOS/Google Drive Helper", Rule(390).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/bin/bash", Rule(389).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/bin/echo", Rule(387).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/bin/zsh", Rule(386).
+inv0_ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) :- ps(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10), v9 = "0:00.51", v10 = "/usr/bin/cd .", Rule(388).
+ps_aux(v1, v8, v3) :- inv0_ps(v1, v8, v9, v7, v0, v2, v5, v6, v10, v4, v3), Rule(417).
+ps_aux(v1, v8, v3) :- ps(v1, v8, v9, v7, v0, v2, v5, v6, v10, v4, v3), Rule(416).

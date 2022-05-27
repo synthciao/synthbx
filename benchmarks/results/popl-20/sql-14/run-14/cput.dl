@@ -1,0 +1,255 @@
+.type Plan <: symbol
+.type Attributes <: symbol
+.type Id <: symbol
+.type Value <: symbol
+
+.decl active(v0: Attributes)
+.decl correct(v0: Value)
+.decl input1(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl inv(v0: Plan)
+.decl ans(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl M__1(v0: Plan, v1: Value)
+.decl M__2(v0: Value, v1: Plan)
+.decl ans__0_(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1_(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl correct_0__cp(v0: Value)
+.decl correct_1__cp(v0: Value)
+.decl active_update(v0: Attributes)
+.decl active_sdt_insert(v0: Attributes)
+.decl active_sdt_delete(v0: Attributes)
+.decl correct_update(v0: Value)
+.decl correct_sdt_insert(v0: Value)
+.decl correct_sdt_delete(v0: Value)
+.decl input1_update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_sdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_sdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl inv_update(v0: Plan)
+.decl inv_sdt_insert(v0: Plan)
+.decl inv_sdt_delete(v0: Plan)
+.decl inv_vdt_insert(v0: Plan)
+.decl inv_vdt_delete(v0: Plan)
+.decl ans_update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans_vdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans_vdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl M__1_update(v0: Plan, v1: Value)
+.decl M__1_sdt_insert(v0: Plan, v1: Value)
+.decl M__1_sdt_delete(v0: Plan, v1: Value)
+.decl M__1_vdt_insert(v0: Plan, v1: Value)
+.decl M__1_vdt_delete(v0: Plan, v1: Value)
+.decl M__2_update(v0: Value, v1: Plan)
+.decl M__2_sdt_insert(v0: Value, v1: Plan)
+.decl M__2_sdt_delete(v0: Value, v1: Plan)
+.decl M__2_vdt_insert(v0: Value, v1: Plan)
+.decl M__2_vdt_delete(v0: Value, v1: Plan)
+.decl ans__0__update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__0__sdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__0__sdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__0__vdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__0__vdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1__update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1__sdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1__sdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1__vdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1__vdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp_update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp_sdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp_sdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp_vdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_0__cp_vdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp_update(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp_sdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp_sdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp_vdt_insert(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp_vdt_delete(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl correct_0__cp_update(v0: Value)
+.decl correct_0__cp_sdt_insert(v0: Value)
+.decl correct_0__cp_sdt_delete(v0: Value)
+.decl correct_0__cp_vdt_insert(v0: Value)
+.decl correct_0__cp_vdt_delete(v0: Value)
+.decl correct_1__cp_update(v0: Value)
+.decl correct_1__cp_sdt_insert(v0: Value)
+.decl correct_1__cp_sdt_delete(v0: Value)
+.decl correct_1__cp_vdt_insert(v0: Value)
+.decl correct_1__cp_vdt_delete(v0: Value)
+.decl Au_P_0_M__1_input1(v0: Id, v1: Attributes)
+.decl Au_P_0_inv_M__2(v0: Value)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input active
+.input correct
+.input input1
+.output inv
+.output ans
+.output M__1
+.output M__2
+.output ans__0_
+.output ans__1_
+.output input1_0__cp
+.output input1_1__cp
+.output correct_0__cp
+.output correct_1__cp
+.output active_update
+.output active_sdt_insert
+.output active_sdt_delete
+.output correct_update
+.output correct_sdt_insert
+.output correct_sdt_delete
+.output input1_update
+.output input1_sdt_insert
+.output input1_sdt_delete
+.output inv_update
+.output inv_sdt_insert
+.output inv_sdt_delete
+.output inv_vdt_insert
+.output inv_vdt_delete
+.input ans_update
+.output ans_vdt_insert
+.output ans_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output ans__0__update
+.output ans__0__sdt_insert
+.output ans__0__sdt_delete
+.output ans__0__vdt_insert
+.output ans__0__vdt_delete
+.output ans__1__update
+.output ans__1__sdt_insert
+.output ans__1__sdt_delete
+.output ans__1__vdt_insert
+.output ans__1__vdt_delete
+.output input1_0__cp_update
+.output input1_0__cp_sdt_insert
+.output input1_0__cp_sdt_delete
+.output input1_0__cp_vdt_insert
+.output input1_0__cp_vdt_delete
+.output input1_1__cp_update
+.output input1_1__cp_sdt_insert
+.output input1_1__cp_sdt_delete
+.output input1_1__cp_vdt_insert
+.output input1_1__cp_vdt_delete
+.output correct_0__cp_update
+.output correct_0__cp_sdt_insert
+.output correct_0__cp_sdt_delete
+.output correct_0__cp_vdt_insert
+.output correct_0__cp_vdt_delete
+.output correct_1__cp_update
+.output correct_1__cp_sdt_insert
+.output correct_1__cp_sdt_delete
+.output correct_1__cp_vdt_insert
+.output correct_1__cp_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v1, v3) :- input1(v0, v1, v2, v3).
+M__2(v0, v1) :- correct_1__cp(v0), M__1(v1, v0).
+ans(v0, v1, v2, v3) :- ans__0_(v0, v1, v2, v3); ans__1_(v0, v1, v2, v3).
+ans__0_(v0, v1, v2, v3) :- correct_0__cp(v3), input1_0__cp(v0, v1, v2, v3).
+ans__1_(v0, v1, v2, v3) :- input1_1__cp(v0, v1, v2, v3), inv(v1).
+correct_0__cp(v0) :- correct(v0).
+correct_1__cp(v0) :- correct(v0).
+input1_0__cp(v0, v1, v2, v3) :- input1(v0, v1, v2, v3).
+input1_1__cp(v0, v1, v2, v3) :- input1(v0, v1, v2, v3).
+inv(v1) :- M__2(v0, v1).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0, v1) :- M__2(v0, v1), !M__2_update(v0, v1).
+M__2_vdt_insert(v0, v1) :- M__2_update(v0, v1), !M__2(v0, v1).
+ans__0__vdt_delete(v0, v1, v2, v3) :- ans__0_(v0, v1, v2, v3), !ans__0__update(v0, v1, v2, v3).
+ans__0__vdt_insert(v0, v1, v2, v3) :- ans__0__update(v0, v1, v2, v3), !ans__0_(v0, v1, v2, v3).
+ans__1__vdt_delete(v0, v1, v2, v3) :- ans__1_(v0, v1, v2, v3), !ans__1__update(v0, v1, v2, v3).
+ans__1__vdt_insert(v0, v1, v2, v3) :- ans__1__update(v0, v1, v2, v3), !ans__1_(v0, v1, v2, v3).
+ans_vdt_delete(v0, v1, v2, v3) :- ans(v0, v1, v2, v3), !ans_update(v0, v1, v2, v3).
+ans_vdt_insert(v0, v1, v2, v3) :- ans_update(v0, v1, v2, v3), !ans(v0, v1, v2, v3).
+correct_0__cp_vdt_delete(v0) :- correct_0__cp(v0), !correct_0__cp_update(v0).
+correct_0__cp_vdt_insert(v0) :- correct_0__cp_update(v0), !correct_0__cp(v0).
+correct_1__cp_vdt_delete(v0) :- correct_1__cp(v0), !correct_1__cp_update(v0).
+correct_1__cp_vdt_insert(v0) :- correct_1__cp_update(v0), !correct_1__cp(v0).
+input1_0__cp_vdt_delete(v0, v1, v2, v3) :- input1_0__cp(v0, v1, v2, v3), !input1_0__cp_update(v0, v1, v2, v3).
+input1_0__cp_vdt_insert(v0, v1, v2, v3) :- input1_0__cp_update(v0, v1, v2, v3), !input1_0__cp(v0, v1, v2, v3).
+input1_1__cp_vdt_delete(v0, v1, v2, v3) :- input1_1__cp(v0, v1, v2, v3), !input1_1__cp_update(v0, v1, v2, v3).
+input1_1__cp_vdt_insert(v0, v1, v2, v3) :- input1_1__cp_update(v0, v1, v2, v3), !input1_1__cp(v0, v1, v2, v3).
+inv_vdt_delete(v0) :- inv(v0), !inv_update(v0).
+inv_vdt_insert(v0) :- inv_update(v0), !inv(v0).
+
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0, v1) :- M__2(v0, v1), !M__2_sdt_delete(v0, v1); M__2_sdt_insert(v0, v1).
+active_update(v0) :- active(v0), !active_sdt_delete(v0); active_sdt_insert(v0).
+ans__0__update(v0, v1, v2, v3) :- ans__0_(v0, v1, v2, v3), !ans__0__sdt_delete(v0, v1, v2, v3); ans__0__sdt_insert(v0, v1, v2, v3).
+ans__1__update(v0, v1, v2, v3) :- ans__1_(v0, v1, v2, v3), !ans__1__sdt_delete(v0, v1, v2, v3); ans__1__sdt_insert(v0, v1, v2, v3).
+correct_0__cp_update(v0) :- correct_0__cp(v0), !correct_0__cp_sdt_delete(v0); correct_0__cp_sdt_insert(v0).
+correct_1__cp_update(v0) :- correct_1__cp(v0), !correct_1__cp_sdt_delete(v0); correct_1__cp_sdt_insert(v0).
+correct_update(v0) :- correct(v0), !correct_sdt_delete(v0); correct_sdt_insert(v0).
+input1_0__cp_update(v0, v1, v2, v3) :- input1_0__cp(v0, v1, v2, v3), !input1_0__cp_sdt_delete(v0, v1, v2, v3); input1_0__cp_sdt_insert(v0, v1, v2, v3).
+input1_1__cp_update(v0, v1, v2, v3) :- input1_1__cp(v0, v1, v2, v3), !input1_1__cp_sdt_delete(v0, v1, v2, v3); input1_1__cp_sdt_insert(v0, v1, v2, v3).
+input1_update(v0, v1, v2, v3) :- input1(v0, v1, v2, v3), !input1_sdt_delete(v0, v1, v2, v3); input1_sdt_insert(v0, v1, v2, v3).
+inv_update(v0) :- inv(v0), !inv_sdt_delete(v0); inv_sdt_insert(v0).
+
+Fr__("_rejected_") :- M__1_sdt_insert(_, v0), M__1(_, v0).
+Fr__("_rejected_") :- correct_0__cp_sdt_delete(v3), correct_0__cp_update(v3), input1_0__cp_sdt_delete(_, _, _, v3), input1_0__cp_update(_, _, _, v3).
+Fr__("_rejected_") :- correct_0__cp_sdt_insert(v3), correct_0__cp(v3).
+Fr__("_rejected_") :- correct_1__cp_sdt_delete(v0), correct_1__cp_update(v0), M__1_sdt_delete(_, v0), M__1_update(_, v0).
+Fr__("_rejected_") :- correct_1__cp_sdt_insert(v0), correct_1__cp(v0).
+Fr__("_rejected_") :- input1_0__cp_sdt_insert(_, _, _, v3), input1_0__cp(_, _, _, v3).
+Fr__("_rejected_") :- input1_1__cp_sdt_delete(_, v1, _, _), input1_1__cp_update(_, v1, _, _), inv_sdt_delete(v1), inv_update(v1).
+Fr__("_rejected_") :- input1_1__cp_sdt_insert(_, v1, _, _), input1_1__cp(_, v1, _, _).
+Fr__("_rejected_") :- inv_sdt_insert(v1), inv(v1).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v1, v3) :- input1_0__cp_sdt_delete(v0, v1, v2, v3), input1(v0, v1, v2, v3), Rule(27).
+M__1_sdt_delete(v1, v3) :- input1_1__cp_sdt_delete(v0, v1, v2, v3), input1(v0, v1, v2, v3), Rule(31).
+M__1_sdt_insert(v1, v0) :- M__2_vdt_insert(v0, v1), !M__1(v1, v0), Rule(4).
+M__1_sdt_insert(v1, v3) :- input1_0__cp_sdt_insert(v0, v1, v2, v3), !input1(v0, v1, v2, v3), Rule(28).
+M__1_sdt_insert(v1, v3) :- input1_1__cp_sdt_insert(v0, v1, v2, v3), !input1(v0, v1, v2, v3), Rule(32).
+M__2_sdt_delete(v0, v1) :- inv_vdt_delete(v1), M__2(v0, v1), Rule(23).
+M__2_sdt_insert(v0, v1) :- inv_vdt_insert(v1), Au_P_0_inv_M__2(v0), !M__2(_, v1), Rule(24).
+ans__0__sdt_delete(v0, v1, v2, v3) :- ans_vdt_delete(v0, v1, v2, v3), ans__0_(v0, v1, v2, v3), Rule(5).
+ans__0__sdt_insert(v0, v1, v2, v3) :- ans_vdt_insert(v0, v1, v2, v3), !ans__0_(v0, v1, v2, v3), Rule(7).
+ans__1__sdt_delete(v0, v1, v2, v3) :- ans_vdt_delete(v0, v1, v2, v3), ans__1_(v0, v1, v2, v3), Rule(6).
+ans__1__sdt_insert(v0, v1, v2, v3) :- ans_vdt_insert(v0, v1, v2, v3), !ans__1_(v0, v1, v2, v3), Rule(8).
+correct_0__cp_sdt_delete(v0) :- correct_1__cp_sdt_delete(v0), correct(v0), Rule(39).
+correct_0__cp_sdt_delete(v3) :- ans__0__vdt_delete(_, _, _, v3), correct_0__cp(v3), Rule(9).
+correct_0__cp_sdt_insert(v0) :- correct_1__cp_sdt_insert(v0), !correct(v0), Rule(40).
+correct_0__cp_sdt_insert(v3) :- ans__0__vdt_insert(_, _, _, v3), !correct_0__cp(v3), Rule(10).
+correct_1__cp_sdt_delete(v0) :- M__2_vdt_delete(v0, _), correct_1__cp(v0), Rule(2).
+correct_1__cp_sdt_delete(v0) :- correct_0__cp_sdt_delete(v0), correct(v0), Rule(37).
+correct_1__cp_sdt_insert(v0) :- M__2_vdt_insert(v0, _), !correct_1__cp(v0), Rule(3).
+correct_1__cp_sdt_insert(v0) :- correct_0__cp_sdt_insert(v0), !correct(v0), Rule(38).
+correct_sdt_delete(v0) :- correct_0__cp_vdt_delete(v0), Rule(15).
+correct_sdt_delete(v0) :- correct_1__cp_vdt_delete(v0), Rule(17).
+correct_sdt_insert(v0) :- correct_0__cp_vdt_insert(v0), Rule(16).
+correct_sdt_insert(v0) :- correct_1__cp_vdt_insert(v0), Rule(18).
+input1_0__cp_sdt_delete(v0, v1, v2, v3) :- M__1_sdt_delete(v1, v3), input1(v0, v1, v2, v3), Rule(25).
+input1_0__cp_sdt_delete(v0, v1, v2, v3) :- input1_1__cp_sdt_delete(v0, v1, v2, v3), input1(v0, v1, v2, v3), Rule(35).
+input1_0__cp_sdt_insert(v0, v1, v2, v3) :- M__1_sdt_insert(v1, v3), Au_P_0_M__1_input1(v0, v2), !input1(v0, v1, v2, v3), Rule(26).
+input1_0__cp_sdt_insert(v0, v1, v2, v3) :- ans__0__vdt_insert(v0, v1, v2, v3), !input1_0__cp(v0, v1, v2, v3), Rule(11).
+input1_0__cp_sdt_insert(v0, v1, v2, v3) :- input1_1__cp_sdt_insert(v0, v1, v2, v3), !input1(v0, v1, v2, v3), Rule(36).
+input1_1__cp_sdt_delete(v0, v1, v2, v3) :- M__1_sdt_delete(v1, v3), input1(v0, v1, v2, v3), Rule(29).
+input1_1__cp_sdt_delete(v0, v1, v2, v3) :- ans__1__vdt_delete(v0, v1, v2, v3), input1_1__cp(v0, v1, v2, v3), Rule(12).
+input1_1__cp_sdt_delete(v0, v1, v2, v3) :- input1_0__cp_sdt_delete(v0, v1, v2, v3), input1(v0, v1, v2, v3), Rule(33).
+input1_1__cp_sdt_insert(v0, v1, v2, v3) :- M__1_sdt_insert(v1, v3), Au_P_0_M__1_input1(v0, v2), !input1(v0, v1, v2, v3), Rule(30).
+input1_1__cp_sdt_insert(v0, v1, v2, v3) :- ans__1__vdt_insert(v0, v1, v2, v3), !input1_1__cp(v0, v1, v2, v3), Rule(13).
+input1_1__cp_sdt_insert(v0, v1, v2, v3) :- input1_0__cp_sdt_insert(v0, v1, v2, v3), !input1(v0, v1, v2, v3), Rule(34).
+input1_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v1, v3), input1(v0, v1, v2, v3), Rule(0).
+input1_sdt_delete(v0, v1, v2, v3) :- input1_0__cp_vdt_delete(v0, v1, v2, v3), Rule(19).
+input1_sdt_delete(v0, v1, v2, v3) :- input1_1__cp_vdt_delete(v0, v1, v2, v3), Rule(21).
+input1_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v1, v3), Au_P_0_M__1_input1(v0, v2), !input1(_, v1, _, v3), Rule(1).
+input1_sdt_insert(v0, v1, v2, v3) :- input1_0__cp_vdt_insert(v0, v1, v2, v3), Rule(20).
+input1_sdt_insert(v0, v1, v2, v3) :- input1_1__cp_vdt_insert(v0, v1, v2, v3), Rule(22).
+inv_sdt_insert(v1) :- ans__1__vdt_insert(_, v1, _, _), !inv(v1), Rule(14).
+
+Au_P_0_M__1_input1("_null_", "_null_").
+Au_P_0_inv_M__2("_null_").

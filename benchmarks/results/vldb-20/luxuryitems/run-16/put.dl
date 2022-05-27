@@ -1,0 +1,34 @@
+.type id <: symbol
+.type name <: symbol
+.type price <: symbol
+
+.decl items(v0: id, v1: name, v2: price)
+.decl luxuryitems(v0: id, v1: name, v2: price)
+.decl items_update(v0: id, v1: name, v2: price)
+.decl items_sdt_insert(v0: id, v1: name, v2: price)
+.decl items_sdt_delete(v0: id, v1: name, v2: price)
+.decl luxuryitems_update(v0: id, v1: name, v2: price)
+.decl luxuryitems_vdt_insert(v0: id, v1: name, v2: price)
+.decl luxuryitems_vdt_delete(v0: id, v1: name, v2: price)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input items
+.output items_update
+.input luxuryitems_update
+.output Fr__
+.output Fv__
+
+luxuryitems(v0, v1, v2) :- items(v0, v1, v2), v2 > "700.00".
+
+luxuryitems_vdt_delete(v0, v1, v2) :- luxuryitems(v0, v1, v2), !luxuryitems_update(v0, v1, v2).
+luxuryitems_vdt_insert(v0, v1, v2) :- luxuryitems_update(v0, v1, v2), !luxuryitems(v0, v1, v2).
+
+items_update(v0, v1, v2) :- items(v0, v1, v2), !items_sdt_delete(v0, v1, v2); items_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- luxuryitems(_, _, v2), v2 <= "700.00".
+Fr__("_rejected_") :- luxuryitems_update(_, _, v2), v2 <= "700.00".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+items_sdt_delete(v0, v1, v2) :- luxuryitems_vdt_delete(v0, v1, v2), items(v0, v1, v2).
+items_sdt_insert(v0, v1, v2) :- luxuryitems_vdt_insert(v0, v1, v2), !items(v0, v1, v2).

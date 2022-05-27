@@ -1,0 +1,18 @@
+.type date <: symbol
+.type yrq <: symbol
+
+.decl LE20130201(v0: date)
+.decl GE20130215(v0: date)
+.decl input1(v0: yrq, v1: date, v2: date)
+.decl ans(v0: yrq)
+.decl M__1(v0: date, v1: date, v2: yrq)
+.decl M__2(v0: date, v1: date, v2: yrq)
+
+.input LE20130201
+.input GE20130215
+.input input1
+.output ans
+
+M__1(v0, v1, v2) :- GE20130215(v0), input1(v2, v1, v0).
+M__2(v0, v1, v2) :- M__1(v0, v1, v2), LE20130201(v1).
+ans(v2) :- M__2(v0, v1, v2).

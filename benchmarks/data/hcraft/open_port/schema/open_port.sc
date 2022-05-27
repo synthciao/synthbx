@@ -1,0 +1,3 @@
+*service(SNAME, PORT, PROTO, DESCRIPTION)
+*active(PROTO, PORT, STATE)
+open_port(PORT, PROTO, SNAME)

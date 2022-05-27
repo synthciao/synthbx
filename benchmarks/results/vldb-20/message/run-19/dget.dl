@@ -1,0 +1,22 @@
+.type MESSAGEID <: symbol
+.type TYPE <: symbol
+.type TEXT <: symbol
+.type DATE <: symbol
+.type ADDRESS <: symbol
+.type READ <: symbol
+.type SENDER <: symbol
+.type MESSAGETECH <: symbol
+
+.decl messagecentre(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentreemail(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl message(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+
+.input messagecentre
+.input messagecentreemail
+.output message
+
+message(v0, v1, v2, v3, v4, v5, v6, v7) :- message__0_(v0, v1, v2, v3, v4, v5, v6, v7); message__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__0_(v0, v1, v2, v3, v4, v5, v6, v7) :- messagecentre(v0, v2, v3, v4, v5, v6, v7), v1 = "S".
+message__1_(v0, v1, v2, v3, v4, v5, v6, v7) :- messagecentreemail(v0, v2, v3, v4, v5, v6, v7), v1 = "E".

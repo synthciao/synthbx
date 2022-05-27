@@ -1,0 +1,168 @@
+.type ID <: symbol
+.type NUMBER <: symbol
+.type LASTNAME <: symbol
+.type FIRSTNAME <: symbol
+.type PHONENO <: symbol
+.type SOURCE <: symbol
+
+.decl customer(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl supplier(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl vendor(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl phonelist(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl customer_update(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl customer_sdt_insert(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl customer_sdt_delete(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl supplier_update(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl supplier_sdt_insert(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl supplier_sdt_delete(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl vendor_update(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl vendor_sdt_insert(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl vendor_sdt_delete(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl phonelist_update(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist_vdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist_vdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0__update(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0__sdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0__sdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0__vdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__0__vdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1__update(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1__sdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1__sdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1__vdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__1__vdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2__update(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2__sdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2__sdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2__vdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__2__vdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3__update(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3__sdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3__sdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3__vdt_insert(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl phonelist__3__vdt_delete(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl Au_U_phonelist_phonelist__2_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl Au_U_phonelist_phonelist__3_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl Au_U_phonelist__3__phonelist__0_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl Au_U_phonelist__3__phonelist__1_(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input customer
+.input supplier
+.input vendor
+.output phonelist
+.output phonelist__0_
+.output phonelist__1_
+.output phonelist__2_
+.output phonelist__3_
+.output customer_update
+.output customer_sdt_insert
+.output customer_sdt_delete
+.output supplier_update
+.output supplier_sdt_insert
+.output supplier_sdt_delete
+.output vendor_update
+.output vendor_sdt_insert
+.output vendor_sdt_delete
+.input phonelist_update
+.output phonelist_vdt_insert
+.output phonelist_vdt_delete
+.output phonelist__0__update
+.output phonelist__0__sdt_insert
+.output phonelist__0__sdt_delete
+.output phonelist__0__vdt_insert
+.output phonelist__0__vdt_delete
+.output phonelist__1__update
+.output phonelist__1__sdt_insert
+.output phonelist__1__sdt_delete
+.output phonelist__1__vdt_insert
+.output phonelist__1__vdt_delete
+.output phonelist__2__update
+.output phonelist__2__sdt_insert
+.output phonelist__2__sdt_delete
+.output phonelist__2__vdt_insert
+.output phonelist__2__vdt_delete
+.output phonelist__3__update
+.output phonelist__3__sdt_insert
+.output phonelist__3__sdt_delete
+.output phonelist__3__vdt_insert
+.output phonelist__3__vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+phonelist(v0, v1, v2, v3, v4, v5) :- phonelist__2_(v0, v1, v2, v3, v4, v5); phonelist__3_(v0, v1, v2, v3, v4, v5).
+phonelist__0_(v0, v1, v2, v3, v4, v5) :- customer(v1, v2, v3, v4, v5), v0 = "Customer".
+phonelist__1_(v0, v1, v2, v3, v4, v5) :- supplier(v1, v2, v3, v4, v5), v0 = "Supplier".
+phonelist__2_(v0, v1, v2, v3, v4, v5) :- vendor(v1, v2, v3, v4, v5), v0 = "Vendor".
+phonelist__3_(v0, v1, v2, v3, v4, v5) :- phonelist__0_(v0, v1, v2, v3, v4, v5); phonelist__1_(v0, v1, v2, v3, v4, v5).
+
+phonelist__0__vdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__0__update(v0, v1, v2, v3, v4, v5).
+phonelist__0__vdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__0__update(v0, v1, v2, v3, v4, v5), !phonelist__0_(v0, v1, v2, v3, v4, v5).
+phonelist__1__vdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__1__update(v0, v1, v2, v3, v4, v5).
+phonelist__1__vdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__1__update(v0, v1, v2, v3, v4, v5), !phonelist__1_(v0, v1, v2, v3, v4, v5).
+phonelist__2__vdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__2__update(v0, v1, v2, v3, v4, v5).
+phonelist__2__vdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__2__update(v0, v1, v2, v3, v4, v5), !phonelist__2_(v0, v1, v2, v3, v4, v5).
+phonelist__3__vdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__3__update(v0, v1, v2, v3, v4, v5).
+phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__update(v0, v1, v2, v3, v4, v5), !phonelist__3_(v0, v1, v2, v3, v4, v5).
+phonelist_vdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist(v0, v1, v2, v3, v4, v5), !phonelist_update(v0, v1, v2, v3, v4, v5).
+phonelist_vdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_update(v0, v1, v2, v3, v4, v5), !phonelist(v0, v1, v2, v3, v4, v5).
+
+customer_update(v0, v1, v2, v3, v4) :- customer(v0, v1, v2, v3, v4), !customer_sdt_delete(v0, v1, v2, v3, v4); customer_sdt_insert(v0, v1, v2, v3, v4).
+phonelist__0__update(v0, v1, v2, v3, v4, v5) :- phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__0__sdt_delete(v0, v1, v2, v3, v4, v5); phonelist__0__sdt_insert(v0, v1, v2, v3, v4, v5).
+phonelist__1__update(v0, v1, v2, v3, v4, v5) :- phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__1__sdt_delete(v0, v1, v2, v3, v4, v5); phonelist__1__sdt_insert(v0, v1, v2, v3, v4, v5).
+phonelist__2__update(v0, v1, v2, v3, v4, v5) :- phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__2__sdt_delete(v0, v1, v2, v3, v4, v5); phonelist__2__sdt_insert(v0, v1, v2, v3, v4, v5).
+phonelist__3__update(v0, v1, v2, v3, v4, v5) :- phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__3__sdt_delete(v0, v1, v2, v3, v4, v5); phonelist__3__sdt_insert(v0, v1, v2, v3, v4, v5).
+supplier_update(v0, v1, v2, v3, v4) :- supplier(v0, v1, v2, v3, v4), !supplier_sdt_delete(v0, v1, v2, v3, v4); supplier_sdt_insert(v0, v1, v2, v3, v4).
+vendor_update(v0, v1, v2, v3, v4) :- vendor(v0, v1, v2, v3, v4), !vendor_sdt_delete(v0, v1, v2, v3, v4); vendor_sdt_insert(v0, v1, v2, v3, v4).
+
+Fr__("_rejected_") :- phonelist__0_(v0, _, _, _, _, _), v0 != "Customer".
+Fr__("_rejected_") :- phonelist__0__update(v0, _, _, _, _, _), v0 != "Customer".
+Fr__("_rejected_") :- phonelist__1_(v0, _, _, _, _, _), v0 != "Supplier".
+Fr__("_rejected_") :- phonelist__1__update(v0, _, _, _, _, _), v0 != "Supplier".
+Fr__("_rejected_") :- phonelist__2_(v0, _, _, _, _, _), v0 != "Vendor".
+Fr__("_rejected_") :- phonelist__2__update(v0, _, _, _, _, _), v0 != "Vendor".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+customer_sdt_delete(v1, v2, v3, v4, v5) :- phonelist__0__vdt_delete(_, v1, v2, v3, v4, v5), customer(v1, v2, v3, v4, v5), Rule(10).
+customer_sdt_insert(v1, v2, v3, v4, v5) :- phonelist__0__vdt_insert(_, v1, v2, v3, v4, v5), !customer(v1, v2, v3, v4, v5), Rule(11).
+phonelist__0__sdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_delete(v0, v1, v2, v3, v4, v5), phonelist__0_(v0, v1, v2, v3, v4, v5), Rule(16).
+phonelist__0__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist__3__phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__0_(v0, v1, v2, v3, v4, v5), Rule(19).
+phonelist__0__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist__3__phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__0_(v0, v1, v2, v3, v4, v5), Rule(21).
+phonelist__0__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist__3__phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__0_(v0, v1, v2, v3, v4, v5), Rule(18).
+phonelist__0__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist__3__phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__0_(v0, v1, v2, v3, v4, v5), Rule(20).
+phonelist__1__sdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_delete(v0, v1, v2, v3, v4, v5), phonelist__1_(v0, v1, v2, v3, v4, v5), Rule(17).
+phonelist__1__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist__3__phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__1_(v0, v1, v2, v3, v4, v5), Rule(23).
+phonelist__1__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist__3__phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__1_(v0, v1, v2, v3, v4, v5), Rule(25).
+phonelist__1__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist__3__phonelist__0_(v0, v1, v2, v3, v4, v5), !phonelist__1_(v0, v1, v2, v3, v4, v5), Rule(22).
+phonelist__1__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist__3__vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist__3__phonelist__1_(v0, v1, v2, v3, v4, v5), !phonelist__1_(v0, v1, v2, v3, v4, v5), Rule(24).
+phonelist__2__sdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_delete(v0, v1, v2, v3, v4, v5), phonelist__2_(v0, v1, v2, v3, v4, v5), Rule(0).
+phonelist__2__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist_phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__2_(v0, v1, v2, v3, v4, v5), Rule(3).
+phonelist__2__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist_phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__2_(v0, v1, v2, v3, v4, v5), Rule(5).
+phonelist__2__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist_phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__2_(v0, v1, v2, v3, v4, v5), Rule(2).
+phonelist__2__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist_phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__2_(v0, v1, v2, v3, v4, v5), Rule(4).
+phonelist__3__sdt_delete(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_delete(v0, v1, v2, v3, v4, v5), phonelist__3_(v0, v1, v2, v3, v4, v5), Rule(1).
+phonelist__3__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist_phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__3_(v0, v1, v2, v3, v4, v5), Rule(7).
+phonelist__3__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), !Au_U_phonelist_phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__3_(v0, v1, v2, v3, v4, v5), Rule(9).
+phonelist__3__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist_phonelist__2_(v0, v1, v2, v3, v4, v5), !phonelist__3_(v0, v1, v2, v3, v4, v5), Rule(6).
+phonelist__3__sdt_insert(v0, v1, v2, v3, v4, v5) :- phonelist_vdt_insert(v0, v1, v2, v3, v4, v5), Au_U_phonelist_phonelist__3_(v0, v1, v2, v3, v4, v5), !phonelist__3_(v0, v1, v2, v3, v4, v5), Rule(8).
+supplier_sdt_delete(v1, v2, v3, v4, v5) :- phonelist__1__vdt_delete(_, v1, v2, v3, v4, v5), supplier(v1, v2, v3, v4, v5), Rule(12).
+supplier_sdt_insert(v1, v2, v3, v4, v5) :- phonelist__1__vdt_insert(_, v1, v2, v3, v4, v5), !supplier(v1, v2, v3, v4, v5), Rule(13).
+vendor_sdt_delete(v1, v2, v3, v4, v5) :- phonelist__2__vdt_delete(_, v1, v2, v3, v4, v5), vendor(v1, v2, v3, v4, v5), Rule(14).
+vendor_sdt_insert(v1, v2, v3, v4, v5) :- phonelist__2__vdt_insert(_, v1, v2, v3, v4, v5), !vendor(v1, v2, v3, v4, v5), Rule(15).
+
+Au_U_phonelist_phonelist__2_("Vendor", "309", "1", "Alderson", "Elliot", "+1-0512-7001").
+Au_U_phonelist_phonelist__3_("Customer", "198", "44", "Johnson", "William", "+44-8192-7396").
+Au_U_phonelist_phonelist__3_("Customer", "109", "7", "Mikhail", "Ivan", "+7-7777-7777").
+Au_U_phonelist_phonelist__3_("Supplier", "204", "81", "Rodriguez", "John", "+81-0167-0716").
+Au_U_phonelist_phonelist__3_("Supplier", "205", "86", "Martinez", "Jeans", "+86-1267-8791").
+Au_U_phonelist__3__phonelist__0_("Customer", "198", "44", "Johnson", "William", "+44-8192-7396").
+Au_U_phonelist__3__phonelist__0_("Customer", "109", "7", "Mikhail", "Ivan", "+7-7777-7777").
+Au_U_phonelist__3__phonelist__1_("Supplier", "204", "81", "Rodriguez", "John", "+81-0167-0716").
+Au_U_phonelist__3__phonelist__1_("Supplier", "205", "86", "Martinez", "Jeans", "+86-1267-8791").

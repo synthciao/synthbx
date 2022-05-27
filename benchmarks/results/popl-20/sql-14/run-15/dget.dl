@@ -1,0 +1,34 @@
+.type Plan <: symbol
+.type Attributes <: symbol
+.type Id <: symbol
+.type Value <: symbol
+
+.decl active(v0: Attributes)
+.decl correct(v0: Value)
+.decl input1(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl inv(v0: Plan)
+.decl ans(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl M__1(v0: Plan, v1: Value)
+.decl M__2(v0: Value, v1: Plan)
+.decl ans__0_(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl ans__1_(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl correct_0__cp(v0: Value)
+.decl correct_1__cp(v0: Value)
+.decl input1_0__cp(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+.decl input1_1__cp(v0: Id, v1: Plan, v2: Attributes, v3: Value)
+
+.input active
+.input correct
+.input input1
+.output ans
+
+M__1(v1, v3) :- input1(v0, v1, v2, v3).
+M__2(v0, v1) :- correct_0__cp(v0), M__1(v1, v0).
+ans(v0, v1, v2, v3) :- ans__0_(v0, v1, v2, v3); ans__1_(v0, v1, v2, v3).
+ans__0_(v0, v1, v2, v3) :- correct_1__cp(v3), input1_0__cp(v0, v1, v2, v3).
+ans__1_(v0, v1, v2, v3) :- input1_1__cp(v0, v1, v2, v3), inv(v1).
+correct_0__cp(v0) :- correct(v0).
+correct_1__cp(v0) :- correct(v0).
+input1_0__cp(v0, v1, v2, v3) :- input1(v0, v1, v2, v3).
+input1_1__cp(v0, v1, v2, v3) :- input1(v0, v1, v2, v3).
+inv(v1) :- M__2(v0, v1).

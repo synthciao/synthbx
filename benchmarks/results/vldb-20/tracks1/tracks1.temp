@@ -1,0 +1,38 @@
+[1;36m[+] Synthesizing put[0m
+[1;33m--------Iteration 1 --------[0m
+[1;33mCalls to z3: 1, Calls to Souffle: 0
+Culumative Number of Constraints - - Why: 0, Whynot: 0
+[0m
+[1;33m--------Iteration 2 --------[0m
+[1;33mCalls to z3: 2, Calls to Souffle: 6
+Culumative Number of Constraints - - Why: 0, Whynot: 1
+[0m
+[1;33m--------Iteration 3 --------[0m
+[1;33mCalls to z3: 3, Calls to Souffle: 10
+Culumative Number of Constraints - - Why: 0, Whynot: 2
+[0m
+[1;33m--------Iteration 4 --------[0m
+[1;33mCalls to z3: 4, Calls to Souffle: 17
+Culumative Number of Constraints - - Why: 0, Whynot: 4
+[0m
+[1;33m--------Iteration 5 --------[0m
+[1;33mCalls to z3: 5, Calls to Souffle: 21
+Culumative Number of Constraints - - Why: 0, Whynot: 5
+[0m
+Z3 reports error in generating a model. Problem unsat.
+Z3 reports error in generating a model. Problem unsat.
+[1;36m[+] Exit Synthesizing put[0m
+SynthTime (put.dl): [0, 0]
+Total runtime (put.dl): 1.1107630729675293
+[1;36m[+] Synthesizing get[0m
+[1;33m--------Iteration 1 --------[0m
+[1;33mCalls to z3: 1, Calls to Souffle: 0
+Culumative Number of Constraints - - Why: 0, Whynot: 0
+[0m
+==type = J_RULE
+[1;33mNo put could pair with get {'1'}[0m
+Exhausted! No solutions!
+[1;36m[+] Exit Synthesizing get[0m
+SynthTime (get.dl): [0.03277778625488281, 1.4111011028289795]
+Total runtime (get.dl): 1.4463059902191162
+Number of found gets (get.dl):1

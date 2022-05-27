@@ -1,0 +1,168 @@
+.type PRODUCT_ID <: symbol
+.type TITLE <: symbol
+.type DESCRIPTION <: symbol
+.type MANUFACTURER_ID <: symbol
+.type CREATED_AT <: symbol
+.type UPDATED_AT <: symbol
+.type MPN <: symbol
+.type VISIBLE <: symbol
+.type SUBSCRIPTIONS_COUNT <: symbol
+
+.decl products_raw(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl products(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl M__1(v0: PRODUCT_ID)
+.decl M__2(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products__0_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products_raw_0__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg_0__cp(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl products_raw_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg_update(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_sdt_insert(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_sdt_delete(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl products_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl M__1_update(v0: PRODUCT_ID)
+.decl M__1_sdt_insert(v0: PRODUCT_ID)
+.decl M__1_sdt_delete(v0: PRODUCT_ID)
+.decl M__1_vdt_insert(v0: PRODUCT_ID)
+.decl M__1_vdt_delete(v0: PRODUCT_ID)
+.decl M__2_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__2_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__2_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__2_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__2_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl M__3_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products__0__update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__0__sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__0__sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__0__vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__0__vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1__update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1__sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1__sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1__vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products__1__vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl products_raw_0__cp_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_0__cp_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_0__cp_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_0__cp_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_0__cp_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_1__cp_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp_update(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp_sdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp_sdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp_vdt_insert(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl products_raw_2__cp_vdt_delete(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE)
+.decl subscriptions_agg_0__cp_update(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_0__cp_sdt_insert(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_0__cp_sdt_delete(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_0__cp_vdt_insert(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl subscriptions_agg_0__cp_vdt_delete(v0: PRODUCT_ID, v1: SUBSCRIPTIONS_COUNT)
+.decl Au_P_0_M__1_subscriptions_agg(v0: SUBSCRIPTIONS_COUNT)
+.decl Au_U_products_products__0_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl Au_U_products_products__1_(v0: PRODUCT_ID, v1: TITLE, v2: DESCRIPTION, v3: MANUFACTURER_ID, v4: CREATED_AT, v5: UPDATED_AT, v6: MPN, v7: VISIBLE, v8: SUBSCRIPTIONS_COUNT)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input products_raw
+.input subscriptions_agg
+.output products_raw_update
+.output subscriptions_agg_update
+.input products_update
+.output Fr__
+.output Fv__
+
+M__1(v0) :- subscriptions_agg(v0, v1).
+M__2(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7), M__1(v0).
+M__3(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7), !M__2(v0, v1, v2, v3, v4, v5, v6, v7).
+products(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8); products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7), subscriptions_agg_0__cp(v0, v8).
+products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- M__3(v0, v1, v2, v3, v4, v5, v6, v7), v8 = "0".
+products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+subscriptions_agg_0__cp(v0, v1) :- subscriptions_agg(v0, v1).
+
+M__1_vdt_delete(v0) :- M__1(v0), !M__1_update(v0).
+M__1_vdt_insert(v0) :- M__1_update(v0), !M__1(v0).
+M__2_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7), !M__2_update(v0, v1, v2, v3, v4, v5, v6, v7).
+M__2_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- M__2_update(v0, v1, v2, v3, v4, v5, v6, v7), !M__2(v0, v1, v2, v3, v4, v5, v6, v7).
+M__3_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- M__3(v0, v1, v2, v3, v4, v5, v6, v7), !M__3_update(v0, v1, v2, v3, v4, v5, v6, v7).
+M__3_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- M__3_update(v0, v1, v2, v3, v4, v5, v6, v7), !M__3(v0, v1, v2, v3, v4, v5, v6, v7).
+products__0__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products_raw_0__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_0__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_1__cp_update(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_1__cp_update(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_2__cp_update(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp_update(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products_update(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_update(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+subscriptions_agg_0__cp_vdt_delete(v0, v1) :- subscriptions_agg_0__cp(v0, v1), !subscriptions_agg_0__cp_update(v0, v1).
+subscriptions_agg_0__cp_vdt_insert(v0, v1) :- subscriptions_agg_0__cp_update(v0, v1), !subscriptions_agg_0__cp(v0, v1).
+
+M__1_update(v0) :- M__1(v0), !M__1_sdt_delete(v0); M__1_sdt_insert(v0).
+M__2_update(v0, v1, v2, v3, v4, v5, v6, v7) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7), !M__2_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); M__2_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+M__3_update(v0, v1, v2, v3, v4, v5, v6, v7) :- M__3(v0, v1, v2, v3, v4, v5, v6, v7), !M__3_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); M__3_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+products__0__update(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8); products__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__1__update(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8); products__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products_raw_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_update(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_1__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_1__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); products_raw_1__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_update(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_2__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); products_raw_2__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_update(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); products_raw_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+subscriptions_agg_0__cp_update(v0, v1) :- subscriptions_agg_0__cp(v0, v1), !subscriptions_agg_0__cp_sdt_delete(v0, v1); subscriptions_agg_0__cp_sdt_insert(v0, v1).
+subscriptions_agg_update(v0, v1) :- subscriptions_agg(v0, v1), !subscriptions_agg_sdt_delete(v0, v1); subscriptions_agg_sdt_insert(v0, v1).
+
+Fr__("_rejected_") :- M__1_sdt_insert(v0), M__1(v0).
+Fr__("_rejected_") :- products__1_(_, _, _, _, _, _, _, _, v8), v8 != "0".
+Fr__("_rejected_") :- products__1__update(_, _, _, _, _, _, _, _, v8), v8 != "0".
+Fr__("_rejected_") :- products_raw_1__cp_sdt_delete(v0, _, _, _, _, _, _, _), products_raw_1__cp_update(v0, _, _, _, _, _, _, _), M__1_sdt_delete(v0), M__1_update(v0).
+Fr__("_rejected_") :- products_raw_1__cp_sdt_insert(v0, _, _, _, _, _, _, _), products_raw_1__cp(v0, _, _, _, _, _, _, _).
+Fr__("_rejected_") :- products_raw_2__cp_sdt_delete(v0, _, _, _, _, _, _, _), products_raw_2__cp_update(v0, _, _, _, _, _, _, _), subscriptions_agg_0__cp_sdt_delete(v0, _), subscriptions_agg_0__cp_update(v0, _).
+Fr__("_rejected_") :- products_raw_2__cp_sdt_insert(v0, _, _, _, _, _, _, _), products_raw_2__cp(v0, _, _, _, _, _, _, _).
+Fr__("_rejected_") :- subscriptions_agg_0__cp_sdt_insert(v0, _), subscriptions_agg_0__cp(v0, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_insert(v0) :- M__2_vdt_insert(v0, _, _, _, _, _, _, _), !M__1(v0).
+M__2_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !M__2(v0, v1, v2, v3, v4, v5, v6, v7), !M__3_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+M__3_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, _), M__3(v0, v1, v2, v3, v4, v5, v6, v7).
+M__3_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, _), !M__3(v0, v1, v2, v3, v4, v5, v6, v7).
+products__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8), !Au_U_products_products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8), products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- products_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8), !Au_U_products_products__0_(v0, v1, v2, v3, v4, v5, v6, v7, v8), !products__1_(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+products_raw_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- M__3_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- M__3_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw_0__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_1__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_2__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, _), !products_raw_2__cp(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_2__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !products_raw(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7).
+products_raw_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- products_raw_0__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+subscriptions_agg_0__cp_sdt_insert(v0, v8) :- products__0__vdt_insert(v0, _, _, _, _, _, _, _, v8), !subscriptions_agg_0__cp(v0, v8).
+subscriptions_agg_sdt_insert(v0, v1) :- M__1_vdt_insert(v0), Au_P_0_M__1_subscriptions_agg(v1), !subscriptions_agg(v0, _).
+
+Au_P_0_M__1_subscriptions_agg("20").
+Au_U_products_products__0_("1051", "RAM", "null", "Corsair", "2020-01-15", "2020-01-15", "none", "T", "20").
+Au_U_products_products__1_("1050", "Mouse", "null", "Gigabyte", "2020-01-15", "2020-01-15", "none", "T", "0").

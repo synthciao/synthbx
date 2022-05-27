@@ -1,0 +1,29 @@
+.type car_id <: symbol
+.type car_name <: symbol
+.type brand_id <: symbol
+
+.decl cars(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_master(v0: car_id, v1: car_name)
+.decl cars_update(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_sdt_insert(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_sdt_delete(v0: car_id, v1: car_name, v2: brand_id)
+.decl cars_master_update(v0: car_id, v1: car_name)
+.decl cars_master_vdt_insert(v0: car_id, v1: car_name)
+.decl cars_master_vdt_delete(v0: car_id, v1: car_name)
+.decl Au_P_0_cars_master_cars(v0: brand_id)
+
+.input cars
+.output cars_update
+.input cars_master_update
+
+cars_master(v0, v1) :- cars(v0, v1, v2).
+
+cars_master_vdt_delete(v0, v1) :- cars_master(v0, v1), !cars_master_update(v0, v1).
+cars_master_vdt_insert(v0, v1) :- cars_master_update(v0, v1), !cars_master(v0, v1).
+
+cars_update(v0, v1, v2) :- cars(v0, v1, v2), !cars_sdt_delete(v0, v1, v2); cars_sdt_insert(v0, v1, v2).
+
+cars_sdt_delete(v0, v1, v2) :- cars_master_vdt_delete(v0, v1), cars(v0, v1, v2).
+cars_sdt_insert(v0, v1, v2) :- cars_master_vdt_insert(v0, v1), Au_P_0_cars_master_cars(v2), !cars(v0, v1, _).
+
+Au_P_0_cars_master_cars("1").

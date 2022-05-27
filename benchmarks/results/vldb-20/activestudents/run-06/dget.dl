@@ -1,0 +1,21 @@
+.type cname <: symbol
+.type jyear <: symbol
+.type sname <: symbol
+.type sid <: symbol
+.type login <: symbol
+.type age <: symbol
+.type gpa <: symbol
+
+.decl clubs(v0: cname, v1: jyear, v2: sname)
+.decl students(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl activestudents(v0: sname, v1: login, v2: cname, v3: jyear)
+.decl M__1(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__2(v0: sname, v1: login)
+
+.input clubs
+.input students
+.output activestudents
+
+M__1(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), v4 > "3.0".
+M__2(v1, v2) :- M__1(v0, v1, v2, v3, v4).
+activestudents(v0, v1, v2, v3) :- M__2(v0, v1), clubs(v2, v3, v0).

@@ -1,0 +1,24 @@
+.type CUSTOMER_ID <: symbol
+.type NAME <: symbol
+.type ADDRESS <: symbol
+.type WEBSITE <: symbol
+.type CREDIT_LIMIT <: symbol
+.type CONTACT_ID <: symbol
+.type FIRST_NAME <: symbol
+.type LAST_NAME <: symbol
+.type EMAIL <: symbol
+.type PHONE <: symbol
+
+.decl customers(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl contacts(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.decl vw_customers(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.decl M__1(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__2(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+
+.input customers
+.input contacts
+.output vw_customers
+
+M__1(v1, v2, v3, v4, v5) :- contacts(v0, v1, v2, v3, v4, v5).
+M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- customers(v0, v1, v2, v3, v4), M__1(v5, v6, v7, v8, v0).
+vw_customers(v1, v2, v3, v4, v5, v6, v7, v8) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8).

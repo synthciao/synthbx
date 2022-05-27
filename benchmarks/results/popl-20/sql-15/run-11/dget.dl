@@ -1,0 +1,25 @@
+.type meets_at <: symbol
+.type C_name <: symbol
+.type S_key <: symbol
+
+.decl class(v0: C_name, v1: meets_at)
+.decl LT(v0: C_name, v1: C_name)
+.decl enroll(v0: S_key, v1: C_name)
+.decl inv(v0: S_key, v1: C_name, v2: meets_at)
+.decl ans(v0: S_key)
+.decl M__1(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl M__2(v0: C_name, v1: C_name, v2: S_key, v3: meets_at)
+.decl inv_0__cp(v0: S_key, v1: C_name, v2: meets_at)
+.decl inv_1__cp(v0: S_key, v1: C_name, v2: meets_at)
+
+.input class
+.input LT
+.input enroll
+.output ans
+
+M__1(v0, v1, v2, v3) :- LT(v0, v1), inv_0__cp(v2, v0, v3).
+M__2(v0, v1, v2, v3) :- M__1(v0, v1, v2, v3), inv_1__cp(v2, v1, v3).
+ans(v2) :- M__2(v0, v1, v2, v3).
+inv(v0, v1, v2) :- class(v1, v2), enroll(v0, v1).
+inv_0__cp(v0, v1, v2) :- inv(v0, v1, v2).
+inv_1__cp(v0, v1, v2) :- inv(v0, v1, v2).

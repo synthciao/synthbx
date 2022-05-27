@@ -1,0 +1,39 @@
+.type KOD_LOK <: symbol
+.type NAZEV <: symbol
+.type KATASTR <: symbol
+.type PRESNOST <: symbol
+.type SIRKA <: symbol
+.type DELKA <: symbol
+
+.decl lokalita(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST)
+.decl ukaz_lok(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST, v4: SIRKA, v5: DELKA)
+.decl lokalita_update(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST)
+.decl lokalita_sdt_insert(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST)
+.decl lokalita_sdt_delete(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST)
+.decl ukaz_lok_update(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST, v4: SIRKA, v5: DELKA)
+.decl ukaz_lok_vdt_insert(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST, v4: SIRKA, v5: DELKA)
+.decl ukaz_lok_vdt_delete(v0: KOD_LOK, v1: NAZEV, v2: KATASTR, v3: PRESNOST, v4: SIRKA, v5: DELKA)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input lokalita
+.output lokalita_update
+.input ukaz_lok_update
+.output Fr__
+.output Fv__
+
+ukaz_lok(v0, v1, v2, v3, v4, v5) :- lokalita(v0, v1, v2, v3), v4 = "50.0", v5 = "14.0".
+
+ukaz_lok_vdt_delete(v0, v1, v2, v3, v4, v5) :- ukaz_lok(v0, v1, v2, v3, v4, v5), !ukaz_lok_update(v0, v1, v2, v3, v4, v5).
+ukaz_lok_vdt_insert(v0, v1, v2, v3, v4, v5) :- ukaz_lok_update(v0, v1, v2, v3, v4, v5), !ukaz_lok(v0, v1, v2, v3, v4, v5).
+
+lokalita_update(v0, v1, v2, v3) :- lokalita(v0, v1, v2, v3), !lokalita_sdt_delete(v0, v1, v2, v3); lokalita_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- ukaz_lok(_, _, _, _, _, v5), v5 != "14.0".
+Fr__("_rejected_") :- ukaz_lok(_, _, _, _, v4, _), v4 != "50.0".
+Fr__("_rejected_") :- ukaz_lok_update(_, _, _, _, _, v5), v5 != "14.0".
+Fr__("_rejected_") :- ukaz_lok_update(_, _, _, _, v4, _), v4 != "50.0".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+lokalita_sdt_delete(v0, v1, v2, v3) :- ukaz_lok_vdt_delete(v0, v1, v2, v3, _, _), lokalita(v0, v1, v2, v3).
+lokalita_sdt_insert(v0, v1, v2, v3) :- ukaz_lok_vdt_insert(v0, v1, v2, v3, _, _), !lokalita(v0, v1, v2, v3).

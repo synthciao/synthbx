@@ -1,0 +1,16 @@
+.type Inv
+.type Demand
+.type Company
+
+
+.decl In(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.input In
+.decl not_null(v0: Company)
+.input not_null
+
+
+.decl Out(v0: Company, v1: Demand)
+.output Out
+
+Out(v2, v1) :- In(v0, v1, v2, v3), not_null(v2).
+Out(v3, v1) :- In(v0, v1, v2, v3), not_null(v3).

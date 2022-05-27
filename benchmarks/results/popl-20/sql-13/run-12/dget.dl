@@ -1,0 +1,14 @@
+.type ID <: symbol
+.type Item <: symbol
+
+.decl A(v0: ID, v1: Item)
+.decl B(v0: Item, v1: Item)
+.decl Out(v0: ID, v1: Item)
+.decl M__1(v0: ID, v1: Item, v2: Item)
+
+.input A
+.input B
+.output Out
+
+M__1(v0, v1, v2) :- A(v0, v1), B(v2, v1).
+Out(v0, v2) :- M__1(v0, v1, v2).

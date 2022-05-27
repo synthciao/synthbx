@@ -1,0 +1,80 @@
+.type date <: symbol
+.type yrq <: symbol
+
+.decl LE20130201(v0: date)
+.decl GE20130215(v0: date)
+.decl input1(v0: yrq, v1: date, v2: date)
+.decl ans(v0: yrq)
+.decl M__1(v0: date, v1: date, v2: yrq)
+.decl M__2(v0: date, v1: date, v2: yrq)
+.decl LE20130201_update(v0: date)
+.decl LE20130201_sdt_insert(v0: date)
+.decl LE20130201_sdt_delete(v0: date)
+.decl GE20130215_update(v0: date)
+.decl GE20130215_sdt_insert(v0: date)
+.decl GE20130215_sdt_delete(v0: date)
+.decl input1_update(v0: yrq, v1: date, v2: date)
+.decl input1_sdt_insert(v0: yrq, v1: date, v2: date)
+.decl input1_sdt_delete(v0: yrq, v1: date, v2: date)
+.decl ans_update(v0: yrq)
+.decl ans_vdt_insert(v0: yrq)
+.decl ans_vdt_delete(v0: yrq)
+.decl M__1_update(v0: date, v1: date, v2: yrq)
+.decl M__1_sdt_insert(v0: date, v1: date, v2: yrq)
+.decl M__1_sdt_delete(v0: date, v1: date, v2: yrq)
+.decl M__1_vdt_insert(v0: date, v1: date, v2: yrq)
+.decl M__1_vdt_delete(v0: date, v1: date, v2: yrq)
+.decl M__2_update(v0: date, v1: date, v2: yrq)
+.decl M__2_sdt_insert(v0: date, v1: date, v2: yrq)
+.decl M__2_sdt_delete(v0: date, v1: date, v2: yrq)
+.decl M__2_vdt_insert(v0: date, v1: date, v2: yrq)
+.decl M__2_vdt_delete(v0: date, v1: date, v2: yrq)
+.decl Au_P_0_ans_M__2(v0: date, v1: date)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input LE20130201
+.input GE20130215
+.input input1
+.output LE20130201_update
+.output GE20130215_update
+.output input1_update
+.input ans_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2) :- GE20130215(v0), input1(v2, v1, v0).
+M__2(v0, v1, v2) :- M__1(v0, v1, v2), LE20130201(v1).
+ans(v2) :- M__2(v0, v1, v2).
+
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+ans_vdt_delete(v0) :- ans(v0), !ans_update(v0).
+ans_vdt_insert(v0) :- ans_update(v0), !ans(v0).
+
+GE20130215_update(v0) :- GE20130215(v0), !GE20130215_sdt_delete(v0); GE20130215_sdt_insert(v0).
+LE20130201_update(v0) :- LE20130201(v0), !LE20130201_sdt_delete(v0); LE20130201_sdt_insert(v0).
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+input1_update(v0, v1, v2) :- input1(v0, v1, v2), !input1_sdt_delete(v0, v1, v2); input1_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- GE20130215_sdt_delete(v0), GE20130215_update(v0), input1_sdt_delete(_, _, v0), input1_update(_, _, v0).
+Fr__("_rejected_") :- GE20130215_sdt_insert(v0), GE20130215(v0).
+Fr__("_rejected_") :- LE20130201_sdt_insert(v1), LE20130201(v1).
+Fr__("_rejected_") :- M__1_sdt_delete(_, v1, _), M__1_update(_, v1, _), LE20130201_sdt_delete(v1), LE20130201_update(v1).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v1, _), M__1(_, v1, _).
+Fr__("_rejected_") :- input1_sdt_insert(_, _, v0), input1(_, _, v0).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+GE20130215_sdt_insert(v0) :- M__1_vdt_insert(v0, _, _), !GE20130215(v0).
+LE20130201_sdt_insert(v1) :- M__2_vdt_insert(_, v1, _), !LE20130201(v1).
+M__1_sdt_delete(v0, v1, v2) :- M__2_vdt_delete(v0, v1, v2), M__1(v0, v1, v2).
+M__1_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_sdt_delete(v0, v1, v2) :- ans_vdt_delete(v2), M__2(v0, v1, v2).
+M__2_sdt_insert(v0, v1, v2) :- ans_vdt_insert(v2), Au_P_0_ans_M__2(v0, v1), !M__2(_, _, v2).
+input1_sdt_delete(v2, v1, v0) :- M__1_vdt_delete(v0, v1, v2), input1(v2, v1, v0).
+input1_sdt_insert(v2, v1, v0) :- M__1_vdt_insert(v0, v1, v2), !input1(v2, v1, v0).
+
+Au_P_0_ans_M__2("_null_", "_null_").

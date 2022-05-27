@@ -1,0 +1,54 @@
+.type T
+.type C
+.type S
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl Active(v0: S)
+.input Active
+.decl Inactive(v0: S)
+.input Inactive
+.decl Input1(v0: T, v1: S, v2: C)
+.input Input1
+
+.decl inv1(v0: T, v1: C)
+.output inv1
+.decl inv2(v0: T, v1: C)
+.output inv2
+
+.decl ans(v0: T, v1: C, v2: C)
+.output ans
+
+inv2(v1, v2) :- Active(v0), Input1(v1, v0, v2), inv1(v1, v3), Rule(38).
+inv2(v0, v1) :- inv1(v0, v1), Rule(1).
+inv2(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), inv1(v1, v3), Rule(36).
+inv1(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), inv2(v1, v3), Rule(14).
+inv1(v0, v3) :- Input1(v0, v1, v2), inv2(v0, v3), Rule(21).
+inv2(v0, v4) :- Input1(v0, v1, v2), Input1(v3, v1, v4), Rule(35).
+inv1(v0, v1) :- inv2(v0, v1), inv2(v0, v2), Rule(10).
+inv1(v0, v2) :- Input1(v0, v1, v2), inv2(v3, v2), Rule(15).
+inv2(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), inv1(v3, v2), Rule(54).
+inv2(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), Rule(58).
+inv1(v3, v2) :- Input1(v0, v1, v2), inv2(v3, v2), Rule(81).
+ans(v0, v1, v2) :- inv1(v0, v1), inv1(v0, v2), Rule(42).
+ans(v0, v1, v2) :- inv1(v0, v1), inv2(v0, v2), Rule(63).
+inv2(v1, v2) :- Active(v0), Input1(v1, v0, v2), Rule(32).
+inv1(v0, v2) :- Input1(v0, v1, v2), inv2(v0, v3), Rule(27).
+inv1(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), inv2(v3, v2), Rule(74).
+ans(v0, v1, v2) :- inv2(v0, v1), inv2(v0, v2), Rule(22).
+ans(v0, v2, v1) :- inv1(v0, v1), inv2(v0, v2), Rule(49).
+inv2(v0, v3) :- Input1(v0, v1, v2), inv1(v0, v3), Rule(84).
+inv2(v3, v2) :- Input1(v0, v1, v2), inv1(v3, v2), Rule(8).
+inv2(v0, v2) :- Input1(v0, v1, v2), Rule(88).
+inv1(v1, v2) :- Active(v0), Input1(v1, v0, v2), Rule(57).
+inv1(v1, v2) :- Active(v0), Input1(v1, v0, v2), inv2(v3, v2), Rule(29).
+inv1(v0, v1) :- inv2(v0, v1), Rule(65).
+inv1(v1, v2) :- Inactive(v0), Input1(v1, v0, v2), Rule(69).
+inv2(v0, v1) :- inv1(v0, v1), inv1(v0, v2), Rule(5).
+inv1(v0, v4) :- Input1(v0, v1, v2), Input1(v3, v1, v4), Rule(39).
+inv1(v0, v2) :- Input1(v0, v1, v2), Rule(70).
+inv1(v1, v2) :- Active(v0), Input1(v1, v0, v2), inv2(v1, v3), Rule(67).
+inv2(v1, v2) :- Active(v0), Input1(v1, v0, v2), inv1(v3, v2), Rule(51).
+inv2(v0, v2) :- Input1(v0, v1, v2), inv1(v3, v2), Rule(62).
+inv2(v0, v2) :- Input1(v0, v1, v2), inv1(v0, v3), Rule(41).

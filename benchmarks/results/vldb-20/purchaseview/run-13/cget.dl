@@ -1,0 +1,16 @@
+.type PRODUCT_ID <: symbol
+.type PRODUCT_NAME <: symbol
+.type PURCHASE_ID <: symbol
+.type WHEN_BOUGHT <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl product(v0: PRODUCT_ID, v1: PRODUCT_NAME)
+.decl purchase(v0: PURCHASE_ID, v1: PRODUCT_ID, v2: WHEN_BOUGHT)
+.input product, purchase
+
+.decl purchaseview(v0: PURCHASE_ID, v1: PRODUCT_NAME, v2: WHEN_BOUGHT)
+.output purchaseview
+
+purchaseview(v0, v3, v2) :- purchase(v0, v1, v2), product(v1, v3), Rule(1).

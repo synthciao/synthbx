@@ -1,0 +1,25 @@
+.type SalesQuotaKey <: symbol
+.type EmployeeKey <: symbol
+.type DateKey <: symbol
+.type CalendarQuarter <: symbol
+.type SalesAmountQuota <: symbol
+.type Date <: symbol
+.type CalendarYear <: symbol
+
+
+.decl FactSalesQuota2010(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.input FactSalesQuota2010
+.input FactSalesQuota2011
+.input FactSalesQuota2012
+.input FactSalesQuota2013
+
+.decl dw_sales(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.output dw_sales
+
+dw_sales(v0, v6, v3, v4) :- FactSalesQuota2010(v0, v1, v2, v3, v4, v5), v3 = "4", v6 = "2010".
+dw_sales(v0, v6, v3, v4) :- FactSalesQuota2011(v0, v1, v2, v3, v4, v5), v3 = "4", v6 = "2011".
+dw_sales(v0, v6, v3, v4) :- FactSalesQuota2012(v0, v1, v2, v3, v4, v5), v3 = "4", v6 = "2012".
+dw_sales(v0, v6, v3, v4) :- FactSalesQuota2013(v0, v1, v2, v3, v4, v5), v3 = "4", v6 = "2013".

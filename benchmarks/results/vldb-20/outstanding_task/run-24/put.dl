@@ -1,0 +1,82 @@
+.type ID <: symbol
+.type CINEMA_ID <: symbol
+.type VENUE_ID <: symbol
+.type MOVIE_ID <: symbol
+.type EVENT_ID <: symbol
+.type RESULT <: symbol
+.type CONTEXT <: symbol
+.type GUIDE <: symbol
+.type STARTED_AT <: symbol
+.type ENDED_AT <: symbol
+.type CREATED_AT <: symbol
+.type UPDATED_AT <: symbol
+
+.decl task(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl outstanding_task(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl M__1(v0: ID)
+.decl task_0__cp(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_update(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_sdt_insert(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_sdt_delete(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl outstanding_task_update(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl outstanding_task_vdt_insert(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl outstanding_task_vdt_delete(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl M__1_update(v0: ID)
+.decl M__1_sdt_insert(v0: ID)
+.decl M__1_sdt_delete(v0: ID)
+.decl M__1_vdt_insert(v0: ID)
+.decl M__1_vdt_delete(v0: ID)
+.decl task_0__cp_update(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_0__cp_sdt_insert(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_0__cp_sdt_delete(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_0__cp_vdt_insert(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl task_0__cp_vdt_delete(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl Au_P_0_M__1_task(v0: ID, v1: CINEMA_ID, v2: VENUE_ID, v3: MOVIE_ID, v4: EVENT_ID, v5: RESULT, v6: CONTEXT, v7: GUIDE, v8: STARTED_AT, v9: ENDED_AT, v10: CREATED_AT, v11: UPDATED_AT)
+.decl Au_P_1_M__1_task(v0: ID, v1: ID, v2: CINEMA_ID, v3: VENUE_ID, v4: MOVIE_ID, v5: EVENT_ID, v6: RESULT, v7: CONTEXT, v8: GUIDE, v9: STARTED_AT, v10: ENDED_AT, v11: CREATED_AT, v12: UPDATED_AT)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input task
+.output task_update
+.input outstanding_task_update
+.output Fr__
+.output Fv__
+
+M__1(v0) :- task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+outstanding_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), M__1(v1).
+task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+
+M__1_vdt_delete(v0) :- M__1(v0), !M__1_update(v0).
+M__1_vdt_insert(v0) :- M__1_update(v0), !M__1(v0).
+outstanding_task_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- outstanding_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !outstanding_task_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+outstanding_task_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- outstanding_task_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !outstanding_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+
+M__1_update(v0) :- M__1(v0), !M__1_sdt_delete(v0); M__1_sdt_insert(v0).
+task_0__cp_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12); task_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_update(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12); task_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+
+Fr__("_rejected_") :- M__1_sdt_insert(v1), M__1(v1).
+Fr__("_rejected_") :- task_0__cp_sdt_delete(_, v1, _, _, _, _, _, _, _, _, _, _, _), task_0__cp_update(_, v1, _, _, _, _, _, _, _, _, _, _, _), M__1_sdt_delete(v1), M__1_update(v1).
+Fr__("_rejected_") :- task_0__cp_sdt_insert(_, v1, _, _, _, _, _, _, _, _, _, _, _), task_0__cp(_, v1, _, _, _, _, _, _, _, _, _, _, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0) :- task_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+M__1_sdt_insert(v0) :- task_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+M__1_sdt_insert(v1) :- outstanding_task_vdt_insert(_, v1, _, _, _, _, _, _, _, _, _, _, _), !M__1(v1).
+task_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_sdt_delete(v0), task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- outstanding_task_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_sdt_insert(v0), Au_P_0_M__1_task(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !Au_P_1_M__1_task(v0, _, _, _, _, _, _, _, _, _, _, _, _), !task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_sdt_insert(v0), Au_P_1_M__1_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_0__cp_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- outstanding_task_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task_0__cp(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_vdt_delete(v0), task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+task_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_vdt_insert(v0), Au_P_0_M__1_task(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !Au_P_1_M__1_task(v0, _, _, _, _, _, _, _, _, _, _, _, _), !task(v0, _, _, _, _, _, _, _, _, _, _, _, _).
+task_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- M__1_vdt_insert(v0), Au_P_1_M__1_task(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12), !task(v0, _, _, _, _, _, _, _, _, _, _, _, _).
+task_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) :- task_0__cp_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12).
+
+Au_P_0_M__1_task("1", "724", "70", "223341", "181", "D", "c3", "0", "2022-02-22 22:22:22", "2022-02-22 23:59:59", "0000-00-00 00:00:00", "0000-00-00 00:00:00").
+Au_P_1_M__1_task("11", "1", "616", "54", "451672", "133", "A", "c0", "0", "2022-02-22 22:22:22", "2022-02-22 23:59:59", "0000-00-00 00:00:00", "0000-00-00 00:00:00").
+Au_P_1_M__1_task("12", "101", "666", "55", "111111", "111", "A", "c1", "0", "0000-00-00 00:00:00", "0000-00-00 00:00:00", "0000-00-00 00:00:00", "0000-00-00 00:00:00").
+Au_P_1_M__1_task("101", "0", "0", "0", "000000", "000", "A", "c0", "0", "0000-00-00 00:00:00", "0000-00-00 00:00:00", "0000-00-00 00:00:00", "0000-00-00 00:00:00").

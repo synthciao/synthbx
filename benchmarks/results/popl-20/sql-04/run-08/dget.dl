@@ -1,0 +1,25 @@
+.type Inv <: symbol
+.type Demand <: symbol
+.type Company <: symbol
+
+.decl In(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl not_null(v0: Company)
+.decl Out(v0: Company, v1: Demand)
+.decl M__1(v0: Demand, v1: Company)
+.decl M__2(v0: Demand, v1: Company)
+.decl Out__0_(v0: Company, v1: Demand)
+.decl Out__1_(v0: Company, v1: Demand)
+.decl not_null_0__cp(v0: Company)
+.decl not_null_1__cp(v0: Company)
+
+.input In
+.input not_null
+.output Out
+
+M__1(v1, v2) :- In(v0, v1, v2, v3).
+M__2(v1, v3) :- In(v0, v1, v2, v3).
+Out(v0, v1) :- Out__0_(v0, v1); Out__1_(v0, v1).
+Out__0_(v0, v1) :- M__1(v1, v0), not_null_1__cp(v0).
+Out__1_(v0, v1) :- M__2(v1, v0), not_null_0__cp(v0).
+not_null_0__cp(v0) :- not_null(v0).
+not_null_1__cp(v0) :- not_null(v0).

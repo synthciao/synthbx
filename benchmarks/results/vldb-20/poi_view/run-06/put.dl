@@ -1,0 +1,81 @@
+.type POI_ID <: symbol
+.type COL_A <: symbol
+.type COL_B <: symbol
+.type COL_C <: symbol
+.type COL_D <: symbol
+.type COL_E <: symbol
+.type COL_F <: symbol
+
+.decl poi(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl points(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.decl poi_view(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_D, v4: COL_E)
+.decl M__1(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__2(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl poi_update(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl poi_sdt_insert(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl poi_sdt_delete(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl points_update(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.decl points_sdt_insert(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.decl points_sdt_delete(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.decl poi_view_update(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_D, v4: COL_E)
+.decl poi_view_vdt_insert(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_D, v4: COL_E)
+.decl poi_view_vdt_delete(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_D, v4: COL_E)
+.decl M__1_update(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__1_sdt_insert(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__1_sdt_delete(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__1_vdt_insert(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__1_vdt_delete(v0: POI_ID, v1: COL_A, v2: COL_B)
+.decl M__2_update(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl M__2_sdt_insert(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl M__2_sdt_delete(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl M__2_vdt_insert(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl M__2_vdt_delete(v0: POI_ID, v1: COL_D, v2: COL_E)
+.decl Au_P_0_M__1_poi(v0: COL_C)
+.decl Au_P_1_M__1_poi(v0: POI_ID, v1: COL_A, v2: COL_B, v3: COL_C)
+.decl Au_P_0_M__2_points(v0: COL_F)
+.decl Au_P_1_M__2_points(v0: POI_ID, v1: COL_D, v2: COL_E, v3: COL_F)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input poi
+.input points
+.output poi_update
+.output points_update
+.input poi_view_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2) :- poi(v0, v1, v2, v3).
+M__2(v0, v1, v2) :- points(v0, v1, v2, v3).
+poi_view(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2), M__2(v0, v3, v4).
+
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_vdt_delete(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_update(v0, v1, v2).
+M__2_vdt_insert(v0, v1, v2) :- M__2_update(v0, v1, v2), !M__2(v0, v1, v2).
+poi_view_vdt_delete(v0, v1, v2, v3, v4) :- poi_view(v0, v1, v2, v3, v4), !poi_view_update(v0, v1, v2, v3, v4).
+poi_view_vdt_insert(v0, v1, v2, v3, v4) :- poi_view_update(v0, v1, v2, v3, v4), !poi_view(v0, v1, v2, v3, v4).
+
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+M__2_update(v0, v1, v2) :- M__2(v0, v1, v2), !M__2_sdt_delete(v0, v1, v2); M__2_sdt_insert(v0, v1, v2).
+poi_update(v0, v1, v2, v3) :- poi(v0, v1, v2, v3), !poi_sdt_delete(v0, v1, v2, v3); poi_sdt_insert(v0, v1, v2, v3).
+points_update(v0, v1, v2, v3) :- points(v0, v1, v2, v3), !points_sdt_delete(v0, v1, v2, v3); points_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1_sdt_delete(v0, _, _), M__1_update(v0, _, _), M__2_sdt_delete(v0, _, _), M__2_update(v0, _, _).
+Fr__("_rejected_") :- M__1_sdt_insert(v0, _, _), M__1(v0, _, _).
+Fr__("_rejected_") :- M__2_sdt_insert(v0, _, _), M__2(v0, _, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2) :- poi_view_vdt_delete(v0, v1, v2, _, _), M__1(v0, v1, v2).
+M__1_sdt_insert(v0, v1, v2) :- poi_view_vdt_insert(v0, v1, v2, _, _), !M__1(v0, v1, v2).
+M__2_sdt_delete(v0, v3, v4) :- poi_view_vdt_delete(v0, _, _, v3, v4), M__2(v0, v3, v4).
+M__2_sdt_insert(v0, v3, v4) :- poi_view_vdt_insert(v0, _, _, v3, v4), !M__2(v0, v3, v4).
+poi_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v0, v1, v2), poi(v0, v1, v2, v3).
+poi_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1, v2), Au_P_0_M__1_poi(v3), !Au_P_1_M__1_poi(v0, v1, v2, _), !poi(v0, v1, v2, _).
+poi_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1, v2), Au_P_1_M__1_poi(v0, v1, v2, v3), !poi(v0, v1, v2, _).
+points_sdt_delete(v0, v1, v2, v3) :- M__2_vdt_delete(v0, v1, v2), points(v0, v1, v2, v3).
+points_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v2), Au_P_0_M__2_points(v3), !Au_P_1_M__2_points(v0, v1, v2, _), !points(v0, v1, v2, _).
+points_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v0, v1, v2), Au_P_1_M__2_points(v0, v1, v2, v3), !points(v0, v1, v2, _).
+
+Au_P_0_M__1_poi("500").
+Au_P_0_M__2_points("f504").

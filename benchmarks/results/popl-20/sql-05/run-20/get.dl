@@ -1,0 +1,15 @@
+.type supplier_key
+.type part_id
+.type part_name
+
+
+.decl input1(v0: supplier_key, v1: part_id)
+.input input1
+.decl input2(v0: part_id, v1: part_name)
+.input input2
+
+
+.decl ans(v0: part_name)
+.output ans
+
+ans(v3) :- input1(v0, v1), input1(v0, v2), input2(v2, v3).

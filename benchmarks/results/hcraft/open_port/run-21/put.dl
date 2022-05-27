@@ -1,0 +1,94 @@
+.type sname <: symbol
+.type port <: symbol
+.type proto <: symbol
+.type description <: symbol
+.type state <: symbol
+
+.decl service(v0: sname, v1: port, v2: proto, v3: description)
+.decl active(v0: proto, v1: port, v2: state)
+.decl open_port(v0: port, v1: proto, v2: sname)
+.decl inv0_service(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active(v0: proto, v1: port, v2: state)
+.decl M__1(v0: sname, v1: port, v2: proto)
+.decl M__2(v0: proto, v1: port)
+.decl service_update(v0: sname, v1: port, v2: proto, v3: description)
+.decl service_sdt_insert(v0: sname, v1: port, v2: proto, v3: description)
+.decl service_sdt_delete(v0: sname, v1: port, v2: proto, v3: description)
+.decl active_update(v0: proto, v1: port, v2: state)
+.decl active_sdt_insert(v0: proto, v1: port, v2: state)
+.decl active_sdt_delete(v0: proto, v1: port, v2: state)
+.decl open_port_update(v0: port, v1: proto, v2: sname)
+.decl open_port_vdt_insert(v0: port, v1: proto, v2: sname)
+.decl open_port_vdt_delete(v0: port, v1: proto, v2: sname)
+.decl inv0_service_update(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_service_sdt_insert(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_service_sdt_delete(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_service_vdt_insert(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_service_vdt_delete(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active_update(v0: proto, v1: port, v2: state)
+.decl inv0_active_sdt_insert(v0: proto, v1: port, v2: state)
+.decl inv0_active_sdt_delete(v0: proto, v1: port, v2: state)
+.decl inv0_active_vdt_insert(v0: proto, v1: port, v2: state)
+.decl inv0_active_vdt_delete(v0: proto, v1: port, v2: state)
+.decl M__1_update(v0: sname, v1: port, v2: proto)
+.decl M__1_sdt_insert(v0: sname, v1: port, v2: proto)
+.decl M__1_sdt_delete(v0: sname, v1: port, v2: proto)
+.decl M__1_vdt_insert(v0: sname, v1: port, v2: proto)
+.decl M__1_vdt_delete(v0: sname, v1: port, v2: proto)
+.decl M__2_update(v0: proto, v1: port)
+.decl M__2_sdt_insert(v0: proto, v1: port)
+.decl M__2_sdt_delete(v0: proto, v1: port)
+.decl M__2_vdt_insert(v0: proto, v1: port)
+.decl M__2_vdt_delete(v0: proto, v1: port)
+.decl Au_P_0_M__1_service(v0: description)
+.decl Au_P_0_M__2_active(v0: state)
+.decl Au_P_1_M__2_active(v0: proto, v1: port, v2: state)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input service
+.input active
+.output service_update
+.output active_update
+.input open_port_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2) :- service(v0, v1, v2, v3).
+M__2(v0, v1) :- active(v0, v1, v2).
+open_port(v0, v1, v2) :- M__1(v2, v0, v1), M__2(v1, v0).
+
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_vdt_delete(v0, v1) :- M__2(v0, v1), !M__2_update(v0, v1).
+M__2_vdt_insert(v0, v1) :- M__2_update(v0, v1), !M__2(v0, v1).
+inv0_active_vdt_delete(v0, v1, v2) :- inv0_active(v0, v1, v2), !inv0_active_update(v0, v1, v2).
+inv0_active_vdt_insert(v0, v1, v2) :- inv0_active_update(v0, v1, v2), !inv0_active(v0, v1, v2).
+inv0_service_vdt_delete(v0, v1, v2, v3) :- inv0_service(v0, v1, v2, v3), !inv0_service_update(v0, v1, v2, v3).
+inv0_service_vdt_insert(v0, v1, v2, v3) :- inv0_service_update(v0, v1, v2, v3), !inv0_service(v0, v1, v2, v3).
+open_port_vdt_delete(v0, v1, v2) :- open_port(v0, v1, v2), !open_port_update(v0, v1, v2).
+open_port_vdt_insert(v0, v1, v2) :- open_port_update(v0, v1, v2), !open_port(v0, v1, v2).
+
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+M__2_update(v0, v1) :- M__2(v0, v1), !M__2_sdt_delete(v0, v1); M__2_sdt_insert(v0, v1).
+active_update(v0, v1, v2) :- active(v0, v1, v2), !active_sdt_delete(v0, v1, v2); active_sdt_insert(v0, v1, v2).
+inv0_active_update(v0, v1, v2) :- inv0_active(v0, v1, v2), !inv0_active_sdt_delete(v0, v1, v2); inv0_active_sdt_insert(v0, v1, v2).
+inv0_service_update(v0, v1, v2, v3) :- inv0_service(v0, v1, v2, v3), !inv0_service_sdt_delete(v0, v1, v2, v3); inv0_service_sdt_insert(v0, v1, v2, v3).
+service_update(v0, v1, v2, v3) :- service(v0, v1, v2, v3), !service_sdt_delete(v0, v1, v2, v3); service_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1_sdt_delete(_, v0, v1), M__1_update(_, v0, v1), M__2_sdt_delete(v1, v0), M__2_update(v1, v0).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v0, v1), M__1(_, v0, v1).
+Fr__("_rejected_") :- M__2_sdt_insert(v1, v0), M__2(v1, v0).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_insert(v2, v0, v1) :- open_port_vdt_insert(v0, v1, v2), !M__1(v2, v0, v1).
+M__2_sdt_delete(v1, v0) :- open_port_vdt_delete(v0, v1, _), M__2(v1, v0).
+M__2_sdt_insert(v1, v0) :- open_port_vdt_insert(v0, v1, _), !M__2(v1, v0).
+active_sdt_delete(v0, v1, v2) :- M__2_vdt_delete(v0, v1), active(v0, v1, v2).
+active_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0, v1), Au_P_0_M__2_active(v2), !Au_P_1_M__2_active(v0, v1, _), !active(v0, v1, _).
+active_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v0, v1), Au_P_1_M__2_active(v0, v1, v2), !active(v0, v1, _).
+service_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v0, v1, v2), service(v0, v1, v2, v3).
+service_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v0, v1, v2), Au_P_0_M__1_service(v3), !service(v0, v1, v2, _).
+
+Au_P_0_M__1_service("_null_").
+Au_P_0_M__2_active("LISTENING").

@@ -1,0 +1,100 @@
+.type CUSTOMER_ID <: symbol
+.type NAME <: symbol
+.type ADDRESS <: symbol
+.type WEBSITE <: symbol
+.type CREDIT_LIMIT <: symbol
+.type CONTACT_ID <: symbol
+.type FIRST_NAME <: symbol
+.type LAST_NAME <: symbol
+.type EMAIL <: symbol
+.type PHONE <: symbol
+
+.decl customers(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl contacts(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.decl vw_customers(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.decl M__1(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__2(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl customers_update(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl customers_sdt_insert(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl customers_sdt_delete(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl contacts_update(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.decl contacts_sdt_insert(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.decl contacts_sdt_delete(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.decl vw_customers_update(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.decl vw_customers_vdt_insert(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.decl vw_customers_vdt_delete(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.decl M__1_update(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__1_sdt_insert(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__1_sdt_delete(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__1_vdt_insert(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__1_vdt_delete(v0: FIRST_NAME, v1: LAST_NAME, v2: EMAIL, v3: PHONE, v4: CUSTOMER_ID)
+.decl M__2_update(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl M__2_sdt_insert(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl M__2_sdt_delete(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl M__2_vdt_insert(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl M__2_vdt_delete(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT, v5: FIRST_NAME, v6: LAST_NAME, v7: EMAIL, v8: PHONE)
+.decl Au_P_0_M__1_contacts(v0: CONTACT_ID)
+.decl Au_P_0_vw_customers_M__2(v0: CUSTOMER_ID)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input customers
+.input contacts
+.output vw_customers
+.output M__1
+.output M__2
+.output customers_update
+.output customers_sdt_insert
+.output customers_sdt_delete
+.output contacts_update
+.output contacts_sdt_insert
+.output contacts_sdt_delete
+.input vw_customers_update
+.output vw_customers_vdt_insert
+.output vw_customers_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v1, v2, v3, v4, v5) :- contacts(v0, v1, v2, v3, v4, v5).
+M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- customers(v0, v1, v2, v3, v4), M__1(v5, v6, v7, v8, v0).
+vw_customers(v1, v2, v3, v4, v5, v6, v7, v8) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+
+M__1_vdt_delete(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_update(v0, v1, v2, v3, v4).
+M__1_vdt_insert(v0, v1, v2, v3, v4) :- M__1_update(v0, v1, v2, v3, v4), !M__1(v0, v1, v2, v3, v4).
+M__2_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8), !M__2_update(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+M__2_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- M__2_update(v0, v1, v2, v3, v4, v5, v6, v7, v8), !M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+vw_customers_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- vw_customers(v0, v1, v2, v3, v4, v5, v6, v7), !vw_customers_update(v0, v1, v2, v3, v4, v5, v6, v7).
+vw_customers_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- vw_customers_update(v0, v1, v2, v3, v4, v5, v6, v7), !vw_customers(v0, v1, v2, v3, v4, v5, v6, v7).
+
+M__1_update(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_sdt_delete(v0, v1, v2, v3, v4); M__1_sdt_insert(v0, v1, v2, v3, v4).
+M__2_update(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8), !M__2_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8); M__2_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+contacts_update(v0, v1, v2, v3, v4, v5) :- contacts(v0, v1, v2, v3, v4, v5), !contacts_sdt_delete(v0, v1, v2, v3, v4, v5); contacts_sdt_insert(v0, v1, v2, v3, v4, v5).
+customers_update(v0, v1, v2, v3, v4) :- customers(v0, v1, v2, v3, v4), !customers_sdt_delete(v0, v1, v2, v3, v4); customers_sdt_insert(v0, v1, v2, v3, v4).
+
+Fr__("_rejected_") :- M__1_sdt_insert(_, _, _, _, v0), M__1(_, _, _, _, v0).
+Fr__("_rejected_") :- customers_sdt_delete(v0, _, _, _, _), customers_update(v0, _, _, _, _), M__1_sdt_delete(_, _, _, _, v0), M__1_update(_, _, _, _, v0).
+Fr__("_rejected_") :- customers_sdt_insert(v0, _, _, _, _), customers(v0, _, _, _, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v5, v6, v7, v8, v0) :- M__2_vdt_delete(v0, _, _, _, _, v5, v6, v7, v8), M__1(v5, v6, v7, v8, v0), Rule(2).
+M__1_sdt_insert(v5, v6, v7, v8, v0) :- M__2_vdt_insert(v0, _, _, _, _, v5, v6, v7, v8), !M__1(v5, v6, v7, v8, v0), Rule(4).
+M__2_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- vw_customers_vdt_delete(v1, v2, v3, v4, v5, v6, v7, v8), M__2(v0, v1, v2, v3, v4, v5, v6, v7, v8), Rule(5).
+M__2_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- vw_customers_vdt_insert(v1, v2, v3, v4, v5, v6, v7, v8), Au_P_0_vw_customers_M__2(v0), !M__2(_, v1, v2, v3, v4, v5, v6, v7, v8), Rule(6).
+contacts_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__1_vdt_delete(v1, v2, v3, v4, v5), contacts(v0, v1, v2, v3, v4, v5), Rule(0).
+contacts_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_vdt_insert(v1, v2, v3, v4, v5), Au_P_0_M__1_contacts(v0), !contacts(_, v1, v2, v3, v4, v5), Rule(1).
+customers_sdt_insert(v0, v1, v2, v3, v4) :- M__2_vdt_insert(v0, v1, v2, v3, v4, _, _, _, _), !customers(v0, v1, v2, v3, v4), Rule(3).
+
+Au_P_0_M__1_contacts("_null_").
+Au_P_0_vw_customers_M__2("_null_").

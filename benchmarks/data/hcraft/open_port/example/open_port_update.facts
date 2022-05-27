@@ -1,0 +1,9 @@
+80	tcp	http
+80	tcp	www
+80	tcp	www-http
+110	tcp	pop3
+143	tcp	imap
+443	tcp	https
+445	udp	microsoft-ds
+448	udp	ddm-ssl
+501	udp	stmf

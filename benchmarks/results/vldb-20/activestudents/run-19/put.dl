@@ -1,0 +1,76 @@
+.type cname <: symbol
+.type jyear <: symbol
+.type sname <: symbol
+.type sid <: symbol
+.type login <: symbol
+.type age <: symbol
+.type gpa <: symbol
+
+.decl clubs(v0: cname, v1: jyear, v2: sname)
+.decl students(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl activestudents(v0: sname, v1: login, v2: cname, v3: jyear)
+.decl M__1(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__2(v0: sname, v1: login)
+.decl clubs_update(v0: cname, v1: jyear, v2: sname)
+.decl clubs_sdt_insert(v0: cname, v1: jyear, v2: sname)
+.decl clubs_sdt_delete(v0: cname, v1: jyear, v2: sname)
+.decl students_update(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl students_sdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl students_sdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl activestudents_update(v0: sname, v1: login, v2: cname, v3: jyear)
+.decl activestudents_vdt_insert(v0: sname, v1: login, v2: cname, v3: jyear)
+.decl activestudents_vdt_delete(v0: sname, v1: login, v2: cname, v3: jyear)
+.decl M__1_update(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_sdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_sdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_vdt_insert(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__1_vdt_delete(v0: sid, v1: sname, v2: login, v3: age, v4: gpa)
+.decl M__2_update(v0: sname, v1: login)
+.decl M__2_sdt_insert(v0: sname, v1: login)
+.decl M__2_sdt_delete(v0: sname, v1: login)
+.decl M__2_vdt_insert(v0: sname, v1: login)
+.decl M__2_vdt_delete(v0: sname, v1: login)
+.decl Au_P_0_M__2_M__1(v0: sid, v1: age, v2: gpa)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input clubs
+.input students
+.output clubs_update
+.output students_update
+.input activestudents_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), v4 > "3.0".
+M__2(v1, v2) :- M__1(v0, v1, v2, v3, v4).
+activestudents(v0, v1, v2, v3) :- M__2(v0, v1), clubs(v2, v3, v0).
+
+M__1_vdt_delete(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_update(v0, v1, v2, v3, v4).
+M__1_vdt_insert(v0, v1, v2, v3, v4) :- M__1_update(v0, v1, v2, v3, v4), !M__1(v0, v1, v2, v3, v4).
+M__2_vdt_delete(v0, v1) :- M__2(v0, v1), !M__2_update(v0, v1).
+M__2_vdt_insert(v0, v1) :- M__2_update(v0, v1), !M__2(v0, v1).
+activestudents_vdt_delete(v0, v1, v2, v3) :- activestudents(v0, v1, v2, v3), !activestudents_update(v0, v1, v2, v3).
+activestudents_vdt_insert(v0, v1, v2, v3) :- activestudents_update(v0, v1, v2, v3), !activestudents(v0, v1, v2, v3).
+
+M__1_update(v0, v1, v2, v3, v4) :- M__1(v0, v1, v2, v3, v4), !M__1_sdt_delete(v0, v1, v2, v3, v4); M__1_sdt_insert(v0, v1, v2, v3, v4).
+M__2_update(v0, v1) :- M__2(v0, v1), !M__2_sdt_delete(v0, v1); M__2_sdt_insert(v0, v1).
+clubs_update(v0, v1, v2) :- clubs(v0, v1, v2), !clubs_sdt_delete(v0, v1, v2); clubs_sdt_insert(v0, v1, v2).
+students_update(v0, v1, v2, v3, v4) :- students(v0, v1, v2, v3, v4), !students_sdt_delete(v0, v1, v2, v3, v4); students_sdt_insert(v0, v1, v2, v3, v4).
+
+Fr__("_rejected_") :- M__1(_, _, _, _, v4), v4 <= "3.0".
+Fr__("_rejected_") :- M__1_update(_, _, _, _, v4), v4 <= "3.0".
+Fr__("_rejected_") :- M__2_sdt_delete(v0, _), M__2_update(v0, _), clubs_sdt_delete(_, _, v0), clubs_update(_, _, v0).
+Fr__("_rejected_") :- M__2_sdt_insert(v0, _), M__2(v0, _).
+Fr__("_rejected_") :- clubs_sdt_insert(_, _, v0), clubs(_, _, v0).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3, v4) :- M__2_vdt_delete(v1, v2), M__1(v0, v1, v2, v3, v4).
+M__1_sdt_insert(v0, v1, v2, v3, v4) :- M__2_vdt_insert(v1, v2), Au_P_0_M__2_M__1(v0, v3, v4), !M__1(_, v1, v2, _, _).
+M__2_sdt_insert(v0, v1) :- activestudents_vdt_insert(v0, v1, _, _), !M__2(v0, v1).
+clubs_sdt_delete(v2, v3, v0) :- activestudents_vdt_delete(v0, _, v2, v3), clubs(v2, v3, v0).
+clubs_sdt_insert(v2, v3, v0) :- activestudents_vdt_insert(v0, _, v2, v3), !clubs(v2, v3, v0).
+students_sdt_delete(v0, v1, v2, v3, v4) :- M__1_vdt_delete(v0, v1, v2, v3, v4), students(v0, v1, v2, v3, v4).
+students_sdt_insert(v0, v1, v2, v3, v4) :- M__1_vdt_insert(v0, v1, v2, v3, v4), !students(v0, v1, v2, v3, v4).
+
+Au_P_0_M__2_M__1("55555", "0", "4.0").

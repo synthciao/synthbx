@@ -1,0 +1,136 @@
+.type uid <: symbol
+.type name <: symbol
+.type username <: symbol
+.type email <: symbol
+.type gr <: symbol
+.type pgr <: symbol
+.type gtitle <: symbol
+.type postid <: symbol
+.type title <: symbol
+.type state <: symbol
+.type access <: symbol
+
+.decl users(v0: uid, v1: name, v2: username, v3: email)
+.decl map(v0: uid, v1: gr)
+.decl groups(v0: gr, v1: pgr, v2: gtitle)
+.decl post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl admin_post_cms(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent(v0: uid, v1: gtitle)
+.decl inv0_users(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_map(v0: uid, v1: gr)
+.decl inv0_groups(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl Rule(v0: number)
+
+.input users
+.input map
+.input groups
+.input post
+.output admin_post_cms
+.output invent
+.output inv0_users
+.output inv0_map
+.output inv0_groups
+.output inv0_post
+.input Rule
+
+admin_post_cms(v6, v3, v10, v2) :- inv0_users(v7, v1, v10, v0), inv0_post(v6, v7, v4, v5, v2), invent(v7, v3), Rule(25).
+admin_post_cms(v6, v3, v10, v2) :- inv0_users(v8, v1, v10, v0), inv0_post(v6, v8, v4, v5, v2), invent(v8, v3), Rule(26).
+admin_post_cms(v6, v3, v10, v2) :- inv0_users(v9, v1, v10, v0), inv0_post(v6, v9, v4, v5, v2), invent(v9, v3), Rule(27).
+admin_post_cms(v6, v3, v10, v2) :- post(v6, v7, v4, v5, v2), inv0_users(v7, v0, v10, v1), invent(v7, v3), Rule(22).
+admin_post_cms(v6, v3, v10, v2) :- post(v6, v8, v4, v5, v2), inv0_users(v8, v0, v10, v1), invent(v8, v3), Rule(23).
+admin_post_cms(v6, v3, v10, v2) :- post(v6, v9, v4, v5, v2), inv0_users(v9, v0, v10, v1), invent(v9, v3), Rule(24).
+admin_post_cms(v6, v3, v10, v2) :- users(v7, v1, v10, v0), inv0_post(v6, v7, v4, v5, v2), invent(v7, v3), Rule(19).
+admin_post_cms(v6, v3, v10, v2) :- users(v7, v1, v10, v0), post(v6, v7, v4, v5, v2), invent(v7, v3), Rule(16).
+admin_post_cms(v6, v3, v10, v2) :- users(v8, v1, v10, v0), inv0_post(v6, v8, v4, v5, v2), invent(v8, v3), Rule(20).
+admin_post_cms(v6, v3, v10, v2) :- users(v8, v1, v10, v0), post(v6, v8, v4, v5, v2), invent(v8, v3), Rule(17).
+admin_post_cms(v6, v3, v10, v2) :- users(v9, v1, v10, v0), inv0_post(v6, v9, v4, v5, v2), invent(v9, v3), Rule(21).
+admin_post_cms(v6, v3, v10, v2) :- users(v9, v1, v10, v0), post(v6, v9, v4, v5, v2), invent(v9, v3), Rule(18).
+inv0_groups(v0, v1, v2) :- groups(v0, v1, v2), v0 = "7", Rule(2).
+inv0_map(v0, v1) :- map(v0, v1), v1 = "7", Rule(1).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "NoTitle", Rule(3).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "Post1002", Rule(6).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "Post1011", Rule(5).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "Post1012", Rule(4).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v3 = "0", Rule(7).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v3 = "1", Rule(8).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "1", Rule(12).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "100", Rule(15).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "11", Rule(14).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "12", Rule(10).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "13", Rule(11).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "29", Rule(13).
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v4 = "88", Rule(9).
+inv0_users(v0, v1, v2, v3) :- users(v0, v1, v2, v3), v3 = "jkyoATjoomla.site", Rule(0).
+invent(v0, v3) :- groups(v1, v4, v3), inv0_map(v0, v1), Rule(32).
+invent(v0, v3) :- groups(v2, v4, v3), inv0_map(v0, v2), Rule(33).
+invent(v0, v3) :- inv0_map(v0, v1), inv0_groups(v1, v4, v3), Rule(34).
+invent(v0, v3) :- inv0_map(v0, v2), inv0_groups(v2, v4, v3), Rule(35).
+invent(v0, v3) :- map(v0, v1), groups(v1, v4, v3), Rule(28).
+invent(v0, v3) :- map(v0, v1), inv0_groups(v1, v4, v3), Rule(30).
+invent(v0, v3) :- map(v0, v2), groups(v2, v4, v3), Rule(29).
+invent(v0, v3) :- map(v0, v2), inv0_groups(v2, v4, v3), Rule(31).
+invent(v5, v1) :- groups(v3, v8, v1), inv0_users(v5, v0, v7, v2), inv0_map(v5, v3), Rule(80).
+invent(v5, v1) :- groups(v4, v8, v1), inv0_users(v5, v0, v7, v2), inv0_map(v5, v4), Rule(81).
+invent(v5, v1) :- map(v5, v3), groups(v3, v8, v1), inv0_users(v5, v0, v7, v2), Rule(56).
+invent(v5, v1) :- map(v5, v4), groups(v4, v8, v1), inv0_users(v5, v0, v7, v2), Rule(57).
+invent(v5, v2) :- inv0_users(v5, v1, v7, v0), inv0_map(v5, v3), inv0_groups(v3, v8, v2), Rule(92).
+invent(v5, v2) :- inv0_users(v5, v1, v7, v0), inv0_map(v5, v4), inv0_groups(v4, v8, v2), Rule(93).
+invent(v5, v2) :- map(v5, v3), inv0_users(v5, v1, v7, v0), inv0_groups(v3, v8, v2), Rule(68).
+invent(v5, v2) :- map(v5, v4), inv0_users(v5, v1, v7, v0), inv0_groups(v4, v8, v2), Rule(69).
+invent(v5, v2) :- users(v5, v1, v7, v0), groups(v3, v8, v2), inv0_map(v5, v3), Rule(44).
+invent(v5, v2) :- users(v5, v1, v7, v0), groups(v4, v8, v2), inv0_map(v5, v4), Rule(45).
+invent(v5, v2) :- users(v5, v1, v7, v0), inv0_map(v5, v3), inv0_groups(v3, v8, v2), Rule(48).
+invent(v5, v2) :- users(v5, v1, v7, v0), inv0_map(v5, v4), inv0_groups(v4, v8, v2), Rule(49).
+invent(v5, v2) :- users(v5, v1, v7, v0), map(v5, v3), groups(v3, v8, v2), Rule(36).
+invent(v5, v2) :- users(v5, v1, v7, v0), map(v5, v3), inv0_groups(v3, v8, v2), Rule(40).
+invent(v5, v2) :- users(v5, v1, v7, v0), map(v5, v4), groups(v4, v8, v2), Rule(37).
+invent(v5, v2) :- users(v5, v1, v7, v0), map(v5, v4), inv0_groups(v4, v8, v2), Rule(41).
+invent(v6, v1) :- groups(v3, v8, v1), inv0_users(v6, v0, v7, v2), inv0_map(v6, v3), Rule(82).
+invent(v6, v1) :- groups(v4, v8, v1), inv0_users(v6, v0, v7, v2), inv0_map(v6, v4), Rule(83).
+invent(v6, v1) :- map(v6, v3), groups(v3, v8, v1), inv0_users(v6, v0, v7, v2), Rule(58).
+invent(v6, v1) :- map(v6, v4), groups(v4, v8, v1), inv0_users(v6, v0, v7, v2), Rule(59).
+invent(v6, v2) :- inv0_users(v6, v1, v7, v0), inv0_map(v6, v3), inv0_groups(v3, v8, v2), Rule(94).
+invent(v6, v2) :- inv0_users(v6, v1, v7, v0), inv0_map(v6, v4), inv0_groups(v4, v8, v2), Rule(95).
+invent(v6, v2) :- map(v6, v3), inv0_users(v6, v1, v7, v0), inv0_groups(v3, v8, v2), Rule(70).
+invent(v6, v2) :- map(v6, v4), inv0_users(v6, v1, v7, v0), inv0_groups(v4, v8, v2), Rule(71).
+invent(v6, v2) :- users(v6, v1, v7, v0), groups(v3, v8, v2), inv0_map(v6, v3), Rule(46).
+invent(v6, v2) :- users(v6, v1, v7, v0), groups(v4, v8, v2), inv0_map(v6, v4), Rule(47).
+invent(v6, v2) :- users(v6, v1, v7, v0), inv0_map(v6, v3), inv0_groups(v3, v8, v2), Rule(50).
+invent(v6, v2) :- users(v6, v1, v7, v0), inv0_map(v6, v4), inv0_groups(v4, v8, v2), Rule(51).
+invent(v6, v2) :- users(v6, v1, v7, v0), map(v6, v3), groups(v3, v8, v2), Rule(38).
+invent(v6, v2) :- users(v6, v1, v7, v0), map(v6, v3), inv0_groups(v3, v8, v2), Rule(42).
+invent(v6, v2) :- users(v6, v1, v7, v0), map(v6, v4), groups(v4, v8, v2), Rule(39).
+invent(v6, v2) :- users(v6, v1, v7, v0), map(v6, v4), inv0_groups(v4, v8, v2), Rule(43).
+invent(v7, v0) :- groups(v4, v9, v0), inv0_map(v7, v4), inv0_post(v6, v7, v2, v3, v1), Rule(84).
+invent(v7, v0) :- groups(v4, v9, v0), post(v6, v7, v2, v3, v1), inv0_map(v7, v4), Rule(76).
+invent(v7, v0) :- groups(v5, v9, v0), inv0_map(v7, v5), inv0_post(v6, v7, v2, v3, v1), Rule(85).
+invent(v7, v0) :- groups(v5, v9, v0), post(v6, v7, v2, v3, v1), inv0_map(v7, v5), Rule(77).
+invent(v7, v0) :- inv0_map(v7, v4), inv0_groups(v4, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(96).
+invent(v7, v0) :- inv0_map(v7, v5), inv0_groups(v5, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(97).
+invent(v7, v0) :- map(v7, v4), groups(v4, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(60).
+invent(v7, v0) :- map(v7, v4), groups(v4, v9, v0), post(v6, v7, v2, v3, v1), Rule(52).
+invent(v7, v0) :- map(v7, v4), inv0_groups(v4, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(72).
+invent(v7, v0) :- map(v7, v4), post(v6, v7, v2, v3, v1), inv0_groups(v4, v9, v0), Rule(64).
+invent(v7, v0) :- map(v7, v5), groups(v5, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(61).
+invent(v7, v0) :- map(v7, v5), groups(v5, v9, v0), post(v6, v7, v2, v3, v1), Rule(53).
+invent(v7, v0) :- map(v7, v5), inv0_groups(v5, v9, v0), inv0_post(v6, v7, v2, v3, v1), Rule(73).
+invent(v7, v0) :- map(v7, v5), post(v6, v7, v2, v3, v1), inv0_groups(v5, v9, v0), Rule(65).
+invent(v7, v0) :- post(v6, v7, v2, v3, v1), inv0_map(v7, v4), inv0_groups(v4, v9, v0), Rule(88).
+invent(v7, v0) :- post(v6, v7, v2, v3, v1), inv0_map(v7, v5), inv0_groups(v5, v9, v0), Rule(89).
+invent(v8, v0) :- groups(v4, v9, v0), inv0_map(v8, v4), inv0_post(v6, v8, v2, v3, v1), Rule(86).
+invent(v8, v0) :- groups(v4, v9, v0), post(v6, v8, v2, v3, v1), inv0_map(v8, v4), Rule(78).
+invent(v8, v0) :- groups(v5, v9, v0), inv0_map(v8, v5), inv0_post(v6, v8, v2, v3, v1), Rule(87).
+invent(v8, v0) :- groups(v5, v9, v0), post(v6, v8, v2, v3, v1), inv0_map(v8, v5), Rule(79).
+invent(v8, v0) :- inv0_map(v8, v4), inv0_groups(v4, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(98).
+invent(v8, v0) :- inv0_map(v8, v5), inv0_groups(v5, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(99).
+invent(v8, v0) :- map(v8, v4), groups(v4, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(62).
+invent(v8, v0) :- map(v8, v4), groups(v4, v9, v0), post(v6, v8, v2, v3, v1), Rule(54).
+invent(v8, v0) :- map(v8, v4), inv0_groups(v4, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(74).
+invent(v8, v0) :- map(v8, v4), post(v6, v8, v2, v3, v1), inv0_groups(v4, v9, v0), Rule(66).
+invent(v8, v0) :- map(v8, v5), groups(v5, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(63).
+invent(v8, v0) :- map(v8, v5), groups(v5, v9, v0), post(v6, v8, v2, v3, v1), Rule(55).
+invent(v8, v0) :- map(v8, v5), inv0_groups(v5, v9, v0), inv0_post(v6, v8, v2, v3, v1), Rule(75).
+invent(v8, v0) :- map(v8, v5), post(v6, v8, v2, v3, v1), inv0_groups(v5, v9, v0), Rule(67).
+invent(v8, v0) :- post(v6, v8, v2, v3, v1), inv0_map(v8, v4), inv0_groups(v4, v9, v0), Rule(90).
+invent(v8, v0) :- post(v6, v8, v2, v3, v1), inv0_map(v8, v5), inv0_groups(v5, v9, v0), Rule(91).

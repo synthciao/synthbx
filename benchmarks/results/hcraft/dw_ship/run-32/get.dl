@@ -1,0 +1,24 @@
+.type shipmethodid <: symbol
+.type shipname <: symbol
+.type shipbase <: symbol
+.type shiprate <: symbol
+.type purcharseorderid <: symbol
+.type status <: symbol
+.type employeeid <: symbol
+.type vendorid <: symbol
+.type orderdate <: symbol
+.type shipdate <: symbol
+.type subtotal <: symbol
+.type taxamt <: symbol
+.type freight <: symbol
+
+.decl ShipMethod(v0: shipmethodid, v1: shipname, v2: shipbase, v3: shiprate)
+.decl PurcharseOrderHeader(v0: purcharseorderid, v1: status, v2: employeeid, v3: vendorid, v4: shipmethodid, v5: orderdate, v6: shipdate, v7: subtotal, v8: taxamt, v9: freight)
+.decl dw_ship(v0: purcharseorderid, v1: shipdate, v2: shipmethodid, v3: shipname)
+
+.input ShipMethod
+.input PurcharseOrderHeader
+.output dw_ship
+
+dw_ship(v11, v12, v6, v2) :- ShipMethod(v6, v2, v9, v5), PurcharseOrderHeader(v11, v10, v3, v4, v6, v8, v12, v13, v1, v0).
+dw_ship(v11, v12, v7, v2) :- ShipMethod(v7, v2, v9, v5), PurcharseOrderHeader(v11, v10, v3, v4, v7, v8, v12, v13, v1, v0).

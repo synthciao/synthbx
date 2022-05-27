@@ -1,0 +1,149 @@
+.type content_id <: symbol
+.type asset_id <: symbol
+.type title <: symbol
+.type alias <: symbol
+.type introtext <: symbol
+.type state <: symbol
+.type year <: symbol
+.type date <: symbol
+.type version <: symbol
+.type access <: symbol
+
+.decl content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl blog_2020(v0: year, v1: content_id, v2: title, v3: version, v4: access)
+.decl inv0_content(v0: content_id, v1: asset_id, v2: title, v3: alias, v4: introtext, v5: state, v6: year, v7: date, v8: version, v9: access)
+.decl Rule(v0: number)
+
+.input content
+.output blog_2020
+.output inv0_content
+.input Rule
+
+blog_2020(v9, v1, v2, v3, v8) :- content(v1, v0, v2, v6, v4, v7, v9, v5, v3, v8), Rule(126).
+blog_2020(v9, v1, v2, v3, v8) :- inv0_content(v1, v0, v2, v6, v4, v7, v9, v5, v3, v8), Rule(127).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", Rule(0).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v3 = "_null_", Rule(17).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v3 = "draft", Rule(18).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v3 = "lorem-ipsum", Rule(20).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v3 = "no-quotes", Rule(19).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v5 = "0", Rule(41).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v6 = "2020", Rule(47).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v8 = "1", Rule(53).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v9 = "0", Rule(62).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v9 = "1", Rule(60).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v9 = "17", Rule(61).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Draft", v9 = "2", Rule(59).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", Rule(2).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v3 = "_null_", Rule(25).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v3 = "draft", Rule(26).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v3 = "lorem-ipsum", Rule(28).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v3 = "no-quotes", Rule(27).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v5 = "0", Rule(43).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v6 = "2020", Rule(49).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v8 = "1", Rule(55).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v9 = "0", Rule(70).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v9 = "1", Rule(68).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v9 = "17", Rule(69).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Keigo Higashino Quotes", v9 = "2", Rule(67).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", Rule(1).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v3 = "_null_", Rule(21).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v3 = "draft", Rule(22).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v3 = "lorem-ipsum", Rule(24).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v3 = "no-quotes", Rule(23).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v5 = "0", Rule(42).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v6 = "2020", Rule(48).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v8 = "1", Rule(54).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v9 = "0", Rule(66).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v9 = "1", Rule(64).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v9 = "17", Rule(65).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Lorem ipsum", v9 = "2", Rule(63).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", Rule(5).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v3 = "_null_", Rule(37).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v3 = "draft", Rule(38).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v3 = "lorem-ipsum", Rule(40).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v3 = "no-quotes", Rule(39).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v5 = "0", Rule(46).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v6 = "2020", Rule(52).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v8 = "1", Rule(58).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v9 = "0", Rule(82).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v9 = "1", Rule(80).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v9 = "17", Rule(81).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "No Quotes", v9 = "2", Rule(79).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", Rule(3).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v3 = "_null_", Rule(29).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v3 = "draft", Rule(30).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v3 = "lorem-ipsum", Rule(32).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v3 = "no-quotes", Rule(31).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v5 = "0", Rule(44).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v6 = "2020", Rule(50).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v8 = "1", Rule(56).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v9 = "0", Rule(74).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v9 = "1", Rule(72).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v9 = "17", Rule(73).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Paulo Coelho Quotes", v9 = "2", Rule(71).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", Rule(4).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v3 = "_null_", Rule(33).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v3 = "draft", Rule(34).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v3 = "lorem-ipsum", Rule(36).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v3 = "no-quotes", Rule(35).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v5 = "0", Rule(45).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v6 = "2020", Rule(51).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v8 = "1", Rule(57).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v9 = "0", Rule(78).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v9 = "1", Rule(76).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v9 = "17", Rule(77).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v2 = "Sam Esmail Quotes", v9 = "2", Rule(75).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", Rule(6).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v5 = "0", Rule(83).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v6 = "2020", Rule(87).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v8 = "1", Rule(91).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v9 = "0", Rule(98).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v9 = "1", Rule(96).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v9 = "17", Rule(97).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "_null_", v9 = "2", Rule(95).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", Rule(7).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v5 = "0", Rule(84).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v6 = "2020", Rule(88).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v8 = "1", Rule(92).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v9 = "0", Rule(102).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v9 = "1", Rule(100).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v9 = "17", Rule(101).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "draft", v9 = "2", Rule(99).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", Rule(9).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v5 = "0", Rule(86).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v6 = "2020", Rule(90).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v8 = "1", Rule(94).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v9 = "0", Rule(110).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v9 = "1", Rule(108).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v9 = "17", Rule(109).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "lorem-ipsum", v9 = "2", Rule(107).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", Rule(8).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v5 = "0", Rule(85).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v6 = "2020", Rule(89).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v8 = "1", Rule(93).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v9 = "0", Rule(106).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v9 = "1", Rule(104).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v9 = "17", Rule(105).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v3 = "no-quotes", v9 = "2", Rule(103).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", Rule(10).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v6 = "2020", Rule(111).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v8 = "1", Rule(112).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v9 = "0", Rule(116).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v9 = "1", Rule(114).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v9 = "17", Rule(115).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v5 = "0", v9 = "2", Rule(113).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", Rule(11).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", v8 = "1", Rule(117).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", v9 = "0", Rule(121).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", v9 = "1", Rule(119).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", v9 = "17", Rule(120).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v6 = "2020", v9 = "2", Rule(118).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v8 = "1", Rule(12).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v8 = "1", v9 = "0", Rule(125).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v8 = "1", v9 = "1", Rule(123).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v8 = "1", v9 = "17", Rule(124).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v8 = "1", v9 = "2", Rule(122).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v9 = "0", Rule(16).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v9 = "1", Rule(14).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v9 = "17", Rule(15).
+inv0_content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9) :- content(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), v9 = "2", Rule(13).

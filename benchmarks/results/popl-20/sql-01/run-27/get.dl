@@ -1,0 +1,16 @@
+.type date
+.type yrq
+
+
+.decl LE20130201(v0: date)
+.input LE20130201
+.decl GE20130215(v0: date)
+.input GE20130215
+.decl input1(v0: yrq, v1: date, v2: date)
+.input input1
+
+
+.decl ans(v0: yrq)
+.output ans
+
+ans(v2) :- GE20130215(v0), LE20130201(v1), input1(v2, v1, v0).

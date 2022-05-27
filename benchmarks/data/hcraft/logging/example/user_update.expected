@@ -1,0 +1,8 @@
+reboot	-10	-10	reboot	/var/empty	/usr/bin/false
+shutdown	-11	-11	shutdown	/var/empty	/usr/bin/false
+nobody	-2	-2	Unprivileged User	/var/empty	/usr/bin/false
+root	0	0	System Administrator	/var/root	/bin/sh
+daemon	1	1	System Services	/var/root	/usr/bin/false
+babyshark	1001	1001	BabyS	/home/babyshark	/bin/bash
+bob	1002	1002	Bobby	/home/bob	/bin/zsh
+dont	5000	5000	Dont	/opt/dont	/bin/bash

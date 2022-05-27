@@ -1,0 +1,15 @@
+.type ID <: symbol
+.type Name <: symbol
+.type School <: symbol
+
+.decl In(v0: ID, v1: Name, v2: School)
+.decl Out(v0: ID, v1: Name)
+.decl M__1(v0: ID, v1: Name)
+.decl M__2(v0: Name)
+
+.input In
+.output Out
+
+M__1(v0, v1) :- In(v0, v1, v2).
+M__2(v1) :- In(v0, v1, v2).
+Out(v0, v1) :- M__1(v0, v1), M__2(v1).

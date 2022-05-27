@@ -1,0 +1,63 @@
+root	293	559.5	1.0	39221128	168056	??	Rs	9:24AM	17:39.18	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+bob	778	17.0	1.1	34977332	192368	??	R	9:25AM	0:04.54	/Applications/iTerm.app/Contents/MacOS/iTerm2
+root	116	9.4	0.3	34014552	46196	??	Ss	9:24AM	0:21.11	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Support/mds
+bob	781	2.4	0.0	34201096	4784	s000	S	9:25AM	0:00.24	-zsh
+root	154	0.9	0.1	33831980	8560	??	Ss	9:24AM	0:00.63	/usr/libexec/sandboxd
+bob	479	0.9	0.0	33799528	3672	??	S	9:25AM	0:00.39	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/XPCServices/com.apple.hiservices-xpcservice.x
+bob	520	0.7	0.1	343683121	9840	??	S	9:25AM	0:00.24	/System/Library/CoreServices/Siri.app/Contents/MacOS/Siri launchd
+root	130	0.4	0.1	33832672	9404	??	Ss	9:24AM	0:00.92	/System/Library/CoreServices/launchservicesd
+bob	446	0.3	0.3	34482124	54864	??	S	9:25AM	0:02.73	/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+root	155	0.2	0.1	33833480	9748	??	Ss	9:24AM	0:03.22	/usr/libexec/corebrightnessd --launchd
+root	386	0.2	0.1	33894232	20668	??	Ss	9:25AM	0:01.06	/usr/libexec/TouchBarServer
+bob	539	0.2	0.4	34436772	73372	??	S	9:25AM	0:01.70	3
+bob	444	0.2	0.3	34357156	53004	??	S	9:25AM	0:04.50	/System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter
+root	397	0.1	0.1	33830156	8484	??	S	9:25AM	0:00.05	/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/XPCServices/ViewBridgeAuxiliary.xpc/Contents/MacOS/ViewBridgeAuxiliary
+bob	1082	0.1	0.1	33854088	17636	??	Ss	9:26AM	0:00.15	/System/Library/CoreServices/Siri.app/Contents/XPCServices/SiriNCService.xpc/Contents/MacOS/SiriNCService
+root	415	0.1	0.0	33726760	3232	??	Ss	9:25AM	0:00.09	/System/Library/PrivateFrameworks/CoreSymbolication.framework/coresymbolicationd
+root	103	0.1	0.1	33831392	8404	??	Ss	9:24AM	0:00.78	/System/Library/CoreServices/powerd.bundle/powerd
+bob	824	0.1	0.0	34218060	3104	??	Ss	9:25AM	0:00.02	/Applications/iTerm.app/Contents/XPCServices/pidinfo.xpc/Contents/MacOS/pidinfo
+bob	663	0.1	0.1	34398964	18144	??	S	9:25AM	0:00.19	/Applications/EVKey.app/Contents/MacOS/EVKey
+bob	461	0.1	0.1	33830508	8924	??	S	9:25AM	0:00.10	/System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/XPCServices/ViewBridgeAuxiliary.xpc/Contents/MacOS/ViewBridgeAuxiliary
+_reportmemoryexception	976	0.0	0.0	33697508	1260	??	S	9:25AM	0:00.03	/usr/sbin/distnoted agent
+_spotlight	972	0.0	0.0	33746556	3056	??	S	9:25AM	0:00.03	/usr/libexec/containermanagerd --runmode=agent
+_spotlight	961	0.0	0.0	33832380	7740	??	S	9:25AM	0:00.35	/usr/libexec/trustd --agent
+_spotlight	960	0.0	0.1	33839244	18616	??	SN	9:25AM	0:02.10	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport
+root	780	0.0	0.0	34179188	5068	s000	Ss	9:25AM	0:00.02	login -fp bob
+bob	779	0.0	0.0	34132272	2096	??	R+	9:25AM	0:00.00	ps aux
+bob	775	0.0	0.0	33747432	4976	??	Ss	9:25AM	0:00.05	/System/Library/PrivateFrameworks/IDSBlastDoorSupport.framework/Versions/A/XPCServices/IDSBlastDoorService.xpc/Contents/MacOS/IDSBlastDoorService
+bob	774	0.0	0.2	33837344	30036	??	S	9:25AM	0:04.77	/System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/Support/assistant_service
+bob	773	0.0	0.1	33833888	13392	??	S	9:25AM	0:00.40	/usr/libexec/adprivacyd
+bob	769	0.0	0.0	33774736	4708	??	S	9:25AM	0:00.02	/usr/sbin/BTLEServerAgent
+_fpsd	766	0.0	0.0	33725656	3372	??	Ss	9:25AM	0:00.02	/System/Library/PrivateFrameworks/CoreFP.framework/Versions/A/fairplayd
+bob	761	0.0	0.1	33947204	15640	??	S	9:25AM	0:00.14	/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Resources/SoftwareUpdateNotificationManager.app/Contents/MacOS/SoftwareUpdateNotificationManager
+bob	758	0.0	0.0	33746260	2004	??	Ss	9:25AM	0:00.01	/System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService
+bob	751	0.0	0.0	33745236	1972	??	Ss	9:25AM	0:00.01	/System/Library/Frameworks/NetFS.framework/Versions/A/XPCServices/PlugInLibraryService.xpc/Contents/MacOS/PlugInLibraryService
+bob	737	0.0	0.0	33829296	7836	??	S	9:25AM	0:00.07	/usr/libexec/diagnosticextensionsd
+bob	736	0.0	0.1	34282156	18848	??	Ss	9:25AM	0:00.11	/System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+bob	735	0.0	0.1	34272496	12300	??	Ss	9:25AM	0:00.13	/System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTDecoderXPCService.xpc/Contents/MacOS/VTDecoderXPCService
+root	731	0.0	0.0	33781048	2048	??	Ss	9:25AM	0:00.03	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/CVMServer
+bob	716	0.0	0.0	33765412	5104	??	S	9:25AM	0:00.01	/System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/Support/followupd
+bob	713	0.0	0.3	34569560	53212	??	S	9:25AM	0:00.71	/Applications/Google Drive.app/Contents/Frameworks/Google Drive Helper GPU.app/Contents/MacOS/Google Drive Helper GPU
+bob	711	0.0	0.0	33798988	7456	??	S	9:25AM	0:00.05	/usr/libexec/findmydevice-user-agent
+bob	710	0.0	0.6	34851120	93444	??	S	9:25AM	0:01.43	/Applications/Google Drive.app/Contents/MacOS/Google Drive --single_process --crash_handler_token=inherited
+bob	709	0.0	0.0	34145168	3056	??	S	9:25AM	0:00.01	/Applications/Google Drive.app/Contents/MacOS/crashpad_handler
+bob	707	0.0	0.1	33812344	12528	??	S	9:25AM	0:00.04	/Library/Apple/System/Library/CoreServices/SafariSupport.bundle/Contents/MacOS/SafariLaunchAgent
+bob	706	0.0	0.1	33837964	19496	??	SN	9:25AM	0:02.64	/System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport
+bob	705	0.0	0.1	33743104	12400	??	S	9:25AM	0:00.25	/usr/libexec/promotedcontentd
+nobody	703	0.0	0.0	33697508	1252	??	S	9:25AM	0:00.04	/usr/sbin/distnoted agent
+bob	440000	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440001	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440002	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/usr/bin/cd .
+bob	440003	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440004	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440005	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/usr/bin/cd .
+bob	440006	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440007	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440008	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440009	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/bash
+bob	440010	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440011	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440012	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440013	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/echo
+bob	440014	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/zsh
+bob	440015	0.0	0.1	34814248	11111	??	S	10:00PM	0:00.00	/bin/bash

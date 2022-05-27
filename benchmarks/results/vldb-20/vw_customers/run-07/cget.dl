@@ -1,0 +1,23 @@
+.type CUSTOMER_ID <: symbol
+.type NAME <: symbol
+.type ADDRESS <: symbol
+.type WEBSITE <: symbol
+.type CREDIT_LIMIT <: symbol
+.type CONTACT_ID <: symbol
+.type FIRST_NAME <: symbol
+.type LAST_NAME <: symbol
+.type EMAIL <: symbol
+.type PHONE <: symbol
+
+.decl customers(v0: CUSTOMER_ID, v1: NAME, v2: ADDRESS, v3: WEBSITE, v4: CREDIT_LIMIT)
+.decl contacts(v0: CONTACT_ID, v1: FIRST_NAME, v2: LAST_NAME, v3: EMAIL, v4: PHONE, v5: CUSTOMER_ID)
+.input customers, contacts
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl vw_customers(v0: NAME, v1: ADDRESS, v2: WEBSITE, v3: CREDIT_LIMIT, v4: FIRST_NAME, v5: LAST_NAME, v6: EMAIL, v7: PHONE)
+.output vw_customers
+
+
+vw_customers(v1, v2, v3, v4, v6, v7, v8, v9) :- customers(v0, v1, v2, v3, v4), contacts(v5, v6, v7, v8, v9, v0), Rule(1).

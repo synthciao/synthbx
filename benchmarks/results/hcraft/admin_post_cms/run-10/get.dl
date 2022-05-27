@@ -1,0 +1,41 @@
+.type uid <: symbol
+.type name <: symbol
+.type username <: symbol
+.type email <: symbol
+.type gr <: symbol
+.type pgr <: symbol
+.type gtitle <: symbol
+.type postid <: symbol
+.type title <: symbol
+.type state <: symbol
+.type access <: symbol
+
+.decl users(v0: uid, v1: name, v2: username, v3: email)
+.decl map(v0: uid, v1: gr)
+.decl groups(v0: gr, v1: pgr, v2: gtitle)
+.decl post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl admin_post_cms(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent(v0: uid, v1: gtitle)
+.decl inv0_users(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_map(v0: uid, v1: gr)
+.decl inv0_groups(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+
+.input users
+.input map
+.input groups
+.input post
+.output admin_post_cms
+.output invent
+.output inv0_users
+.output inv0_map
+.output inv0_groups
+.output inv0_post
+
+admin_post_cms(v6, v3, v10, v2) :- inv0_users(v7, v1, v10, v0), inv0_post(v6, v7, v4, v5, v2), invent(v7, v3).
+admin_post_cms(v6, v3, v10, v2) :- users(v8, v1, v10, v0), inv0_post(v6, v8, v4, v5, v2), invent(v8, v3).
+admin_post_cms(v6, v3, v10, v2) :- users(v8, v1, v10, v0), post(v6, v8, v4, v5, v2), invent(v8, v3).
+inv0_map(v0, v1) :- map(v0, v1), v1 = "7".
+inv0_post(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), v2 = "NoTitle".
+inv0_users(v0, v1, v2, v3) :- users(v0, v1, v2, v3), v3 = "jkyoATjoomla.site".
+invent(v0, v3) :- groups(v1, v4, v3), inv0_map(v0, v1).

@@ -1,0 +1,34 @@
+.type OFFICECODE <: symbol
+.type CITY <: symbol
+.type PHONE <: symbol
+.type ADDRESSLINE <: symbol
+.type STATE <: symbol
+.type COUNTRY <: symbol
+.type POSTALCODE <: symbol
+.type TERRITORY <: symbol
+
+.decl offices(v0: OFFICECODE, v1: CITY, v2: PHONE, v3: ADDRESSLINE, v4: ADDRESSLINE, v5: STATE, v6: COUNTRY, v7: POSTALCODE, v8: TERRITORY)
+.decl officeinfo(v0: OFFICECODE, v1: PHONE, v2: CITY)
+.decl offices_update(v0: OFFICECODE, v1: CITY, v2: PHONE, v3: ADDRESSLINE, v4: ADDRESSLINE, v5: STATE, v6: COUNTRY, v7: POSTALCODE, v8: TERRITORY)
+.decl offices_sdt_insert(v0: OFFICECODE, v1: CITY, v2: PHONE, v3: ADDRESSLINE, v4: ADDRESSLINE, v5: STATE, v6: COUNTRY, v7: POSTALCODE, v8: TERRITORY)
+.decl offices_sdt_delete(v0: OFFICECODE, v1: CITY, v2: PHONE, v3: ADDRESSLINE, v4: ADDRESSLINE, v5: STATE, v6: COUNTRY, v7: POSTALCODE, v8: TERRITORY)
+.decl officeinfo_update(v0: OFFICECODE, v1: PHONE, v2: CITY)
+.decl officeinfo_vdt_insert(v0: OFFICECODE, v1: PHONE, v2: CITY)
+.decl officeinfo_vdt_delete(v0: OFFICECODE, v1: PHONE, v2: CITY)
+.decl Au_P_0_officeinfo_offices(v0: ADDRESSLINE, v1: ADDRESSLINE, v2: STATE, v3: COUNTRY, v4: POSTALCODE, v5: TERRITORY)
+
+.input offices
+.output offices_update
+.input officeinfo_update
+
+officeinfo(v0, v2, v1) :- offices(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+
+officeinfo_vdt_delete(v0, v1, v2) :- officeinfo(v0, v1, v2), !officeinfo_update(v0, v1, v2).
+officeinfo_vdt_insert(v0, v1, v2) :- officeinfo_update(v0, v1, v2), !officeinfo(v0, v1, v2).
+
+offices_update(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- offices(v0, v1, v2, v3, v4, v5, v6, v7, v8), !offices_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8); offices_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+
+offices_sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- officeinfo_vdt_delete(v0, v2, v1), offices(v0, v1, v2, v3, v4, v5, v6, v7, v8).
+offices_sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7, v8) :- officeinfo_vdt_insert(v0, v2, v1), Au_P_0_officeinfo_offices(v3, v4, v5, v6, v7, v8), !offices(v0, v1, v2, _, _, _, _, _, _).
+
+Au_P_0_officeinfo_offices("43 Rue Jouffroy D\abbans", "NULL", "NULL", "France", "75017", "EMEA").

@@ -1,0 +1,29 @@
+.type country <: symbol
+.type id <: symbol
+.type status <: symbol
+
+.decl treat(v0: status)
+.decl untreat(v0: status)
+.decl input1(v0: id, v1: country, v2: status)
+.decl inv(v0: country)
+.decl ans(v0: id, v1: country, v2: status)
+.decl M__1(v0: id, v1: status)
+.decl M__2(v0: id, v1: country)
+.decl M__3(v0: status, v1: id)
+.decl M__4(v0: status, v1: id, v2: country)
+.decl M__5(v0: id, v1: country, v2: status)
+.decl input1_0__cp(v0: id, v1: country, v2: status)
+
+.input treat
+.input untreat
+.input input1
+.output ans
+
+M__1(v0, v2) :- input1(v0, v1, v2).
+M__2(v0, v1) :- input1(v0, v1, v2).
+M__3(v0, v1) :- untreat(v0), M__1(v1, v0).
+M__4(v0, v1, v2) :- M__3(v0, v1), M__2(v1, v2).
+M__5(v0, v1, v2) :- input1_0__cp(v0, v1, v2), inv(v1).
+ans(v0, v1, v2) :- M__5(v0, v1, v2), treat(v2).
+input1_0__cp(v0, v1, v2) :- input1(v0, v1, v2).
+inv(v2) :- M__4(v0, v1, v2).

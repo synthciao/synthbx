@@ -1,0 +1,16 @@
+.type VEHICLE_ID <: symbol
+.type SIZE <: symbol
+.type BRAND_ID <: symbol
+.type NAME <: symbol
+
+.decl vehicle(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl brand(v0: BRAND_ID, v1: NAME)
+.decl vehicle_view(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.decl M__1(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID, v3: NAME)
+
+.input vehicle
+.input brand
+.output vehicle_view
+
+M__1(v0, v1, v2, v3) :- vehicle(v0, v1, v2), brand(v2, v3).
+vehicle_view(v0, v1, v3) :- M__1(v0, v1, v2, v3).

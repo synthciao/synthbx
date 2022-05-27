@@ -1,0 +1,60 @@
+.type ID <: symbol
+.type Name <: symbol
+.type Age <: symbol
+
+.decl family(v0: ID, v1: Name, v2: Age, v3: ID)
+.decl Out(v0: ID, v1: Name)
+.decl M__1(v0: ID, v1: Name)
+.decl M__2(v0: ID)
+.decl family_update(v0: ID, v1: Name, v2: Age, v3: ID)
+.decl family_sdt_insert(v0: ID, v1: Name, v2: Age, v3: ID)
+.decl family_sdt_delete(v0: ID, v1: Name, v2: Age, v3: ID)
+.decl Out_update(v0: ID, v1: Name)
+.decl Out_vdt_insert(v0: ID, v1: Name)
+.decl Out_vdt_delete(v0: ID, v1: Name)
+.decl M__1_update(v0: ID, v1: Name)
+.decl M__1_sdt_insert(v0: ID, v1: Name)
+.decl M__1_sdt_delete(v0: ID, v1: Name)
+.decl M__1_vdt_insert(v0: ID, v1: Name)
+.decl M__1_vdt_delete(v0: ID, v1: Name)
+.decl M__2_update(v0: ID)
+.decl M__2_sdt_insert(v0: ID)
+.decl M__2_sdt_delete(v0: ID)
+.decl M__2_vdt_insert(v0: ID)
+.decl M__2_vdt_delete(v0: ID)
+.decl Au_P_0_M__1_family(v0: Age, v1: ID)
+.decl Au_P_0_M__2_family(v0: ID, v1: Name, v2: Age)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input family
+.output family_update
+.input Out_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1) :- family(v0, v1, v2, v3).
+M__2(v3) :- family(v0, v1, v2, v3).
+Out(v0, v1) :- M__1(v0, v1), M__2(v0).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0) :- M__2(v0), !M__2_update(v0).
+M__2_vdt_insert(v0) :- M__2_update(v0), !M__2(v0).
+Out_vdt_delete(v0, v1) :- Out(v0, v1), !Out_update(v0, v1).
+Out_vdt_insert(v0, v1) :- Out_update(v0, v1), !Out(v0, v1).
+
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0) :- M__2(v0), !M__2_sdt_delete(v0); M__2_sdt_insert(v0).
+family_update(v0, v1, v2, v3) :- family(v0, v1, v2, v3), !family_sdt_delete(v0, v1, v2, v3); family_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__1_sdt_delete(v0, _), M__1_update(v0, _), M__2_sdt_delete(v0), M__2_update(v0).
+Fr__("_rejected_") :- M__1_sdt_insert(v0, _), M__1(v0, _).
+Fr__("_rejected_") :- M__2_sdt_insert(v0), M__2(v0).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__2_sdt_insert(v0) :- Out_vdt_insert(v0, _), !M__2(v0).
+family_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v3), Au_P_0_M__2_family(v0, v1, v2), !family(_, _, _, v3).
+
+Au_P_0_M__1_family("18", "2").
+Au_P_0_M__2_family("3", "Rick", "18").

@@ -1,0 +1,18 @@
+.type emp_name <: symbol
+.type birth_date <: symbol
+.type gender <: symbol
+.type dept_name <: symbol
+
+.decl residents(v0: emp_name, v1: birth_date, v2: gender)
+.decl ced(v0: emp_name, v1: dept_name)
+.decl retired(v0: emp_name)
+.decl M__1(v0: emp_name)
+.decl M__2(v0: emp_name)
+
+.input residents
+.input ced
+.output retired
+
+M__1(v0) :- residents(v0, v1, v2).
+M__2(v0) :- ced(v0, v1).
+retired(v0) :- M__1(v0), !M__2(v0).

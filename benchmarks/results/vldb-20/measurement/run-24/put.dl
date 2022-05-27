@@ -1,0 +1,78 @@
+.type CITY_ID <: symbol
+.type LOGDATE <: symbol
+.type PEAKTEMP <: symbol
+.type UNITSALES <: symbol
+
+.decl measurement_y2006m02(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m03(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0_(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1_(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m02_update(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m02_sdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m02_sdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m03_update(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m03_sdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_y2006m03_sdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_update(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_vdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement_vdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0__update(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0__sdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0__sdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0__vdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__0__vdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1__update(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1__sdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1__sdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1__vdt_insert(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl measurement__1__vdt_delete(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl Au_U_measurement_measurement__0_(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl Au_U_measurement_measurement__1_(v0: CITY_ID, v1: LOGDATE, v2: PEAKTEMP, v3: UNITSALES)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input measurement_y2006m02
+.input measurement_y2006m03
+.output measurement_y2006m02_update
+.output measurement_y2006m03_update
+.input measurement_update
+.output Fr__
+.output Fv__
+
+measurement(v0, v1, v2, v3) :- measurement__0_(v0, v1, v2, v3); measurement__1_(v0, v1, v2, v3).
+measurement__0_(v0, v1, v2, v3) :- measurement_y2006m02(v0, v1, v2, v3), v1 >= "2006-02-01", v1 <= "2006-02-28".
+measurement__1_(v0, v1, v2, v3) :- measurement_y2006m03(v0, v1, v2, v3), v1 >= "2006-03-01", v1 <= "2006-03-31".
+
+measurement__0__vdt_delete(v0, v1, v2, v3) :- measurement__0_(v0, v1, v2, v3), !measurement__0__update(v0, v1, v2, v3).
+measurement__0__vdt_insert(v0, v1, v2, v3) :- measurement__0__update(v0, v1, v2, v3), !measurement__0_(v0, v1, v2, v3).
+measurement__1__vdt_delete(v0, v1, v2, v3) :- measurement__1_(v0, v1, v2, v3), !measurement__1__update(v0, v1, v2, v3).
+measurement__1__vdt_insert(v0, v1, v2, v3) :- measurement__1__update(v0, v1, v2, v3), !measurement__1_(v0, v1, v2, v3).
+measurement_vdt_delete(v0, v1, v2, v3) :- measurement(v0, v1, v2, v3), !measurement_update(v0, v1, v2, v3).
+measurement_vdt_insert(v0, v1, v2, v3) :- measurement_update(v0, v1, v2, v3), !measurement(v0, v1, v2, v3).
+
+measurement__0__update(v0, v1, v2, v3) :- measurement__0_(v0, v1, v2, v3), !measurement__0__sdt_delete(v0, v1, v2, v3); measurement__0__sdt_insert(v0, v1, v2, v3).
+measurement__1__update(v0, v1, v2, v3) :- measurement__1_(v0, v1, v2, v3), !measurement__1__sdt_delete(v0, v1, v2, v3); measurement__1__sdt_insert(v0, v1, v2, v3).
+measurement_y2006m02_update(v0, v1, v2, v3) :- measurement_y2006m02(v0, v1, v2, v3), !measurement_y2006m02_sdt_delete(v0, v1, v2, v3); measurement_y2006m02_sdt_insert(v0, v1, v2, v3).
+measurement_y2006m03_update(v0, v1, v2, v3) :- measurement_y2006m03(v0, v1, v2, v3), !measurement_y2006m03_sdt_delete(v0, v1, v2, v3); measurement_y2006m03_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- measurement__0_(_, v1, _, _), v1 < "2006-02-01".
+Fr__("_rejected_") :- measurement__0_(_, v1, _, _), v1 > "2006-02-28".
+Fr__("_rejected_") :- measurement__0__update(_, v1, _, _), v1 < "2006-02-01".
+Fr__("_rejected_") :- measurement__0__update(_, v1, _, _), v1 > "2006-02-28".
+Fr__("_rejected_") :- measurement__1_(_, v1, _, _), v1 < "2006-03-01".
+Fr__("_rejected_") :- measurement__1_(_, v1, _, _), v1 > "2006-03-31".
+Fr__("_rejected_") :- measurement__1__update(_, v1, _, _), v1 < "2006-03-01".
+Fr__("_rejected_") :- measurement__1__update(_, v1, _, _), v1 > "2006-03-31".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+measurement__0__sdt_insert(v0, v1, v2, v3) :- measurement_vdt_insert(v0, v1, v2, v3), !Au_U_measurement_measurement__1_(v0, v1, v2, v3), !measurement__0_(v0, v1, v2, v3).
+measurement__1__sdt_insert(v0, v1, v2, v3) :- measurement_vdt_insert(v0, v1, v2, v3), !Au_U_measurement_measurement__0_(v0, v1, v2, v3), !measurement__1_(v0, v1, v2, v3).
+measurement_y2006m02_sdt_insert(v0, v1, v2, v3) :- measurement__0__vdt_insert(v0, v1, v2, v3), !measurement_y2006m02(v0, v1, v2, v3).
+measurement_y2006m03_sdt_insert(v0, v1, v2, v3) :- measurement__1__vdt_insert(v0, v1, v2, v3), !measurement_y2006m03(v0, v1, v2, v3).
+
+Au_U_measurement_measurement__0_("212", "2006-02-25", "20", "50").
+Au_U_measurement_measurement__0_("213", "2006-02-27", "16", "245").
+Au_U_measurement_measurement__1_("320", "2006-03-21", "22", "500").
+Au_U_measurement_measurement__1_("321", "2006-03-22", "17", "200").
+Au_U_measurement_measurement__1_("322", "2006-03-23", "20", "400").

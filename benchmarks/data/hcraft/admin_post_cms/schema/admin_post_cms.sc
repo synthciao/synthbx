@@ -1,0 +1,6 @@
+*users(uid, name, username, email)
+*map(uid, gr)
+*groups(gr, pgr, gtitle)
+*post(postid, uid, title, state, access)
++invent(uid, gtitle)
+admin_post_cms(postid, gtitle, username, access)

@@ -1,0 +1,19 @@
+.type sname <: symbol
+.type port <: symbol
+.type proto <: symbol
+.type description <: symbol
+.type state <: symbol
+
+.decl service(v0: sname, v1: port, v2: proto, v3: description)
+.decl active(v0: proto, v1: port, v2: state)
+.decl open_port(v0: port, v1: proto, v2: sname)
+.decl inv0_service(v0: sname, v1: port, v2: proto, v3: description)
+.decl inv0_active(v0: proto, v1: port, v2: state)
+
+.input service
+.input active
+.output open_port
+.output inv0_service
+.output inv0_active
+
+open_port(v3, v5, v2) :- service(v2, v3, v5, v1), active(v5, v3, v0).

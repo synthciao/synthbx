@@ -1,0 +1,6 @@
+*Active(S)
+*Inactive(S)
+*Input1(T,S,C)
++inv1(T,C)
++inv2(T,C)
+ans(T,C,C)

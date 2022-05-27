@@ -1,0 +1,22 @@
+.type id <: symbol
+.type name <: symbol
+.type host_id <: symbol
+.type host_name <: symbol
+.type neighbourhood <: symbol
+.type room_type <: symbol
+.type price <: symbol
+.type minimum_nights <: symbol
+
+.decl listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+.decl neighbour_airbnb(v0: id, v1: neighbourhood, v2: room_type, v3: minimum_nights)
+.decl inv0_listing(v0: id, v1: name, v2: host_id, v3: host_name, v4: neighbourhood, v5: room_type, v6: price, v7: minimum_nights)
+
+.input listing
+.output neighbour_airbnb
+.output inv0_listing
+
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v6 = "Unk".
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shibuya Ku", v7 = "4".
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Shinjuku Ku", v5 = "Private room".
+inv0_listing(v0, v1, v2, v3, v4, v5, v6, v7) :- listing(v0, v1, v2, v3, v4, v5, v6, v7), v4 = "Sumida Ku".
+neighbour_airbnb(v1, v2, v3, v4) :- inv0_listing(v1, v5, v0, v7, v2, v3, v6, v4).

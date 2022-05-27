@@ -1,0 +1,14 @@
+.type car_id <: symbol
+.type car_name <: symbol
+.type brand_id <: symbol
+
+.decl cars(v0: car_id, v1: car_name, v2: brand_id)
+.input cars
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl cars_master(v0: car_id, v1: car_name)
+.output cars_master
+
+cars_master(v0, v1) :- cars(v0, v1, v2), Rule(1).

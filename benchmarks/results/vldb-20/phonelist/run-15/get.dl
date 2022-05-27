@@ -1,0 +1,19 @@
+.type ID <: symbol
+.type NUMBER <: symbol
+.type LASTNAME <: symbol
+.type FIRSTNAME <: symbol
+.type PHONENO <: symbol
+.type SOURCE <: symbol
+
+
+.decl customer(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl supplier(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.decl vendor(v0: ID, v1: NUMBER, v2: LASTNAME, v3: FIRSTNAME, v4: PHONENO)
+.input customer, supplier, vendor
+
+.decl phonelist(v0: SOURCE, v1: ID, v2: NUMBER, v3: LASTNAME, v4: FIRSTNAME, v5: PHONENO)
+.output phonelist
+
+phonelist(v5, v0, v1, v2, v3, v4) :- customer(v0, v1, v2, v3, v4), v5 = "Customer".
+phonelist(v5, v0, v1, v2, v3, v4) :- supplier(v0, v1, v2, v3, v4), v5 = "Supplier".
+phonelist(v5, v0, v1, v2, v3, v4) :- vendor(v0, v1, v2, v3, v4), v5 = "Vendor".

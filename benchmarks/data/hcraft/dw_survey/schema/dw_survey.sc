@@ -1,0 +1,2 @@
+*FactSurveyResponse(SurveyResponseKey, DateKey, CustomerKey, ProductCategoryKey, EnglishProductCategory, ProductSubcategoryKey, EnglishProductSubcategory, Date)
+dw_survey(SurveyResponseKey, DateKey, CustomerKey, ProductCategoryKey, EnglishProductCategory, ProductSubcategoryKey, EnglishProductSubcategory, Date)

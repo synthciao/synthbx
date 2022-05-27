@@ -1,0 +1,197 @@
+.type Inv <: symbol
+.type Demand <: symbol
+.type Company <: symbol
+
+.decl In(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl not_null(v0: Company)
+.decl Out(v0: Company, v1: Demand)
+.decl M__1(v0: Demand, v1: Company)
+.decl M__2(v0: Demand, v1: Company)
+.decl Out__0_(v0: Company, v1: Demand)
+.decl Out__1_(v0: Company, v1: Demand)
+.decl not_null_0__cp(v0: Company)
+.decl not_null_1__cp(v0: Company)
+.decl In_update(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl In_sdt_insert(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl In_sdt_delete(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl not_null_update(v0: Company)
+.decl not_null_sdt_insert(v0: Company)
+.decl not_null_sdt_delete(v0: Company)
+.decl Out_update(v0: Company, v1: Demand)
+.decl Out_vdt_insert(v0: Company, v1: Demand)
+.decl Out_vdt_delete(v0: Company, v1: Demand)
+.decl M__1_update(v0: Demand, v1: Company)
+.decl M__1_sdt_insert(v0: Demand, v1: Company)
+.decl M__1_sdt_delete(v0: Demand, v1: Company)
+.decl M__1_vdt_insert(v0: Demand, v1: Company)
+.decl M__1_vdt_delete(v0: Demand, v1: Company)
+.decl M__2_update(v0: Demand, v1: Company)
+.decl M__2_sdt_insert(v0: Demand, v1: Company)
+.decl M__2_sdt_delete(v0: Demand, v1: Company)
+.decl M__2_vdt_insert(v0: Demand, v1: Company)
+.decl M__2_vdt_delete(v0: Demand, v1: Company)
+.decl Out__0__update(v0: Company, v1: Demand)
+.decl Out__0__sdt_insert(v0: Company, v1: Demand)
+.decl Out__0__sdt_delete(v0: Company, v1: Demand)
+.decl Out__0__vdt_insert(v0: Company, v1: Demand)
+.decl Out__0__vdt_delete(v0: Company, v1: Demand)
+.decl Out__1__update(v0: Company, v1: Demand)
+.decl Out__1__sdt_insert(v0: Company, v1: Demand)
+.decl Out__1__sdt_delete(v0: Company, v1: Demand)
+.decl Out__1__vdt_insert(v0: Company, v1: Demand)
+.decl Out__1__vdt_delete(v0: Company, v1: Demand)
+.decl not_null_0__cp_update(v0: Company)
+.decl not_null_0__cp_sdt_insert(v0: Company)
+.decl not_null_0__cp_sdt_delete(v0: Company)
+.decl not_null_0__cp_vdt_insert(v0: Company)
+.decl not_null_0__cp_vdt_delete(v0: Company)
+.decl not_null_1__cp_update(v0: Company)
+.decl not_null_1__cp_sdt_insert(v0: Company)
+.decl not_null_1__cp_sdt_delete(v0: Company)
+.decl not_null_1__cp_vdt_insert(v0: Company)
+.decl not_null_1__cp_vdt_delete(v0: Company)
+.decl Au_P_0_M__1_In(v0: Inv, v1: Company)
+.decl Au_P_1_M__1_In(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl Au_P_0_M__2_In(v0: Inv, v1: Company)
+.decl Au_P_1_M__2_In(v0: Inv, v1: Demand, v2: Company, v3: Company)
+.decl Au_U_Out_Out__0_(v0: Company, v1: Demand)
+.decl Au_U_Out_Out__1_(v0: Company, v1: Demand)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input In
+.input not_null
+.output Out
+.output M__1
+.output M__2
+.output Out__0_
+.output Out__1_
+.output not_null_0__cp
+.output not_null_1__cp
+.output In_update
+.output In_sdt_insert
+.output In_sdt_delete
+.output not_null_update
+.output not_null_sdt_insert
+.output not_null_sdt_delete
+.input Out_update
+.output Out_vdt_insert
+.output Out_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output M__2_update
+.output M__2_sdt_insert
+.output M__2_sdt_delete
+.output M__2_vdt_insert
+.output M__2_vdt_delete
+.output Out__0__update
+.output Out__0__sdt_insert
+.output Out__0__sdt_delete
+.output Out__0__vdt_insert
+.output Out__0__vdt_delete
+.output Out__1__update
+.output Out__1__sdt_insert
+.output Out__1__sdt_delete
+.output Out__1__vdt_insert
+.output Out__1__vdt_delete
+.output not_null_0__cp_update
+.output not_null_0__cp_sdt_insert
+.output not_null_0__cp_sdt_delete
+.output not_null_0__cp_vdt_insert
+.output not_null_0__cp_vdt_delete
+.output not_null_1__cp_update
+.output not_null_1__cp_sdt_insert
+.output not_null_1__cp_sdt_delete
+.output not_null_1__cp_vdt_insert
+.output not_null_1__cp_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v1, v2) :- In(v0, v1, v2, v3).
+M__2(v1, v3) :- In(v0, v1, v2, v3).
+Out(v0, v1) :- Out__0_(v0, v1); Out__1_(v0, v1).
+Out__0_(v0, v1) :- M__1(v1, v0), not_null_1__cp(v0).
+Out__1_(v0, v1) :- M__2(v1, v0), not_null_0__cp(v0).
+not_null_0__cp(v0) :- not_null(v0).
+not_null_1__cp(v0) :- not_null(v0).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0, v1) :- M__2(v0, v1), !M__2_update(v0, v1).
+M__2_vdt_insert(v0, v1) :- M__2_update(v0, v1), !M__2(v0, v1).
+Out__0__vdt_delete(v0, v1) :- Out__0_(v0, v1), !Out__0__update(v0, v1).
+Out__0__vdt_insert(v0, v1) :- Out__0__update(v0, v1), !Out__0_(v0, v1).
+Out__1__vdt_delete(v0, v1) :- Out__1_(v0, v1), !Out__1__update(v0, v1).
+Out__1__vdt_insert(v0, v1) :- Out__1__update(v0, v1), !Out__1_(v0, v1).
+Out_vdt_delete(v0, v1) :- Out(v0, v1), !Out_update(v0, v1).
+Out_vdt_insert(v0, v1) :- Out_update(v0, v1), !Out(v0, v1).
+not_null_0__cp_vdt_delete(v0) :- not_null_0__cp(v0), !not_null_0__cp_update(v0).
+not_null_0__cp_vdt_insert(v0) :- not_null_0__cp_update(v0), !not_null_0__cp(v0).
+not_null_1__cp_vdt_delete(v0) :- not_null_1__cp(v0), !not_null_1__cp_update(v0).
+not_null_1__cp_vdt_insert(v0) :- not_null_1__cp_update(v0), !not_null_1__cp(v0).
+
+In_update(v0, v1, v2, v3) :- In(v0, v1, v2, v3), !In_sdt_delete(v0, v1, v2, v3); In_sdt_insert(v0, v1, v2, v3).
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0, v1) :- M__2(v0, v1), !M__2_sdt_delete(v0, v1); M__2_sdt_insert(v0, v1).
+Out__0__update(v0, v1) :- Out__0_(v0, v1), !Out__0__sdt_delete(v0, v1); Out__0__sdt_insert(v0, v1).
+Out__1__update(v0, v1) :- Out__1_(v0, v1), !Out__1__sdt_delete(v0, v1); Out__1__sdt_insert(v0, v1).
+not_null_0__cp_update(v0) :- not_null_0__cp(v0), !not_null_0__cp_sdt_delete(v0); not_null_0__cp_sdt_insert(v0).
+not_null_1__cp_update(v0) :- not_null_1__cp(v0), !not_null_1__cp_sdt_delete(v0); not_null_1__cp_sdt_insert(v0).
+not_null_update(v0) :- not_null(v0), !not_null_sdt_delete(v0); not_null_sdt_insert(v0).
+
+Fr__("_rejected_") :- M__1_sdt_delete(_, v0), M__1_update(_, v0), not_null_1__cp_sdt_delete(v0), not_null_1__cp_update(v0).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v0), M__1(_, v0).
+Fr__("_rejected_") :- M__2_sdt_delete(_, v0), M__2_update(_, v0), not_null_0__cp_sdt_delete(v0), not_null_0__cp_update(v0).
+Fr__("_rejected_") :- M__2_sdt_insert(_, v0), M__2(_, v0).
+Fr__("_rejected_") :- not_null_0__cp_sdt_insert(v0), not_null_0__cp(v0).
+Fr__("_rejected_") :- not_null_1__cp_sdt_insert(v0), not_null_1__cp(v0).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+In_sdt_delete(v0, v1, v2, v3) :- M__1_vdt_delete(v1, v2), In(v0, v1, v2, v3), Rule(0).
+In_sdt_delete(v0, v1, v2, v3) :- M__2_vdt_delete(v1, v3), In(v0, v1, v2, v3), Rule(3).
+In_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v1, v2), Au_P_0_M__1_In(v0, v3), !Au_P_1_M__1_In(_, v1, v2, _), !In(_, v1, v2, _), Rule(2).
+In_sdt_insert(v0, v1, v2, v3) :- M__1_vdt_insert(v1, v2), Au_P_1_M__1_In(v0, v1, v2, v3), !In(_, v1, v2, _), Rule(1).
+In_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v1, v3), Au_P_0_M__2_In(v0, v2), !Au_P_1_M__2_In(_, v1, _, v3), !In(_, v1, _, v3), Rule(5).
+In_sdt_insert(v0, v1, v2, v3) :- M__2_vdt_insert(v1, v3), Au_P_1_M__2_In(v0, v1, v2, v3), !In(_, v1, _, v3), Rule(4).
+M__1_sdt_delete(v1, v0) :- Out__0__vdt_delete(v0, v1), M__1(v1, v0), Rule(16).
+M__1_sdt_delete(v1, v2) :- M__2_sdt_delete(v1, v3), In(_, v1, v2, v3), Rule(33).
+M__1_sdt_insert(v1, v0) :- Out__0__vdt_insert(v0, v1), !M__1(v1, v0), Rule(17).
+M__1_sdt_insert(v1, v2) :- M__2_sdt_insert(v1, v3), Au_P_0_M__2_In(v0, v2), !Au_P_1_M__2_In(_, v1, _, v3), !In(_, v1, v2, v3), Rule(35).
+M__1_sdt_insert(v1, v2) :- M__2_sdt_insert(v1, v3), Au_P_1_M__2_In(v0, v1, v2, v3), !In(_, v1, v2, v3), Rule(34).
+M__2_sdt_delete(v1, v0) :- Out__1__vdt_delete(v0, v1), M__2(v1, v0), Rule(19).
+M__2_sdt_delete(v1, v3) :- M__1_sdt_delete(v1, v2), In(_, v1, v2, v3), Rule(30).
+M__2_sdt_insert(v1, v0) :- Out__1__vdt_insert(v0, v1), !M__2(v1, v0), Rule(20).
+M__2_sdt_insert(v1, v3) :- M__1_sdt_insert(v1, v2), Au_P_0_M__1_In(v0, v3), !Au_P_1_M__1_In(_, v1, v2, _), !In(_, v1, v2, v3), Rule(32).
+M__2_sdt_insert(v1, v3) :- M__1_sdt_insert(v1, v2), Au_P_1_M__1_In(v0, v1, v2, v3), !In(_, v1, v2, v3), Rule(31).
+Out__0__sdt_delete(v0, v1) :- Out_vdt_delete(v0, v1), Out__0_(v0, v1), Rule(6).
+Out__0__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), !Au_U_Out_Out__0_(v0, v1), !Out__0_(v0, v1), Rule(9).
+Out__0__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), !Au_U_Out_Out__1_(v0, v1), !Out__0_(v0, v1), Rule(11).
+Out__0__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), Au_U_Out_Out__0_(v0, v1), !Out__0_(v0, v1), Rule(8).
+Out__0__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), Au_U_Out_Out__1_(v0, v1), !Out__0_(v0, v1), Rule(10).
+Out__1__sdt_delete(v0, v1) :- Out_vdt_delete(v0, v1), Out__1_(v0, v1), Rule(7).
+Out__1__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), !Au_U_Out_Out__0_(v0, v1), !Out__1_(v0, v1), Rule(13).
+Out__1__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), !Au_U_Out_Out__1_(v0, v1), !Out__1_(v0, v1), Rule(15).
+Out__1__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), Au_U_Out_Out__0_(v0, v1), !Out__1_(v0, v1), Rule(12).
+Out__1__sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), Au_U_Out_Out__1_(v0, v1), !Out__1_(v0, v1), Rule(14).
+not_null_0__cp_sdt_delete(v0) :- not_null_1__cp_sdt_delete(v0), not_null(v0), Rule(28).
+not_null_0__cp_sdt_insert(v0) :- Out__1__vdt_insert(v0, _), !not_null_0__cp(v0), Rule(21).
+not_null_0__cp_sdt_insert(v0) :- not_null_1__cp_sdt_insert(v0), !not_null(v0), Rule(29).
+not_null_1__cp_sdt_delete(v0) :- not_null_0__cp_sdt_delete(v0), not_null(v0), Rule(26).
+not_null_1__cp_sdt_insert(v0) :- Out__0__vdt_insert(v0, _), !not_null_1__cp(v0), Rule(18).
+not_null_1__cp_sdt_insert(v0) :- not_null_0__cp_sdt_insert(v0), !not_null(v0), Rule(27).
+not_null_sdt_delete(v0) :- not_null_0__cp_vdt_delete(v0), Rule(22).
+not_null_sdt_delete(v0) :- not_null_1__cp_vdt_delete(v0), Rule(24).
+not_null_sdt_insert(v0) :- not_null_0__cp_vdt_insert(v0), Rule(23).
+not_null_sdt_insert(v0) :- not_null_1__cp_vdt_insert(v0), Rule(25).
+
+Au_P_0_M__1_In("5", "non").
+Au_P_1_M__1_In("0", "d1", "non", "tesla").
+Au_P_0_M__2_In("5", "linkedin").
+Au_P_1_M__2_In("0", "d1", "non", "tesla").
+Au_U_Out_Out__0_("linkedin", "d3").
+Au_U_Out_Out__1_("tesla", "d1").

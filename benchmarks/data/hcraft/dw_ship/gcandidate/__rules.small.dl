@@ -1,0 +1,25 @@
+.type ShipMethodID <: symbol
+.type ShipName <: symbol
+.type ShipBase <: symbol
+.type ShipRate <: symbol
+.type PurcharseOrderID <: symbol
+.type Status <: symbol
+.type EmployeeID <: symbol
+.type VendorID <: symbol
+.type OrderDate <: symbol
+.type ShipDate <: symbol
+.type SubTotal <: symbol
+.type TaxAmt <: symbol
+.type Freight <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl ShipMethod(v0: ShipMethodID, v1: ShipName, v2: ShipBase, v3: ShipRate)
+.decl PurcharseOrderHeader(v0: PurcharseOrderID, v1: Status, v2: EmployeeID, v3: VendorID, v4: ShipMethodID, v5: OrderDate, v6: ShipDate, v7: SubTotal, v8: TaxAmt, v9: Freight)
+.input ShipMethod, PurcharseOrderHeader
+
+.decl dw_ship(v0: PurcharseOrderID, v1: ShipDate, v2: ShipMethodID, v3: ShipName)
+.output dw_ship
+
+dw_ship(v0, v6, v4, v10) :- PurcharseOrderHeader(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9), ShipMethod(v4, v10, v11, v12), Rule(1).

@@ -1,0 +1,48 @@
+.type username <: symbol
+.type uid <: symbol
+.type gid <: symbol
+.type info <: symbol
+.type homedir <: symbol
+.type shell <: symbol
+.type tty <: symbol
+.type day <: symbol
+.type date <: symbol
+
+.decl user(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged(v0: username, v1: tty, v2: day, v3: date)
+.decl status(v0: tty)
+.decl logging(v0: username, v1: uid, v2: info, v3: date)
+.decl invent(v0: username, v1: tty, v2: date)
+.decl inv0_logged(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_status(v0: tty)
+.decl M__1(v0: username, v1: tty, v2: date)
+.decl M__2(v0: username, v1: uid, v2: info)
+.decl M__3(v0: uid, v1: username, v2: info, v3: date, v4: tty)
+.decl M__4(v0: uid, v1: username, v2: info, v3: date, v4: tty)
+.decl M__5(v0: uid, v1: username, v2: info, v3: date, v4: tty)
+.decl inv0_logged__0_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__1_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__2_(v0: username, v1: tty, v2: day, v3: date)
+.decl inv0_logged__3_(v0: username, v1: tty, v2: day, v3: date)
+.decl M__3_0__cp(v0: uid, v1: username, v2: info, v3: date, v4: tty)
+.decl M__3_1__cp(v0: uid, v1: username, v2: info, v3: date, v4: tty)
+
+.input user
+.input logged
+.input status
+.output logging
+
+M__1(v0, v1, v3) :- inv0_logged(v0, v1, v2, v3).
+M__2(v0, v1, v3) :- user(v0, v1, v2, v3, v4, v5).
+M__3(v0, v1, v2, v3, v4) :- M__2(v1, v0, v2), invent(v1, v4, v3).
+M__3_0__cp(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4).
+M__3_1__cp(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3, v4).
+M__4(v0, v1, v2, v3, v4) :- M__3_1__cp(v0, v1, v2, v3, v4), inv0_status(v4).
+M__5(v0, v1, v2, v3, v4) :- M__3_0__cp(v0, v1, v2, v3, v4), !M__4(v0, v1, v2, v3, v4).
+inv0_logged(v0, v1, v2, v3) :- inv0_logged__2_(v0, v1, v2, v3); inv0_logged__3_(v0, v1, v2, v3).
+inv0_logged__0_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "console", v2 = "Sun".
+inv0_logged__1_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys000", v2 = "Sun".
+inv0_logged__2_(v0, v1, v2, v3) :- logged(v0, v1, v2, v3), v1 = "ttys001", v2 = "Sun".
+inv0_logged__3_(v0, v1, v2, v3) :- inv0_logged__0_(v0, v1, v2, v3); inv0_logged__1_(v0, v1, v2, v3).
+invent(v0, v1, v2) :- status(v1), M__1(v0, v1, v2).
+logging(v1, v0, v2, v3) :- M__5(v0, v1, v2, v3, v4).

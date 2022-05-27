@@ -1,0 +1,49 @@
+.type SalesQuotaKey <: symbol
+.type EmployeeKey <: symbol
+.type DateKey <: symbol
+.type CalendarQuarter <: symbol
+.type SalesAmountQuota <: symbol
+.type Date <: symbol
+.type CalendarYear <: symbol
+
+.decl FactSalesQuota2010(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2011(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2012(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl FactSalesQuota2013(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl dw_sales(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl M__1(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__2(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__3(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__4(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__5(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__6(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl M__7(v0: SalesQuotaKey, v1: EmployeeKey, v2: DateKey, v3: CalendarQuarter, v4: SalesAmountQuota, v5: Date)
+.decl M__8(v0: SalesQuotaKey, v1: CalendarQuarter, v2: SalesAmountQuota)
+.decl dw_sales__0_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__1_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__2_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__3_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__4_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+.decl dw_sales__5_(v0: SalesQuotaKey, v1: CalendarYear, v2: CalendarQuarter, v3: SalesAmountQuota)
+
+.input FactSalesQuota2010
+.input FactSalesQuota2011
+.input FactSalesQuota2012
+.input FactSalesQuota2013
+.output dw_sales
+
+M__1(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2010(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__2(v0, v3, v4) :- M__1(v0, v1, v2, v3, v4, v5).
+M__3(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2011(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__4(v0, v3, v4) :- M__3(v0, v1, v2, v3, v4, v5).
+M__5(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2012(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__6(v0, v3, v4) :- M__5(v0, v1, v2, v3, v4, v5).
+M__7(v0, v1, v2, v3, v4, v5) :- FactSalesQuota2013(v0, v1, v2, v3, v4, v5), v3 = "4".
+M__8(v0, v3, v4) :- M__7(v0, v1, v2, v3, v4, v5).
+dw_sales(v0, v1, v2, v3) :- dw_sales__4_(v0, v1, v2, v3); dw_sales__5_(v0, v1, v2, v3).
+dw_sales__0_(v0, v1, v2, v3) :- M__2(v0, v2, v3), v1 = "2010".
+dw_sales__1_(v0, v1, v2, v3) :- M__4(v0, v2, v3), v1 = "2011".
+dw_sales__2_(v0, v1, v2, v3) :- M__6(v0, v2, v3), v1 = "2012".
+dw_sales__3_(v0, v1, v2, v3) :- M__8(v0, v2, v3), v1 = "2013".
+dw_sales__4_(v0, v1, v2, v3) :- dw_sales__0_(v0, v1, v2, v3); dw_sales__1_(v0, v1, v2, v3).
+dw_sales__5_(v0, v1, v2, v3) :- dw_sales__2_(v0, v1, v2, v3); dw_sales__3_(v0, v1, v2, v3).

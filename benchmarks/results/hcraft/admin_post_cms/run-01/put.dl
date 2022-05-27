@@ -1,0 +1,421 @@
+.type uid <: symbol
+.type name <: symbol
+.type username <: symbol
+.type email <: symbol
+.type gr <: symbol
+.type pgr <: symbol
+.type gtitle <: symbol
+.type postid <: symbol
+.type title <: symbol
+.type state <: symbol
+.type access <: symbol
+
+.decl users(v0: uid, v1: name, v2: username, v3: email)
+.decl map(v0: uid, v1: gr)
+.decl groups(v0: gr, v1: pgr, v2: gtitle)
+.decl post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl admin_post_cms(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent(v0: uid, v1: gtitle)
+.decl inv0_users(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_map(v0: uid, v1: gr)
+.decl inv0_groups(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl M__1(v0: postid, v1: uid, v2: access)
+.decl M__2(v0: uid, v1: username)
+.decl M__3(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__4(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__5(v0: uid, v1: username)
+.decl M__6(v0: postid, v1: uid, v2: access)
+.decl M__7(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__8(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__9(v0: gr, v1: gtitle)
+.decl M__10(v0: uid)
+.decl M__11(v0: uid, v1: gtitle, v2: gr)
+.decl M__12(v0: uid, v1: gtitle, v2: gr)
+.decl M__13(v0: gr, v1: gtitle)
+.decl M__14(v0: gr, v1: uid, v2: gtitle)
+.decl admin_post_cms__0_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent__0_(v0: uid, v1: gtitle)
+.decl invent__1_(v0: uid, v1: gtitle)
+.decl inv0_map_0__cp(v0: uid, v1: gr)
+.decl inv0_map_1__cp(v0: uid, v1: gr)
+.decl invent_0__cp(v0: uid, v1: gtitle)
+.decl invent_1__cp(v0: uid, v1: gtitle)
+.decl users_update(v0: uid, v1: name, v2: username, v3: email)
+.decl users_sdt_insert(v0: uid, v1: name, v2: username, v3: email)
+.decl users_sdt_delete(v0: uid, v1: name, v2: username, v3: email)
+.decl map_update(v0: uid, v1: gr)
+.decl map_sdt_insert(v0: uid, v1: gr)
+.decl map_sdt_delete(v0: uid, v1: gr)
+.decl groups_update(v0: gr, v1: pgr, v2: gtitle)
+.decl groups_sdt_insert(v0: gr, v1: pgr, v2: gtitle)
+.decl groups_sdt_delete(v0: gr, v1: pgr, v2: gtitle)
+.decl post_update(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl post_sdt_insert(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl post_sdt_delete(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl admin_post_cms_update(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms_vdt_insert(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms_vdt_delete(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent_update(v0: uid, v1: gtitle)
+.decl invent_sdt_insert(v0: uid, v1: gtitle)
+.decl invent_sdt_delete(v0: uid, v1: gtitle)
+.decl invent_vdt_insert(v0: uid, v1: gtitle)
+.decl invent_vdt_delete(v0: uid, v1: gtitle)
+.decl inv0_users_update(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_users_sdt_insert(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_users_sdt_delete(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_users_vdt_insert(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_users_vdt_delete(v0: uid, v1: name, v2: username, v3: email)
+.decl inv0_map_update(v0: uid, v1: gr)
+.decl inv0_map_sdt_insert(v0: uid, v1: gr)
+.decl inv0_map_sdt_delete(v0: uid, v1: gr)
+.decl inv0_map_vdt_insert(v0: uid, v1: gr)
+.decl inv0_map_vdt_delete(v0: uid, v1: gr)
+.decl inv0_groups_update(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_groups_sdt_insert(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_groups_sdt_delete(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_groups_vdt_insert(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_groups_vdt_delete(v0: gr, v1: pgr, v2: gtitle)
+.decl inv0_post_update(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl inv0_post_sdt_insert(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl inv0_post_sdt_delete(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl inv0_post_vdt_insert(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl inv0_post_vdt_delete(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl M__1_update(v0: postid, v1: uid, v2: access)
+.decl M__1_sdt_insert(v0: postid, v1: uid, v2: access)
+.decl M__1_sdt_delete(v0: postid, v1: uid, v2: access)
+.decl M__1_vdt_insert(v0: postid, v1: uid, v2: access)
+.decl M__1_vdt_delete(v0: postid, v1: uid, v2: access)
+.decl M__2_update(v0: uid, v1: username)
+.decl M__2_sdt_insert(v0: uid, v1: username)
+.decl M__2_sdt_delete(v0: uid, v1: username)
+.decl M__2_vdt_insert(v0: uid, v1: username)
+.decl M__2_vdt_delete(v0: uid, v1: username)
+.decl M__3_update(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__3_sdt_insert(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__3_sdt_delete(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__3_vdt_insert(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__3_vdt_delete(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__4_update(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__4_sdt_insert(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__4_sdt_delete(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__4_vdt_insert(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__4_vdt_delete(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__5_update(v0: uid, v1: username)
+.decl M__5_sdt_insert(v0: uid, v1: username)
+.decl M__5_sdt_delete(v0: uid, v1: username)
+.decl M__5_vdt_insert(v0: uid, v1: username)
+.decl M__5_vdt_delete(v0: uid, v1: username)
+.decl M__6_update(v0: postid, v1: uid, v2: access)
+.decl M__6_sdt_insert(v0: postid, v1: uid, v2: access)
+.decl M__6_sdt_delete(v0: postid, v1: uid, v2: access)
+.decl M__6_vdt_insert(v0: postid, v1: uid, v2: access)
+.decl M__6_vdt_delete(v0: postid, v1: uid, v2: access)
+.decl M__7_update(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__7_sdt_insert(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__7_sdt_delete(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__7_vdt_insert(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__7_vdt_delete(v0: postid, v1: access, v2: username, v3: uid)
+.decl M__8_update(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__8_sdt_insert(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__8_sdt_delete(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__8_vdt_insert(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__8_vdt_delete(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl M__9_update(v0: gr, v1: gtitle)
+.decl M__9_sdt_insert(v0: gr, v1: gtitle)
+.decl M__9_sdt_delete(v0: gr, v1: gtitle)
+.decl M__9_vdt_insert(v0: gr, v1: gtitle)
+.decl M__9_vdt_delete(v0: gr, v1: gtitle)
+.decl M__10_update(v0: uid)
+.decl M__10_sdt_insert(v0: uid)
+.decl M__10_sdt_delete(v0: uid)
+.decl M__10_vdt_insert(v0: uid)
+.decl M__10_vdt_delete(v0: uid)
+.decl M__11_update(v0: uid, v1: gtitle, v2: gr)
+.decl M__11_sdt_insert(v0: uid, v1: gtitle, v2: gr)
+.decl M__11_sdt_delete(v0: uid, v1: gtitle, v2: gr)
+.decl M__11_vdt_insert(v0: uid, v1: gtitle, v2: gr)
+.decl M__11_vdt_delete(v0: uid, v1: gtitle, v2: gr)
+.decl M__12_update(v0: uid, v1: gtitle, v2: gr)
+.decl M__12_sdt_insert(v0: uid, v1: gtitle, v2: gr)
+.decl M__12_sdt_delete(v0: uid, v1: gtitle, v2: gr)
+.decl M__12_vdt_insert(v0: uid, v1: gtitle, v2: gr)
+.decl M__12_vdt_delete(v0: uid, v1: gtitle, v2: gr)
+.decl M__13_update(v0: gr, v1: gtitle)
+.decl M__13_sdt_insert(v0: gr, v1: gtitle)
+.decl M__13_sdt_delete(v0: gr, v1: gtitle)
+.decl M__13_vdt_insert(v0: gr, v1: gtitle)
+.decl M__13_vdt_delete(v0: gr, v1: gtitle)
+.decl M__14_update(v0: gr, v1: uid, v2: gtitle)
+.decl M__14_sdt_insert(v0: gr, v1: uid, v2: gtitle)
+.decl M__14_sdt_delete(v0: gr, v1: uid, v2: gtitle)
+.decl M__14_vdt_insert(v0: gr, v1: uid, v2: gtitle)
+.decl M__14_vdt_delete(v0: gr, v1: uid, v2: gtitle)
+.decl admin_post_cms__0__update(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__0__sdt_insert(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__0__sdt_delete(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__0__vdt_insert(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__0__vdt_delete(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1__update(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1__sdt_insert(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1__sdt_delete(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1__vdt_insert(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl admin_post_cms__1__vdt_delete(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl invent__0__update(v0: uid, v1: gtitle)
+.decl invent__0__sdt_insert(v0: uid, v1: gtitle)
+.decl invent__0__sdt_delete(v0: uid, v1: gtitle)
+.decl invent__0__vdt_insert(v0: uid, v1: gtitle)
+.decl invent__0__vdt_delete(v0: uid, v1: gtitle)
+.decl invent__1__update(v0: uid, v1: gtitle)
+.decl invent__1__sdt_insert(v0: uid, v1: gtitle)
+.decl invent__1__sdt_delete(v0: uid, v1: gtitle)
+.decl invent__1__vdt_insert(v0: uid, v1: gtitle)
+.decl invent__1__vdt_delete(v0: uid, v1: gtitle)
+.decl inv0_map_0__cp_update(v0: uid, v1: gr)
+.decl inv0_map_0__cp_sdt_insert(v0: uid, v1: gr)
+.decl inv0_map_0__cp_sdt_delete(v0: uid, v1: gr)
+.decl inv0_map_0__cp_vdt_insert(v0: uid, v1: gr)
+.decl inv0_map_0__cp_vdt_delete(v0: uid, v1: gr)
+.decl inv0_map_1__cp_update(v0: uid, v1: gr)
+.decl inv0_map_1__cp_sdt_insert(v0: uid, v1: gr)
+.decl inv0_map_1__cp_sdt_delete(v0: uid, v1: gr)
+.decl inv0_map_1__cp_vdt_insert(v0: uid, v1: gr)
+.decl inv0_map_1__cp_vdt_delete(v0: uid, v1: gr)
+.decl invent_0__cp_update(v0: uid, v1: gtitle)
+.decl invent_0__cp_sdt_insert(v0: uid, v1: gtitle)
+.decl invent_0__cp_sdt_delete(v0: uid, v1: gtitle)
+.decl invent_0__cp_vdt_insert(v0: uid, v1: gtitle)
+.decl invent_0__cp_vdt_delete(v0: uid, v1: gtitle)
+.decl invent_1__cp_update(v0: uid, v1: gtitle)
+.decl invent_1__cp_sdt_insert(v0: uid, v1: gtitle)
+.decl invent_1__cp_sdt_delete(v0: uid, v1: gtitle)
+.decl invent_1__cp_vdt_insert(v0: uid, v1: gtitle)
+.decl invent_1__cp_vdt_delete(v0: uid, v1: gtitle)
+.decl Au_P_0_M__1_post(v0: title, v1: state)
+.decl Au_P_1_M__1_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl Au_P_0_M__10_inv0_users(v0: name, v1: username, v2: email)
+.decl Au_P_0_M__13_groups(v0: pgr)
+.decl Au_P_0_M__2_inv0_users(v0: name, v1: email)
+.decl Au_P_0_M__5_users(v0: name, v1: email)
+.decl Au_P_0_M__6_post(v0: title, v1: state)
+.decl Au_P_1_M__6_post(v0: postid, v1: uid, v2: title, v3: state, v4: access)
+.decl Au_P_0_M__9_groups(v0: pgr)
+.decl Au_U_admin_post_cms_admin_post_cms__1_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl Au_U_admin_post_cms_admin_post_cms__0__admin_post_cms__1_(v0: postid, v1: gtitle, v2: username, v3: access)
+.decl Au_P_0_admin_post_cms__0__M__4(v0: uid)
+.decl Au_P_1_admin_post_cms__0__M__4(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl Au_P_0_admin_post_cms__1__M__8(v0: uid)
+.decl Au_P_1_admin_post_cms__1__M__8(v0: postid, v1: access, v2: username, v3: uid, v4: gtitle)
+.decl Au_P_0_invent__0__M__12(v0: gr)
+.decl Au_P_0_invent__1__M__14(v0: gr)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input users
+.input map
+.input groups
+.input post
+.output users_update
+.output map_update
+.output groups_update
+.output post_update
+.input admin_post_cms_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v4) :- post(v0, v1, v2, v3, v4).
+M__10(v0) :- inv0_users(v0, v1, v2, v3).
+M__11(v0, v1, v2) :- M__9(v2, v1), inv0_map_0__cp(v0, v2).
+M__12(v0, v1, v2) :- M__11(v0, v1, v2), M__10(v0).
+M__13(v0, v2) :- groups(v0, v1, v2).
+M__14(v0, v1, v2) :- M__13(v0, v2), inv0_map_1__cp(v1, v0).
+M__2(v0, v2) :- inv0_users(v0, v1, v2, v3).
+M__3(v0, v1, v2, v3) :- M__1(v0, v3, v1), M__2(v3, v2).
+M__4(v0, v1, v2, v3, v4) :- M__3(v0, v1, v2, v3), invent_0__cp(v3, v4).
+M__5(v0, v2) :- users(v0, v1, v2, v3).
+M__6(v0, v1, v4) :- post(v0, v1, v2, v3, v4).
+M__7(v0, v1, v2, v3) :- M__5(v3, v2), M__6(v0, v3, v1).
+M__8(v0, v1, v2, v3, v4) :- M__7(v0, v1, v2, v3), invent_1__cp(v3, v4).
+M__9(v0, v2) :- groups(v0, v1, v2).
+admin_post_cms(v0, v1, v2, v3) :- admin_post_cms__0_(v0, v1, v2, v3); admin_post_cms__1_(v0, v1, v2, v3).
+admin_post_cms__0_(v0, v4, v2, v1) :- M__4(v0, v1, v2, v3, v4).
+admin_post_cms__1_(v0, v4, v2, v1) :- M__8(v0, v1, v2, v3, v4).
+inv0_map(v0, v1) :- map(v0, v1), v1 = "7".
+inv0_map_0__cp(v0, v1) :- inv0_map(v0, v1).
+inv0_map_1__cp(v0, v1) :- inv0_map(v0, v1).
+inv0_users(v0, v1, v2, v3) :- users(v0, v1, v2, v3), v3 = "jkyoATjoomla.site".
+invent(v0, v1) :- invent__0_(v0, v1); invent__1_(v0, v1).
+invent_0__cp(v0, v1) :- invent(v0, v1).
+invent_1__cp(v0, v1) :- invent(v0, v1).
+invent__0_(v0, v1) :- M__12(v0, v1, v2).
+invent__1_(v1, v2) :- M__14(v0, v1, v2).
+
+M__10_vdt_delete(v0) :- M__10(v0), !M__10_update(v0).
+M__10_vdt_insert(v0) :- M__10_update(v0), !M__10(v0).
+M__11_vdt_delete(v0, v1, v2) :- M__11(v0, v1, v2), !M__11_update(v0, v1, v2).
+M__11_vdt_insert(v0, v1, v2) :- M__11_update(v0, v1, v2), !M__11(v0, v1, v2).
+M__12_vdt_delete(v0, v1, v2) :- M__12(v0, v1, v2), !M__12_update(v0, v1, v2).
+M__12_vdt_insert(v0, v1, v2) :- M__12_update(v0, v1, v2), !M__12(v0, v1, v2).
+M__13_vdt_delete(v0, v1) :- M__13(v0, v1), !M__13_update(v0, v1).
+M__13_vdt_insert(v0, v1) :- M__13_update(v0, v1), !M__13(v0, v1).
+M__14_vdt_delete(v0, v1, v2) :- M__14(v0, v1, v2), !M__14_update(v0, v1, v2).
+M__14_vdt_insert(v0, v1, v2) :- M__14_update(v0, v1, v2), !M__14(v0, v1, v2).
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+M__2_vdt_delete(v0, v1) :- M__2(v0, v1), !M__2_update(v0, v1).
+M__2_vdt_insert(v0, v1) :- M__2_update(v0, v1), !M__2(v0, v1).
+M__3_vdt_delete(v0, v1, v2, v3) :- M__3(v0, v1, v2, v3), !M__3_update(v0, v1, v2, v3).
+M__3_vdt_insert(v0, v1, v2, v3) :- M__3_update(v0, v1, v2, v3), !M__3(v0, v1, v2, v3).
+M__4_vdt_delete(v0, v1, v2, v3, v4) :- M__4(v0, v1, v2, v3, v4), !M__4_update(v0, v1, v2, v3, v4).
+M__4_vdt_insert(v0, v1, v2, v3, v4) :- M__4_update(v0, v1, v2, v3, v4), !M__4(v0, v1, v2, v3, v4).
+M__5_vdt_delete(v0, v1) :- M__5(v0, v1), !M__5_update(v0, v1).
+M__5_vdt_insert(v0, v1) :- M__5_update(v0, v1), !M__5(v0, v1).
+M__6_vdt_delete(v0, v1, v2) :- M__6(v0, v1, v2), !M__6_update(v0, v1, v2).
+M__6_vdt_insert(v0, v1, v2) :- M__6_update(v0, v1, v2), !M__6(v0, v1, v2).
+M__7_vdt_delete(v0, v1, v2, v3) :- M__7(v0, v1, v2, v3), !M__7_update(v0, v1, v2, v3).
+M__7_vdt_insert(v0, v1, v2, v3) :- M__7_update(v0, v1, v2, v3), !M__7(v0, v1, v2, v3).
+M__8_vdt_delete(v0, v1, v2, v3, v4) :- M__8(v0, v1, v2, v3, v4), !M__8_update(v0, v1, v2, v3, v4).
+M__8_vdt_insert(v0, v1, v2, v3, v4) :- M__8_update(v0, v1, v2, v3, v4), !M__8(v0, v1, v2, v3, v4).
+M__9_vdt_delete(v0, v1) :- M__9(v0, v1), !M__9_update(v0, v1).
+M__9_vdt_insert(v0, v1) :- M__9_update(v0, v1), !M__9(v0, v1).
+admin_post_cms__0__vdt_delete(v0, v1, v2, v3) :- admin_post_cms__0_(v0, v1, v2, v3), !admin_post_cms__0__update(v0, v1, v2, v3).
+admin_post_cms__0__vdt_insert(v0, v1, v2, v3) :- admin_post_cms__0__update(v0, v1, v2, v3), !admin_post_cms__0_(v0, v1, v2, v3).
+admin_post_cms__1__vdt_delete(v0, v1, v2, v3) :- admin_post_cms__1_(v0, v1, v2, v3), !admin_post_cms__1__update(v0, v1, v2, v3).
+admin_post_cms__1__vdt_insert(v0, v1, v2, v3) :- admin_post_cms__1__update(v0, v1, v2, v3), !admin_post_cms__1_(v0, v1, v2, v3).
+admin_post_cms_vdt_delete(v0, v1, v2, v3) :- admin_post_cms(v0, v1, v2, v3), !admin_post_cms_update(v0, v1, v2, v3).
+admin_post_cms_vdt_insert(v0, v1, v2, v3) :- admin_post_cms_update(v0, v1, v2, v3), !admin_post_cms(v0, v1, v2, v3).
+inv0_groups_vdt_delete(v0, v1, v2) :- inv0_groups(v0, v1, v2), !inv0_groups_update(v0, v1, v2).
+inv0_groups_vdt_insert(v0, v1, v2) :- inv0_groups_update(v0, v1, v2), !inv0_groups(v0, v1, v2).
+inv0_map_0__cp_vdt_delete(v0, v1) :- inv0_map_0__cp(v0, v1), !inv0_map_0__cp_update(v0, v1).
+inv0_map_0__cp_vdt_insert(v0, v1) :- inv0_map_0__cp_update(v0, v1), !inv0_map_0__cp(v0, v1).
+inv0_map_1__cp_vdt_delete(v0, v1) :- inv0_map_1__cp(v0, v1), !inv0_map_1__cp_update(v0, v1).
+inv0_map_1__cp_vdt_insert(v0, v1) :- inv0_map_1__cp_update(v0, v1), !inv0_map_1__cp(v0, v1).
+inv0_map_vdt_delete(v0, v1) :- inv0_map(v0, v1), !inv0_map_update(v0, v1).
+inv0_map_vdt_insert(v0, v1) :- inv0_map_update(v0, v1), !inv0_map(v0, v1).
+inv0_post_vdt_delete(v0, v1, v2, v3, v4) :- inv0_post(v0, v1, v2, v3, v4), !inv0_post_update(v0, v1, v2, v3, v4).
+inv0_post_vdt_insert(v0, v1, v2, v3, v4) :- inv0_post_update(v0, v1, v2, v3, v4), !inv0_post(v0, v1, v2, v3, v4).
+inv0_users_vdt_delete(v0, v1, v2, v3) :- inv0_users(v0, v1, v2, v3), !inv0_users_update(v0, v1, v2, v3).
+inv0_users_vdt_insert(v0, v1, v2, v3) :- inv0_users_update(v0, v1, v2, v3), !inv0_users(v0, v1, v2, v3).
+invent_0__cp_vdt_delete(v0, v1) :- invent_0__cp(v0, v1), !invent_0__cp_update(v0, v1).
+invent_0__cp_vdt_insert(v0, v1) :- invent_0__cp_update(v0, v1), !invent_0__cp(v0, v1).
+invent_1__cp_vdt_delete(v0, v1) :- invent_1__cp(v0, v1), !invent_1__cp_update(v0, v1).
+invent_1__cp_vdt_insert(v0, v1) :- invent_1__cp_update(v0, v1), !invent_1__cp(v0, v1).
+invent__0__vdt_delete(v0, v1) :- invent__0_(v0, v1), !invent__0__update(v0, v1).
+invent__0__vdt_insert(v0, v1) :- invent__0__update(v0, v1), !invent__0_(v0, v1).
+invent__1__vdt_delete(v0, v1) :- invent__1_(v0, v1), !invent__1__update(v0, v1).
+invent__1__vdt_insert(v0, v1) :- invent__1__update(v0, v1), !invent__1_(v0, v1).
+invent_vdt_delete(v0, v1) :- invent(v0, v1), !invent_update(v0, v1).
+invent_vdt_insert(v0, v1) :- invent_update(v0, v1), !invent(v0, v1).
+
+M__10_update(v0) :- M__10(v0), !M__10_sdt_delete(v0); M__10_sdt_insert(v0).
+M__11_update(v0, v1, v2) :- M__11(v0, v1, v2), !M__11_sdt_delete(v0, v1, v2); M__11_sdt_insert(v0, v1, v2).
+M__12_update(v0, v1, v2) :- M__12(v0, v1, v2), !M__12_sdt_delete(v0, v1, v2); M__12_sdt_insert(v0, v1, v2).
+M__13_update(v0, v1) :- M__13(v0, v1), !M__13_sdt_delete(v0, v1); M__13_sdt_insert(v0, v1).
+M__14_update(v0, v1, v2) :- M__14(v0, v1, v2), !M__14_sdt_delete(v0, v1, v2); M__14_sdt_insert(v0, v1, v2).
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+M__2_update(v0, v1) :- M__2(v0, v1), !M__2_sdt_delete(v0, v1); M__2_sdt_insert(v0, v1).
+M__3_update(v0, v1, v2, v3) :- M__3(v0, v1, v2, v3), !M__3_sdt_delete(v0, v1, v2, v3); M__3_sdt_insert(v0, v1, v2, v3).
+M__4_update(v0, v1, v2, v3, v4) :- M__4(v0, v1, v2, v3, v4), !M__4_sdt_delete(v0, v1, v2, v3, v4); M__4_sdt_insert(v0, v1, v2, v3, v4).
+M__5_update(v0, v1) :- M__5(v0, v1), !M__5_sdt_delete(v0, v1); M__5_sdt_insert(v0, v1).
+M__6_update(v0, v1, v2) :- M__6(v0, v1, v2), !M__6_sdt_delete(v0, v1, v2); M__6_sdt_insert(v0, v1, v2).
+M__7_update(v0, v1, v2, v3) :- M__7(v0, v1, v2, v3), !M__7_sdt_delete(v0, v1, v2, v3); M__7_sdt_insert(v0, v1, v2, v3).
+M__8_update(v0, v1, v2, v3, v4) :- M__8(v0, v1, v2, v3, v4), !M__8_sdt_delete(v0, v1, v2, v3, v4); M__8_sdt_insert(v0, v1, v2, v3, v4).
+M__9_update(v0, v1) :- M__9(v0, v1), !M__9_sdt_delete(v0, v1); M__9_sdt_insert(v0, v1).
+admin_post_cms__0__update(v0, v1, v2, v3) :- admin_post_cms__0_(v0, v1, v2, v3), !admin_post_cms__0__sdt_delete(v0, v1, v2, v3); admin_post_cms__0__sdt_insert(v0, v1, v2, v3).
+admin_post_cms__1__update(v0, v1, v2, v3) :- admin_post_cms__1_(v0, v1, v2, v3), !admin_post_cms__1__sdt_delete(v0, v1, v2, v3); admin_post_cms__1__sdt_insert(v0, v1, v2, v3).
+groups_update(v0, v1, v2) :- groups(v0, v1, v2), !groups_sdt_delete(v0, v1, v2); groups_sdt_insert(v0, v1, v2).
+inv0_groups_update(v0, v1, v2) :- inv0_groups(v0, v1, v2), !inv0_groups_sdt_delete(v0, v1, v2); inv0_groups_sdt_insert(v0, v1, v2).
+inv0_map_0__cp_update(v0, v1) :- inv0_map_0__cp(v0, v1), !inv0_map_0__cp_sdt_delete(v0, v1); inv0_map_0__cp_sdt_insert(v0, v1).
+inv0_map_1__cp_update(v0, v1) :- inv0_map_1__cp(v0, v1), !inv0_map_1__cp_sdt_delete(v0, v1); inv0_map_1__cp_sdt_insert(v0, v1).
+inv0_map_update(v0, v1) :- inv0_map(v0, v1), !inv0_map_sdt_delete(v0, v1); inv0_map_sdt_insert(v0, v1).
+inv0_post_update(v0, v1, v2, v3, v4) :- inv0_post(v0, v1, v2, v3, v4), !inv0_post_sdt_delete(v0, v1, v2, v3, v4); inv0_post_sdt_insert(v0, v1, v2, v3, v4).
+inv0_users_update(v0, v1, v2, v3) :- inv0_users(v0, v1, v2, v3), !inv0_users_sdt_delete(v0, v1, v2, v3); inv0_users_sdt_insert(v0, v1, v2, v3).
+invent_0__cp_update(v0, v1) :- invent_0__cp(v0, v1), !invent_0__cp_sdt_delete(v0, v1); invent_0__cp_sdt_insert(v0, v1).
+invent_1__cp_update(v0, v1) :- invent_1__cp(v0, v1), !invent_1__cp_sdt_delete(v0, v1); invent_1__cp_sdt_insert(v0, v1).
+invent__0__update(v0, v1) :- invent__0_(v0, v1), !invent__0__sdt_delete(v0, v1); invent__0__sdt_insert(v0, v1).
+invent__1__update(v0, v1) :- invent__1_(v0, v1), !invent__1__sdt_delete(v0, v1); invent__1__sdt_insert(v0, v1).
+invent_update(v0, v1) :- invent(v0, v1), !invent_sdt_delete(v0, v1); invent_sdt_insert(v0, v1).
+map_update(v0, v1) :- map(v0, v1), !map_sdt_delete(v0, v1); map_sdt_insert(v0, v1).
+post_update(v0, v1, v2, v3, v4) :- post(v0, v1, v2, v3, v4), !post_sdt_delete(v0, v1, v2, v3, v4); post_sdt_insert(v0, v1, v2, v3, v4).
+users_update(v0, v1, v2, v3) :- users(v0, v1, v2, v3), !users_sdt_delete(v0, v1, v2, v3); users_sdt_insert(v0, v1, v2, v3).
+
+Fr__("_rejected_") :- M__10_sdt_insert(v0), M__10(v0).
+Fr__("_rejected_") :- M__11_sdt_delete(v0, _, _), M__11_update(v0, _, _), M__10_sdt_delete(v0), M__10_update(v0).
+Fr__("_rejected_") :- M__11_sdt_insert(v0, _, _), M__11(v0, _, _).
+Fr__("_rejected_") :- M__13_sdt_delete(v0, _), M__13_update(v0, _), inv0_map_1__cp_sdt_delete(_, v0), inv0_map_1__cp_update(_, v0).
+Fr__("_rejected_") :- M__13_sdt_insert(v0, _), M__13(v0, _).
+Fr__("_rejected_") :- M__1_sdt_delete(_, v3, _), M__1_update(_, v3, _), M__2_sdt_delete(v3, _), M__2_update(v3, _).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v3, _), M__1(_, v3, _).
+Fr__("_rejected_") :- M__2_sdt_insert(v3, _), M__2(v3, _).
+Fr__("_rejected_") :- M__3_sdt_delete(_, _, _, v3), M__3_update(_, _, _, v3), invent_0__cp_sdt_delete(v3, _), invent_0__cp_update(v3, _).
+Fr__("_rejected_") :- M__3_sdt_insert(_, _, _, v3), M__3(_, _, _, v3).
+Fr__("_rejected_") :- M__5_sdt_delete(v3, _), M__5_update(v3, _), M__6_sdt_delete(_, v3, _), M__6_update(_, v3, _).
+Fr__("_rejected_") :- M__5_sdt_insert(v3, _), M__5(v3, _).
+Fr__("_rejected_") :- M__6_sdt_insert(_, v3, _), M__6(_, v3, _).
+Fr__("_rejected_") :- M__7_sdt_delete(_, _, _, v3), M__7_update(_, _, _, v3), invent_1__cp_sdt_delete(v3, _), invent_1__cp_update(v3, _).
+Fr__("_rejected_") :- M__7_sdt_insert(_, _, _, v3), M__7(_, _, _, v3).
+Fr__("_rejected_") :- M__9_sdt_delete(v2, _), M__9_update(v2, _), inv0_map_0__cp_sdt_delete(_, v2), inv0_map_0__cp_update(_, v2).
+Fr__("_rejected_") :- M__9_sdt_insert(v2, _), M__9(v2, _).
+Fr__("_rejected_") :- inv0_map(_, v1), v1 != "7".
+Fr__("_rejected_") :- inv0_map_0__cp_sdt_insert(_, v2), inv0_map_0__cp(_, v2).
+Fr__("_rejected_") :- inv0_map_1__cp_sdt_insert(_, v0), inv0_map_1__cp(_, v0).
+Fr__("_rejected_") :- inv0_map_update(_, v1), v1 != "7".
+Fr__("_rejected_") :- inv0_users(_, _, _, v3), v3 != "jkyoATjoomla.site".
+Fr__("_rejected_") :- inv0_users_update(_, _, _, v3), v3 != "jkyoATjoomla.site".
+Fr__("_rejected_") :- invent_0__cp_sdt_insert(v3, _), invent_0__cp(v3, _).
+Fr__("_rejected_") :- invent_1__cp_sdt_insert(v3, _), invent_1__cp(v3, _).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__10_sdt_insert(v0) :- M__12_vdt_insert(v0, _, _), !M__10(v0).
+M__11_sdt_insert(v0, v1, v2) :- M__12_vdt_insert(v0, v1, v2), !M__11(v0, v1, v2).
+M__12_sdt_insert(v0, v1, v2) :- invent__0__vdt_insert(v0, v1), Au_P_0_invent__0__M__12(v2), !M__12(v0, v1, _).
+M__14_sdt_insert(v0, v1, v2) :- invent__1__vdt_insert(v1, v2), Au_P_0_invent__1__M__14(v0), !M__14(_, v1, v2).
+M__1_sdt_delete(v0, v1, v4) :- M__6_sdt_delete(v0, v1, v4), post(v0, v1, _, _, v4).
+M__1_sdt_insert(v0, v1, v4) :- M__6_sdt_insert(v0, v1, v4), Au_P_0_M__6_post(v2, v3), !Au_P_1_M__6_post(v0, v1, _, _, v4), !post(v0, v1, _, _, v4).
+M__1_sdt_insert(v0, v3, v1) :- M__3_vdt_insert(v0, v1, _, v3), !M__1(v0, v3, v1).
+M__2_sdt_insert(v3, v2) :- M__3_vdt_insert(_, _, v2, v3), !M__2(v3, v2).
+M__3_sdt_insert(v0, v1, v2, v3) :- M__4_vdt_insert(v0, v1, v2, v3, _), !M__3(v0, v1, v2, v3).
+M__4_sdt_insert(v0, v1, v2, v3, v4) :- admin_post_cms__0__vdt_insert(v0, v4, v2, v1), Au_P_0_admin_post_cms__0__M__4(v3), !Au_P_1_admin_post_cms__0__M__4(v0, v1, v2, _, v4), !M__4(v0, v1, v2, _, v4).
+M__5_sdt_insert(v3, v2) :- M__7_vdt_insert(_, _, v2, v3), !M__5(v3, v2).
+M__6_sdt_delete(v0, v3, v1) :- M__7_vdt_delete(v0, v1, _, v3), M__6(v0, v3, v1).
+M__6_sdt_insert(v0, v3, v1) :- M__7_vdt_insert(v0, v1, _, v3), !M__6(v0, v3, v1).
+M__7_sdt_delete(v0, v1, v2, v3) :- M__8_vdt_delete(v0, v1, v2, v3, _), M__7(v0, v1, v2, v3).
+M__7_sdt_insert(v0, v1, v2, v3) :- M__8_vdt_insert(v0, v1, v2, v3, _), !M__7(v0, v1, v2, v3).
+M__8_sdt_delete(v0, v1, v2, v3, v4) :- admin_post_cms__1__vdt_delete(v0, v4, v2, v1), M__8(v0, v1, v2, v3, v4).
+M__8_sdt_insert(v0, v1, v2, v3, v4) :- admin_post_cms__1__vdt_insert(v0, v4, v2, v1), Au_P_0_admin_post_cms__1__M__8(v3), !Au_P_1_admin_post_cms__1__M__8(v0, v1, v2, _, v4), !M__8(v0, v1, v2, _, v4).
+M__8_sdt_insert(v0, v1, v2, v3, v4) :- admin_post_cms__1__vdt_insert(v0, v4, v2, v1), Au_P_1_admin_post_cms__1__M__8(v0, v1, v2, v3, v4), !M__8(v0, v1, v2, _, v4).
+admin_post_cms__0__sdt_insert(v0, v1, v2, v3) :- admin_post_cms_vdt_insert(v0, v1, v2, v3), !Au_U_admin_post_cms_admin_post_cms__1_(v0, v1, v2, v3), !admin_post_cms__0_(v0, v1, v2, v3).
+admin_post_cms__1__sdt_delete(v0, v1, v2, v3) :- admin_post_cms_vdt_delete(v0, v1, v2, v3), admin_post_cms__1_(v0, v1, v2, v3).
+admin_post_cms__1__sdt_insert(v0, v1, v2, v3) :- admin_post_cms_vdt_insert(v0, v1, v2, v3), !Au_U_admin_post_cms_admin_post_cms__0__admin_post_cms__1_(v0, v1, v2, v3), !admin_post_cms__1_(v0, v1, v2, v3).
+admin_post_cms__1__sdt_insert(v0, v1, v2, v3) :- admin_post_cms_vdt_insert(v0, v1, v2, v3), !Au_U_admin_post_cms_admin_post_cms__1_(v0, v1, v2, v3), !admin_post_cms__1_(v0, v1, v2, v3).
+inv0_map_0__cp_sdt_insert(v0, v1) :- inv0_map_1__cp_sdt_insert(v0, v1), !inv0_map(v0, v1).
+inv0_map_1__cp_sdt_insert(v1, v0) :- M__14_vdt_insert(v0, v1, _), !inv0_map_1__cp(v1, v0).
+inv0_map_sdt_insert(v0, v1) :- inv0_map_0__cp_vdt_insert(v0, v1).
+inv0_users_sdt_insert(v0, v1, v2, v3) :- M__10_vdt_insert(v0), Au_P_0_M__10_inv0_users(v1, v2, v3), !inv0_users(v0, _, _, _).
+invent_0__cp_sdt_insert(v3, v4) :- M__4_vdt_insert(_, _, _, v3, v4), !invent_0__cp(v3, v4).
+invent_1__cp_sdt_insert(v3, v4) :- M__8_vdt_insert(_, _, _, v3, v4), !invent_1__cp(v3, v4).
+invent__0__sdt_insert(v0, v1) :- invent_vdt_insert(v0, v1), !invent__0_(v0, v1).
+invent__1__sdt_insert(v0, v1) :- invent_vdt_insert(v0, v1), !invent__1_(v0, v1).
+invent_sdt_insert(v0, v1) :- invent_0__cp_vdt_insert(v0, v1).
+map_sdt_insert(v0, v1) :- inv0_map_vdt_insert(v0, v1), !map(v0, v1).
+post_sdt_delete(v0, v1, v2, v3, v4) :- M__1_vdt_delete(v0, v1, v4), post(v0, v1, v2, v3, v4).
+post_sdt_insert(v0, v1, v2, v3, v4) :- M__1_vdt_insert(v0, v1, v4), Au_P_0_M__1_post(v2, v3), !Au_P_1_M__1_post(v0, v1, _, _, v4), !post(v0, v1, _, _, v4).
+users_sdt_insert(v0, v1, v2, v3) :- M__5_vdt_insert(v0, v2), Au_P_0_M__5_users(v1, v3), !users(v0, _, v2, _).
+
+Au_P_0_M__1_post("NoTitle", "0").
+Au_P_0_M__10_inv0_users("kyo", "jkyo", "jkyoATjoomla.site").
+Au_P_0_M__13_groups("_null_").
+Au_P_0_M__2_inv0_users("kyo", "jkyoATjoomla.site").
+Au_P_0_M__5_users("kyo", "jkyoATjoomla.site").
+Au_P_0_M__6_post("NoTitle", "0").
+Au_P_0_M__9_groups("_null_").
+Au_U_admin_post_cms_admin_post_cms__1_("1100", "Administrator", "jcarol", "11").
+Au_U_admin_post_cms_admin_post_cms__0__admin_post_cms__1_("1101", "Administrator", "jkyo", "12").
+Au_U_admin_post_cms_admin_post_cms__0__admin_post_cms__1_("1102", "Administrator", "jkyo", "13").
+Au_U_admin_post_cms_admin_post_cms__0__admin_post_cms__1_("1104", "Administrator", "jkyo", "1").
+Au_P_0_admin_post_cms__0__M__4("501").
+Au_P_0_admin_post_cms__1__M__8("501").
+Au_P_1_admin_post_cms__1__M__8("1100", "11", "jcarol", "449", "Administrator").
+Au_P_0_invent__0__M__12("7").
+Au_P_0_invent__1__M__14("7").

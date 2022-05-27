@@ -1,0 +1,26 @@
+.type username <: symbol
+.type uid <: symbol
+.type gid <: symbol
+.type info <: symbol
+.type homedir <: symbol
+.type shell <: symbol
+.type tty <: symbol
+.type day <: symbol
+.type date <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl user(v0: username, v1: uid, v2: gid, v3: info, v4: homedir, v5: shell)
+.decl logged(v0: username, v1: tty, v2: day, v3: date)
+.decl status(v0: tty)
+.input user, logged, status
+
+.decl invent(v0: username, v1: tty, v2: date)
+.output invent
+
+.decl logging(v0: username, v1: uid, v2: info, v3: date)
+.output logging
+
+invent(v0, v1, v3) :- logged(v0, v1, v2, v3), status(v1), v2 = "Sun", Rule(1).
+logging(v0, v1, v3, v7) :- user(v0, v1, v2, v3, v4, v5), invent(v0, v6, v7), Rule(2).

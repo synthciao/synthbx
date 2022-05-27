@@ -1,0 +1,18 @@
+.type emp_name <: symbol
+.type dept_name <: symbol
+
+.decl ed(v0: emp_name, v1: dept_name)
+.decl eed(v0: emp_name, v1: dept_name)
+.input ed, eed
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl ced(v0: emp_name, v1: dept_name)
+.output ced
+
+ced(v0, v1) :- ed(v0, v1), Rule(0).
+ced(v0, v1) :- eed(v0, v1), Rule(1).
+ced(v0, v1) :- ed(v0, v1), eed(v0, v1), Rule(2).
+ced(v0, v1) :- ed(v0, v1), !eed(v0, v1), Rule(3).
+ced(v0, v1) :- eed(v0, v1), !ed(v0, v1), Rule(4).

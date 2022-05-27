@@ -1,0 +1,14 @@
+.type CITY_ID <: symbol
+.type CITY <: symbol
+.type COUNTRY_ID <: symbol
+.type LAST_UPDATE <: symbol
+
+.decl city(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+.decl usa_city(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID)
+.decl M__1(v0: CITY_ID, v1: CITY, v2: COUNTRY_ID, v3: LAST_UPDATE)
+
+.input city
+.output usa_city
+
+M__1(v0, v1, v2, v3) :- city(v0, v1, v2, v3), v2 = "103".
+usa_city(v0, v1, v2) :- M__1(v0, v1, v2, v3).

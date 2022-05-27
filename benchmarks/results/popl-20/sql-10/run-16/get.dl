@@ -1,0 +1,19 @@
+.type ID
+.type Pid
+.type Name
+.type G
+
+
+.decl In(v0: ID, v1: Pid, v2: Name, v3: G)
+.input In
+.decl Lt(v0: G, v1: G)
+.input Lt
+
+.decl inv(v0: Pid, v1: G)
+.output inv
+
+.decl Out(v0: Pid, v1: G, v2: G)
+.output Out
+
+inv(v1, v3) :- In(v0, v1, v2, v3).
+Out(v2, v0, v1) :- Lt(v0, v1), inv(v2, v0), inv(v2, v1).

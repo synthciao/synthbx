@@ -1,0 +1,83 @@
+.type MESSAGEID <: symbol
+.type TYPE <: symbol
+.type TEXT <: symbol
+.type DATE <: symbol
+.type ADDRESS <: symbol
+.type READ <: symbol
+.type SENDER <: symbol
+.type MESSAGETECH <: symbol
+
+.decl messagecentre(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentreemail(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl message(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl messagecentre_update(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentre_sdt_insert(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentre_sdt_delete(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentreemail_update(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentreemail_sdt_insert(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl messagecentreemail_sdt_delete(v0: MESSAGEID, v1: TYPE, v2: TEXT, v3: DATE, v4: ADDRESS, v5: READ, v6: SENDER)
+.decl message_update(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message_vdt_insert(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message_vdt_delete(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0__update(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0__sdt_insert(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0__sdt_delete(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0__vdt_insert(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__0__vdt_delete(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1__update(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1__sdt_insert(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1__sdt_delete(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1__vdt_insert(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl message__1__vdt_delete(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl Au_U_message_message__0_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl Au_U_message_message__1_(v0: MESSAGEID, v1: MESSAGETECH, v2: TYPE, v3: TEXT, v4: DATE, v5: ADDRESS, v6: READ, v7: SENDER)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input messagecentre
+.input messagecentreemail
+.output messagecentre_update
+.output messagecentreemail_update
+.input message_update
+.output Fr__
+.output Fv__
+
+message(v0, v1, v2, v3, v4, v5, v6, v7) :- message__0_(v0, v1, v2, v3, v4, v5, v6, v7); message__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__0_(v0, v1, v2, v3, v4, v5, v6, v7) :- messagecentre(v0, v2, v3, v4, v5, v6, v7), v1 = "S".
+message__1_(v0, v1, v2, v3, v4, v5, v6, v7) :- messagecentreemail(v0, v2, v3, v4, v5, v6, v7), v1 = "E".
+
+message__0__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- message__0_(v0, v1, v2, v3, v4, v5, v6, v7), !message__0__update(v0, v1, v2, v3, v4, v5, v6, v7).
+message__0__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- message__0__update(v0, v1, v2, v3, v4, v5, v6, v7), !message__0_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__1__vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- message__1_(v0, v1, v2, v3, v4, v5, v6, v7), !message__1__update(v0, v1, v2, v3, v4, v5, v6, v7).
+message__1__vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- message__1__update(v0, v1, v2, v3, v4, v5, v6, v7), !message__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+message_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- message(v0, v1, v2, v3, v4, v5, v6, v7), !message_update(v0, v1, v2, v3, v4, v5, v6, v7).
+message_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- message_update(v0, v1, v2, v3, v4, v5, v6, v7), !message(v0, v1, v2, v3, v4, v5, v6, v7).
+
+message__0__update(v0, v1, v2, v3, v4, v5, v6, v7) :- message__0_(v0, v1, v2, v3, v4, v5, v6, v7), !message__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); message__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+message__1__update(v0, v1, v2, v3, v4, v5, v6, v7) :- message__1_(v0, v1, v2, v3, v4, v5, v6, v7), !message__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7); message__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7).
+messagecentre_update(v0, v1, v2, v3, v4, v5, v6) :- messagecentre(v0, v1, v2, v3, v4, v5, v6), !messagecentre_sdt_delete(v0, v1, v2, v3, v4, v5, v6); messagecentre_sdt_insert(v0, v1, v2, v3, v4, v5, v6).
+messagecentreemail_update(v0, v1, v2, v3, v4, v5, v6) :- messagecentreemail(v0, v1, v2, v3, v4, v5, v6), !messagecentreemail_sdt_delete(v0, v1, v2, v3, v4, v5, v6); messagecentreemail_sdt_insert(v0, v1, v2, v3, v4, v5, v6).
+
+Fr__("_rejected_") :- message__0_(_, v1, _, _, _, _, _, _), v1 != "S".
+Fr__("_rejected_") :- message__0__update(_, v1, _, _, _, _, _, _), v1 != "S".
+Fr__("_rejected_") :- message__1_(_, v1, _, _, _, _, _, _), v1 != "E".
+Fr__("_rejected_") :- message__1__update(_, v1, _, _, _, _, _, _), v1 != "E".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+message__0__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- message_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), message__0_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__0__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- message_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_message_message__1_(v0, v1, v2, v3, v4, v5, v6, v7), !message__0_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__1__sdt_delete(v0, v1, v2, v3, v4, v5, v6, v7) :- message_vdt_delete(v0, v1, v2, v3, v4, v5, v6, v7), message__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+message__1__sdt_insert(v0, v1, v2, v3, v4, v5, v6, v7) :- message_vdt_insert(v0, v1, v2, v3, v4, v5, v6, v7), !Au_U_message_message__0_(v0, v1, v2, v3, v4, v5, v6, v7), !message__1_(v0, v1, v2, v3, v4, v5, v6, v7).
+messagecentre_sdt_delete(v0, v2, v3, v4, v5, v6, v7) :- message__0__vdt_delete(v0, _, v2, v3, v4, v5, v6, v7), messagecentre(v0, v2, v3, v4, v5, v6, v7).
+messagecentre_sdt_insert(v0, v2, v3, v4, v5, v6, v7) :- message__0__vdt_insert(v0, _, v2, v3, v4, v5, v6, v7), !messagecentre(v0, v2, v3, v4, v5, v6, v7).
+messagecentreemail_sdt_delete(v0, v2, v3, v4, v5, v6, v7) :- message__1__vdt_delete(v0, _, v2, v3, v4, v5, v6, v7), messagecentreemail(v0, v2, v3, v4, v5, v6, v7).
+messagecentreemail_sdt_insert(v0, v2, v3, v4, v5, v6, v7) :- message__1__vdt_insert(v0, _, v2, v3, v4, v5, v6, v7), !messagecentreemail(v0, v2, v3, v4, v5, v6, v7).
+
+Au_U_message_message__0_("4001", "S", "html", "null", "2012-06-06", "Bob@mes", "y", "Richard@mes").
+Au_U_message_message__0_("4003", "S", "text", "not null", "2012-06-07", "Tom@mes", "y", "Jerry@mes").
+Au_U_message_message__1_("4002", "E", "html", "not null", "2012-01-12", "Alex@mes", "n", "William@mes").
+Au_U_message_message__1_("4004", "E", "text", "not null", "2012-02-01", "Alice@mes", "y", "Bob@mes").
+Au_U_message_message__1_("4006", "E", "text", "not null", "2012-12-01", "Jeams@mes", "y", "David@mes").
+Au_U_message_message__1_("4008", "E", "html", "null", "2012-10-10", "Kahlua@mes", "n", "David@mes").

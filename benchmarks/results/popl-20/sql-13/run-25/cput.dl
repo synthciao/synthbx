@@ -1,0 +1,77 @@
+.type ID <: symbol
+.type Item <: symbol
+
+.decl A(v0: ID, v1: Item)
+.decl B(v0: Item, v1: Item)
+.decl Out(v0: ID, v1: Item)
+.decl M__1(v0: ID, v1: Item, v2: Item)
+.decl A_update(v0: ID, v1: Item)
+.decl A_sdt_insert(v0: ID, v1: Item)
+.decl A_sdt_delete(v0: ID, v1: Item)
+.decl B_update(v0: Item, v1: Item)
+.decl B_sdt_insert(v0: Item, v1: Item)
+.decl B_sdt_delete(v0: Item, v1: Item)
+.decl Out_update(v0: ID, v1: Item)
+.decl Out_vdt_insert(v0: ID, v1: Item)
+.decl Out_vdt_delete(v0: ID, v1: Item)
+.decl M__1_update(v0: ID, v1: Item, v2: Item)
+.decl M__1_sdt_insert(v0: ID, v1: Item, v2: Item)
+.decl M__1_sdt_delete(v0: ID, v1: Item, v2: Item)
+.decl M__1_vdt_insert(v0: ID, v1: Item, v2: Item)
+.decl M__1_vdt_delete(v0: ID, v1: Item, v2: Item)
+.decl Au_P_0_Out_M__1(v0: Item)
+.decl Au_P_1_Out_M__1(v0: ID, v1: Item, v2: Item)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+.decl Rule(v0: number)
+
+.input A
+.input B
+.output Out
+.output M__1
+.output A_update
+.output A_sdt_insert
+.output A_sdt_delete
+.output B_update
+.output B_sdt_insert
+.output B_sdt_delete
+.input Out_update
+.output Out_vdt_insert
+.output Out_vdt_delete
+.output M__1_update
+.output M__1_sdt_insert
+.output M__1_sdt_delete
+.output M__1_vdt_insert
+.output M__1_vdt_delete
+.output Fr__
+.output Fv__
+.input Rule
+
+M__1(v0, v1, v2) :- A(v0, v1), B(v2, v1).
+Out(v0, v2) :- M__1(v0, v1, v2).
+
+M__1_vdt_delete(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_update(v0, v1, v2).
+M__1_vdt_insert(v0, v1, v2) :- M__1_update(v0, v1, v2), !M__1(v0, v1, v2).
+Out_vdt_delete(v0, v1) :- Out(v0, v1), !Out_update(v0, v1).
+Out_vdt_insert(v0, v1) :- Out_update(v0, v1), !Out(v0, v1).
+
+A_update(v0, v1) :- A(v0, v1), !A_sdt_delete(v0, v1); A_sdt_insert(v0, v1).
+B_update(v0, v1) :- B(v0, v1), !B_sdt_delete(v0, v1); B_sdt_insert(v0, v1).
+M__1_update(v0, v1, v2) :- M__1(v0, v1, v2), !M__1_sdt_delete(v0, v1, v2); M__1_sdt_insert(v0, v1, v2).
+
+Fr__("_rejected_") :- A_sdt_delete(_, v1), A_update(_, v1), B_sdt_delete(_, v1), B_update(_, v1).
+Fr__("_rejected_") :- A_sdt_insert(_, v1), A(_, v1).
+Fr__("_rejected_") :- B_sdt_insert(_, v1), B(_, v1).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+A_sdt_insert(v0, v1) :- M__1_vdt_insert(v0, v1, _), !A(v0, v1), Rule(1).
+B_sdt_delete(v2, v1) :- M__1_vdt_delete(_, v1, v2), B(v2, v1), Rule(0).
+B_sdt_insert(v2, v1) :- M__1_vdt_insert(_, v1, v2), !B(v2, v1), Rule(2).
+M__1_sdt_delete(v0, v1, v2) :- Out_vdt_delete(v0, v2), M__1(v0, v1, v2), Rule(3).
+M__1_sdt_insert(v0, v1, v2) :- Out_vdt_insert(v0, v2), Au_P_0_Out_M__1(v1), !Au_P_1_Out_M__1(v0, _, v2), !M__1(v0, _, v2), Rule(5).
+M__1_sdt_insert(v0, v1, v2) :- Out_vdt_insert(v0, v2), Au_P_1_Out_M__1(v0, v1, v2), !M__1(v0, _, v2), Rule(4).
+
+Au_P_0_Out_M__1("d").
+Au_P_1_Out_M__1("6", "f", "i").
+Au_P_1_Out_M__1("3", "b", "o").
+Au_P_1_Out_M__1("4", "e", "o").

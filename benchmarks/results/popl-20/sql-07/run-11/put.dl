@@ -1,0 +1,79 @@
+.type ID <: symbol
+.type Name <: symbol
+.type School <: symbol
+
+.decl In(v0: ID, v1: Name, v2: School)
+.decl Out(v0: ID, v1: Name)
+.decl M__1(v0: ID, v1: Name)
+.decl M__2(v0: Name)
+.decl In_update(v0: ID, v1: Name, v2: School)
+.decl In_sdt_insert(v0: ID, v1: Name, v2: School)
+.decl In_sdt_delete(v0: ID, v1: Name, v2: School)
+.decl Out_update(v0: ID, v1: Name)
+.decl Out_vdt_insert(v0: ID, v1: Name)
+.decl Out_vdt_delete(v0: ID, v1: Name)
+.decl M__1_update(v0: ID, v1: Name)
+.decl M__1_sdt_insert(v0: ID, v1: Name)
+.decl M__1_sdt_delete(v0: ID, v1: Name)
+.decl M__1_vdt_insert(v0: ID, v1: Name)
+.decl M__1_vdt_delete(v0: ID, v1: Name)
+.decl M__2_update(v0: Name)
+.decl M__2_sdt_insert(v0: Name)
+.decl M__2_sdt_delete(v0: Name)
+.decl M__2_vdt_insert(v0: Name)
+.decl M__2_vdt_delete(v0: Name)
+.decl Au_P_0_M__1_In(v0: School)
+.decl Au_P_1_M__1_In(v0: ID, v1: Name, v2: School)
+.decl Au_P_0_M__2_In(v0: ID, v1: School)
+.decl Au_P_1_M__2_In(v0: ID, v1: Name, v2: School)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input In
+.output In_update
+.input Out_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1) :- In(v0, v1, v2).
+M__2(v1) :- In(v0, v1, v2).
+Out(v0, v1) :- M__1(v0, v1), M__2(v1).
+
+M__1_vdt_delete(v0, v1) :- M__1(v0, v1), !M__1_update(v0, v1).
+M__1_vdt_insert(v0, v1) :- M__1_update(v0, v1), !M__1(v0, v1).
+M__2_vdt_delete(v0) :- M__2(v0), !M__2_update(v0).
+M__2_vdt_insert(v0) :- M__2_update(v0), !M__2(v0).
+Out_vdt_delete(v0, v1) :- Out(v0, v1), !Out_update(v0, v1).
+Out_vdt_insert(v0, v1) :- Out_update(v0, v1), !Out(v0, v1).
+
+In_update(v0, v1, v2) :- In(v0, v1, v2), !In_sdt_delete(v0, v1, v2); In_sdt_insert(v0, v1, v2).
+M__1_update(v0, v1) :- M__1(v0, v1), !M__1_sdt_delete(v0, v1); M__1_sdt_insert(v0, v1).
+M__2_update(v0) :- M__2(v0), !M__2_sdt_delete(v0); M__2_sdt_insert(v0).
+
+Fr__("_rejected_") :- M__1_sdt_delete(_, v1), M__1_update(_, v1), M__2_sdt_delete(v1), M__2_update(v1).
+Fr__("_rejected_") :- M__1_sdt_insert(_, v1), M__1(_, v1).
+Fr__("_rejected_") :- M__2_sdt_insert(v1), M__2(v1).
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+In_sdt_delete(v0, v1, v2) :- M__1_vdt_delete(v0, v1), In(v0, v1, v2).
+In_sdt_delete(v0, v1, v2) :- M__2_vdt_delete(v1), In(v0, v1, v2).
+In_sdt_insert(v0, v1, v2) :- M__1_vdt_insert(v0, v1), Au_P_0_M__1_In(v2), !Au_P_1_M__1_In(v0, v1, _), !In(v0, v1, _).
+In_sdt_insert(v0, v1, v2) :- M__1_vdt_insert(v0, v1), Au_P_1_M__1_In(v0, v1, v2), !In(v0, v1, _).
+In_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v1), Au_P_0_M__2_In(v0, v2), !Au_P_1_M__2_In(_, v1, _), !In(_, v1, _).
+In_sdt_insert(v0, v1, v2) :- M__2_vdt_insert(v1), Au_P_1_M__2_In(v0, v1, v2), !In(_, v1, _).
+M__1_sdt_delete(v0, v1) :- M__2_sdt_delete(v1), In(v0, v1, _).
+M__1_sdt_delete(v0, v1) :- Out_vdt_delete(v0, v1), M__1(v0, v1).
+M__1_sdt_insert(v0, v1) :- M__2_sdt_insert(v1), Au_P_0_M__2_In(v0, v2), !Au_P_1_M__2_In(_, v1, _), !In(v0, v1, _).
+M__1_sdt_insert(v0, v1) :- M__2_sdt_insert(v1), Au_P_1_M__2_In(v0, v1, v2), !In(v0, v1, _).
+M__1_sdt_insert(v0, v1) :- Out_vdt_insert(v0, v1), !M__1(v0, v1).
+M__2_sdt_delete(v1) :- M__1_sdt_delete(v0, v1), In(v0, v1, _).
+M__2_sdt_delete(v1) :- Out_vdt_delete(_, v1), M__2(v1).
+M__2_sdt_insert(v1) :- M__1_sdt_insert(v0, v1), Au_P_0_M__1_In(v2), !Au_P_1_M__1_In(v0, v1, _), !In(v0, v1, _).
+M__2_sdt_insert(v1) :- M__1_sdt_insert(v0, v1), Au_P_1_M__1_In(v0, v1, v2), !In(v0, v1, _).
+M__2_sdt_insert(v1) :- Out_vdt_insert(_, v1), !M__2(v1).
+
+Au_P_0_M__1_In("VT").
+Au_P_1_M__1_In("6", "Trinity", "VCU").
+Au_P_0_M__2_In("6", "VCU").
+Au_P_1_M__2_In("7", "Neo", "VT").
+Au_P_1_M__2_In("8", "Rabbit", "VT").

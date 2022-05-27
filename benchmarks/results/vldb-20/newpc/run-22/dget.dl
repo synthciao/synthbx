@@ -1,0 +1,21 @@
+.type MAKER <: symbol
+.type MODEL <: symbol
+.type TYPE <: symbol
+.type SPEED <: symbol
+.type RAM <: symbol
+.type HD <: symbol
+.type PRICE <: symbol
+
+.decl product(v0: MAKER, v1: MODEL, v2: TYPE)
+.decl pc(v0: MODEL, v1: SPEED, v2: RAM, v3: HD, v4: PRICE)
+.decl newpc(v0: MAKER, v1: MODEL, v2: SPEED, v3: RAM, v4: HD, v5: PRICE)
+.decl M__1(v0: MAKER, v1: MODEL, v2: TYPE)
+.decl M__2(v0: MAKER, v1: MODEL)
+
+.input product
+.input pc
+.output newpc
+
+M__1(v0, v1, v2) :- product(v0, v1, v2), v2 = "pc".
+M__2(v0, v1) :- M__1(v0, v1, v2).
+newpc(v0, v1, v2, v3, v4, v5) :- M__2(v0, v1), pc(v1, v2, v3, v4, v5).

@@ -1,0 +1,16 @@
+.type VEHICLE_ID <: symbol
+.type SIZE <: symbol
+.type BRAND_ID <: symbol
+.type NAME <: symbol
+
+.decl Rule(v0: number)
+.input Rule
+
+.decl vehicle(v0: VEHICLE_ID, v1: SIZE, v2: BRAND_ID)
+.decl brand(v0: BRAND_ID, v1: NAME)
+.input vehicle, brand
+
+.decl vehicle_view(v0: VEHICLE_ID, v1: SIZE, v2: NAME)
+.output vehicle_view
+
+vehicle_view(v0, v1, v3) :- vehicle(v0, v1, v2), brand(v2, v3), Rule(1).

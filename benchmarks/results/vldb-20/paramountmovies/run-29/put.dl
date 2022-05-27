@@ -1,0 +1,52 @@
+.type title <: symbol
+.type year <: symbol
+.type length <: symbol
+.type genre <: symbol
+.type studioname <: symbol
+.type producerc <: symbol
+
+.decl movies(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl paramountmovies(v0: title, v1: year)
+.decl M__1(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl movies_update(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl movies_sdt_insert(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl movies_sdt_delete(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl paramountmovies_update(v0: title, v1: year)
+.decl paramountmovies_vdt_insert(v0: title, v1: year)
+.decl paramountmovies_vdt_delete(v0: title, v1: year)
+.decl M__1_update(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl M__1_sdt_insert(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl M__1_sdt_delete(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl M__1_vdt_insert(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl M__1_vdt_delete(v0: title, v1: year, v2: length, v3: genre, v4: studioname, v5: producerc)
+.decl Au_P_0_paramountmovies_M__1(v0: length, v1: genre, v2: studioname, v3: producerc)
+.decl Fr__(v0: symbol)
+.decl Fv__(v0: symbol)
+
+.input movies
+.output movies_update
+.input paramountmovies_update
+.output Fr__
+.output Fv__
+
+M__1(v0, v1, v2, v3, v4, v5) :- movies(v0, v1, v2, v3, v4, v5), v4 = "Paramount".
+paramountmovies(v0, v1) :- M__1(v0, v1, v2, v3, v4, v5).
+
+M__1_vdt_delete(v0, v1, v2, v3, v4, v5) :- M__1(v0, v1, v2, v3, v4, v5), !M__1_update(v0, v1, v2, v3, v4, v5).
+M__1_vdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_update(v0, v1, v2, v3, v4, v5), !M__1(v0, v1, v2, v3, v4, v5).
+paramountmovies_vdt_delete(v0, v1) :- paramountmovies(v0, v1), !paramountmovies_update(v0, v1).
+paramountmovies_vdt_insert(v0, v1) :- paramountmovies_update(v0, v1), !paramountmovies(v0, v1).
+
+M__1_update(v0, v1, v2, v3, v4, v5) :- M__1(v0, v1, v2, v3, v4, v5), !M__1_sdt_delete(v0, v1, v2, v3, v4, v5); M__1_sdt_insert(v0, v1, v2, v3, v4, v5).
+movies_update(v0, v1, v2, v3, v4, v5) :- movies(v0, v1, v2, v3, v4, v5), !movies_sdt_delete(v0, v1, v2, v3, v4, v5); movies_sdt_insert(v0, v1, v2, v3, v4, v5).
+
+Fr__("_rejected_") :- M__1(_, _, _, _, v4, _), v4 != "Paramount".
+Fr__("_rejected_") :- M__1_update(_, _, _, _, v4, _), v4 != "Paramount".
+Fv__("_valid_") :- !Fr__("_rejected_").
+
+M__1_sdt_delete(v0, v1, v2, v3, v4, v5) :- paramountmovies_vdt_delete(v0, v1), M__1(v0, v1, v2, v3, v4, v5).
+M__1_sdt_insert(v0, v1, v2, v3, v4, v5) :- paramountmovies_vdt_insert(v0, v1), Au_P_0_paramountmovies_M__1(v2, v3, v4, v5), !M__1(v0, v1, _, _, _, _).
+movies_sdt_delete(v0, v1, v2, v3, v4, v5) :- M__1_vdt_delete(v0, v1, v2, v3, v4, v5), movies(v0, v1, v2, v3, v4, v5).
+movies_sdt_insert(v0, v1, v2, v3, v4, v5) :- M__1_vdt_insert(v0, v1, v2, v3, v4, v5), !movies(v0, v1, v2, v3, v4, v5).
+
+Au_P_0_paramountmovies_M__1("0", "null", "Paramount", "00000").
